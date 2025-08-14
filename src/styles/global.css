@@ -1,0 +1,38 @@
+/* src/styles/global.css */
+@import './colors.css';
+
+/* Titles */
+.title {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.title:hover {
+    color: var(--hover-color);
+}
+
+/* Paragraphs */
+p {
+    color: var(--text-color);
+}
+
+ul li:hover,
+ol li:hover {
+    color: var(--hover-color);
+    cursor: pointer;
+}
+
+td:hover {
+    color: var(--hover-color);
+    cursor: pointer;
+}
+
+button:hover {
+    color: var(--hover-color);
+    cursor: pointer;
+}
+
+button text:hover {
+
+    color: var(--text-button-color);
+}

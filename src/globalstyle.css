@@ -1,0 +1,19 @@
+/* src/global-styles.css @import './colors.css';
+
+.title {
+    color: var(--primary-color);
+}
+
+.title:hover {
+    color: var(--hover-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+
+ul li:hover,
+ol li:hover {
+    color: var(--hover-color);
+} */
