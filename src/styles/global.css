@@ -27,12 +27,12 @@ td:hover {
     cursor: pointer;
 }
 
-button:hover {
+/* button:hover {
     color: var(--hover-color);
     cursor: pointer;
-}
+} */
 
-button text:hover {
+/* button text:hover {
 
     color: var(--text-button-color);
-}
+} */

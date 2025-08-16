@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Navbar'
+// import Navbar from '../Navbar'
 import HeroSection from '../HeroSection'
 import Footer from '../Footer'
 import StudyGoal from './home/StudyGoal'
@@ -13,6 +13,7 @@ import RegularAlerts from './home/RegularAlerts'
 import CourseFinderBanner from './home/CourseBanner'
 import NewsletterForm from './home/NewsletterForm'
 import LatestNews from './home/LatestNews'
+import Services from './home/OurServices'
 
 function Home() {
     return (
@@ -20,6 +21,7 @@ function Home() {
 
             <HeroSection />
             <StudyGoal />
+            <Services />
             <ExploreProgramsSection />
             <TopUniversitiesColleges />
 
