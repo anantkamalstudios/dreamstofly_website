@@ -2,7 +2,6 @@ import React from 'react'
 // import Navbar from '../Navbar'
 import HeroSection from '../HeroSection'
 import Footer from '../Footer'
-import StudyGoal from './home/StudyGoal'
 import ExploreProgramsSection from './home/ExplorePrograms'
 import TopUniversitiesColleges from './home/TopUniversitiesColleges'
 import AdmissionChanceBanner from './home/AdmissionBanner'
@@ -14,26 +13,32 @@ import CourseFinderBanner from './home/CourseBanner'
 import NewsletterForm from './home/NewsletterForm'
 import LatestNews from './home/LatestNews'
 import Services from './home/OurServices'
+import WhyChooseUs from './home/WhyChooseUs'
+import StudyAbroadPlatform from './home/StudyAbroadPlatform'
+import WhyUs from './home/Whyus'
+import PremiumFeature from './home/PremiumFeature'
+import Certificates from './home/Certificates'
 
 function Home() {
     return (
         <div>
 
             <HeroSection />
-            <StudyGoal />
+            <WhyChooseUs />
+            <StudyAbroadPlatform />
             <Services />
             <ExploreProgramsSection />
             <TopUniversitiesColleges />
-
             <AdmissionChanceBanner />
-
+            <WhyUs />
             <CollegeRanking />
             <RegularAlerts />
-
             <TopStudyPlacesCarousel />
             <CourseFinderBanner />
+            <PremiumFeature />
             <LatestNews />
             <StudyAbroadSection />
+            <Certificates />
             <NewsletterForm />
 
 

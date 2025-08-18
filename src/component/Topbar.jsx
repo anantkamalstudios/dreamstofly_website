@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Book, ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-
 export default function Topbar() {
     const [isAllCoursesOpen, setIsAllCoursesOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,13 +9,13 @@ export default function Topbar() {
 
     const links = [
         { name: "Home", href: "/" },
-        { name: "SOP MAKER", href: "#" },
-        { name: "CONNECT", href: "#" },
-        { name: "POST ADMIT SERVICES", href: "#" },
+        { name: "SOP MAKER", href: "/sop-maker" },
+        { name: "CONNECT", href: "/connect" },
+        { name: "POST ADMIT SERVICES", href: "/post-admit-services" },
         { name: "BLOGS", href: "/blogs" },
-        { name: "EXAM PREP", href: "#" },
-        { name: "FREE COURSES", href: "#" },
-        { name: "TRAVEL", href: "#" },
+        { name: "EXAM PREP", href: "/exam-prep" },
+        { name: "FREE COURSES", href: "/free-cources" },
+        { name: "TRAVEL", href: "/travel" },
     ];
 
     const categories = [

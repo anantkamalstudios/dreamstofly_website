@@ -192,17 +192,18 @@ const HeroSection = () => {
                         <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
 
                             {/* Heading with Typewriter */}
-                            <h1 className="text-white text-3xl md:text-5xl font-bold text-center mb-8">
+                            <h2 className="text-white text-3xl md:text-5xl font-bold text-center mb-8">
                                 <Typewriter
-                                    words={['Find Over 25000+ Colleges in India']}
+                                    // words={['Find Over 25000+ Colleges in India']}
+                                    words={["Make your Study Abroad Dream come true with Dreams to Fly!"]}
                                     loop={3}
                                     cursor
                                     cursorStyle="|"
-                                    typeSpeed={100}
+                                    typeSpeed={50}
                                     deleteSpeed={50}
                                     delaySpeed={1000}
                                 />
-                            </h1>
+                            </h2>
 
                             {/* Search Bar */}
                             <div className="w-full max-w-4xl flex animate-slide-up">
