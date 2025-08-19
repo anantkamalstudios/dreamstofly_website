@@ -1,7 +1,7 @@
 
-import sandy from "../../assets/sydney.png"
-import tower from "../../assets/towerfree.png"
-import brandenburg from "../../assets/brandenburg.png"
+import sandy from "../../../assets/sydney.png"
+import tower from "../../../assets/towerfree.png"
+import brandenburg from "../../../assets/brandenburg.png"
 const countries = [
     {
         name: "Germany",

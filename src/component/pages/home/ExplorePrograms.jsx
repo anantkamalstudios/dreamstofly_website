@@ -2,7 +2,7 @@
 import React from "react";
 import ranking from "../../../assets/ranking.jpg"
 import college from "../../../assets/college.png"
-import { cards, programs } from "../../data/programs";
+import { cards, programs } from "../../data/home/programs";
 
 
 export default function ExplorePrograms() {

@@ -156,7 +156,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Typewriter } from 'react-simple-typewriter';
-import slides from './data/Herosection';
+import slides from './data/home/Herosection';
 
 const HeroSection = () => {
     const [currentSlide, setCurrentSlide] = useState(0);

@@ -138,7 +138,7 @@
 
 // export default StudyGoal;
 import React from "react";
-import cards from "../../data/WhyChooseUs";
+import cards from "../../data/home/WhyChooseUs";
 
 const WhyChooseUs = () => {
 

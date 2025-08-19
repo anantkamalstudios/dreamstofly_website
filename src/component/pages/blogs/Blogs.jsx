@@ -387,7 +387,7 @@
 // export default Blogs;
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import blogPosts from "../../data/BlogsData";
+import blogPosts from "../../data/home/BlogsData";
 import {
     Search,
     Calendar,

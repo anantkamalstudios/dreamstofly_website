@@ -345,7 +345,7 @@
 // src/pages/Services.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import services from "../../data/Services";
+import services from "../../data/home/Services";
 
 export default function Services() {
     return (

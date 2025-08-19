@@ -73,7 +73,7 @@
 //     );
 // }
 import React from "react";
-import { collegesRow1, collegesRow2 } from "../../data/TopUnivercity";
+import { collegesRow1, collegesRow2 } from "../../data/home/TopUnivercity";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";

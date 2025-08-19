@@ -72,7 +72,7 @@
 
 // export default StudyAbroadPlatform;
 import React from "react";
-import cards from "../../data/StudyAbroadPlatform";
+import cards from "../../data/home/StudyAbroadPlatform";
 
 const StudyAbroadPlatform = () => {
 

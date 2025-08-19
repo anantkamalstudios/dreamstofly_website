@@ -1,6 +1,6 @@
 
 import React from "react";
-import { colleges, agencies } from "../../data/collegeranking";
+import { colleges, agencies } from "../../data/home/collegeranking";
 
 export default function CollegeRanking() {
 

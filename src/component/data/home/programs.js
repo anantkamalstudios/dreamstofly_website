@@ -1,5 +1,5 @@
-import ranking from "../../assets/ranking.jpg"
-import college from "../../assets/college.png"
+import ranking from "../../../assets/ranking.jpg"
+import college from "../../../assets/college.png"
 const programs = [
     "ME/M.Tech",
     "B.Sc",
