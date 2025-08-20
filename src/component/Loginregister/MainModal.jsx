@@ -32,7 +32,7 @@ const CollegeduniaApp = () => {
 
 
                     <Link to={"/login"} >
-                        <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-1 rounded-lg transition-colors duration-200">
+                        <button className="w-full bg-[#0073df] hover:bg-#blue-600 text-white font-semibold py-1 rounded-lg transition-colors duration-200">
                             Login/Register
                         </button>
                     </Link>
@@ -40,7 +40,7 @@ const CollegeduniaApp = () => {
                 </div>
 
 
-                <div className="bg-orange-50 mx-4 rounded-lg p-4 mb-3 relative overflow-hidden">
+                <div className="bg-#08dceb-50 mx-4 rounded-lg p-4 mb-3 relative overflow-hidden">
                     <div className="flex items-center justify-between">
                         <div>
                             <div className="text-gray-700 font-medium mb-1">
@@ -53,7 +53,7 @@ const CollegeduniaApp = () => {
                                 {[...Array(5)].map((_, i) => (
                                     <Star
                                         key={i}
-                                        className={`w-5 h-5 ${i < 4 ? 'text-orange-400 fill-current' : 'text-gray-300'}`}
+                                        className={`w-5 h-5 ${i < 4 ? 'text-#08dceb-400 fill-current' : 'text-gray-300'}`}
                                     />
                                 ))}
                             </div>
@@ -124,7 +124,7 @@ const CollegeduniaApp = () => {
                         <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center">
                             <Linkedin className="w-5 h-5 text-white" />
                         </div>
-                        <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+                        <div className="w-10 h-10 bg-#08dceb-500 rounded-lg flex items-center justify-center">
                             <Rss className="w-5 h-5 text-white" />
                         </div>
                     </div>
@@ -168,7 +168,7 @@ const CollegeduniaApp = () => {
                                 key={goal}
                                 onClick={() => setSelectedGoal(goal)}
                                 className={`w-full text-left p-3 rounded-lg border transition-colors ${selectedGoal === goal
-                                    ? 'border-orange-500 bg-orange-50 text-orange-700'
+                                    ? 'border-#08dceb-500 bg-#08dceb-50 text-#08dceb-700'
                                     : 'border-gray-200 hover:border-gray-300'
                                     }`}
                             >
@@ -176,7 +176,7 @@ const CollegeduniaApp = () => {
                             </button>
                         ))}
                     </div>
-                    <button className="w-full bg-orange-500 text-white py-3 rounded-lg mt-4 font-medium">
+                    <button className="w-full bg-#08dceb-500 text-white py-3 rounded-lg mt-4 font-medium">
                         Continue
                     </button>
                 </div>

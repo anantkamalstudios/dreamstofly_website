@@ -127,7 +127,7 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-purple-50 flex flex-col">
+        <div className="min-h-screen bg-gradient-to-br from-#08dceb-50 via-white to-purple-50 flex flex-col">
             {/* Header */}
 
 
@@ -135,7 +135,7 @@ const Login = () => {
                 <div className="w-full max-w-md">
                     {/* Welcome Section */}
                     <div className="text-center mb-8">
-                        <div className="w-20 h-20 bg-gradient-to-r from-orange-300 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div className="w-20 h-20 bg-gradient-to-r from-#08dceb-300 to-#08dceb-600 rounded-full flex items-center justify-center mx-auto mb-4">
                             <User className="w-10 h-10 text-white" />
                         </div>
                         <h1 className="text-2xl font-bold text-gray-800 mb-2">Welcome Back!</h1>
@@ -152,7 +152,7 @@ const Login = () => {
                                     setErrors({});
                                 }}
                                 className={`flex-1 flex items-center justify-center space-x-2 py-2 px-4 rounded-md transition-all duration-200 ${loginMethod === 'email'
-                                    ? 'bg-white text-orange-600 shadow-sm font-medium'
+                                    ? 'bg-white text-#08dceb-600 shadow-sm font-medium'
                                     : 'text-gray-600 hover:text-gray-800'
                                     }`}
                             >
@@ -166,7 +166,7 @@ const Login = () => {
                                     setErrors({});
                                 }}
                                 className={`flex-1 flex items-center justify-center space-x-2 py-2 px-4 rounded-md transition-all duration-200 ${loginMethod === 'otp'
-                                    ? 'bg-white text-orange-600 shadow-sm font-medium'
+                                    ? 'bg-white text-#08dceb-600 shadow-sm font-medium'
                                     : 'text-gray-600 hover:text-gray-800'
                                     }`}
                             >
@@ -189,7 +189,7 @@ const Login = () => {
                                                 type="email"
                                                 value={formData.email}
                                                 onChange={(e) => handleInputChange('email', e.target.value)}
-                                                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-colors ${errors.email ? 'border-red-500' : 'border-gray-300'
                                                     }`}
                                                 placeholder="Enter your email"
                                             />
@@ -213,7 +213,7 @@ const Login = () => {
                                                 type={showPassword ? 'text' : 'password'}
                                                 value={formData.password}
                                                 onChange={(e) => handleInputChange('password', e.target.value)}
-                                                className={`w-full pl-10 pr-12 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors ${errors.password ? 'border-red-500' : 'border-gray-300'
+                                                className={`w-full pl-10 pr-12 py-3 border rounded-lg focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-colors ${errors.password ? 'border-red-500' : 'border-gray-300'
                                                     }`}
                                                 placeholder="Enter your password"
                                             />
@@ -235,10 +235,10 @@ const Login = () => {
 
                                     <div className="flex items-center justify-between text-sm">
                                         <label className="flex items-center space-x-2">
-                                            <input type="checkbox" className="rounded border-gray-300 text-orange-600 focus:ring-orange-500" />
+                                            <input type="checkbox" className="rounded border-gray-300 text-#08dceb-600 focus:ring-#08dceb-500" />
                                             <span className="text-gray-600">Remember me</span>
                                         </label>
-                                        <button type="button" className="text-orange-600 hover:text-orange-700 font-medium">
+                                        <button type="button" className="text-#08dceb-600 hover:text-#08dceb-700 font-medium">
                                             Forgot Password?
                                         </button>
                                     </div>
@@ -256,7 +256,7 @@ const Login = () => {
                                                 type="tel"
                                                 value={formData.phone}
                                                 onChange={(e) => handleInputChange('phone', e.target.value)}
-                                                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                                                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-colors ${errors.phone ? 'border-red-500' : 'border-gray-300'
                                                     }`}
                                                 placeholder="Enter 10-digit phone number"
                                                 maxLength="10"
@@ -284,7 +284,7 @@ const Login = () => {
                                                         type="text"
                                                         value={digit}
                                                         onChange={(e) => handleOtpChange(index, e.target.value)}
-                                                        className="w-12 h-12 text-center border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none font-semibold text-lg"
+                                                        className="w-12 h-12 text-center border border-gray-300 rounded-lg focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none font-semibold text-lg"
                                                         maxLength="1"
                                                     />
                                                 ))}
@@ -297,7 +297,7 @@ const Login = () => {
                                             )}
                                             <div className="text-sm text-gray-600">
                                                 Didn't receive OTP?
-                                                <button type="button" className="text-orange-600 hover:text-orange-700 font-medium ml-1">
+                                                <button type="button" className="text-#08dceb-600 hover:text-#08dceb-700 font-medium ml-1">
                                                     Resend in 30s
                                                 </button>
                                             </div>
@@ -310,7 +310,7 @@ const Login = () => {
                             <button
                                 onClick={handleSubmit}
                                 disabled={isLoading}
-                                className="w-full bg-gradient-to-r from-orange-300 to-orange-600 hover:from-orange-300 hover:to-orange-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="w-full bg-gradient-to-r from-#08dceb-300 to-#08dceb-600 hover:from-#08dceb-300 hover:to-#08dceb-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
                             >
                                 {isLoading ? (
                                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -358,7 +358,7 @@ const Login = () => {
                         <p className="text-gray-600">
                             Don't have an account?
                             <Link to={"/register"}>
-                                <button className="text-orange-600 hover:text-orange-700 font-semibold ml-1">
+                                <button className="text-#08dceb-600 hover:text-#08dceb-700 font-semibold ml-1">
                                     Sign up here
                                 </button>
                             </Link>

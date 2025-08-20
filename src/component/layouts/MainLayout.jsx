@@ -2,7 +2,7 @@
 import Footer from "../../component/Footer";
 
 import Topbar from "../Header";
-import Topbarnavigae from "../Topbar.jsx";
+import Topbarnavigae from "../Topbar";
 
 export default function MainLayout({ children }) {
     return (

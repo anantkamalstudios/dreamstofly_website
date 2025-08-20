@@ -116,7 +116,7 @@
 
 //     return (
 //         <div className="min-h-screen bg-gray-50">
-//             <section className="bg-gradient-to-r from-orange-300 to-orange-700 text-white py-12">
+//             <section className="bg-gradient-to-r from-#08dceb-300 to-#08dceb-700 text-white py-12">
 //                 <div className="container mx-auto px-4 text-center">
 //                     <h1 className="text-4xl md:text-5xl font-bold mb-4">Dreams To Fly Blog</h1>
 //                     <p className="text-xl opacity-90">Updates on the Latest Career Opportunities, Online Education, Universities & more</p>
@@ -335,7 +335,7 @@
 //     return (
 //         <div className="min-h-screen bg-gray-50">
 //             {/* Header */}
-//             <section className="bg-gradient-to-r from-orange-300 to-orange-700 text-white py-12">
+//             <section className="bg-gradient-to-r from-#08dceb-300 to-#08dceb-700 text-white py-12">
 //                 <div className="container mx-auto px-4 text-center">
 //                     <h1 className="text-4xl md:text-5xl font-bold mb-4">Dreams To Fly Blog</h1>
 //                     <p className="text-xl opacity-90">
@@ -431,9 +431,9 @@ const Blogs = () => {
     const categories = ["All", "Rankings", "Exams", "Careers", "Online Education"];
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="  min-h-screen bg-gray-50">
             {/* Header */}
-            <section className="bg-gradient-to-r from-orange-300 to-orange-700 text-white py-12">
+            <section className="bg-gradient-to-r from-blue-900 to-blue-400 text-white py-12">
                 <div className="container mx-auto px-4 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">
                         Dreams To Fly Blog
@@ -474,7 +474,7 @@ const Blogs = () => {
                                     <button
                                         onClick={() => setSelectedCategory(cat)}
                                         className={`w-full text-left px-4 py-2 rounded-lg transition ${selectedCategory === cat
-                                            ? "bg-orange-600 text-white font-medium"
+                                            ? "bg-[#0073df] text-white font-medium"
                                             : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                                             }`}
                                     >

@@ -212,10 +212,10 @@ const HeroSection = () => {
                                     <input
                                         type="text"
                                         placeholder="Search for colleges, exams, courses and more.."
-                                        className="w-full pl-12 pr-4 py-4 text-gray-700 bg-white rounded-l-lg outline-none text-lg focus:ring-2 focus:ring-orange-500"
+                                        className="w-full pl-12 pr-4 py-4 text-gray-700 bg-white rounded-l-lg outline-none text-lg focus:ring-2 focus:ring-blue-500"
                                     />
                                 </div>
-                                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-r-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg">
+                                <button className=" text-white bg-[#0073df] px-8 py-4 rounded-r-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg">
                                     Search
                                 </button>
                             </div>
@@ -253,7 +253,7 @@ const HeroSection = () => {
 
                 {/* Right - Need Counselling & Slide Indicator */}
                 <div className="hidden md:flex items-center space-x-4 animate-slide-in-right">
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
+                    <button className="text-white bg-[#0073df] px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
                         Need Counselling
                     </button>
                     <div className="flex items-center space-x-2 text-white bg-black bg-opacity-30 px-3 py-2 rounded-lg backdrop-blur-sm">
@@ -269,7 +269,7 @@ const HeroSection = () => {
 
             {/* Mobile - Only Need Counselling (centered) */}
             <div className="absolute bottom-6 left-0 right-0 flex justify-center md:hidden z-20">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
+                <button className="bg-[ #0073df] hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
                     Need Counselling
                 </button>
             </div>
@@ -281,7 +281,7 @@ const HeroSection = () => {
                         key={index}
                         onClick={() => goToSlide(index)}
                         className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${currentSlide === index
-                            ? 'bg-orange-500 shadow-lg'
+                            ? 'bg-blue-500 shadow-lg'
                             : 'bg-white bg-opacity-50 hover:bg-opacity-75'
                             }`}
                     />
@@ -291,7 +291,7 @@ const HeroSection = () => {
             {/* Progress Bar */}
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-black bg-opacity-20">
                 <div
-                    className="h-full bg-orange-500 transition-all duration-700 ease-out"
+                    className="h-full bg-blue-500 transition-all duration-700 ease-out"
                     style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
                 />
             </div>

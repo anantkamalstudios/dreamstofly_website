@@ -415,7 +415,7 @@ export default function Footer() {
                     {/* Left Links */}
                     <div className="flex flex-wrap justify-center md:justify-start gap-4">
                         {[
-                            "About Collegedunia",
+                            "About Dreams to Fly",
                             "Contact Us",
                             "Advertising",
                             "Career",

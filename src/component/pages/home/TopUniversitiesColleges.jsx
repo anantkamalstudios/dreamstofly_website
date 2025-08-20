@@ -40,9 +40,9 @@
 //             <p className="text-xs text-gray-500 mt-1">{college.rank}</p>
 
 //             <div className="mt-3 space-y-1 text-sm">
-//                 <button className="w-full text-left font-bold hover:text-orange-700 text-black">View All Courses and fees</button> <hr />
-//                 <button className="w-full text-left font-bold hover:text-orange-700  text-black">Download Brochure</button> <hr />
-//                 <button className="w-full text-left font-bold hover:text-orange-700  text-black">Compare</button> <hr />
+//                 <button className="w-full text-left font-bold hover:text-#08dceb-700 text-black">View All Courses and fees</button> <hr />
+//                 <button className="w-full text-left font-bold hover:text-#08dceb-700  text-black">Download Brochure</button> <hr />
+//                 <button className="w-full text-left font-bold hover:text-#08dceb-700  text-black">Compare</button> <hr />
 //             </div>
 //         </div>
 //     </div>
@@ -129,15 +129,15 @@ const CollegeCard = ({ college }) => (
             <p className="text-xs text-gray-500 mt-1">{college.rank}</p>
 
             <div className="mt-3 space-y-1 text-sm">
-                <button className="w-full text-left font-bold hover:text-orange-700 text-black">
+                <button className="w-full text-left font-bold hover:text-#08dceb-700 text-gray-700">
                     View All Courses and fees
                 </button>
                 <hr />
-                <button className="w-full text-left font-bold hover:text-orange-700 text-black">
+                <button className="w-full text-left font-bold hover:text-#08dceb-700 text-gray-700">
                     Download Brochure
                 </button>
                 <hr />
-                <button className="w-full text-left font-bold hover:text-orange-700 text-black">
+                <button className="w-full text-left font-bold hover:text-#08dceb-700 text-gray-700">
                     Compare
                 </button>
             </div>

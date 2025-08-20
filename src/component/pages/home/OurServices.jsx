@@ -73,7 +73,7 @@
 //             icon: "📱",
 //             category: "Connectivity",
 //             features: ["Pre-activated", "Unlimited calls", "High-speed data", "Global validity"],
-//             color: "bg-orange-100 text-orange-800"
+//             color: "bg-#08dceb-100 text-#08dceb-800"
 //         },
 //         {
 //             title: "SOP Maker",
@@ -343,43 +343,182 @@
 //     );
 // }
 // src/pages/Services.jsx
-import React from "react";
+// import React from "react";
+// import { motion } from "framer-motion";
+// import services from "../../data/home/Services";
+
+// export default function Services() {
+//     return (
+//         <div className="py-12 px-6 md:px-16 bg-gray-50">
+//             <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
+//             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//                 {services.map((service, index) => (
+//                     <motion.div
+//                         key={index}
+//                         className="bg-white shadow-lg rounded-2xl p-6 flex items-center gap-4 hover:shadow-2xl transition duration-300"
+//                         initial={{ opacity: 0, y: 40 }}
+//                         animate={{ opacity: 1, y: 0 }}
+//                         transition={{ delay: index * 0.05, duration: 0.5 }}
+//                         whileHover={{ scale: 1.05 }}
+//                     >
+//                         {/* Image */}
+//                         <img
+//                             src={service.img}
+//                             alt={service.title}
+//                             className="w-20 h-20 flex-shrink-0 rounded-lg"
+//                         />
+
+//                         {/* Text Content */}
+//                         <div className="flex flex-col">
+//                             <h3 className="text-lg font-semibold text-gray-800">
+//                                 {service.title}
+//                             </h3>
+//                             <p className="text-gray-600 text-sm mt-1">{service.desc}</p>
+//                             <span className="mt-2 text-indigo-600 text-sm font-medium cursor-pointer">
+//                                 Learn More →
+//                             </span>
+//                         </div>
+//                     </motion.div>
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// }
+// import React, { useRef, useEffect } from "react";
+// import { motion } from "framer-motion";
+// import services from "../../data/home/Services";
+
+// export default function Services() {
+//     const scrollRef = useRef(null);
+
+//     useEffect(() => {
+//         const container = scrollRef.current;
+//         if (!container) return;
+
+//         let scrollPos = 0;
+//         const speed = 0.5; // Adjust scroll speed
+
+//         const scroll = () => {
+//             scrollPos += speed;
+//             if (scrollPos >= container.scrollHeight / 2) scrollPos = 0;
+//             container.scrollTop = scrollPos;
+//             requestAnimationFrame(scroll);
+//         };
+
+//         scroll();
+//     }, []);
+
+//     return (
+//         <div className="py-12 px-6 md:px-16 bg-gray-50">
+//             <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
+
+//             {/* Scrollable container */}
+//             <div
+//                 ref={scrollRef}
+//                 className="h-[600px] overflow-hidden"
+//             >
+//                 {/* Duplicate for infinite scroll */}
+//                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//                     {[...services, ...services].map((service, index) => (
+//                         <motion.div
+//                             key={index}
+//                             className="bg-white shadow-lg rounded-2xl p-6 flex items-center gap-4 hover:shadow-2xl transition duration-300"
+//                             initial={{ opacity: 0, y: 40 }}
+//                             animate={{ opacity: 1, y: 0 }}
+//                             transition={{ delay: (index % services.length) * 0.05, duration: 0.5 }}
+//                             whileHover={{ scale: 1.05 }}
+//                         >
+//                             <img
+//                                 src={service.img}
+//                                 alt={service.title}
+//                                 className="w-20 h-20 flex-shrink-0 rounded-lg"
+//                             />
+//                             <div className="flex flex-col">
+//                                 <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
+//                                 <p className="text-gray-600 text-sm mt-1">{service.desc}</p>
+//                                 <span className="mt-2 text-indigo-600 text-sm font-medium cursor-pointer">
+//                                     Learn More →
+//                                 </span>
+//                             </div>
+//                         </motion.div>
+//                     ))}
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import services from "../../data/home/Services";
 
 export default function Services() {
+    // Refs for each column
+    const colRefs = [useRef(null), useRef(null), useRef(null)];
+
+    useEffect(() => {
+        const speed = 0.5; // scroll speed
+
+        const animateCol = (colRef, direction = 1) => {
+            const col = colRef.current;
+            if (!col) return;
+            let scrollPos = direction === 1 ? 0 : col.scrollHeight;
+            const step = () => {
+                scrollPos += direction * speed;
+                if (direction === 1 && scrollPos >= col.scrollHeight / 2) scrollPos = 0;
+                if (direction === -1 && scrollPos <= 0) scrollPos = col.scrollHeight / 2;
+                col.scrollTop = scrollPos;
+                requestAnimationFrame(step);
+            };
+            step();
+        };
+
+        animateCol(colRefs[0], 1); // col 1 scroll down
+        animateCol(colRefs[1], -1); // col 2 scroll up
+        animateCol(colRefs[2], 1); // col 3 scroll down
+    }, []);
+
+    // Split services into 3 columns
+    const col1 = services.filter((_, i) => i % 3 === 0);
+    const col2 = services.filter((_, i) => i % 3 === 1);
+    const col3 = services.filter((_, i) => i % 3 === 2);
+
+    const renderColumn = (col, ref) => (
+        <div ref={ref} className="flex flex-col gap-6 overflow-hidden h-[600px]">
+            {[...col, ...col].map((service, idx) => (
+                <motion.div
+                    key={idx}
+                    className="bg-white shadow-lg rounded-2xl p-6 flex items-center gap-4 hover:shadow-2xl transition duration-300"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: (idx % col.length) * 0.05, duration: 0.5 }}
+                    whileHover={{ scale: 1.05 }}
+                >
+                    <img
+                        src={service.img}
+                        alt={service.title}
+                        className="w-20 h-20 flex-shrink-0 rounded-lg"
+                    />
+                    <div className="flex flex-col">
+                        <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
+                        <p className="text-gray-600 text-sm mt-1">{service.desc}</p>
+                        <span className="mt-2 text-indigo-600 text-sm font-medium cursor-pointer">
+                            Learn More →
+                        </span>
+                    </div>
+                </motion.div>
+            ))}
+        </div>
+    );
+
     return (
         <div className="py-12 px-6 md:px-16 bg-gray-50">
             <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {services.map((service, index) => (
-                    <motion.div
-                        key={index}
-                        className="bg-white shadow-lg rounded-2xl p-6 flex items-center gap-4 hover:shadow-2xl transition duration-300"
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.05, duration: 0.5 }}
-                        whileHover={{ scale: 1.05 }}
-                    >
-                        {/* Image */}
-                        <img
-                            src={service.img}
-                            alt={service.title}
-                            className="w-20 h-20 flex-shrink-0 rounded-lg"
-                        />
 
-                        {/* Text Content */}
-                        <div className="flex flex-col">
-                            <h3 className="text-lg font-semibold text-gray-800">
-                                {service.title}
-                            </h3>
-                            <p className="text-gray-600 text-sm mt-1">{service.desc}</p>
-                            <span className="mt-2 text-indigo-600 text-sm font-medium cursor-pointer">
-                                Learn More →
-                            </span>
-                        </div>
-                    </motion.div>
-                ))}
+            {/* 3 Column Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {renderColumn(col1, colRefs[0])}
+                {renderColumn(col2, colRefs[1])}
+                {renderColumn(col3, colRefs[2])}
             </div>
         </div>
     );

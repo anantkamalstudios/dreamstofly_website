@@ -25,7 +25,7 @@
 //     ];
 
 //     return (
-//         <section className="bg-orange-100 py-12">
+//         <section className="bg-#08dceb-100 py-12">
 //             <div className="max-w-6xl mx-auto px-4">
 //                 {/* Title */}
 //                 <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
@@ -69,7 +69,7 @@ export default function Certificates() {
     };
 
     return (
-        <section className="bg-orange-100 py-12">
+        <section className="bg-#08dceb-100 py-12">
             <div className="max-w-6xl mx-auto px-4">
                 {/* Title */}
                 <motion.h2
