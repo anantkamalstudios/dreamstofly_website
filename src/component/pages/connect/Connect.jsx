@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import BookingModal from './connect/BookingModal.jsx'; // Import the modal component
+import BookingModal from './BookingModal.jsx'; // Import the modal component
 
 const Connect = () => {
   const [selectedDegree, setSelectedDegree] = useState('');
