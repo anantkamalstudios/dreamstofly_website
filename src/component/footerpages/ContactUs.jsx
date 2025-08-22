@@ -1,125 +1,122 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 
-const ContactUs = () => {
+export default function ContactUs() {
+  const EMAIL = "support@dreamstofly.com"; // update to your email
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      
+    <div className="min-h-screen bg-gradient-to-b from-white to-sky-50">
       {/* Hero Section */}
-      <div className="bg-[#00fff] text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl text-gray-600  md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            We'd love to hear from you. Get in touch with our team for any queries or support.
-          </p>
-        </div>
-      </div>
+      <section className="relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-sky-100 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-blue-100 blur-3xl" />
 
-      {/* Contact Form */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-          <div className="md:flex">
-            <div className="md:w-1/2 p-8 bg-gray-50">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Get in touch</h2>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="bg-[#0073df] p-2 rounded-full mr-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-[#0073df] p-2 rounded-full mr-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Email</h3>
-                    <p className="text-gray-600">support@yocket.com</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-[#0073df] p-2 rounded-full mr-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Address</h3>
-                    <p className="text-gray-600">123 Education Street, Suite 456<br />San Francisco, CA 94103</p>
-                  </div>
-                </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-sm font-medium">
+              <Mail className="w-4 h-4" /> Contact Us
+            </div>
+            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
+              Get in <span className="text-sky-600">Touch</span> With Us
+            </h1>
+            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-600">
+              Have questions about studying abroad or our services?  
+              We’d love to hear from you.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Info + Form */}
+      <section className="py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10">
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-2xl shadow-sm p-6 sm:p-8 border border-gray-100 space-y-6"
+          >
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+              Contact Information
+            </h2>
+            <div className="space-y-4 text-gray-600">
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-sky-600" />
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="hover:underline text-gray-700"
+                >
+                  {EMAIL}
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-green-600" />
+                <a href="tel:+911234567890" className="hover:underline">
+                  +91 12345 67890
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-red-600" />
+                <p>DreamsToFly HQ, New Delhi, India</p>
               </div>
             </div>
-            <div className="md:w-1/2 p-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a message</h2>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#0073df] focus:border-transparent"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                  <input 
-                    type="email" 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#0073df] focus:border-transparent"
-                    placeholder="Your email address"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                  <textarea 
-                    rows="4"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#0073df] focus:border-transparent"
-                    placeholder="How can we help you?"
-                  ></textarea>
-                </div>
-                <button 
-                  type="submit"
-                  className="w-full bg-[#0073df] text-white py-3 rounded-md font-medium hover:bg-[#0063c5] transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+          </motion.div>
 
-      {/* FAQ Section */}
-      <div className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">How can I create an account on Yocket?</h3>
-              <p className="text-gray-600">You can create an account by clicking on the "Sign Up" button at the top right corner of our homepage. You'll need to provide your email address and create a password.</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Is Yocket free to use?</h3>
-              <p className="text-gray-600">Yes, creating an account and accessing basic features on Yocket is completely free. We also offer premium services for those who need additional guidance.</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">How do I connect with other students?</h3>
-              <p className="text-gray-600">You can browse through student profiles, join relevant discussion groups, or participate in our forum discussions to connect with other students.</p>
-            </div>
-          </div>
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-2xl shadow-sm p-6 sm:p-8 border border-gray-100"
+          >
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+              Send Us a Message
+            </h2>
+            <form
+              action={`mailto:${EMAIL}`}
+              method="POST"
+              encType="text/plain"
+              className="space-y-4"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sky-500 focus:outline-none"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sky-500 focus:outline-none"
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="4"
+                required
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-sky-500 focus:outline-none"
+              ></textarea>
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 bg-sky-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-sky-700 transition-colors shadow"
+              >
+                <Send className="w-5 h-5" /> Send Message
+              </button>
+            </form>
+          </motion.div>
         </div>
-      </div>
+      </section>
 
+      
     </div>
   );
-};
-
-export default ContactUs;
+}

@@ -12,7 +12,7 @@ export default function RegularAlerts() {
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center sm:text-left">
                         Subscribe For Regular Alerts
                     </h2>
-                    <button className="text-[#0073df] bg-white hover:bg-#08dceb-600 text-white font-bold py-3 px-4 mx-5 sm:px-6 rounded whitespace-nowrap w-full sm:w-auto text-sm sm:text-base">
+                    <button className="text-[#0073df] bg-white hover:bg-#08dceb-600 font-bold py-3 px-4 mx-5 sm:px-6 rounded whitespace-nowrap w-full sm:w-auto text-sm sm:text-base">
                         Subscribe Now
                     </button>
                 </div>

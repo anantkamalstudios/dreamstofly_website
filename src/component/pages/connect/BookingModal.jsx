@@ -23,26 +23,25 @@ const BookingModal = ({
   const [validationErrors, setValidationErrors] = useState({});
 
   // Swiper items data
-  const swiperItems = [
-    {
-      id: 1,
-      title: "Application process",
-      tags: ["Scholarships", "SOP & LOR Documents"],
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: 2,
-      title: "Visa Guidance",
-      tags: ["Documentation", "Interview Preparation"],
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-    },
-    {
-      id: 3,
-      title: "University Selection",
-      tags: ["Shortlisting", "Admission Process"],
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-    }
-  ];
+  const swiperItems = 
+  [
+  {
+    "id": 1,
+    "title": "Application process",
+    
+    "image": "https://d15gkqt2d16c1n.cloudfront.net/images/svgs/third-slide.svg"
+  },
+  {
+    "id": 2,
+   
+    "image": "https://d15gkqt2d16c1n.cloudfront.net/images/svgs/second-slide.svg"
+  },
+  {
+    "id": 3,
+    
+    "image":"https://d15gkqt2d16c1n.cloudfront.net/images/svgs/first-slide.svg"
+  }
+]
 
   // Auto swipe effect
   useEffect(() => {
@@ -172,25 +171,56 @@ const BookingModal = ({
 
             {modalStep === 1 ? (
               <>
-                {/* Degree */}
-                <div className="mb-1">
-                  <h3 className="text-md font-semibold text-gray-800 mb-3">Degree you're planning to study</h3>
-                  <select
-                    className={`px-6 py-3 rounded-lg text-sm font-medium border ${validationErrors.degree ? "border-red-500" : "border-gray-300"}`}
-                    value={selectedDegree}
-                    onChange={(e) => {
-                      setSelectedDegree(e.target.value);
-                      setValidationErrors((prev) => ({ ...prev, degree: "" }));
-                    }}
-                  >
-                    <option value="">Select Degree</option>
-                    <option value="bachelors">Bachelor's</option>
-                    <option value="masters">Master's / MBA</option>
-                  </select>
-                  {validationErrors.degree && <p className="text-red-500 text-xs mt-1">{validationErrors.degree}</p>}
-                </div>
-
-                <div className="border-t border-gray-200 my-4"></div>
+               <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-6">
+  <div className="flex-1">
+    <h3 className="text-md font-semibold text-gray-800 mb-3">Select Degree you're planning to study</h3>
+    <div className="relative">
+      <select
+        className={`w-full px-6 py-3 rounded-lg text-sm font-medium border ${validationErrors.degree ? "border-red-500" : "border-gray-300"} appearance-none`}
+        value={selectedDegree}
+        onChange={(e) => {
+          setSelectedDegree(e.target.value);
+          setValidationErrors((prev) => ({ ...prev, degree: "" }));
+        }}
+      >
+        <option value="">Select Degree</option>
+        <option value="bachelors">Bachelor's</option>
+        <option value="masters">Master's / MBA</option>
+      </select>
+      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+        </svg>
+      </div>
+    </div>
+    {validationErrors.degree && <p className="text-red-500 text-xs mt-1">{validationErrors.degree}</p>}
+  </div>
+  
+  <div className="flex-1">
+    <h3 className="text-md font-semibold text-gray-800 mb-2">When are you going to study abroad?</h3>
+    <div className="relative">
+      <select
+        className={`w-full px-6 py-3 rounded-lg text-sm font-medium border ${validationErrors.studyYear ? "border-red-500" : "border-gray-300"} appearance-none`}
+        value={studyYear}
+        onChange={(e) => {
+          setStudyYear(Number(e.target.value));
+          setValidationErrors((prev) => ({ ...prev, studyYear: "" }));
+        }}
+      >
+        <option value="">Select Year</option>
+        {[2025, 2026, 2027].map((year) => (
+          <option key={year} value={year}>{year}</option>
+        ))}
+      </select>
+      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+        </svg>
+      </div>
+    </div>
+    {validationErrors.studyYear && <p className="text-red-500 text-xs mt-1">{validationErrors.studyYear}</p>}
+  </div>
+</div>
 
                 {/* Email */}
                 <div className="mb-1">
@@ -254,23 +284,7 @@ const BookingModal = ({
                 <div className="border-t border-gray-200 my-4"></div>
 
                 {/* Study Year */}
-                <div className="mb-4">
-                  <h3 className="text-md font-semibold text-gray-800 mb-2">When are you going to study abroad?</h3>
-                  <select
-                    className={`px-6 py-3 rounded-md text-sm font-medium border ${validationErrors.studyYear ? "border-red-500" : "border-gray-300"}`}
-                    value={studyYear}
-                    onChange={(e) => {
-                      setStudyYear(Number(e.target.value));
-                      setValidationErrors((prev) => ({ ...prev, studyYear: "" }));
-                    }}
-                  >
-                    <option value="">Select Year</option>
-                    {[2025, 2026, 2027].map((year) => (
-                      <option key={year} value={year}>{year}</option>
-                    ))}
-                  </select>
-                  {validationErrors.studyYear && <p className="text-red-500 text-xs mt-1">{validationErrors.studyYear}</p>}
-                </div>
+                
 
                 <button className="w-full bg-[#0073df] text-white py-3 rounded-md font-semibold hover:bg-[#0063c5] transition-colors mt-2" onClick={handleNextStep}>
                   Book a Slot

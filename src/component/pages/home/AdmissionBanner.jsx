@@ -86,7 +86,7 @@ export default function HaveQuestions() {
                     </p>
                     <button
                         onClick={() => setOpen(true)}
-                        className="bg-white text-[#0073df] hover:bg-blye-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition"
+                        className="bg-white text-[#0073df] hover:bg-blye-600 font-semibold px-8 py-3 rounded-lg shadow-md transition"
                     >
                         Get on Call
                     </button>

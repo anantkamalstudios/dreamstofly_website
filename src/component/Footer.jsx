@@ -414,38 +414,23 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full">
                     {/* Left Links */}
                     <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                        {[
-                            "About Dreams to Fly",
-                            "Contact Us",
-                            "Advertising",
-                            "Career",
-                            "Terms & Conditions",
-                        ].map((link, i) => (
-                            <span
-                                key={i}
-                                className="hover:underline cursor-pointer whitespace-nowrap"
-                            >
-                                {link}
-                            </span>
-                        ))}
-                    </div>
-                  <div className="flex flex-wrap justify-center md:justify-start gap-4">
   {[
-    { name: "About Collegedunia", path: "#" },
+    { name: "About Dreams to Fly", path: "/about" },
     { name: "Contact Us", path: "/contact" },
-    { name: "Advertising", path: "#" },
-    { name: "Career", path: "#" },
+    { name: "Advertising", path: "/advertising" },
+    { name: "Career", path: "/career" },
     { name: "Terms & Conditions", path: "/terms" },
   ].map((link, i) => (
-    <Link
+    <a
       key={i}
-      to={link.path}
+      href={link.path}
       className="hover:underline cursor-pointer whitespace-nowrap"
     >
       {link.name}
-    </Link>
+    </a>
   ))}
 </div>
+
 
                     {/* Social Icons */}
                     <div className="flex items-center gap-3 text-gray-600 text-lg">

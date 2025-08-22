@@ -15,7 +15,20 @@ import PostAdmitServices from "./component/pages/postadmitservices/PostAdmitServ
 import ExamPrep from "./component/pages/examprep/ExamPrep";
 import FreeCourses from "./component/pages/freecourses/FreeCourses";
 import Travel from "./component/pages/travel/Travel";
+
+
+
 import ContactUs from "./component/footerpages/ContactUs";
+import Aboutus from "./component/footerpages/AboutUs";
+import CareerPage from "./component/footerpages/CareerPage";
+import TermsPage from "./component/footerpages/TermsCondition";
+import Advertise from "./component/footerpages/Advertise";
+import IELTSPrep from "./component/pages/examprep/IELTSPrep";
+import IeltsAcademic from "./component/pages/examprep/IeltsAcademic";
+import PTEAcademic from "./component/pages/examprep/PTE";
+import ToeflIBT from "./component/pages/examprep/Toefl_IBT";
+import DuolingoTest from "./component/pages/examprep/DuolingoTest";
+import GREPrep from "./component/pages/examprep/GREPrep";
 
 
 // import About from "./component/pages/";
@@ -42,7 +55,23 @@ export default function App() {
             <Route path="/exam-prep" element={<ExamPrep />} />
             <Route path="/free-cources" element={<FreeCourses />} />
             <Route path="/travel" element={<Travel />} />
+            
+
+            
+            <Route path="/about" element={<Aboutus />} />
+             <Route path="/career" element={<CareerPage />} />
+             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/advertising" element={<Advertise />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/IELTS" element={<IELTSPrep/>} />
+            <Route path="/IELTS-ACEDEMIC" element={<IeltsAcademic/>} />
+            <Route path="/PTEAcademic" element={<PTEAcademic/>} />
+            <Route path="/ToeflIBT" element={<ToeflIBT/>} />
+            <Route path="/DuolingoTest" element={<DuolingoTest/>} />
+            <Route path="/GREPrep" element={<GREPrep/>} />
+   
+
+
 
 
           </Routes>
