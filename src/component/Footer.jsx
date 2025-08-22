@@ -288,7 +288,7 @@
 //         </footer>
 //     );
 // }
-
+import { Link } from "react-router-dom";
 import React from "react";
 import {
     FaFacebookF,
@@ -412,23 +412,23 @@ export default function Footer() {
             {/* Middle Section: Links & Social */}
             <div className="max-w-7xl mx-auto px-4 py-4 text-gray-600 text-sm">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full">
-                    {/* Left Links */}
-                    <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                        {[
-                            "About Collegedunia",
-                            "Contact Us",
-                            "Advertising",
-                            "Career",
-                            "Terms & Conditions",
-                        ].map((link, i) => (
-                            <span
-                                key={i}
-                                className="hover:underline cursor-pointer whitespace-nowrap"
-                            >
-                                {link}
-                            </span>
-                        ))}
-                    </div>
+                  <div className="flex flex-wrap justify-center md:justify-start gap-4">
+  {[
+    { name: "About Collegedunia", path: "#" },
+    { name: "Contact Us", path: "/contact" },
+    { name: "Advertising", path: "#" },
+    { name: "Career", path: "#" },
+    { name: "Terms & Conditions", path: "/terms" },
+  ].map((link, i) => (
+    <Link
+      key={i}
+      to={link.path}
+      className="hover:underline cursor-pointer whitespace-nowrap"
+    >
+      {link.name}
+    </Link>
+  ))}
+</div>
 
                     {/* Social Icons */}
                     <div className="flex items-center gap-3 text-gray-600 text-lg">

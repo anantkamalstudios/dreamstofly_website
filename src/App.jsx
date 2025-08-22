@@ -15,6 +15,7 @@ import PostAdmitServices from "./component/pages/postadmitservices/PostAdmitServ
 import ExamPrep from "./component/pages/examprep/ExamPrep";
 import FreeCourses from "./component/pages/freecourses/FreeCourses";
 import Travel from "./component/pages/travel/Travel";
+import ContactUs from "./component/footerpages/ContactUs";
 
 
 // import About from "./component/pages/";
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/exam-prep" element={<ExamPrep />} />
             <Route path="/free-cources" element={<FreeCourses />} />
             <Route path="/travel" element={<Travel />} />
+            <Route path="/contact" element={<ContactUs />} />
 
 
           </Routes>
