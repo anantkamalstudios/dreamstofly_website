@@ -9,12 +9,12 @@ import CollegeRanking from './home/CollegeRanking'
 import StudyAbroadSection from './home/StudyAbroadSection'
 import TopStudyPlacesCarousel from './home/TopStudyPlaces'
 import RegularAlerts from './home/RegularAlerts'
-import CourseFinderBanner from './home/CourseBanner'
+// import CourseFinderBanner from './home/CourseBanner'
 import NewsletterForm from './home/NewsletterForm'
 import LatestNews from './home/LatestNews'
 import Services from './home/OurServices'
 import WhyChooseUs from './home/WhyChooseUs'
-import StudyAbroadPlatform from './home/StudyAbroadPlatform'
+// import StudyAbroadPlatform from './home/StudyAbroadPlatform'
 import WhyUs from './home/Whyus'
 import PremiumFeature from './home/PremiumFeature'
 import Certificates from './home/Certificates'
@@ -25,7 +25,7 @@ function Home() {
 
             <HeroSection />
             <WhyChooseUs />
-            <StudyAbroadPlatform />
+            {/* <StudyAbroadPlatform /> */}
             <Services />
             <ExploreProgramsSection />
             <TopUniversitiesColleges />
@@ -34,7 +34,7 @@ function Home() {
             <CollegeRanking />
             <RegularAlerts />
             <TopStudyPlacesCarousel />
-            <CourseFinderBanner />
+            {/* <CourseFinderBanner /> */}
             <PremiumFeature />
             <LatestNews />
             <StudyAbroadSection />

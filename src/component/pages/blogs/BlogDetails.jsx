@@ -74,7 +74,7 @@
 // export default BlogDetails;
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import blogPosts from "../../data/BlogsData";
+import blogPosts from "../../data/home/BlogsData";
 import { Calendar, User, Tag } from "lucide-react";
 
 const BlogDetails = () => {

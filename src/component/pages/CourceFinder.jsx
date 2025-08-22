@@ -224,8 +224,8 @@
 //                         <p className="text-gray-600">Students</p>
 //                     </div>
 //                     <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-//                         <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-//                             <Award className="w-6 h-6 text-orange-600" />
+//                         <div className="w-12 h-12 bg-#08dceb-100 rounded-full flex items-center justify-center mx-auto mb-3">
+//                             <Award className="w-6 h-6 text-#08dceb-600" />
 //                         </div>
 //                         <h3 className="text-2xl font-bold text-gray-800">95%</h3>
 //                         <p className="text-gray-600">Success Rate</p>
@@ -312,7 +312,7 @@
 //                                 </span>
 //                             )}
 //                             {selectedLocation && (
-//                                 <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+//                                 <span className="bg-#08dceb-100 text-#08dceb-800 px-3 py-1 rounded-full text-sm flex items-center gap-1">
 //                                     Location: {selectedLocation}
 //                                     <button onClick={() => setSelectedLocation('')}>
 //                                         <X className="w-3 h-3" />
@@ -666,9 +666,9 @@ const CollegeFinder = () => {
 
     const getCategoryColor = (category) => {
         switch (category) {
-            case 'ambitious': return 'bg-red-500';
-            case 'moderate': return 'bg-yellow-500';
-            case 'safe': return 'bg-green-500';
+            case 'ambitious': return 'bg-gray-500';
+            case 'moderate': return 'bg-gray-500';
+            case 'safe': return 'bg-gray-500';
             default: return 'bg-blue-500';
         }
     };
@@ -684,7 +684,7 @@ const CollegeFinder = () => {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <header className="bg-orange-100 text-light py-12">
+            <header className="bg-gradient-to-r from-blue-900 to-blue-400 text-white py-12">
                 <div className="container mx-auto px-4 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">College Finder</h1>
                     <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
@@ -699,7 +699,7 @@ const CollegeFinder = () => {
                     <aside className="lg:col-span-1">
                         <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
                             <div className="flex items-center gap-2 mb-6">
-                                <Filter className="w-5 h-5 text-purple-600" />
+                                <Filter className="w-5 h-5 text-blue-600" />
                                 <h2 className="text-xl font-bold text-gray-800">Find Your Match</h2>
                             </div>
 
@@ -710,7 +710,7 @@ const CollegeFinder = () => {
                                     Study Level
                                 </h4>
                                 <select
-                                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none transition-colors"
+                                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-[#0073df] focus:outline-none transition-colors"
                                     value={filters.studyLevel}
                                     onChange={(e) => handleFilterChange('studyLevel', e.target.value)}
                                 >
@@ -729,7 +729,7 @@ const CollegeFinder = () => {
                                     Field of Study
                                 </h4>
                                 <select
-                                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none transition-colors"
+                                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-[#0073df] focus:outline-none transition-colors"
                                     value={filters.fieldOfStudy}
                                     onChange={(e) => handleFilterChange('fieldOfStudy', e.target.value)}
                                 >
@@ -761,7 +761,7 @@ const CollegeFinder = () => {
                                         <label key={country.value} className="flex items-center gap-2 cursor-pointer">
                                             <input
                                                 type="checkbox"
-                                                className="w-4 h-4 text-purple-600 border-2 border-gray-300 rounded focus:ring-purple-500"
+                                                className="w-4 h-4 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500"
                                                 checked={filters.countries.includes(country.value)}
                                                 onChange={(e) => handleCountryChange(country.value, e.target.checked)}
                                             />
@@ -780,7 +780,7 @@ const CollegeFinder = () => {
                                         <input
                                             type="text"
                                             placeholder="3.5"
-                                            className="w-full p-2 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors text-sm"
+                                            className="w-full p-2 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-sm"
                                             value={filters.gpa}
                                             onChange={(e) => handleFilterChange('gpa', e.target.value)}
                                         />
@@ -790,7 +790,7 @@ const CollegeFinder = () => {
                                         <input
                                             type="text"
                                             placeholder="7.0"
-                                            className="w-full p-2 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none transition-colors text-sm"
+                                            className="w-full p-2 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-sm"
                                             value={filters.ielts}
                                             onChange={(e) => handleFilterChange('ielts', e.target.value)}
                                         />
@@ -800,7 +800,7 @@ const CollegeFinder = () => {
                                         <input
                                             type="text"
                                             placeholder="320"
-                                            className="w-full p-2 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors text-sm"
+                                            className="w-full p-2 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-sm"
                                             value={filters.gre}
                                             onChange={(e) => handleFilterChange('gre', e.target.value)}
                                         />
@@ -809,12 +809,12 @@ const CollegeFinder = () => {
                             </div>
 
                             {/* Search Button */}
-                            <button className="w-full bg-orange-600  text-white py-3 px-4 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                            <button className="w-full bg-[#0073df]  text-white py-3 px-4 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all transform hover:scale-105 flex items-center justify-center gap-2">
                                 <Search className="w-4 h-4" />
                                 Find Colleges
                             </button>
 
-                            <button className="w-full mt-3 bg-white text-orange-600 border-2 border-orange-600 py-2 px-4 rounded-lg font-medium hover:bg-purple-50 transition-colors">
+                            <button className="w-full mt-3 bg-[#0073df] text-white border-2 border-#08dceb-600 py-2 px-4 rounded-lg font-medium hover:bg-purple-50 transition-colors">
                                 Reset Filters
                             </button>
                         </div>
@@ -834,7 +834,7 @@ const CollegeFinder = () => {
                                 <div className="flex items-center gap-2 mt-4 md:mt-0">
                                     <SortDesc className="w-4 h-4 text-gray-500" />
                                     <select
-                                        className="p-2 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none text-sm"
+                                        className="p-2 border border-gray-300 rounded-lg focus:border-#08dceb-500 focus:outline-none text-sm"
                                         value={sortBy}
                                         onChange={(e) => setSortBy(e.target.value)}
                                     >
@@ -849,7 +849,7 @@ const CollegeFinder = () => {
                             {/* College Results */}
                             {loading ? (
                                 <div className="text-center py-12">
-                                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto"></div>
+                                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-#08dceb-600 mx-auto"></div>
                                     <p className="text-gray-600 mt-4">Finding perfect matches for you...</p>
                                 </div>
                             ) : filteredColleges.length === 0 ? (
@@ -861,7 +861,7 @@ const CollegeFinder = () => {
                             ) : (
                                 <div className="space-y-6">
                                     {filteredColleges.map((college) => (
-                                        <div key={college.id} className="relative border-2 border-gray-200 rounded-xl p-6 hover:border-orange-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                        <div key={college.id} className="relative border-2 border-gray-200 rounded-xl p-6 hover:border-#08dceb-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                                             {/* Recommendation Badge */}
                                             <div className={`absolute -top-2 -right-2 ${getCategoryColor(college.category)} text-white px-3 py-1 rounded-full text-xs font-semibold`}>
                                                 {getCategoryText(college.category)}
@@ -870,7 +870,7 @@ const CollegeFinder = () => {
                                             {/* College Header */}
                                             <div className="flex flex-col md:flex-row justify-between items-start mb-4">
                                                 <div className="flex items-start gap-4 flex-1">
-                                                    <div className="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                                                    <div className="w-16 h-16 bg-#08dceb-600 rounded-xl flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
                                                         {college.logo}
                                                     </div>
                                                     <div className="flex-1 min-w-0">
@@ -934,7 +934,7 @@ const CollegeFinder = () => {
                                             {/* Tags */}
                                             <div className="flex flex-wrap gap-2 mb-4">
                                                 {college.tags.map((tag, index) => (
-                                                    <span key={index} className="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                                                    <span key={index} className="bg-gradient-to-r from-#08dceb-400 to-#08dceb-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                                                         {tag}
                                                     </span>
                                                 ))}
@@ -942,14 +942,14 @@ const CollegeFinder = () => {
 
                                             {/* Actions */}
                                             <div className="flex flex-col sm:flex-row gap-3">
-                                                <button className="flex-1 bg-gradient-to-r from-orange-400 to-orange-600 text-white py-2 px-4 rounded-lg font-medium hover:from-orange-400 hover:to-orange-700 transition-all flex items-center justify-center gap-2">
+                                                <button className="flex-1 bg-[#0073df] text-white py-2 px-4 rounded-lg font-medium hover:from-#08dceb-400 hover:to-#08dceb-700 transition-all flex items-center justify-center gap-2">
                                                     <ExternalLink className="w-4 h-4" />
                                                     View Details
                                                 </button>
-                                                <button className="flex-1 bg-white text-orange-600 border-2 border-orange-600 py-2 px-4 rounded-lg font-medium hover:bg-purple-50 transition-colors">
+                                                <button className="flex-1 bg-white text-#08dceb-600 border-2 border-#08dceb-600 py-2 px-4 rounded-lg font-medium  hover:text-white  hover:bg-blue-500 transition-colors">
                                                     Compare
                                                 </button>
-                                                <button className="flex-1 bg-green-100 text-green-800 border-2 border-green-300 py-2 px-4 rounded-lg font-medium hover:bg-green-200 transition-colors">
+                                                <button className="flex-1 bg-blue-300 text-#08dceb-600-white border-2 border-blue-300 py-2 px-4 rounded-lg font-medium hover:text-white  hover:bg-blue-500 transition-colors">
                                                     Apply Now
                                                 </button>
                                             </div>

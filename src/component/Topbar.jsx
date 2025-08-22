@@ -33,7 +33,7 @@ export default function Topbar() {
 
 
     return (
-        <div className="bg-gray-800 shadow-sm relative">
+        <div className=" shadow-sm relative">
             <div className="max-w-7xl mx-auto px-4 py-2">
                 <div className="flex items-center justify-between">
                     {/* Left section */}
@@ -41,7 +41,7 @@ export default function Topbar() {
                         {/* All Courses Dropdown (Desktop) */}
                         <div className="relative hidden md:block">
                             <button
-                                className="flex items-center text-white hover:text-gray-300 px-3 py-2 text-sm font-medium"
+                                className="flex items-center text-gray-700 hover:text-gray-300 px-3 py-2 text-sm font-medium"
                                 onClick={() => setIsAllCoursesOpen(!isAllCoursesOpen)}
                                 onMouseEnter={() => setIsAllCoursesOpen(true)}
                                 onMouseLeave={() => setIsAllCoursesOpen(false)}
@@ -82,7 +82,7 @@ export default function Topbar() {
                                         <div className="mt-6 pt-4 border-t border-gray-200">
                                             <Link
                                                 to="#"
-                                                className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                                                className="text-gray-700  text-sm font-medium"
                                             >
                                                 View All Courses →
                                             </Link>
@@ -98,7 +98,7 @@ export default function Topbar() {
                                 <Link
                                     key={i}
                                     to={link.href}
-                                    className="text-white hover:text-gray-300 px-3 py-2 text-sm border-r border-gray-600"
+                                    className="text-gray-700 hover:text-blue-700 px-3 py-2 text-sm border-r border-gray-600"
                                 >
                                     {link.name}
                                 </Link>
@@ -120,7 +120,7 @@ export default function Topbar() {
                     <div className="">
                         <Link
                             to="/cource-finder"
-                            className="text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 flex items-center font-medium bg-blue-600"
+                            className="text-white bg-[#0073df] px-4 py-2 rounded-lg text-sm hover:bg-blue-700 flex items-center font-medium"
                         >
                             <span className="bg-yellow-500 text-black text-xs px-1.5 py-0.5 rounded mr-2 font-bold">
                                 NEW

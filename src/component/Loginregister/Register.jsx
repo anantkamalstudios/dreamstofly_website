@@ -187,13 +187,13 @@
 //                 <div className="w-full max-w-md">
 //                     <div className="flex items-center justify-center mb-8">
 //                         <div className="flex items-center space-x-4">
-//                             <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 1 ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-600'
+//                             <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 1 ? 'bg-#08dceb-500 text-white' : 'bg-gray-200 text-gray-600'
 //                                 }`}>
 //                                 {currentStep > 1 ? <Check className="w-5 h-5" /> : '1'}
 //                             </div>
-//                             <div className={`w-12 h-1 rounded transition-all duration-300 ${currentStep > 1 ? 'bg-orange-500' : 'bg-gray-200'
+//                             <div className={`w-12 h-1 rounded transition-all duration-300 ${currentStep > 1 ? 'bg-#08dceb-500' : 'bg-gray-200'
 //                                 }`}></div>
-//                             <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-600'
+//                             <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-#08dceb-500 text-white' : 'bg-gray-200 text-gray-600'
 //                                 }`}>
 //                                 2
 //                             </div>
@@ -201,7 +201,7 @@
 //                     </div>
 
 //                     <div className="text-center mb-8">
-//                         <div className="w-20 h-20 bg-gradient-to-r from-orange-300 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+//                         <div className="w-20 h-20 bg-gradient-to-r from-#08dceb-300 to-#08dceb-600 rounded-full flex items-center justify-center mx-auto mb-4">
 //                             <User className="w-10 h-10 text-white" />
 //                         </div>
 //                         <h1 className="text-3xl font-bold text-gray-800 mb-2">Join Dreams To Fly</h1>
@@ -232,7 +232,7 @@
 //                                                 type="text"
 //                                                 value={formData.firstName}
 //                                                 onChange={(e) => handleInputChange('firstName', e.target.value)}
-//                                                 className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.firstName ? 'border-red-500' : 'border-gray-300'
+//                                                 className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.firstName ? 'border-red-500' : 'border-gray-300'
 //                                                     }`}
 //                                                 placeholder="First name"
 //                                             />
@@ -255,7 +255,7 @@
 //                                                 type="text"
 //                                                 value={formData.lastName}
 //                                                 onChange={(e) => handleInputChange('lastName', e.target.value)}
-//                                                 className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.lastName ? 'border-red-500' : 'border-gray-300'
+//                                                 className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.lastName ? 'border-red-500' : 'border-gray-300'
 //                                                     }`}
 //                                                 placeholder="Last name"
 //                                             />
@@ -280,7 +280,7 @@
 //                                             type="email"
 //                                             value={formData.email}
 //                                             onChange={(e) => handleInputChange('email', e.target.value)}
-//                                             className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.email ? 'border-red-500' : 'border-gray-300'
+//                                             className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.email ? 'border-red-500' : 'border-gray-300'
 //                                                 }`}
 //                                             placeholder="your.email@example.com"
 //                                         />
@@ -296,7 +296,7 @@
 
 //                                 <button
 //                                     onClick={handleNext}
-//                                     className="w-full bg-gradient-to-r from-orange-200 to-orange-600 hover:from-orange-300 hover:to-orange-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2"
+//                                     className="w-full bg-gradient-to-r from-#08dceb-200 to-#08dceb-600 hover:from-#08dceb-300 hover:to-#08dceb-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2"
 //                                 >
 //                                     <span>Continue</span>
 //                                     <ArrowLeft className="w-5 h-5 rotate-180" />
@@ -318,7 +318,7 @@
 //                                     <div className="relative">
 //                                         <button
 //                                             onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-//                                             className="w-full flex items-center justify-between p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-white"
+//                                             className="w-full flex items-center justify-between p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all bg-white"
 //                                         >
 //                                             <div className="flex items-center space-x-3">
 //                                                 <Globe className="w-5 h-5 text-gray-400" />
@@ -364,7 +364,7 @@
 //                                                 type="tel"
 //                                                 value={formData.mobile}
 //                                                 onChange={(e) => handleInputChange('mobile', e.target.value)}
-//                                                 className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.mobile ? 'border-red-500' : 'border-gray-300'
+//                                                 className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.mobile ? 'border-red-500' : 'border-gray-300'
 //                                                     }`}
 //                                                 placeholder="Mobile number"
 //                                             />
@@ -389,7 +389,7 @@
 //                                             type={showPassword ? 'text' : 'password'}
 //                                             value={formData.password}
 //                                             onChange={(e) => handleInputChange('password', e.target.value)}
-//                                             className={`w-full pl-10 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.password ? 'border-red-500' : 'border-gray-300'
+//                                             className={`w-full pl-10 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.password ? 'border-red-500' : 'border-gray-300'
 //                                                 }`}
 //                                             placeholder="Create a strong password"
 //                                         />
@@ -442,7 +442,7 @@
 //                                             type={showConfirmPassword ? 'text' : 'password'}
 //                                             value={formData.confirmPassword}
 //                                             onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-//                                             className={`w-full pl-10 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
+//                                             className={`w-full pl-10 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
 //                                                 }`}
 //                                             placeholder="Confirm your password"
 //                                         />
@@ -471,7 +471,7 @@
 //                                             type="text"
 //                                             value={formData.referralCode}
 //                                             onChange={(e) => handleInputChange('referralCode', e.target.value.toUpperCase())}
-//                                             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
+//                                             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all"
 //                                             placeholder="Enter referral code"
 //                                         />
 //                                     </div>
@@ -483,12 +483,12 @@
 //                                 {/* Terms */}
 //                                 <div className="bg-gray-50 rounded-xl p-4">
 //                                     <label className="flex items-start space-x-3 cursor-pointer">
-//                                         <input type="checkbox" className="mt-1 rounded border-gray-300 text-orange-600 focus:ring-orange-500" />
+//                                         <input type="checkbox" className="mt-1 rounded border-gray-300 text-#08dceb-600 focus:ring-#08dceb-500" />
 //                                         <span className="text-sm text-gray-700 leading-relaxed">
 //                                             I agree to Collegedunia's{' '}
-//                                             <button className="text-orange-600 hover:text-orange-700 font-medium">Terms of Service</button>
+//                                             <button className="text-#08dceb-600 hover:text-#08dceb-700 font-medium">Terms of Service</button>
 //                                             {' '}and{' '}
-//                                             <button className="text-orange-600 hover:text-orange-700 font-medium">Privacy Policy</button>
+//                                             <button className="text-#08dceb-600 hover:text-#08dceb-700 font-medium">Privacy Policy</button>
 //                                         </span>
 //                                     </label>
 //                                 </div>
@@ -497,7 +497,7 @@
 //                                 <button
 //                                     onClick={handleSubmit}
 //                                     disabled={isLoading}
-//                                     className="w-full bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
+//                                     className="w-full bg-gradient-to-r from-#08dceb-500 to-purple-600 hover:from-#08dceb-600 hover:to-purple-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
 //                                 >
 //                                     {isLoading ? (
 //                                         <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -539,7 +539,7 @@
 //                         <p className="text-gray-600">
 //                             Already have an account?
 //                             <Link to={"/login"}>
-//                                 <button className="text-orange-600 hover:text-orange-700 font-semibold ml-1">
+//                                 <button className="text-#08dceb-600 hover:text-#08dceb-700 font-semibold ml-1">
 //                                     Sign in here
 //                                 </button>
 //                             </Link>
@@ -742,13 +742,13 @@ const Register = () => {
                 <div className="w-full max-w-md">
                     <div className="flex items-center justify-center mb-8">
                         <div className="flex items-center space-x-4">
-                            <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 1 ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-600'
+                            <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 1 ? 'bg-#08dceb-500 text-white' : 'bg-gray-200 text-gray-600'
                                 }`}>
                                 {currentStep > 1 ? <Check className="w-5 h-5" /> : '1'}
                             </div>
-                            <div className={`w-12 h-1 rounded transition-all duration-300 ${currentStep > 1 ? 'bg-orange-500' : 'bg-gray-200'
+                            <div className={`w-12 h-1 rounded transition-all duration-300 ${currentStep > 1 ? 'bg-#08dceb-500' : 'bg-gray-200'
                                 }`}></div>
-                            <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-600'
+                            <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-#08dceb-500 text-white' : 'bg-gray-200 text-gray-600'
                                 }`}>
                                 2
                             </div>
@@ -756,7 +756,7 @@ const Register = () => {
                     </div>
 
                     <div className="text-center mb-8">
-                        <div className="w-20 h-20 bg-gradient-to-r from-orange-300 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div className="w-20 h-20 bg-gradient-to-r from-#08dceb-300 to-#08dceb-600 rounded-full flex items-center justify-center mx-auto mb-4">
                             <User className="w-10 h-10 text-white" />
                         </div>
                         <h1 className="text-3xl font-bold text-gray-800 mb-2">Join Dreams To Fly</h1>
@@ -787,7 +787,7 @@ const Register = () => {
                                                 type="text"
                                                 value={formData.firstName}
                                                 onChange={(e) => handleInputChange('firstName', e.target.value)}
-                                                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.firstName ? 'border-red-500' : 'border-gray-300'
+                                                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.firstName ? 'border-red-500' : 'border-gray-300'
                                                     }`}
                                                 placeholder="First name"
                                             />
@@ -810,7 +810,7 @@ const Register = () => {
                                                 type="text"
                                                 value={formData.lastName}
                                                 onChange={(e) => handleInputChange('lastName', e.target.value)}
-                                                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.lastName ? 'border-red-500' : 'border-gray-300'
+                                                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.lastName ? 'border-red-500' : 'border-gray-300'
                                                     }`}
                                                 placeholder="Last name"
                                             />
@@ -835,7 +835,7 @@ const Register = () => {
                                             type="text"
                                             value={formData.username}
                                             onChange={(e) => handleInputChange('username', e.target.value.toLowerCase())}
-                                            className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.username ? 'border-red-500' : 'border-gray-300'
+                                            className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.username ? 'border-red-500' : 'border-gray-300'
                                                 }`}
                                             placeholder="Choose a unique username"
                                         />
@@ -862,7 +862,7 @@ const Register = () => {
                                             type="email"
                                             value={formData.email}
                                             onChange={(e) => handleInputChange('email', e.target.value)}
-                                            className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                            className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.email ? 'border-red-500' : 'border-gray-300'
                                                 }`}
                                             placeholder="your.email@example.com"
                                         />
@@ -877,7 +877,7 @@ const Register = () => {
 
                                 <button
                                     onClick={handleNext}
-                                    className="w-full bg-gradient-to-r from-orange-200 to-orange-600 hover:from-orange-300 hover:to-orange-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2"
+                                    className="w-full bg-gradient-to-r from-#08dceb-200 to-#08dceb-600 hover:from-#08dceb-300 hover:to-#08dceb-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2"
                                 >
                                     <span>Continue</span>
                                     <ArrowLeft className="w-5 h-5 rotate-180" />
@@ -899,7 +899,7 @@ const Register = () => {
                                     <div className="relative">
                                         <button
                                             onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-                                            className="w-full flex items-center justify-between p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-white"
+                                            className="w-full flex items-center justify-between p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all bg-white"
                                         >
                                             <div className="flex items-center space-x-3">
                                                 <Globe className="w-5 h-5 text-gray-400" />
@@ -947,7 +947,7 @@ const Register = () => {
                                                 type="tel"
                                                 value={formData.mobile}
                                                 onChange={(e) => handleInputChange('mobile', e.target.value)}
-                                                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.mobile ? 'border-red-500' : 'border-gray-300'
+                                                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.mobile ? 'border-red-500' : 'border-gray-300'
                                                     }`}
                                                 placeholder="Mobile number"
                                             />
@@ -972,7 +972,7 @@ const Register = () => {
                                             type={showPassword ? 'text' : 'password'}
                                             value={formData.password}
                                             onChange={(e) => handleInputChange('password', e.target.value)}
-                                            className={`w-full pl-10 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.password ? 'border-red-500' : 'border-gray-300'
+                                            className={`w-full pl-10 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.password ? 'border-red-500' : 'border-gray-300'
                                                 }`}
                                             placeholder="Create a strong password"
                                         />
@@ -1025,7 +1025,7 @@ const Register = () => {
                                             type={showConfirmPassword ? 'text' : 'password'}
                                             value={formData.confirmPassword}
                                             onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-                                            className={`w-full pl-10 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
+                                            className={`w-full pl-10 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
                                                 }`}
                                             placeholder="Confirm your password"
                                         />
@@ -1056,7 +1056,7 @@ const Register = () => {
                                             type="text"
                                             value={formData.referralCode}
                                             onChange={(e) => handleInputChange('referralCode', e.target.value.toUpperCase())}
-                                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
+                                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-#08dceb-500 focus:border-#08dceb-500 outline-none transition-all"
                                             placeholder="Enter referral code"
                                         />
                                     </div>
@@ -1068,12 +1068,12 @@ const Register = () => {
                                 {/* Terms */}
                                 <div className="bg-gray-50 rounded-xl p-4">
                                     <label className="flex items-start space-x-3 cursor-pointer">
-                                        <input type="checkbox" className="mt-1 rounded border-gray-300 text-orange-600 focus:ring-orange-500" />
+                                        <input type="checkbox" className="mt-1 rounded border-gray-300 text-#08dceb-600 focus:ring-#08dceb-500" />
                                         <span className="text-sm text-gray-700 leading-relaxed">
                                             I agree to Dreams To Fly's{' '}
-                                            <button className="text-orange-600 hover:text-orange-700 font-medium">Terms of Service</button>
+                                            <button className="text-#08dceb-600 hover:text-#08dceb-700 font-medium">Terms of Service</button>
                                             {' '}and{' '}
-                                            <button className="text-orange-600 hover:text-orange-700 font-medium">Privacy Policy</button>
+                                            <button className="text-#08dceb-600 hover:text-#08dceb-700 font-medium">Privacy Policy</button>
                                         </span>
                                     </label>
                                 </div>
@@ -1082,7 +1082,7 @@ const Register = () => {
                                 <button
                                     onClick={handleSubmit}
                                     disabled={isLoading}
-                                    className="w-full bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                    className="w-full bg-gradient-to-r from-#08dceb-500 to-purple-600 hover:from-#08dceb-600 hover:to-purple-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
                                     {isLoading ? (
                                         <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -1124,7 +1124,7 @@ const Register = () => {
                         <p className="text-gray-600">
                             Already have an account?
                             <Link to={"/login"}>
-                                <button className="text-orange-600 hover:text-orange-700 font-semibold ml-1">
+                                <button className="text-#08dceb-600 hover:text-#08dceb-700 font-semibold ml-1">
                                     Sign in here
                                 </button>
                             </Link>

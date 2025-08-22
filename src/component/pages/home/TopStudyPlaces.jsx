@@ -5,7 +5,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "swiper/css";
 import "swiper/css/navigation";
-import cities from "../../data/studyplace";
+import cities from "../../data/home/studyplace";
 
 export default function TopStudyPlacesCarousel() {
     return (

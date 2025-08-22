@@ -1,6 +1,6 @@
 
 import React from "react";
-import { colleges, agencies } from "../../data/collegeranking";
+import { colleges, agencies } from "../../data/home/collegeranking";
 
 export default function CollegeRanking() {
 
@@ -19,7 +19,7 @@ export default function CollegeRanking() {
                     </h2>
                     <a
                         href="#"
-                        className="text-orange-600 hover:underline text-lg sm:text-xl"
+                        className="text-#08dceb-600 hover:underline text-lg sm:text-xl"
                     >
                         View all Colleges
                     </a>

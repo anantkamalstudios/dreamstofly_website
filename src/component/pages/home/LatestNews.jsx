@@ -110,7 +110,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import newsData from "../../data/Latestnews"
+import newsData from "../../data/home/Latestnews"
 
 export default function LatestNews() {
 

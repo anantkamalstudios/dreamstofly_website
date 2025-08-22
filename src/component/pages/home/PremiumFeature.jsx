@@ -151,13 +151,13 @@ export default function PremiumFeature() {
 
                     {/* Content */}
                     <div className="relative text-center max-w-3xl px-4">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#ff7a00]  mb-4">
+                        <h2 className="text-2xl md:text-3xl font-bold text-white  mb-4">
                             {item.title}
                         </h2>
                         <p className="text-white text-sm md:text-base leading-relaxed mb-6">
                             {item.description}
                         </p>
-                        <button className="bg-[#ff7a00] hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg flex items-center gap-2 mx-auto shadow-lg">
+                        <button className="bg-[#0073df] hover:bg-#08dceb-600 text-white font-semibold py-2 px-6 rounded-lg flex items-center gap-2 mx-auto shadow-lg">
                             {item.buttonText} {item.buttonIcon}
                         </button>
                     </div>

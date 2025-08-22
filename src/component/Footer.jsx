@@ -412,6 +412,23 @@ export default function Footer() {
             {/* Middle Section: Links & Social */}
             <div className="max-w-7xl mx-auto px-4 py-4 text-gray-600 text-sm">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+                    {/* Left Links */}
+                    <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                        {[
+                            "About Dreams to Fly",
+                            "Contact Us",
+                            "Advertising",
+                            "Career",
+                            "Terms & Conditions",
+                        ].map((link, i) => (
+                            <span
+                                key={i}
+                                className="hover:underline cursor-pointer whitespace-nowrap"
+                            >
+                                {link}
+                            </span>
+                        ))}
+                    </div>
                   <div className="flex flex-wrap justify-center md:justify-start gap-4">
   {[
     { name: "About Collegedunia", path: "#" },

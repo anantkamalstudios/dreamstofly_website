@@ -12,7 +12,7 @@
 //                     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#3f5c8b] text-center sm:text-left">
 //                         Know your chances of Admission
 //                     </h2>
-//                     <button className="bg-[#ff7a00] hover:bg-orange-600 text-white font-bold py-2 px-4 sm:px-6 rounded whitespace-nowrap w-full sm:w-auto text-sm sm:text-base">
+//                     <button className="bg-[#ff7a00] hover:bg-#08dceb-600 text-white font-bold py-2 px-4 sm:px-6 rounded whitespace-nowrap w-full sm:w-auto text-sm sm:text-base">
 //                         Start Now
 //                     </button>
 //                 </div>
@@ -36,7 +36,7 @@
 // export default function HaveQuestions() {
 //     return (
 //         <section
-//             className="relative bg-orange-100  text-light py-10 px-6 flex items-center justify-center text-center"
+//             className="relative bg-#08dceb-100  text-light py-10 px-6 flex items-center justify-center text-center"
 //             style={{
 //                 backgroundImage: "url('/images/world-map-pattern.png')", // replace with your uploaded background
 //                 backgroundSize: "cover",
@@ -57,7 +57,7 @@
 
 //                 {/* Button */}
 
-//                 <button className="bg-[#ff7a00] hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md  transition">
+//                 <button className="bg-[#ff7a00] hover:bg-#08dceb-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md  transition">
 //                     Get on Call
 //                 </button>
 
@@ -75,22 +75,18 @@ export default function HaveQuestions() {
     return (
         <>
             <section
-                className="relative bg-orange-100 py-10 px-6 flex items-center justify-center text-center"
-                style={{
-                    backgroundImage: "url('/images/world-map-pattern.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
+                className="relative  bg-gradient-to-r from-blue-900 to-blue-400 py-10 px-6 flex items-center justify-center text-center"
+
             >
-                <div className="max-w-2xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Have Questions ?</h2>
+                <div className="max-w-2xl   mx-auto">
+                    <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">Have Questions ?</h2>
                     <p className="text-lg md:text-xl text-dark mb-6">
                         We are available to answer all your questions! <br />
                         Get on a Call with us today.
                     </p>
                     <button
                         onClick={() => setOpen(true)}
-                        className="bg-[#ff7a00] hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition"
+                        className="bg-white text-[#0073df] hover:bg-blye-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition"
                     >
                         Get on Call
                     </button>

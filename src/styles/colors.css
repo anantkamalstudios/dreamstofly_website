@@ -2,11 +2,18 @@
 :root {
     --primary-color: #3f5c8b;
     /* Main text & titles */
-    --hover-color: #eb6308;
+    --hover-color: #0073df;
     /* Hover color */
     --text-color: #333333;
     /* Paragraph text */
-    --bg-color: #ffffff;
+    /* --bg-color: #ffffff; */
     /* Background color */
-    /* --text-color: #ffffff; */
+    --text-color: #ffffff;
+    /* --btn-bg-color: #0073df; */
+    /* Royal Blue */
+    /* --btn-bg-hover: #0073df; */
+    /* Sky Blue */
+    /* --btn-text-color: #ffffff; */
+    --btn-bg-color: #0073df;
+    /* White text */
 }

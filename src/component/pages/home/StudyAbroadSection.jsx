@@ -7,9 +7,9 @@ import { FaDollarSign } from "react-icons/fa6";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "swiper/css";
 import "swiper/css/navigation";
-import countries from "../../data/studyabord";
+import countries from "../../data/home/studyabord";
 
-export default function TopStudyPlacesCarousel() {
+export default function StudyAbroadSection() {
     return (
         <>
             <hr className="mt-8" />
@@ -103,3 +103,4 @@ export default function TopStudyPlacesCarousel() {
         </>
     );
 }
+
