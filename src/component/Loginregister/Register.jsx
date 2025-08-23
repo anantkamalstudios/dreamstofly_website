@@ -737,18 +737,18 @@ const Register = () => {
     const passwordStrength = getPasswordStrength(formData.password);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
             <div className="flex items-center justify-center p-4 min-h-[calc(100vh-80px)]">
                 <div className="w-full max-w-md">
                     <div className="flex items-center justify-center mb-8">
                         <div className="flex items-center space-x-4">
-                            <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 1 ? 'bg-#08dceb-500 text-white' : 'bg-gray-200 text-gray-600'
+                            <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 1 ? 'bg-blue-300 text-white' : 'bg-gray-200 text-gray-600'
                                 }`}>
                                 {currentStep > 1 ? <Check className="w-5 h-5" /> : '1'}
                             </div>
-                            <div className={`w-12 h-1 rounded transition-all duration-300 ${currentStep > 1 ? 'bg-#08dceb-500' : 'bg-gray-200'
+                            <div className={`w-12 h-1 rounded transition-all duration-300 ${currentStep > 1 ? 'bg-[#08dceb]' : 'bg-gray-200'
                                 }`}></div>
-                            <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-#08dceb-500 text-white' : 'bg-gray-200 text-gray-600'
+                            <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${currentStep >= 2 ? 'bg-blue-300 text-white' : 'bg-gray-200 text-gray-600'
                                 }`}>
                                 2
                             </div>
@@ -1082,7 +1082,7 @@ const Register = () => {
                                 <button
                                     onClick={handleSubmit}
                                     disabled={isLoading}
-                                    className="w-full bg-gradient-to-r from-#08dceb-500 to-purple-600 hover:from-#08dceb-600 hover:to-purple-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                    className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-300 hover:to-blue-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
                                     {isLoading ? (
                                         <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

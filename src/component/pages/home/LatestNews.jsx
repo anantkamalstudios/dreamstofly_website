@@ -1,40 +1,17 @@
+
 // import React from "react";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import { Navigation, Autoplay } from "swiper/modules";
 // import "swiper/css";
 // import "swiper/css/navigation";
 // import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+// import newsData from "../../data/home/Latestnews"
 
 // export default function LatestNews() {
-//     const newsData = [
-//         {
-//             title: "Do PYQs repeat in CLAT- Repeated Questions, Previous Year Trends",
-//             date: "Aug 13, 2025",
-//             description:
-//                 "Do PYQs Repeat In CLAT? Yes, PYQs Repeat In CLAT. Over The Years, Questions Have Been Repeated In Logical Reasoning...",
-//         },
-//         {
-//             title: "CAT MCQs on Geometry: CAT Questions for Practice with Answers",
-//             date: "Aug 13, 2025",
-//             description:
-//                 "The CAT QA Section Requires Speed And Accuracy, Along With A Thorough Understanding Of The Geometry. This Article Provides A...",
-//         },
-//         {
-//             title: "CAT MCQs on Sentence Formation: CAT Questions for Practice",
-//             date: "Aug 13, 2025",
-//             description:
-//                 "The CAT VARC Section Requires Good Reading Skills, Critical Thinking, And Attention To Detail, Along With A Thorough...",
-//         },
-//         {
-//             title: "CAT MCQs on Logical Reasoning: CAT Questions for Practice",
-//             date: "Aug 13, 2025",
-//             description:
-//                 "The CAT VARC Section Requires Good Reading Skills, Critical Thinking, And Attention To Detail, Along With A Thorough...",
-//         },
-//     ];
+
 
 //     return (
-//         <div className="relative w-full px-4 py-8">
+//         <div className="relative max-w-7xl mx-auto px-4 py-8">
 //             {/* Heading */}
 //             <h2 className="text-2xl md:text-3xl font-bold mb-4">
 //                 Latest News & Stories
@@ -56,11 +33,11 @@
 //             {/* Swiper Carousel */}
 //             <div className="relative">
 //                 {/* Navigation Buttons */}
-//                 <div className="swiper-button-prev custom-prev absolute left-[-15px] top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center cursor-pointer z-10 hover:bg-gray-100">
-//                     <GoArrowLeft size={22} />
+//                 <div className="swiper-button-prev custom-prev absolute left-[-18px] top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10 h-10 flex items-center text-black justify-center cursor-pointer z-10 hover:bg-gray-100">
+//                     {/* <GoArrowLeft size={22} className="text-black" /> */}
 //                 </div>
-//                 <div className="swiper-button-next custom-next absolute right-[-15px] top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center cursor-pointer z-10 hover:bg-gray-100">
-//                     <GoArrowRight size={22} />
+//                 <div className="swiper-button-next custom-next absolute right-[-18px] top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center cursor-pointer z-10 hover:bg-gray-100">
+//                     {/* <GoArrowRight size={22} className="text-black" /> */}
 //                 </div>
 
 //                 <Swiper
@@ -74,17 +51,16 @@
 //                         disableOnInteraction: false,
 //                     }}
 //                     spaceBetween={20}
+//                     slidesPerView={3} // Always 3 on large screens
 //                     breakpoints={{
 //                         320: { slidesPerView: 1 },
 //                         640: { slidesPerView: 2 },
 //                         1024: { slidesPerView: 3 },
-//                         1280: { slidesPerView: 4 },
 //                     }}
 //                 >
 //                     {newsData.map((news, index) => (
 //                         <SwiperSlide key={index}>
 //                             <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition duration-300 p-4 flex flex-col h-full">
-
 //                                 <h3 className="font-semibold text-lg mb-2 line-clamp-2">
 //                                     {news.title}
 //                                 </h3>
@@ -109,12 +85,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import newsData from "../../data/home/Latestnews"
+import newsData from "../../data/home/Latestnews";
 
 export default function LatestNews() {
-
-
     return (
         <div className="relative max-w-7xl mx-auto px-4 py-8">
             {/* Heading */}
@@ -137,13 +110,7 @@ export default function LatestNews() {
 
             {/* Swiper Carousel */}
             <div className="relative">
-                {/* Navigation Buttons */}
-                <div className="swiper-button-prev custom-prev absolute left-[-18px] top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10 h-10 flex items-center text-black justify-center cursor-pointer z-10 hover:bg-gray-100">
-                    <GoArrowLeft size={22} className="text-black" />
-                </div>
-                <div className="swiper-button-next custom-next absolute right-[-18px] top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10 h-10 flex items-center justify-center cursor-pointer z-10 hover:bg-gray-100">
-                    <GoArrowRight size={22} className="text-black" />
-                </div>
+
 
                 <Swiper
                     modules={[Navigation, Autoplay]}
@@ -155,8 +122,9 @@ export default function LatestNews() {
                         delay: 3000,
                         disableOnInteraction: false,
                     }}
+                    loop={true}
                     spaceBetween={20}
-                    slidesPerView={3} // Always 3 on large screens
+                    slidesPerView={3} // Default for large screens
                     breakpoints={{
                         320: { slidesPerView: 1 },
                         640: { slidesPerView: 2 },
@@ -175,7 +143,7 @@ export default function LatestNews() {
                                 </p>
                                 <div className="mt-auto flex items-center text-black font-medium text-sm hover:underline cursor-pointer">
                                     Read more
-                                    <GoArrowRight className="ml-2" />
+
                                 </div>
                             </div>
                         </SwiperSlide>

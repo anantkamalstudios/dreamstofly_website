@@ -55,21 +55,21 @@ export default function App() {
             <Route path="/exam-prep" element={<ExamPrep />} />
             <Route path="/free-cources" element={<FreeCourses />} />
             <Route path="/travel" element={<Travel />} />
-            
 
-            
+
+
             <Route path="/about" element={<Aboutus />} />
-             <Route path="/career" element={<CareerPage />} />
-             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/career" element={<CareerPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             <Route path="/advertising" element={<Advertise />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/IELTS" element={<IELTSPrep/>} />
-            <Route path="/IELTS-ACEDEMIC" element={<IeltsAcademic/>} />
-            <Route path="/PTEAcademic" element={<PTEAcademic/>} />
-            <Route path="/ToeflIBT" element={<ToeflIBT/>} />
-            <Route path="/DuolingoTest" element={<DuolingoTest/>} />
-            <Route path="/GREPrep" element={<GREPrep/>} />
-   
+            <Route path="/IELTS" element={<IELTSPrep />} />
+            <Route path="/IELTS-ACEDEMIC" element={<IeltsAcademic />} />
+            <Route path="/PTEAcademic" element={<PTEAcademic />} />
+            <Route path="/ToeflIBT" element={<ToeflIBT />} />
+            <Route path="/DuolingoTest" element={<DuolingoTest />} />
+            <Route path="/GREPrep" element={<GREPrep />} />
+
 
 
 

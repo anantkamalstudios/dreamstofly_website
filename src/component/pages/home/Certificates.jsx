@@ -53,13 +53,17 @@
 // }
 import React from "react";
 import { motion } from "framer-motion";
+import nafsa from "../../../assets/certificates/nafsa.jpeg";
+import IAF from "../../../assets/certificates/iaf.jpeg";
+import icef from "../../../assets/certificates/icef.jpeg";
+import iso from "../../../assets/certificates/iso.jpeg";
 
 export default function Certificates() {
     const certificates = [
-        { id: 1, img: "https://dreamstofly.com/img/nafsa.png", alt: "NAFSA" },
-        { id: 2, img: "https://dreamstofly.com/img/iaf.png", alt: "IAF" },
-        { id: 3, img: "https://dreamstofly.com/img/icef.jpg", alt: "ICEF" },
-        { id: 4, img: "https://dreamstofly.com/img/iso.jpg", alt: "ISO" },
+        { id: 1, img: nafsa, alt: "NAFSA" },
+        { id: 2, img: IAF, alt: "IAF" },
+        { id: 3, img: icef, alt: "ICEF" },
+        { id: 4, img: iso, alt: "ISO" },
     ];
 
     // Variants for animation

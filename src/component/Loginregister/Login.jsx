@@ -310,7 +310,7 @@ const Login = () => {
                             <button
                                 onClick={handleSubmit}
                                 disabled={isLoading}
-                                className="w-full bg-gradient-to-r from-#08dceb-300 to-#08dceb-600 hover:from-#08dceb-300 hover:to-#08dceb-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="w-full bg-blue-700 hover:from-blue-300 hover:to-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
                             >
                                 {isLoading ? (
                                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -358,7 +358,7 @@ const Login = () => {
                         <p className="text-gray-600">
                             Don't have an account?
                             <Link to={"/register"}>
-                                <button className="text-#08dceb-600 hover:text-#08dceb-700 font-semibold ml-1">
+                                <button className="text-blue-600 hover:text-blue-700 font-semibold ml-1">
                                     Sign up here
                                 </button>
                             </Link>
