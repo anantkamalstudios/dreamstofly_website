@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Users, Globe2, Target, BookOpen, Star } from "lucide-react";
 
-export default function AboutUs() {
+function AboutUs() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-sky-50">
       {/* Hero Section */}
@@ -149,3 +149,4 @@ export default function AboutUs() {
     </div>
   );
 }
+export default AboutUs;

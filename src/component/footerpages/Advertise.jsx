@@ -48,7 +48,7 @@ const FeatureItem = ({ children }) => (
   </li>
 );
 
-export default function Advertise() {
+function Advertise() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-sky-50">
       {/* Hero Section */}
@@ -223,3 +223,4 @@ export default function Advertise() {
     </div>
   );
 }
+export default Advertise;

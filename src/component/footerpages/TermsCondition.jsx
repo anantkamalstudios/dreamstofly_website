@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FileText, ShieldCheck, Scale, Lock, Globe2 } from "lucide-react";
 
-export default function TermsAndConditions() {
+function TermsCondition() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-sky-50">
       {/* Hero Section */}
@@ -90,3 +90,4 @@ export default function TermsAndConditions() {
     </div>
   );
 }
+export default TermsCondition;

@@ -25,12 +25,12 @@ import { motion } from "framer-motion";
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section
+       <section
   className="relative bg-gradient-to-r from-blue-700/80 to-indigo-600/80 text-white py-16 px-6 text-center bg-cover bg-center"
   style={{
-    backgroundImage: `url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')')`
+    backgroundImage: `url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')`
   }}
->   <div className="max-w-4xl mx-auto">
+>  <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Duolingo English Test Prep</h1>
           <p className="text-sm md:text-base opacity-90">
             Online | Affordable | Accepted Worldwide

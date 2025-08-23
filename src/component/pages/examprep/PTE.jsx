@@ -25,10 +25,10 @@ function PTEAcademic() {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-     <section
+      <section
   className="relative bg-gradient-to-r from-blue-700/80 to-indigo-600/80 text-white py-16 px-6 text-center bg-cover bg-center"
   style={{
-    backgroundImage: `url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')')`
+    backgroundImage: `url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')`
   }}
 >
       <div className="max-w-4xl mx-auto">
@@ -83,19 +83,19 @@ function PTEAcademic() {
           </div>
 
           {/* Right */}
-          <div className="relative flex flex-col items-center">
+           <div className="relative flex flex-col items-center">
             <img
-              src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=500&q=80"
-              alt="PTE Exam Student"
+              src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=500&q=80"
+              alt="Student"
               className="rounded-2xl shadow-lg w-64 h-80 object-cover"
             />
             <div className="absolute -left-6 top-10 bg-white shadow-md rounded-lg px-4 py-2">
-              <p className="text-lg font-bold text-gray-900">90</p>
-              <p className="text-xs text-gray-600">Max PTE Score</p>
+              <p className="text-lg font-bold text-gray-900">1,50,000+</p>
+              <p className="text-xs text-gray-600">Students Trained</p>
             </div>
             <img
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80"
-              alt="Study Abroad"
+              alt="Happy Student"
               className="absolute right-0 top-32 rounded-2xl shadow-md w-40 h-52 object-cover"
             />
           </div>
