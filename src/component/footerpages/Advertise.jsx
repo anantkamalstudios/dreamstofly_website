@@ -62,7 +62,7 @@ function Advertise() {
               <Megaphone className="w-4 h-4" /> Advertise with DreamsToFly
             </div>
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
-              Simple, effective advertising for <span className="text-sky-600">Study Abroad</span>
+               Adververtising for <span className="text-sky-600">Study Abroad</span>
             </h1>
             <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-600">
               India’s most innovative and interactive education portal with an ergonomically designed interface that maximizes conversions.
