@@ -539,71 +539,34 @@ ${name || "[Your Name]"}`;
           <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 via-transparent to-slate-50/20 pointer-events-none"></div>
             <div className="relative z-10">
-              
-
               {renderSection()}
 
-{/* Action Buttons */}
-<div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
-  <div className="flex items-center gap-2 text-sm text-gray-500">
-    <Zap className="w-4 h-4 text-[#0073df]" />
-    <span>Fill all sections for best results</span>
-  </div>
+              {/* Action Buttons */}
+              <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <Zap className="w-4 h-4 text-[#0073df]" />
+                  <span>Fill all sections for best results</span>
+                </div>
 
-  {/* Navigation Flow */}
-  {activeSection === "personal" && (
-    <button
-      onClick={() => setActiveSection("academic")}
-      className="group relative overflow-hidden bg-gradient-to-r from-gray-800 to-[#0073df] text-white px-8 py-3 rounded-xl font-semibold hover:from-[#005bb5] hover:to-blue-700 transition-all duration-300 flex items-center gap-2 shadow-lg transform hover:scale-105"
-    >
-      Next <ArrowRight className="w-4 h-4" />
-    </button>
-  )}
-
-  {activeSection === "academic" && (
-    <div className="flex gap-3">
-      <button
-        onClick={() => setActiveSection("personal")}
-        className="bg-gray-100 text-gray-700 px-6 py-2 rounded-xl font-medium hover:bg-gray-200 transition-all"
-      >
-        Back
-      </button>
-      <button
-        onClick={() => setActiveSection("goals")}
-        className="group relative overflow-hidden bg-gradient-to-r from-gray-800 to-[#0073df] text-white px-8 py-3 rounded-xl font-semibold hover:from-[#005bb5] hover:to-blue-700 transition-all duration-300 flex items-center gap-2 shadow-lg transform hover:scale-105"
-      >
-        Next <ArrowRight className="w-4 h-4" />
-      </button>
-    </div>
-  )}
-
-  {activeSection === "goals" && (
-    <div className="flex gap-3">
-      <button
-        onClick={() => setActiveSection("academic")}
-        className="bg-gray-100 text-gray-700 px-6 py-2 rounded-xl font-medium hover:bg-gray-200 transition-all"
-      >
-        Back
-      </button>
-      <button
-        onClick={generateSop}
-        className="group relative overflow-hidden bg-gradient-to-r from-gray-800 to-[#0073df] text-white px-8 py-3 rounded-xl font-semibold hover:from-[#005bb5] hover:to-blue-700 transition-all duration-300 flex items-center gap-2 shadow-lg transform hover:scale-105"
-      >
-        <GraduationCap className="w-5 h-5" />
-        Generate SOP
-        <ArrowRight className="w-4 h-4" />
-      </button>
-    </div>
-  )}
-
-  {activeSection === "preview" && (
-    <div className="text-sm text-[#0073df] font-medium flex items-center gap-2">
-      <CheckCircle2 className="w-4 h-4" />
-      SOP Generated Successfully!
-    </div>
-  )}
-</div>
-
+                {activeSection !== 'preview' ? (
+                  <button
+                    onClick={generateSop}
+                    className="group relative overflow-hidden bg-gradient-to-r from-gray-800 to-[#0073df] text-white px-8 py-3 rounded-xl font-semibold hover:from-[#005bb5] hover:to-blue-700 transition-all duration-300 flex items-center gap-2 shadow-lg transform hover:scale-105"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0073df] to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative flex items-center gap-2">
+                      <GraduationCap className="w-5 h-5" />
+                      Generate SOP
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </button>
+                ) : (
+                  <div className="text-sm text-[#0073df] font-medium flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4" />
+                    SOP Generated Successfully!
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

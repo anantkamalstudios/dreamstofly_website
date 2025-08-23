@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { 
   Star, Clock, MessageCircle, Globe, Shield, DollarSign, Eye, 
-  ChevronRight, Play, Users, Award, Target
+  ChevronRight, Play, Users, Award, Target, Sparkles
 } from "lucide-react";
 
 const ExamPrep = () => {
@@ -16,6 +17,7 @@ const ExamPrep = () => {
   });
   const [flipped, setFlipped] = useState({});
   const [isVisible, setIsVisible] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const statsRef = useRef(null);
 
@@ -122,26 +124,47 @@ const ExamPrep = () => {
 
   const toggleFlip = (id) => setFlipped(prev => ({ ...prev, [id]: !prev[id] }));
 
+  const handleMouseMove = (e) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/20" onMouseMove={handleMouseMove}>
+      {/* Background Effects */}
+      <div
+        className="fixed inset-0 pointer-events-none transition-opacity duration-300 z-0"
+        style={{
+          background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(0,115,223,0.05), transparent 40%)`
+        }}
+      />
+      <div className="absolute top-10 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+      <div
+        className="absolute bottom-10 right-10 w-44 h-44 bg-blue-600/10 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: '1s' }}
+      />
 
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-white via-blue-50 to-[#0073df]/10 py-12 overflow-hidden">
-        <div className="relative max-w-5xl mx-auto text-center px-4">
-          <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-[#0073df] bg-clip-text text-transparent">
-            Exam Preparation
-          </h1>
-          <div className="h-8 mb-6 flex items-center justify-center">
-            <span className="text-lg text-gray-600">
-              {currentText}<span className="animate-pulse text-[#0073df]">|</span>
-            </span>
-          </div>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-            Comprehensive test preparation with expert guidance and proven strategies
-          </p>
+      <section className="relative pt-16 pb-12 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-blue-100 rounded-full px-4 py-1 mb-6 shadow-sm text-sm font-medium text-gray-700">
+              <Sparkles className="w-4 h-4 text-blue-500" />
+              Exam Preparation
+            </div>
+            <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+              Master Your Exams with
+              <span className="block text-blue-600 typing min-h-[1.5em]">{currentText}</span>
+            </h1>
+            <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
+              Comprehensive test preparation with expert guidance and proven strategies
+            </p>
+          </motion.div>
         </div>
-      </div>
-
+      </section>
       {/* Exam Cards */}
       <div className="py-12 px-4">
         <div className="max-w-6xl mx-auto">
