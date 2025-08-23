@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
-export default function ContactUs() {
+ function ContactUs() {
   const EMAIL = "support@dreamstofly.com"; // update to your email
 
   return (
@@ -120,3 +120,4 @@ export default function ContactUs() {
     </div>
   );
 }
+export default ContactUs;
