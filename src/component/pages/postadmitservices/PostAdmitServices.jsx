@@ -140,38 +140,28 @@ const PostAdmitServices = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Badge / label like "Post Admit Services" */}
+      {/* Badge */}
       <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-blue-100 rounded-full px-4 py-1 mb-6 shadow-sm text-sm font-medium text-gray-700">
         <Sparkles className="w-4 h-4 text-blue-500" />
-        {activeTab === 'flights' && 'Flights'}
-        {activeTab === 'hotels' && 'Hotels'}
-        {activeTab === 'transfers' && 'Transfers'}
-        {activeTab === 'activities' && 'Activities'}
+        Post Admit Services
       </div>
 
       {/* Heading */}
       <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
-        {activeTab === 'flights' && 'Search for Flights'}
-        {activeTab === 'hotels' && 'Find Your Perfect Stay'}
-        {activeTab === 'transfers' && 'Book Inter-City Transfers'}
-        {activeTab === 'activities' && 'Discover Amazing Activities'}
+        Seamless Support for
+        <span className="block text-blue-600 typing min-h-[1.5em]">
+          {typedText}
+        </span>
       </h1>
 
-      {/* Typing effect */}
-      <span className="block text-blue-600 typing min-h-[1.5em]">
-        {typedText}
-      </span>
-
       {/* Paragraph */}
-      <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed mt-4">
-        {activeTab === 'flights' && 'Discover the best flight deals and travel the world with ease. Your journey begins here.'}
-        {activeTab === 'hotels' && 'Find the perfect accommodation for your next adventure. From luxury resorts to cozy stays.'}
-        {activeTab === 'transfers' && 'Comfortable and reliable transfers between cities. Travel with peace of mind.'}
-        {activeTab === 'activities' && 'Experience unforgettable activities and create memories that last a lifetime.'}
+      <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
+        End-to-end assistance from visa to accommodation — ensuring a smooth transition for your global education journey.
       </p>
     </motion.div>
   </div>
 </section>
+
 
 
       {/* Services Section */}
