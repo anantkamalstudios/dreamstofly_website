@@ -39,9 +39,9 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Loginregister" element={<MainModal />} />
-            <Route path="/Loginregisterpage" element={<LoginRegisterPage />} />
+            <Route path="/register" element={<LoginRegisterPage />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/Forget-Password" element={<Register />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/cource-finder" element={<CourceFinder />} />
