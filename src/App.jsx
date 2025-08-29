@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./component/layouts/MainLayout";
 import Home from "./component/pages/Home";
-import "./App.css"
+import "./App.css";
 import Blogs from "./component/pages/blogs/Blogs";
 import MainModal from "./component/Loginregister/MainModal";
 import LoginRegisterPage from "./component/Loginregister/LoginRegisterPage";
-import Login from "./component/Loginregister/Login"
+import Login from "./component/Loginregister/Login";
 import Register from "./component/Loginregister/Register";
 import CourceFinder from "./component/pages/CourceFinder";
 import BlogDetails from "./component/pages/blogs/BlogDetails";
@@ -15,8 +15,6 @@ import PostAdmitServices from "./component/pages/postadmitservices/PostAdmitServ
 import ExamPrep from "./component/pages/examprep/ExamPrep";
 import FreeCourses from "./component/pages/freecourses/FreeCourses";
 import Travel from "./component/pages/travel/Travel";
-
-
 
 import ContactUs from "./component/footerpages/ContactUs";
 import Aboutus from "./component/footerpages/AboutUs";
@@ -30,34 +28,38 @@ import ToeflIBT from "./component/pages/examprep/Toefl_IBT";
 import DuolingoTest from "./component/pages/examprep/DuolingoTest";
 import GREPrep from "./component/pages/examprep/GREPrep";
 
-
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
 
 export default function App() {
   return (
     <>
-
       <Router>
         <MainLayout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Loginregister" element={<MainModal />} />
-            <Route path="/Loginregisterpage" element={<LoginRegisterPage />} />
+            <Route path="/register" element={<LoginRegisterPage />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/Forget-Password" element={<Register />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/cource-finder" element={<CourceFinder />} />
             <Route path="/sop-maker" element={<SopMaker />} />
             <Route path="/connect" element={<Connect />} />
-            <Route path="/post-admit-services" element={<PostAdmitServices />} />
+            <Route
+              path="/post-admit-services"
+              element={<PostAdmitServices />}
+            />
             <Route path="/exam-prep" element={<ExamPrep />} />
             <Route path="/free-cources" element={<FreeCourses />} />
             <Route path="/travel" element={<Travel />} />
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a1c0cf687bac9b4a4838fa83ac06415152e1e079
             <Route path="/about" element={<Aboutus />} />
             <Route path="/career" element={<CareerPage />} />
             <Route path="/terms" element={<TermsPage />} />
@@ -69,11 +71,14 @@ export default function App() {
             <Route path="/ToeflIBT" element={<ToeflIBT />} />
             <Route path="/DuolingoTest" element={<DuolingoTest />} />
             <Route path="/GREPrep" element={<GREPrep />} />
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> a1c0cf687bac9b4a4838fa83ac06415152e1e079
           </Routes>
         </MainLayout>
       </Router>
