@@ -27,6 +27,7 @@ import PTEAcademic from "./component/pages/examprep/PTE";
 import ToeflIBT from "./component/pages/examprep/Toefl_IBT";
 import DuolingoTest from "./component/pages/examprep/DuolingoTest";
 import GREPrep from "./component/pages/examprep/GREPrep";
+import Services from "./component/pages/services/Services";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -54,6 +55,7 @@ export default function App() {
             <Route path="/exam-prep" element={<ExamPrep />} />
             <Route path="/free-cources" element={<FreeCourses />} />
             <Route path="/travel" element={<Travel />} />
+            <Route path="/services" element={<Services />} />
 
             <Route path="/about" element={<Aboutus />} />
             <Route path="/career" element={<CareerPage />} />

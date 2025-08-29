@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, ArrowLeft, Send, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Mail, ArrowLeft, Send, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Register = () => {
   const [emailSent, setEmailSent] = useState(false);
-  const [currentText, setCurrentText] = useState('');
-  
-  const phrases = ['Password', 'Access', 'Account', 'Security'];
+  const [currentText, setCurrentText] = useState("");
+
+  const phrases = ["Password", "Access", "Account", "Security"];
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -14,25 +14,28 @@ const Register = () => {
 
   // ✅ Typing Effect
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      const currentPhrase = phrases[phraseIndex];
-      if (!isDeleting) {
-        if (charIndex < currentPhrase.length) {
-          setCurrentText(currentPhrase.substring(0, charIndex + 1));
-          setCharIndex(charIndex + 1);
+    const timeout = setTimeout(
+      () => {
+        const currentPhrase = phrases[phraseIndex];
+        if (!isDeleting) {
+          if (charIndex < currentPhrase.length) {
+            setCurrentText(currentPhrase.substring(0, charIndex + 1));
+            setCharIndex(charIndex + 1);
+          } else {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
         } else {
-          setTimeout(() => setIsDeleting(true), 2000);
+          if (charIndex > 0) {
+            setCurrentText(currentPhrase.substring(0, charIndex - 1));
+            setCharIndex(charIndex - 1);
+          } else {
+            setIsDeleting(false);
+            setPhraseIndex((phraseIndex + 1) % phrases.length);
+          }
         }
-      } else {
-        if (charIndex > 0) {
-          setCurrentText(currentPhrase.substring(0, charIndex - 1));
-          setCharIndex(charIndex - 1);
-        } else {
-          setIsDeleting(false);
-          setPhraseIndex((phraseIndex + 1) % phrases.length);
-        }
-      }
-    }, isDeleting ? 50 : 100);
+      },
+      isDeleting ? 50 : 100
+    );
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, phraseIndex]);
 
@@ -57,20 +60,21 @@ const Register = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50/50 flex items-center justify-center px-4">
       <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 bg-white/80 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
-        
         {/* Left: Image Slider */}
         <div className="relative hidden md:flex items-center justify-center bg-blue-50">
-          <img 
-            src={images[slide]} 
-            alt="Forgot password illustration" 
+          <img
+            src={images[slide]}
+            alt="Forgot password illustration"
             className="w-3/4 h-3/4 object-contain transition-all duration-700 ease-in-out"
           />
           {/* Slider dots */}
           <div className="absolute bottom-6 flex gap-2">
             {images.map((_, i) => (
-              <div 
-                key={i} 
-                className={`w-3 h-3 rounded-full ${i === slide ? 'bg-blue-600' : 'bg-gray-300'}`}
+              <div
+                key={i}
+                className={`w-3 h-3 rounded-full ${
+                  i === slide ? "bg-blue-600" : "bg-gray-300"
+                }`}
               />
             ))}
           </div>
@@ -91,10 +95,9 @@ const Register = () => {
               </span>
             </h1>
             <p className="text-gray-600 mt-2">
-              {emailSent 
+              {emailSent
                 ? "Check your email for password reset instructions"
-                : "Enter your email address and we'll send you a link to reset your password"
-              }
+                : "Enter your email address and we'll send you a link to reset your password"}
             </p>
           </div>
 
@@ -110,7 +113,7 @@ const Register = () => {
                 />
               </div>
 
-              <button 
+              <button
                 onClick={handleSubmit}
                 className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-4 rounded-xl font-semibold hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
               >
@@ -119,8 +122,8 @@ const Register = () => {
               </button>
 
               <div className="text-center">
-                <Link 
-                  to="/login" 
+                <Link
+                  to="/login"
                   className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 font-medium"
                 >
                   <ArrowLeft className="w-4 h-4" />
@@ -133,15 +136,17 @@ const Register = () => {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Send className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Email Sent Successfully!</h3>
+              <h3 className="text-xl font-semibold text-gray-900">
+                Email Sent Successfully!
+              </h3>
               <p className="text-gray-600">
-                We've sent password reset instructions to your email address. 
+                We've sent password reset instructions to your email address.
                 Please check your inbox and follow the link.
               </p>
               <div className="bg-blue-50 border border-blue-100 rounded-lg p-3">
                 <p className="text-sm text-blue-700">
                   Didn’t get it?{" "}
-                  <button 
+                  <button
                     onClick={() => setEmailSent(false)}
                     className="ml-1 text-blue-600 hover:underline"
                   >

@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { FaGraduationCap } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa6";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "swiper/css";
 import "swiper/css/navigation";
 import countries from "../../data/home/studyabord";
@@ -88,17 +87,7 @@ export default function StudyAbroadSection() {
                     ))}
                 </Swiper>
 
-                {/* Custom Navigation Buttons */}
-                <div className="custom-prev absolute left-[-20px] top-1/2 transform -translate-y-1/2 
-                        bg-white shadow-md rounded-full w-12 h-12 flex items-center 
-                        justify-center cursor-pointer z-10">
-                    <GoArrowLeft size={24} />
-                </div>
-                <div className="custom-next absolute right-[-20px] top-1/2 transform -translate-y-1/2 
-                        bg-white shadow-md rounded-full w-12 h-12 flex items-center 
-                        justify-center cursor-pointer z-10">
-                    <GoArrowRight size={24} />
-                </div>
+
             </div>
         </>
     );

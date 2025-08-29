@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [currentText, setCurrentText] = useState('');
+  const [currentText, setCurrentText] = useState("");
 
   // Typing effect
-  const phrases = ['Success', 'Dreams', 'Achievement', 'Excellence'];
+  const phrases = ["Success", "Dreams", "Achievement", "Excellence"];
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -22,7 +22,7 @@ const Login = () => {
   const images = [
     "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
     "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80"
+    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80",
   ];
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -35,25 +35,28 @@ const Login = () => {
 
   // Typing effect
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      const currentPhrase = phrases[phraseIndex];
-      if (!isDeleting) {
-        if (charIndex < currentPhrase.length) {
-          setCurrentText(currentPhrase.substring(0, charIndex + 1));
-          setCharIndex(charIndex + 1);
+    const timeout = setTimeout(
+      () => {
+        const currentPhrase = phrases[phraseIndex];
+        if (!isDeleting) {
+          if (charIndex < currentPhrase.length) {
+            setCurrentText(currentPhrase.substring(0, charIndex + 1));
+            setCharIndex(charIndex + 1);
+          } else {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
         } else {
-          setTimeout(() => setIsDeleting(true), 2000);
+          if (charIndex > 0) {
+            setCurrentText(currentPhrase.substring(0, charIndex - 1));
+            setCharIndex(charIndex - 1);
+          } else {
+            setIsDeleting(false);
+            setPhraseIndex((phraseIndex + 1) % phrases.length);
+          }
         }
-      } else {
-        if (charIndex > 0) {
-          setCurrentText(currentPhrase.substring(0, charIndex - 1));
-          setCharIndex(charIndex - 1);
-        } else {
-          setIsDeleting(false);
-          setPhraseIndex((phraseIndex + 1) % phrases.length);
-        }
-      }
-    }, isDeleting ? 50 : 100);
+      },
+      isDeleting ? 50 : 100
+    );
 
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, phraseIndex]);
@@ -90,7 +93,6 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50/50 px-4">
       <div className="w-full max-w-5xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
-        
         {/* Left - Slider */}
         <div className="relative w-full lg:w-1/2 h-64 lg:h-auto">
           {images.map((img, index) => (
@@ -131,7 +133,8 @@ const Login = () => {
               </span>
             </h1>
             <p className="text-gray-600 text-base md:text-lg">
-              Access your personalized learning dashboard and continue your journey
+              Access your personalized learning dashboard and continue your
+              journey
             </p>
           </section>
 
@@ -148,10 +151,14 @@ const Login = () => {
                   value={email}
                   onChange={(e) => handleEmailChange(e.target.value)}
                   placeholder="Enter your email"
-                  className={`w-full pl-12 pr-4 py-3 bg-gray-50/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 hover:bg-white/80 ${emailError ? "border-red-500" : "border-gray-200"}`}
+                  className={`w-full pl-12 pr-4 py-3 bg-gray-50/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 hover:bg-white/80 ${
+                    emailError ? "border-red-500" : "border-gray-200"
+                  }`}
                 />
               </div>
-              {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
+              {emailError && (
+                <p className="text-red-500 text-sm">{emailError}</p>
+              )}
 
               {/* Password */}
               <div className="relative group">
@@ -161,26 +168,39 @@ const Login = () => {
                   value={password}
                   onChange={(e) => handlePasswordChange(e.target.value)}
                   placeholder="Enter your password"
-                  className={`w-full pl-12 pr-12 py-3 bg-gray-50/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 hover:bg-white/80 ${passwordError ? "border-red-500" : "border-gray-200"}`}
+                  className={`w-full pl-12 pr-12 py-3 bg-gray-50/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 hover:bg-white/80 ${
+                    passwordError ? "border-red-500" : "border-gray-200"
+                  }`}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-500 transition-colors duration-200"
                 >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
                 </button>
               </div>
-              {passwordError && <p className="text-red-500 text-sm">{passwordError}</p>}
+              {passwordError && (
+                <p className="text-red-500 text-sm">{passwordError}</p>
+              )}
 
               {/* Remember + Forgot */}
               <div className="flex items-center justify-between">
                 <label className="flex items-center space-x-2 cursor-pointer group">
-                  <input type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
-                  <span className="text-sm text-gray-600 group-hover:text-gray-800">Remember me</span>
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <span className="text-sm text-gray-600 group-hover:text-gray-800">
+                    Remember me
+                  </span>
                 </label>
-                <Link 
-                  to="/Forget-Password" 
+                <Link
+                  to="/Forget-Password"
                   className="text-sm text-blue-600 hover:text-blue-700 font-medium hover:underline"
                 >
                   Forgot Password?
@@ -192,9 +212,11 @@ const Login = () => {
                 type="submit"
                 disabled={!isFormValid}
                 className={`w-full py-3 px-4 rounded-xl font-semibold flex items-center justify-center gap-2 group transition-all duration-300 
-                  ${isFormValid
-                    ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white transform hover:scale-[1.02] hover:shadow-lg"
-                    : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
+                  ${
+                    isFormValid
+                      ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white transform hover:scale-[1.02] hover:shadow-lg"
+                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  }`}
               >
                 Log In
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
@@ -203,8 +225,8 @@ const Login = () => {
               {/* Sign Up */}
               <div className="text-center">
                 <span className="text-gray-600">Don't have an account? </span>
-                <Link 
-                  to="/register" 
+                <Link
+                  to="/register"
                   className="text-blue-600 hover:text-blue-700 font-semibold hover:underline"
                 >
                   Sign up

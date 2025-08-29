@@ -686,7 +686,7 @@ const CollegeFinder = () => {
         <div className="min-h-screen bg-gray-50">
             <header className="bg-gradient-to-r from-blue-900 to-blue-400 text-white py-12">
                 <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">College Finder</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Cource Finder</h1>
                     <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
                         Discover your perfect university match from thousands of colleges worldwide
                     </p>
