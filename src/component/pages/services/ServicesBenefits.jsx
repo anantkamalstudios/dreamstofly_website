@@ -53,7 +53,7 @@ const ServicesBenefits = () => {
                       </div>
                       <h3
                         className="text-base font-semibold mb-1"
-                        style={{ color: "var(--primary-color)" }}
+                        style={{ color: "var(--hover-color)" }}
                       >
                         {title}
                       </h3>
@@ -71,7 +71,7 @@ const ServicesBenefits = () => {
             <div className="relative text-center lg:text-left px-4 sm:px-8 md:px-12 lg:px-0 lg:ml-10 lg:left-20 lg:bottom-32 mb-8 lg:mb-0">
               <h2
                 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight"
-                style={{ color: "var(--primary-color)" }}
+                style={{ color: "var(--hover-color)" }}
               >
                 Why choose Dreams To Fly
               </h2>
@@ -93,7 +93,7 @@ const ServicesBenefits = () => {
                     </div>
                     <h3
                       className="text-lg font-semibold mb-2"
-                      style={{ color: "var(--primary-color)" }}
+                      style={{ color: "var(--hover-color)" }}
                     >
                       {title}
                     </h3>

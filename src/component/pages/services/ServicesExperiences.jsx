@@ -27,7 +27,7 @@ const ServicesExperiences = () => {
               </div>
               <div
                 className="text-xl md:text-2xl font-extrabold"
-                style={{ color: "var(--primary-color)" }}
+                style={{ color: "var(--hover-color)" }}
               >
                 600%
               </div>
@@ -76,7 +76,7 @@ const ServicesExperiences = () => {
               <div>
                 <div
                   className="text-lg sm:text-xl font-bold"
-                  style={{ color: "var(--primary-color)" }}
+                  style={{ color: "var(--hover-color)" }}
                 >
                   5000+
                 </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import services from "../../data/services/ServicesData";
+import { services } from "../../data/services/ServicesData";
 
 const ServicesCategories = () => {
   const [activeCategory, setActiveCategory] = useState("all");

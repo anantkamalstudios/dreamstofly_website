@@ -80,7 +80,7 @@ const Card = ({ item }) => {
         <div className="mt-4">
           <div
             className="font-semibold"
-            style={{ color: "var(--primary-color)" }}
+            style={{ color: "var(--hover-color)" }}
           >
             {item.name}
           </div>
@@ -99,7 +99,7 @@ export default function Testimonials() {
         <div className="text-center mb-12">
           <h2
             className="text-3xl md:text-4xl font-extrabold tracking-tight"
-            style={{ color: "var(--primary-color)" }}
+            style={{ color: "var(--hover-color)" }}
           >
             What Clients Say
           </h2>

@@ -7,7 +7,7 @@ const ServicesHero = () => {
       <div className="w-full lg:w-1/2 bg-white px-5 sm:px-8 lg:px-16 py-10 sm:py-14 lg:py-20 relative z-10 flex items-center justify-center">
         <div className="max-w-xl w-full flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
           {/* Badge */}
-          <div className="inline-block bg-orange-100 text-orange-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wide mb-5">
+          <div className="inline-block bg-yellow-500 text-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wide mb-5">
             Best Study Abroad Services
           </div>
 
@@ -45,15 +45,21 @@ const ServicesHero = () => {
             <button className="bg-blue-600 text-white px-7 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto">
               Find out more
             </button>
-            <button className="bg-white text-blue-600 px-7 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 w-full sm:w-auto">
-              Watch now
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                  clipRule="evenodd"
-                />
-              </svg>
+            <button className="bg-white text-blue-600 px-7 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 flex flex-col sm:flex-row items-center justify-center gap-2 w-full sm:w-auto text-center">
+              <span className="w-full flex justify-center sm:justify-start items-center">
+                Watch now
+                <svg
+                  className="w-5 h-5 ml-2 sm:ml-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
             </button>
           </div>
 
@@ -70,7 +76,7 @@ const ServicesHero = () => {
                   <div className="text-xs text-gray-600">Countries</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-green-600">98%</div>
+                  <div className="text-xl font-bold text-violet-600">98%</div>
                   <div className="text-xs text-gray-600">Success</div>
                 </div>
               </div>
@@ -79,9 +85,7 @@ const ServicesHero = () => {
         </div>
       </div>
 
-      {/* Right Section - Visual Elements with big image */}
       <div className="w-full lg:w-1/2 relative overflow-hidden flex items-center justify-center">
-        {/* Large image centered vertically */}
         <div className="relative w-full h-full flex items-center justify-center px-4 lg:px-8">
           <img
             src="/images/services/services_hero.png"
@@ -96,7 +100,6 @@ const ServicesHero = () => {
           <div className="hidden sm:block absolute -bottom-10 right-10 w-40 h-40 lg:w-52 lg:h-52 bg-orange-400/20 rounded-full blur-3xl"></div>
         </div>
 
-        {/* Decorative bouncing airplanes (desktop only) */}
         <div className="absolute top-12 left-6 hidden lg:block animate-bounce">
           <svg
             className="w-12 h-12 text-blue-500"
@@ -133,7 +136,7 @@ const ServicesHero = () => {
               <div className="text-sm text-gray-600">Countries</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-600">98%</div>
+              <div className="text-3xl font-bold text-violet-600">98%</div>
               <div className="text-sm text-gray-600">Success Rate</div>
             </div>
           </div>

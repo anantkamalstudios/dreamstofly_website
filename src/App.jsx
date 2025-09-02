@@ -28,6 +28,8 @@ import ToeflIBT from "./component/pages/examprep/Toefl_IBT";
 import DuolingoTest from "./component/pages/examprep/DuolingoTest";
 import GREPrep from "./component/pages/examprep/GREPrep";
 import Services from "./component/pages/services/Services";
+import ServiceDetail from "./component/pages/services/[slug]/ServiceDetail";
+import ScrollToTop from "./component/ScrollToTop";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -36,40 +38,43 @@ export default function App() {
   return (
     <>
       <Router>
-        <MainLayout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Loginregister" element={<MainModal />} />
-            <Route path="/register" element={<LoginRegisterPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/Forget-Password" element={<Register />} />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/blog/:id" element={<BlogDetails />} />
-            <Route path="/cource-finder" element={<CourceFinder />} />
-            <Route path="/sop-maker" element={<SopMaker />} />
-            <Route path="/connect" element={<Connect />} />
-            <Route
-              path="/post-admit-services"
-              element={<PostAdmitServices />}
-            />
-            <Route path="/exam-prep" element={<ExamPrep />} />
-            <Route path="/free-cources" element={<FreeCourses />} />
-            <Route path="/travel" element={<Travel />} />
-            <Route path="/services" element={<Services />} />
+        <ScrollToTop>
+          <MainLayout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Loginregister" element={<MainModal />} />
+              <Route path="/register" element={<LoginRegisterPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/Forget-Password" element={<Register />} />
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/blog/:id" element={<BlogDetails />} />
+              <Route path="/cource-finder" element={<CourceFinder />} />
+              <Route path="/sop-maker" element={<SopMaker />} />
+              <Route path="/connect" element={<Connect />} />
+              <Route
+                path="/post-admit-services"
+                element={<PostAdmitServices />}
+              />
+              <Route path="/exam-prep" element={<ExamPrep />} />
+              <Route path="/free-cources" element={<FreeCourses />} />
+              <Route path="/travel" element={<Travel />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services/:slug" element={<ServiceDetail />} />
 
-            <Route path="/about" element={<Aboutus />} />
-            <Route path="/career" element={<CareerPage />} />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/advertising" element={<Advertise />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/IELTS" element={<IELTSPrep />} />
-            <Route path="/IELTS-ACEDEMIC" element={<IeltsAcademic />} />
-            <Route path="/PTEAcademic" element={<PTEAcademic />} />
-            <Route path="/ToeflIBT" element={<ToeflIBT />} />
-            <Route path="/DuolingoTest" element={<DuolingoTest />} />
-            <Route path="/GREPrep" element={<GREPrep />} />
-          </Routes>
-        </MainLayout>
+              <Route path="/about" element={<Aboutus />} />
+              <Route path="/career" element={<CareerPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/advertising" element={<Advertise />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/IELTS" element={<IELTSPrep />} />
+              <Route path="/IELTS-ACEDEMIC" element={<IeltsAcademic />} />
+              <Route path="/PTEAcademic" element={<PTEAcademic />} />
+              <Route path="/ToeflIBT" element={<ToeflIBT />} />
+              <Route path="/DuolingoTest" element={<DuolingoTest />} />
+              <Route path="/GREPrep" element={<GREPrep />} />
+            </Routes>
+          </MainLayout>
+        </ScrollToTop>
       </Router>
     </>
   );
