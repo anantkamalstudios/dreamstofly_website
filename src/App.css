@@ -146,3 +146,7 @@
     transform: scale(1) translateY(0) rotateY(0deg);
   }
 }
+
+.postadmit-subtitle p {
+  color: white;
+}

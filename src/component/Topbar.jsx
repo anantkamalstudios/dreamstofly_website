@@ -7,7 +7,7 @@ export default function Topbar() {
   const [isMobileCoursesOpen, setIsMobileCoursesOpen] = useState(false);
 
   const links = [
-    { name: "Home", href: "/" },
+    { name: "HOME", href: "/" },
     { name: "SOP MAKER", href: "/sop-maker" },
     { name: "CONNECT", href: "/connect" },
     { name: "POST ADMIT SERVICES", href: "/post-admit-services" },
@@ -15,7 +15,7 @@ export default function Topbar() {
     { name: "EXAM PREP", href: "/exam-prep" },
     { name: "FREE COURSES", href: "/free-cources" },
     { name: "TRAVEL", href: "/travel" },
-    { name: "Services", href: "/services" },
+    { name: "SERVICES", href: "/services" },
   ];
 
   const categories = [
@@ -38,9 +38,9 @@ export default function Topbar() {
           {/* Left section */}
           <div className="flex items-center space-x-2">
             {/* All Courses Dropdown (Desktop) */}
-            <div className="relative hidden md:block">
+            <div className="relative hidden lg:block">
               <button
-                className="flex items-center text-gray-700 hover:text-gray-300 px-3 py-2 text-sm font-medium"
+                className="flex items-center text-gray-700 hover:text-gray-300 px-3 py-2 sm:px-2 sm:text-sm font-medium"
                 onClick={() => setIsAllCoursesOpen(!isAllCoursesOpen)}
                 onMouseEnter={() => setIsAllCoursesOpen(true)}
                 onMouseLeave={() => setIsAllCoursesOpen(false)}
@@ -97,7 +97,7 @@ export default function Topbar() {
                 <Link
                   key={i}
                   to={link.href}
-                  className="text-gray-700 hover:text-blue-700 px-3 py-2 text-sm border-r border-gray-600"
+                  className="text-gray-700 hover:text-blue-700 px-1 lg:px-3 py-2 text-xs lg:text-sm border-r border-gray-600"
                 >
                   {link.name}
                 </Link>
@@ -108,7 +108,7 @@ export default function Topbar() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 text-gray-200 hover:text-white"
+                className="p-2 text-gray-900"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
