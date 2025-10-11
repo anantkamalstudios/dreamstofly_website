@@ -30,6 +30,8 @@ import GREPrep from "./component/pages/examprep/GREPrep";
 import Services from "./component/pages/services/Services";
 import ServiceDetail from "./component/pages/services/[slug]/ServiceDetail";
 import ScrollToTop from "./component/ScrollToTop";
+import SOPHomePage from "./component/pages/sopmaker/SOPHomePage";
+import LorMaker from "./component/pages/sopmaker/LorMaker";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -49,7 +51,9 @@ export default function App() {
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
               <Route path="/cource-finder" element={<CourceFinder />} />
-              <Route path="/sop-maker" element={<SopMaker />} />
+              <Route path="/sop-maker" element={<SOPHomePage />} />
+              <Route path="/sop-form" element={<SopMaker />} />
+              <Route path="/lor-form" element={<LorMaker />} />
               <Route path="/connect" element={<Connect />} />
               <Route
                 path="/post-admit-services"

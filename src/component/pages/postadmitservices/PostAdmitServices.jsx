@@ -372,7 +372,7 @@ const PostAdmitServices = () => {
           <img
             src={`${import.meta.env.VITE_IMAGE_URL}${ctaSection?.image}`}
             alt=""
-            className="w-[400px] h-[400px] object-contain rounded-lg"
+            className="w-[500px] h-[500px] object-contain rounded-lg"
           />
         </div>
         <div className="relative mx-auto text-center">

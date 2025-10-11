@@ -54,9 +54,7 @@ export default function TopStudyPlacesCarousel() {
             <SwiperSlide key={city.id}>
               <div className="bg-white border rounded-lg flex flex-col items-center py-6 hover:bg-gray-100 transition cursor-pointer">
                 <img
-                  src={`${import.meta.env.VITE_HOME_IMAGE_URL}/cms/${
-                    city.image
-                  }`}
+                  src={`${import.meta.env.VITE_HOME_IMAGE_URL}${city.image}`}
                   alt={city.title}
                   className="h-16 mb-4 object-contain"
                 />

@@ -47,7 +47,7 @@ const WhyChooseUs = () => {
                   <img
                     src={`${import.meta.env.VITE_HOME_IMAGE_URL}${card?.image}`}
                     alt={card.title}
-                    className="w-20 h-20 object-contain flex-shrink-0"
+                    className="w-24 h-24 object-contain flex-shrink-0"
                   />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">
