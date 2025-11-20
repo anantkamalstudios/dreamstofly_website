@@ -1005,6 +1005,7 @@ import {
   Users,
   CheckCircle,
 } from "lucide-react";
+import axios from "axios";
 
 const SopMaker = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -1102,6 +1103,32 @@ const SopMaker = () => {
     },
   ];
 
+  const handleNextButton = async () => {
+    const currentSectionKey = sections[currentStep].key;
+    const currentData = sopFormData[currentSectionKey];
+
+    // try {
+    //   // 🔹 Example unified API call
+    //   const res = await axios.post("https://your-api-url.com/api/sop-section", {
+    //     step: currentStep,
+    //     section: currentSectionKey,
+    //     data: currentData,
+    //   });
+
+    //   if (res.status === 200 || res.status === 201) {
+    //     console.log(`✅ ${currentSectionKey} saved successfully`);
+    //     // Move to next section after successful API call
+    //     if (currentStep < sections.length - 1) {
+    //       setCurrentStep(currentStep + 1);
+    //     }
+    //   } else {
+    //     alert("Something went wrong while saving data.");
+    //   }
+    // } catch (err) {
+    //   console.error("Error saving section:", err);
+    // }
+  };
+
   const progress = ((currentStep + 1) / sections.length) * 100;
   const currentSection = sections[currentStep];
   const Icon = currentSection.icon;
@@ -1117,6 +1144,7 @@ const SopMaker = () => {
   };
 
   const handleNext = () => {
+    handleNextButton();
     if (currentStep < sections.length - 1) setCurrentStep(currentStep + 1);
   };
 
@@ -1129,8 +1157,8 @@ const SopMaker = () => {
       {/* Header */}
       <div className="bg-[#003E79] text-white">
         <div className="max-w-7xl mx-auto px-6 py-10">
-          <h1 className="text-4xl font-bold mb-2">Letter of Recommendation</h1>
-          <h2 className="text-xl font-semibold mb-3">(LOR Maker)</h2>
+          <h1 className="text-4xl font-bold mb-2">Statement Of Purpose</h1>
+          <h2 className="text-xl font-semibold mb-3">(SOP Maker)</h2>
           <p className="text-blue-100">
             Generate authoritative recommendation letters in minutes with guided
             fields.

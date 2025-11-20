@@ -9,6 +9,8 @@ import ServiceHero from "./ServiceHero";
 import ServiceCTA from "./ServiceCTA";
 import ServiceInfo from "./ServiceInfo";
 import ServiceCountry from "./ServiceCountry";
+import OurCommitments from "../components/OurCommitments";
+import TrustedSection from "./TruestedSection";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
@@ -56,6 +58,9 @@ const ServiceDetail = () => {
           details={serviceDetails}
           formConfig={formConfig}
         />
+
+        <OurCommitments />
+        <TrustedSection />
 
         {/* Country Swiper */}
         <ServiceCountry />

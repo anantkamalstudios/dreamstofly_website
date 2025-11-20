@@ -7,7 +7,7 @@ const ServicesBenefits = () => {
     {
       id: 1,
       title: "Ultimate flexibility",
-      desc: "You're in control, with free cancellation and payment.",
+      desc: "You’re in control, with free cancellation and payment.",
       Icon: Ticket,
     },
     {
@@ -25,84 +25,93 @@ const ServicesBenefits = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-[#F3F7FB]">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left large image with overlay perks on lg */}
-          <div className="relative z-10">
+    // <section className=" py-20 bg-[#F3F7FB]">
+    //   <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    //     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    //       {/* Left Image */}
+    //       <div className="">
+    //         <div className="rounded-3xl overflow-hidden shadow-lg">
+    //           <img
+    //             src={CityImg}
+    //             alt="Why choose us"
+    //             className="w-full h-[520px] lg:h-[600px] object-cover"
+    //           />
+    //         </div>
+    //       </div>
+
+    //       {/* Right Content */}
+    //       <div className="relative flex flex-col">
+    //         <div className=" text-center lg:text-left mb-10 h-[40%]">
+    //           <h2 className="text-3xl md:text-4xl font-extrabold text-[#0F2454] mb-2">
+    //             Why choose Dreams To Fly
+    //           </h2>
+    //           <p className="text-gray-600 text-base md:text-lg">
+    //             Most viewed and all-time top-selling services
+    //           </p>
+    //         </div>
+
+    //         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1 absolute -left-20  -bottom-30">
+    //           {perks.map(({ id, title, desc, Icon }) => (
+    //             <div
+    //               key={id}
+    //               className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-[1.03]"
+    //             >
+    //               <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-orange-50 text-orange-500 mb-4">
+    //                 <Icon size={28} />
+    //               </div>
+    //               <h3 className="text-lg font-semibold text-[#0F2454] mb-2">
+    //                 {title}
+    //               </h3>
+    //               <p className="text-sm text-gray-600 leading-relaxed">
+    //                 {desc}
+    //               </p>
+    //             </div>
+    //           ))}
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
+    <section className="py-20 bg-[#F3F7FB]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-lg">
               <img
                 src={CityImg}
-                alt="Travel city view"
-                className="w-full h-[640px] lg:h-[680px] object-cover"
+                alt="Why choose us"
+                className="w-full h-[500px] object-cover"
               />
-            </div>
-            <div className="absolute -bottom-6 left-10 right-10 h-10 bg-black/10 blur-xl rounded-full"></div>
-
-            {/* Perk overlay (desktop) */}
-            <div className="hidden lg:block absolute bottom-40 left-1/2 -translate-x-1/4 z-20 lg:ml-96 w-[1200px]">
-              <div className="mx-auto max-w-[980px]">
-                <div className="grid grid-cols-3 gap-5">
-                  {perks.map(({ id, title, desc, Icon }, idx) => (
-                    <div
-                      key={id}
-                      className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out min-w-[260px] w-full max-w-[340px] mx-auto transform hover:scale-105"
-                    >
-                      <div className="inline-flex items-center justify-center w-20 h-20 rounded-xl bg-orange-50 text-orange-500 mb-4">
-                        <Icon size={32} />
-                      </div>
-                      <h3
-                        className="text-base font-semibold mb-1"
-                        style={{ color: "var(--hover-color)" }}
-                      >
-                        {title}
-                      </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        {desc}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
 
-          <div>
-            <div className="relative text-center lg:text-left px-4 sm:px-8 md:px-12 lg:px-0 lg:ml-10 lg:left-20 lg:bottom-32 mb-8 lg:mb-0">
-              <h2
-                className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight"
-                style={{ color: "var(--hover-color)" }}
-              >
+          <div className="lg:pt-0 pt-10">
+            <div className="mb-8">
+              <h2 className="text-4xl font-bold text-[#0F2454] mb-3">
                 Why choose Dreams To Fly
               </h2>
-              <p className="mt-3 text-gray-600 text-base sm:text-lg">
-                Most viewed and all‑time top‑selling services
+              <p className="text-gray-600 text-lg">
+                Most viewed and all-time top-selling services
               </p>
             </div>
 
-            {/* Mobile/Tablet perks (hidden on lg since shown over image) */}
-            <div className="lg:hidden">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {perks.map(({ id, title, desc, Icon }) => (
-                  <div
-                    key={id}
-                    className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 ease-in-out"
-                  >
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-orange-50 text-orange-500 mb-4">
-                      <Icon size={28} />
-                    </div>
-                    <h3
-                      className="text-lg font-semibold mb-2"
-                      style={{ color: "var(--hover-color)" }}
-                    >
-                      {title}
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {desc}
-                    </p>
+            <div className="absolute right-20 flex gap-6">
+              {perks.map(({ id, title, desc, Icon }) => (
+                <div
+                  key={id}
+                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 max-w-60"
+                >
+                  <div className="flex items-center justify-center w-14 h-14 rounded-lg bg-orange-50 text-orange-500 mb-4">
+                    <Icon size={28} />
                   </div>
-                ))}
-              </div>
+                  <h3 className="text-xl font-bold text-[#0F2454] mb-3">
+                    {title}
+                  </h3>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    {desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

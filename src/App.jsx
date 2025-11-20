@@ -7,7 +7,7 @@ import MainModal from "./component/Loginregister/MainModal";
 import LoginRegisterPage from "./component/Loginregister/LoginRegisterPage";
 import Login from "./component/Loginregister/Login";
 import Register from "./component/Loginregister/Register";
-import CourceFinder from "./component/pages/CourceFinder";
+import CourseFinder from "./component/pages/courseFinder/CourseFinder";
 import BlogDetails from "./component/pages/blogs/BlogDetails";
 import SopMaker from "./component/pages/sopmaker/SopMaker";
 import Connect from "./component/pages/connect/Connect";
@@ -32,6 +32,9 @@ import ServiceDetail from "./component/pages/services/[slug]/ServiceDetail";
 import ScrollToTop from "./component/ScrollToTop";
 import SOPHomePage from "./component/pages/sopmaker/SOPHomePage";
 import LorMaker from "./component/pages/sopmaker/LorMaker";
+import AccomodationMainPage from "./component/pages/accomodation/AccomodationMainPage";
+import CourseFinderDetailPage from "./component/pages/courseFinder/CourseFinderDetailPage";
+import UniversityDetailPage from "./component/pages/courseFinder/UniversityDetailPage";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -50,7 +53,15 @@ export default function App() {
               <Route path="/Forget-Password" element={<Register />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
-              <Route path="/cource-finder" element={<CourceFinder />} />
+              <Route path="/course-finder" element={<CourseFinder />} />
+              <Route
+                path="/course-detail"
+                element={<CourseFinderDetailPage />}
+              />
+              <Route
+                path="/university-detail"
+                element={<UniversityDetailPage />}
+              />
               <Route path="/sop-maker" element={<SOPHomePage />} />
               <Route path="/sop-form" element={<SopMaker />} />
               <Route path="/lor-form" element={<LorMaker />} />
@@ -76,6 +87,7 @@ export default function App() {
               <Route path="/ToeflIBT" element={<ToeflIBT />} />
               <Route path="/DuolingoTest" element={<DuolingoTest />} />
               <Route path="/GREPrep" element={<GREPrep />} />
+              <Route path="/accomodation" element={<AccomodationMainPage />} />
             </Routes>
           </MainLayout>
         </ScrollToTop>

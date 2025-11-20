@@ -14,7 +14,7 @@ export default function Topbar() {
     { name: "POST ADMIT SERVICES", href: "/post-admit-services" },
     { name: "BLOGS", href: "/blogs" },
     { name: "EXAM PREP", href: "/exam-prep" },
-    { name: "FREE COURSES", href: "/free-cources" },
+    { name: "FREE COURSES", href: `${import.meta.env.VITE_FREE_COURSES}` },
     { name: "TRAVEL", href: "/travel" },
     { name: "SERVICES", href: "/services" },
   ];
@@ -120,10 +120,11 @@ export default function Topbar() {
           {/* Right section - Course Finder */}
           <div className="ml-2">
             <Link
-              href="/cource-finder"
+              to="/course-finder"
               className="text-white bg-[#0073df] px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm hover:bg-blue-700 flex items-center font-medium whitespace-nowrap"
             >
               <span className="bg-yellow-500 text-black text-xs px-1.5 py-0.5 rounded mr-2 font-bold">
+                {" "}
                 NEW
               </span>
               <span className="hidden sm:inline">🔍 Course Finder</span>

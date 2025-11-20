@@ -30,6 +30,7 @@ export const services = [
     featured: true,
     price: "From £150/month",
     slug: "student-accommodation",
+    backgroundImage: "",
   },
   {
     id: 2,
@@ -80,6 +81,7 @@ export const services = [
     featured: true,
     price: "From £99",
     slug: "visa-assistance",
+    backgroundImage: "/images/Visa.png",
   },
   {
     id: 7,
