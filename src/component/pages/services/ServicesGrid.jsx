@@ -40,11 +40,11 @@ const ServicesGrid = () => {
                 onClick={() => handleCardClick(service)}
               >
                 {/* Fixed height icon container */}
-                <div className="h-20 mb-6 flex items-center justify-center">
+                <div className="w-40 flex items-center justify-center">
                   <img
                     src={service.img}
                     alt={service.title}
-                    className="h-20 w-20 object-contain"
+                    className="w-full object-cover"
                   />
                 </div>
 
