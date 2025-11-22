@@ -1,10 +1,54 @@
 import React, { useState } from "react";
 import { Send } from "lucide-react";
 
+// Country codes data - default to India (+91)
+const countryCodes = [
+  { code: "+91", country: "India", flag: "🇮🇳" },
+  { code: "+1", country: "USA/Canada", flag: "🇺🇸" },
+  { code: "+44", country: "UK", flag: "🇬🇧" },
+  { code: "+61", country: "Australia", flag: "🇦🇺" },
+  { code: "+49", country: "Germany", flag: "🇩🇪" },
+  { code: "+31", country: "Netherlands", flag: "🇳🇱" },
+  { code: "+353", country: "Ireland", flag: "🇮🇪" },
+  { code: "+64", country: "New Zealand", flag: "🇳🇿" },
+  { code: "+971", country: "UAE", flag: "🇦🇪" },
+  { code: "+65", country: "Singapore", flag: "🇸🇬" },
+  { code: "+86", country: "China", flag: "🇨🇳" },
+  { code: "+81", country: "Japan", flag: "🇯🇵" },
+  { code: "+82", country: "South Korea", flag: "🇰🇷" },
+  { code: "+33", country: "France", flag: "🇫🇷" },
+  { code: "+39", country: "Italy", flag: "🇮🇹" },
+  { code: "+34", country: "Spain", flag: "🇪🇸" },
+  { code: "+7", country: "Russia", flag: "🇷🇺" },
+  { code: "+27", country: "South Africa", flag: "🇿🇦" },
+  { code: "+55", country: "Brazil", flag: "🇧🇷" },
+  { code: "+52", country: "Mexico", flag: "🇲🇽" },
+];
+
 const ServiceEnquiryForm = ({ formConfig }) => {
-  const [formData, setFormData] = useState({});
+  // Initialize formData with default values for select fields
+  const [formData, setFormData] = useState(() => {
+    const initialData = {};
+    formConfig?.fields?.forEach((field) => {
+      if (field.defaultValue !== undefined) {
+        initialData[field.name] = field.defaultValue;
+      }
+    });
+    return initialData;
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showAllFields, setShowAllFields] = useState(false);
+
+  // Initialize country codes for phone fields - default to +91 (India)
+  const [countryCodesState, setCountryCodesState] = useState(() => {
+    const codes = {};
+    formConfig?.fields?.forEach((field) => {
+      if (field.type === "tel") {
+        codes[field.name] = "+91"; // Default to India
+      }
+    });
+    return codes;
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -14,24 +58,52 @@ const ServiceEnquiryForm = ({ formConfig }) => {
     }));
   };
 
+  const handleCountryCodeChange = (fieldName, code) => {
+    setCountryCodesState((prev) => ({
+      ...prev,
+      [fieldName]: code,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Combine country codes with phone numbers for submission
+    const submissionData = { ...formData };
+    formConfig?.fields?.forEach((field) => {
+      if (field.type === "tel" && formData[field.name]) {
+        const countryCode = countryCodesState[field.name] || "+91";
+        submissionData[field.name] = `${countryCode} ${formData[field.name]}`;
+      }
+    });
+
+    console.log("Form Data:", submissionData);
+
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     setIsSubmitting(false);
-    setFormData({});
+    // Reset form data but preserve default values
+    const resetData = {};
+    formConfig?.fields?.forEach((field) => {
+      if (field.defaultValue !== undefined) {
+        resetData[field.name] = field.defaultValue;
+      }
+    });
+    setFormData(resetData);
     alert("Form submitted successfully! We'll get back to you soon.");
   };
 
-  const shouldBeInSameRow = (fieldName) => {
-    const sameRowFields = ["fullName", "email", "phone", "nationality"];
-    return sameRowFields.includes(fieldName);
-  };
+  const getFieldColSpanClass = (field) => {
+    if (field.colSpan !== undefined) {
+      return field.colSpan === 1 ? "md:col-span-1 mb-1" : "md:col-span-2 mb-1";
+    }
 
-  const shouldBeFullWidth = (fieldType) => {
-    return fieldType === "textarea";
+    if (field.type === "textarea") {
+      return "md:col-span-2";
+    }
+
+    return "md:col-span-2";
   };
 
   const getInitialFields = () => {
@@ -53,15 +125,16 @@ const ServiceEnquiryForm = ({ formConfig }) => {
 
     switch (type) {
       case "select":
+        const selectValue = formData[name] || field.defaultValue || "";
         return (
           <select
             name={name}
-            value={formData[name] || ""}
+            value={selectValue}
             onChange={handleInputChange}
             required={required}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm"
           >
-            <option value="">Select {label}</option>
+            {!field.defaultValue && <option value="">Select {label}</option>}
             {options?.map((option, index) => (
               <option key={index} value={option} className="text-sm">
                 {option}
@@ -107,6 +180,33 @@ const ServiceEnquiryForm = ({ formConfig }) => {
           />
         );
 
+      case "tel":
+        return (
+          <div className="flex border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent transition-all duration-300">
+            <select
+              value={countryCodesState[name] || "+91"}
+              onChange={(e) => handleCountryCodeChange(name, e.target.value)}
+              className="px-3 py-3 border-r border-gray-300 bg-gray-50 text-sm font-medium text-gray-700 focus:outline-none cursor-pointer"
+              style={{ minWidth: "80px" }}
+            >
+              {countryCodes.map((country) => (
+                <option key={country.code} value={country.code}>
+                  {country.flag} {country.code}
+                </option>
+              ))}
+            </select>
+            <input
+              type="tel"
+              name={name}
+              value={formData[name] || ""}
+              onChange={handleInputChange}
+              required={required}
+              placeholder={placeholder || "Enter your phone number"}
+              className="flex-1 px-4 py-3 text-sm border-0 focus:outline-none focus:ring-0"
+            />
+          </div>
+        );
+
       default:
         return (
           <input
@@ -123,7 +223,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-6 lg:p-8 w-[480px] items-start mt-10">
+    <div className="bg-white rounded-2xl shadow-xl p-6 lg:p-8 w-[500px] items-start mt-10">
       <div className="text-center mb-2">
         {formConfig.icon && (
           <div className="mb-3">
@@ -144,23 +244,19 @@ const ServiceEnquiryForm = ({ formConfig }) => {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {getFieldsToDisplay().map((field, index) => (
-            <div
-              key={field.name}
-              className={`${
-                shouldBeInSameRow(field.name)
-                  ? "md:col-span-1"
-                  : "md:col-span-2"
-              }`}
-            >
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                {field.label}{" "}
-                {field.required && <span className="text-red-500">*</span>}
-              </label>
-              {renderField(field)}
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          {getFieldsToDisplay().map((field, index) => {
+            const colSpanClass = getFieldColSpanClass(field);
+            return (
+              <div key={field.name} className={colSpanClass}>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  {field.label}{" "}
+                  {field.required && <span className="text-red-500">*</span>}
+                </label>
+                {renderField(field)}
+              </div>
+            );
+          })}
         </div>
 
         {formConfig.fields.length > 6 && !showAllFields && (

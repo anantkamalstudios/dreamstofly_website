@@ -1,5 +1,7 @@
 export const serviceDetails = {
   "student-flight-ticket": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Student Flight Ticket Booking",
     subtitle: "Exclusive Student Discounts on International Flights",
     heroImage: "/images/services/flightticket.jpeg",
@@ -37,6 +39,9 @@ export const serviceDetails = {
   },
 
   "visa-assistance": {
+    titleColor:
+      "bg-gradient-to-b from-[#0C519B] to-[#041C35] bg-clip-text text-transparent",
+    subTitleColor: "#1D61E7",
     title: "Visa Application Assistance",
     subtitle: "Complete Visa Support with Expert Guidance",
     heroImage: "/images/services/visa.jpeg",
@@ -77,6 +82,8 @@ export const serviceDetails = {
   },
 
   "student-accommodation": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Student Accommodation Search",
     subtitle: "Find Your Perfect Home Away From Home",
     heroImage: "/images/services/accommodation.jpeg",
@@ -114,9 +121,53 @@ export const serviceDetails = {
     ],
   },
 
+  "student-financing": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
+    title: "Student Financing",
+    subtitle: "No need to hold back on your dream of education abroad",
+    heroImage: "/images/services/accommodation.jpeg",
+    price: "From $150/month",
+    duration: "1-2 weeks",
+    description:
+      "Discover comfortable and affordable student housing near your university. We verify all accommodations and ensure they meet student safety and comfort standards.",
+    features: [
+      "Verified student accommodations",
+      "Location-based search",
+      "Budget-friendly options",
+      "Safety and security checks",
+      "Roommate matching service",
+      "Furnished and unfurnished options",
+    ],
+    requirements: [
+      "University enrollment confirmation",
+      "Budget range specification",
+      "Preferred move-in date",
+      "Accommodation type preference",
+      "Special requirements (if any)",
+    ],
+    process: [
+      "Submit accommodation requirements",
+      "Receive personalized options",
+      "Schedule property viewings",
+      "Complete application process",
+      "Move-in assistance provided",
+    ],
+    benefits: [
+      "Save time on accommodation search",
+      "Verified and safe properties",
+      "Competitive rental rates",
+      "Ongoing support during tenancy",
+    ],
+  },
+
   "airport-pickup": {
-    title: "Airport Pickup Service",
-    subtitle: "Reliable Airport Transfer to Your Accommodation",
+    titleColor: "#fff",
+    subTitleColor: "#fff",
+    title: "",
+    subtitle: "",
+    // title: "Airport Pickup Service",
+    // subtitle: "Reliable Airport Transfer to Your Accommodation",
     heroImage: "/images/services/airportpickup.jpeg",
     price: "From $45",
     duration: "Same day service",
@@ -153,6 +204,8 @@ export const serviceDetails = {
   },
 
   "bank-account-setup": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Bank Account Setup Assistance",
     subtitle: "Get Help Opening Your Local Bank Account",
     heroImage: "/images/services/bankaccount.jpeg",
@@ -192,6 +245,8 @@ export const serviceDetails = {
   },
 
   "health-insurance": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Health Insurance for Students",
     subtitle: "Comprehensive Health Coverage Abroad",
     heroImage: "/images/services/healthinsurance.jpeg",
@@ -230,6 +285,8 @@ export const serviceDetails = {
   },
 
   "sop-maker": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Statement of Purpose Writing Service",
     subtitle: "Professional SOP Writing and Editing",
     heroImage: "/images/services/sopmaker.jpeg",
@@ -269,6 +326,8 @@ export const serviceDetails = {
   },
 
   "test-preparation": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Test Preparation Services",
     subtitle: "Comprehensive Preparation for IELTS, TOEFL, GRE, and More",
     heroImage: "/images/services/testpreparation.jpeg",
@@ -308,6 +367,8 @@ export const serviceDetails = {
   },
 
   "study-abroad-counseling": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Study Abroad Counseling",
     subtitle: "Personalized Guidance for Your Study Abroad Journey",
     heroImage: "/images/services/smoothflight/counseller.jpeg",
@@ -347,6 +408,8 @@ export const serviceDetails = {
   },
 
   "job-search": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Job Search",
     subtitle: "Explore from over 10m jobs across different industry verticals",
     heroImage: "/images/services/jobsearch.png",
@@ -384,11 +447,97 @@ export const serviceDetails = {
       "Comprehensive support",
     ],
   },
+
+  "money-transfer": {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
+    title: "International Money Transfer",
+    subtitle: "Transfer funds for tuition & accommodation with utter ease",
+    heroImage: "/images/services/jobsearch.png",
+    price: "From $120",
+    duration: "Ongoing support",
+    description:
+      "Navigate your study abroad journey with confidence through our personalized counseling services. From university selection to application strategies, we guide you every step of the way.",
+    features: [
+      "University selection guidance",
+      "Application strategy planning",
+      "Document preparation support",
+      "Interview preparation",
+      "Visa application assistance",
+      "Pre-departure orientation",
+    ],
+    requirements: [
+      "Academic background details",
+      "Career goals and interests",
+      "Budget and timeline preferences",
+      "Target country preferences",
+      "Specific program interests",
+    ],
+    process: [
+      "Initial consultation",
+      "Profile assessment",
+      "University shortlisting",
+      "Application planning",
+      "Ongoing support and guidance",
+      "Post-admission assistance",
+    ],
+    benefits: [
+      "Expert guidance throughout",
+      "Increased admission chances",
+      "Time and cost savings",
+      "Comprehensive support",
+    ],
+  },
+
+  "hungry-hub": {
+    titleColor: "#0A1A2F",
+    subTitleColor: "#1C2A3A",
+    title: "Restaurant discounts",
+    subtitle: "Explore from over 10m jobs across different industry verticals",
+    heroImage: "/images/services/default-service.jpeg",
+    price: "From $120",
+    duration: "Ongoing support",
+    description:
+      "Navigate your study abroad journey with confidence through our personalized counseling services. From university selection to application strategies, we guide you every step of the way.",
+    features: [
+      "University selection guidance",
+      "Application strategy planning",
+      "Document preparation support",
+      "Interview preparation",
+      "Visa application assistance",
+      "Pre-departure orientation",
+    ],
+    requirements: [
+      "Academic background details",
+      "Career goals and interests",
+      "Budget and timeline preferences",
+      "Target country preferences",
+      "Specific program interests",
+    ],
+    process: [
+      "Initial consultation",
+      "Profile assessment",
+      "University shortlisting",
+      "Application planning",
+      "Ongoing support and guidance",
+      "Post-admission assistance",
+    ],
+    benefits: [
+      "Expert guidance throughout",
+      "Increased admission chances",
+      "Time and cost savings",
+      "Comprehensive support",
+    ],
+  },
 };
 
 export const defaultServiceDetails = {
-  title: "Service Details",
-  subtitle: "Get in touch about our services",
+  titleColor: "#fff",
+  subTitleColor: "#fff",
+  title: " ",
+  subtitle: " ",
+  // title: "Service Details",
+  // subtitle: "Get in touch about our services",
   heroImage: "/images/services/default-service.jpeg",
   price: "Contact for pricing",
   duration: "Varies by service",

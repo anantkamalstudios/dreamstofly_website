@@ -83,7 +83,7 @@ export const services = [
     featured: true,
     price: "From £99",
     slug: "visa-assistance",
-    backgroundImage: "/images/Visa.png",
+    backgroundImage: "/images/services/visa-assistance.jpg",
   },
   {
     id: 7,
@@ -94,7 +94,7 @@ export const services = [
     featured: false,
     price: "From £100",
     slug: "student-financing",
-    backgroundImage: "/images/financing.png",
+    backgroundImage: "/images/services/finance.jpg",
   },
   // {
   //   id: 8,

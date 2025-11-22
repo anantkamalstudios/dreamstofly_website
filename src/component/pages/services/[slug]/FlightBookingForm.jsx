@@ -392,7 +392,7 @@ const FlightBookingForm = ({ showModal, setShowModal }) => {
                       value={bookingFormData.phoneCode}
                       onChange={handleBookingInputChange}
                       className="px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all appearance-none bg-white"
-                      style={{ width: "120px" }}
+                      style={{ width: "70px" }}
                     >
                       {countryCodes.map((country) => (
                         <option key={country.code} value={country.code}>

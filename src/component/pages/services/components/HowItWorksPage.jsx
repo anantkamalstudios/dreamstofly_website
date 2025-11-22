@@ -3,11 +3,11 @@ import { FileText, CreditCard, Upload, MapPin } from "lucide-react";
 
 const HowItWorksPage = ({ steps }) => {
   return (
-    <div className="w-full bg-white py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="w-full bg-white py-16">
+      <div className="max-w-7xl mx-auto bg-[#fcfcfc] p-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-medium text-gray-900 mb-4">
             How it works
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
@@ -17,7 +17,7 @@ const HowItWorksPage = ({ steps }) => {
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-5">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-start">
               {/* Icon with background */}

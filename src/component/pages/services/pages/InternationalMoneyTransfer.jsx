@@ -19,6 +19,21 @@ const InternationalMoneyTransfer = () => {
     );
   }
 
+  const stats = [
+    {
+      number: "12K+",
+      label: "Succes Journey",
+    },
+    {
+      number: "16+",
+      label: "Awards Winning",
+    },
+    {
+      number: "20+",
+      label: "Years Of Experience",
+    },
+  ];
+
   if (!service || !serviceDetails) return null;
 
   const steps = [
@@ -59,7 +74,7 @@ const InternationalMoneyTransfer = () => {
       <ServiceCountry countryData={countryData} />
       <HowItWorksPage steps={steps} />
       <FAQSection />
-      <TrustedAndLoved />
+      <TrustedAndLoved stats={stats} />
       <Testimonials />
     </div>
   );

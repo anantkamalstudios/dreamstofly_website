@@ -3,12 +3,38 @@ import { Star } from "lucide-react";
 const ServiceHeroHeader = ({ service, details }) => {
   if (!service || !details) return null;
 
+  const getTitleStyle = () => {
+    const titleColor = details.titleColor || "#fff";
+    const baseClasses = "text-4xl lg:text-5xl font-bold leading-tight";
+
+    if (
+      titleColor.includes("bg-") ||
+      (titleColor.includes("text-") && titleColor.includes("bg-clip"))
+    ) {
+      return { className: `${baseClasses} ${titleColor}` };
+    }
+
+    return {
+      className: baseClasses,
+      style: { color: titleColor },
+    };
+  };
+
+  const getSubtitleStyle = () => {
+    const subTitleColor = details.subTitleColor || "#fff";
+    return { style: { color: subTitleColor } };
+  };
+
+  const titleStyle = getTitleStyle();
+  const subtitleStyle = getSubtitleStyle();
+
   return (
     <section
       className="relative"
       style={{
         backgroundImage: `url(${service.backgroundImage})`,
         backgroundRepeat: "no-repeat",
+        height: "65vh",
         backgroundSize: "cover",
       }}
     >
@@ -20,11 +46,12 @@ const ServiceHeroHeader = ({ service, details }) => {
               {service.category}
             </div> */}
 
-            <h1 className="text-3xl lg:text-5xl font-bold text-white leading-tight">
-              {details.title}
-            </h1>
+            <h1 {...titleStyle}>{details.title}</h1>
 
-            <p className="text-xl lg:text-2xl text-white leading-relaxed">
+            <p
+              className="text-xl lg:text-2xl leading-relaxed"
+              {...subtitleStyle}
+            >
               {details.subtitle}
             </p>
 

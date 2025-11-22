@@ -1,3 +1,15 @@
+/**
+ * Service Forms Configuration
+ *
+ * Field Layout Control:
+ * - Use `colSpan: 1` to make a field half-width (2 fields per row)
+ * - Use `colSpan: 2` or omit it to make a field full-width (1 field per row)
+ * - Textarea fields are automatically full-width regardless of colSpan
+ *
+ * Examples:
+ * - firstName and lastName with colSpan: 1 each → will appear side by side
+ * - fullName without colSpan → will appear full width on its own row
+ */
 export const serviceForms = {
   "student-flight-ticket": {
     title: "Book Flight Tickets",
@@ -9,12 +21,14 @@ export const serviceForms = {
         label: "First Name",
         type: "text",
         required: true,
+        colSpan: 1, // Half width - will be in same row as lastName
       },
       {
         name: "lastName",
         label: "Last Name",
         type: "text",
         required: true,
+        colSpan: 1, // Half width - will be in same row as firstName
       },
       {
         name: "email",
@@ -22,6 +36,7 @@ export const serviceForms = {
         type: "email",
         required: true,
         placeholder: "Enter your email",
+        colSpan: 1, // Half width
       },
       {
         name: "phone",
@@ -29,12 +44,13 @@ export const serviceForms = {
         type: "tel",
         required: true,
         placeholder: "Enter your phone number",
+        colSpan: 1, // Half width
       },
     ],
   },
 
   "visa-assistance": {
-    title: "Visa Application Assistance",
+    title: "Visa Enquiry",
     icon: "/images/formicon/suit.png",
     description: "Complete visa application support with expert guidance",
     fields: [
@@ -43,18 +59,21 @@ export const serviceForms = {
         label: "First Name",
         type: "text",
         required: true,
+        colSpan: 1, // Half width - same row as lastName
       },
       {
         name: "lastName",
         label: "Last Name",
         type: "text",
         required: true,
+        colSpan: 1, // Half width - same row as firstName
       },
       {
         name: "nationality",
         label: "Nationality",
         type: "text",
         required: true,
+        colSpan: 1, // Half width
       },
       {
         name: "destinationCountry",
@@ -71,6 +90,7 @@ export const serviceForms = {
           "New Zealand",
         ],
         required: true,
+        colSpan: 1,
       },
       {
         name: "email",
@@ -78,6 +98,7 @@ export const serviceForms = {
         type: "email",
         required: true,
         placeholder: "Enter your email",
+        colSpan: 2, // Half width
       },
       {
         name: "phone",
@@ -85,6 +106,7 @@ export const serviceForms = {
         type: "tel",
         required: true,
         placeholder: "Enter your phone number",
+        colSpan: 2, // Half width
       },
     ],
   },
@@ -100,6 +122,7 @@ export const serviceForms = {
         type: "text",
         required: true,
         placeholder: "Enter your full name",
+        // colSpan defaults to 2 (full width) - each field on its own row
       },
       {
         name: "email",
@@ -227,72 +250,41 @@ export const serviceForms = {
     description: "Reliable airport transfer to your accommodation",
     fields: [
       {
-        name: "fullName",
-        label: "Full Name",
-        type: "text",
-        required: true,
-        placeholder: "Enter your full name",
-      },
-      {
-        name: "email",
-        label: "Email Address",
-        type: "email",
-        required: true,
-        placeholder: "Enter your email",
-      },
-      {
-        name: "phone",
-        label: "Phone Number",
-        type: "tel",
-        required: true,
-        placeholder: "Enter your phone number",
-      },
-      {
-        name: "flightNumber",
-        label: "Flight Number",
-        type: "text",
-        required: true,
-        placeholder: "Enter your flight number",
-      },
-      {
-        name: "airline",
-        label: "Airline",
-        type: "text",
-        required: true,
-        placeholder: "Enter airline name",
-      },
-      {
-        name: "arrivalDate",
-        label: "Arrival Date",
-        type: "date",
-        required: true,
-      },
-      {
-        name: "arrivalTime",
-        label: "Arrival Time",
-        type: "time",
-        required: true,
-      },
-      {
-        name: "destination",
-        label: "Destination Address",
-        type: "textarea",
-        required: true,
-        placeholder: "Full address where you want to be dropped off",
-      },
-      {
-        name: "passengers",
-        label: "Number of Passengers",
+        name: "country",
+        label: "Country",
         type: "select",
-        options: ["1", "2", "3", "4", "5+"],
+        options: [
+          "United Kingdom",
+          "Canada",
+          "USA",
+          "Australia",
+          "Germany",
+          "Netherlands",
+          "Ireland",
+          "New Zealand",
+          "France",
+          "Italy",
+          "Spain",
+          "Other",
+        ],
         required: true,
+        defaultValue: "United Kingdom",
       },
       {
-        name: "luggage",
-        label: "Luggage Details",
-        type: "textarea",
-        required: false,
-        placeholder: "Number of bags, special items, etc.",
+        name: "provider",
+        label: "Select Provider",
+        type: "select",
+        options: [
+          "Uber",
+          "Lyft",
+          "Local Taxi Service",
+          "Airport Shuttle",
+          "Private Transfer",
+          "Bolt",
+          "Free Now",
+          "Other",
+        ],
+        required: true,
       },
     ],
   },
@@ -397,23 +389,27 @@ export const serviceForms = {
         label: "First Name",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "lastName",
         label: "Last Name",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "adults",
         label: "Adults",
         type: "number",
+        colSpan: 1,
         required: true,
       },
       {
         name: "children",
         label: "Children",
         type: "number",
+        colSpan: 1,
         required: true,
       },
       {
@@ -421,18 +417,21 @@ export const serviceForms = {
         label: "Start Date",
         type: "date",
         required: true,
+        colSpan: 1,
       },
       {
         name: "endDate",
         label: "End Date",
         type: "date",
         required: true,
+        colSpan: 1,
       },
       {
         name: "email",
         label: "Email Address",
         type: "email",
         required: true,
+        colSpan: 2,
       },
       {
         name: "phone",
@@ -440,6 +439,7 @@ export const serviceForms = {
         type: "tel",
         required: true,
         placeholder: "Enter your phone number",
+        colSpan: 2,
       },
     ],
   },
@@ -877,83 +877,26 @@ export const serviceForms = {
     description: "Safe & Secure extra storage space at convenient locations",
     fields: [
       {
-        name: "fullName",
-        label: "Full Name",
-        type: "text",
-        required: true,
-        placeholder: "Enter your full name",
-      },
-      {
-        name: "email",
-        label: "Email Address",
-        type: "email",
-        required: true,
-        placeholder: "Enter your email",
-      },
-      {
-        name: "phone",
-        label: "Phone Number",
-        type: "tel",
-        required: true,
-        placeholder: "Enter your phone number",
-      },
-      {
-        name: "storageLocation",
-        label: "Preferred Storage Location",
-        type: "text",
-        required: true,
-        placeholder: "City/Area where you need storage",
-      },
-      {
-        name: "storageDuration",
-        label: "Storage Duration",
+        name: "country",
+        label: "Country",
         type: "select",
         options: [
-          "1-7 days",
-          "1-2 weeks",
-          "2-4 weeks",
-          "1-3 months",
-          "3+ months",
+          "UK",
+          "United Kingdom",
+          "Canada",
+          "USA",
+          "Australia",
+          "Germany",
+          "Netherlands",
+          "Ireland",
+          "New Zealand",
+          "France",
+          "Italy",
+          "Spain",
+          "Other",
         ],
         required: true,
-      },
-      {
-        name: "luggageCount",
-        label: "Number of Luggage Items",
-        type: "select",
-        options: ["1", "2", "3", "4", "5+"],
-        required: true,
-      },
-      {
-        name: "luggageSize",
-        label: "Luggage Size",
-        type: "select",
-        options: [
-          "Small (Hand luggage)",
-          "Medium (Check-in)",
-          "Large (Oversized)",
-          "Mixed sizes",
-        ],
-        required: true,
-      },
-      {
-        name: "startDate",
-        label: "Storage Start Date",
-        type: "date",
-        required: true,
-      },
-      {
-        name: "endDate",
-        label: "Expected Pickup Date",
-        type: "date",
-        required: true,
-      },
-      {
-        name: "specialRequirements",
-        label: "Special Requirements",
-        type: "textarea",
-        required: false,
-        placeholder: "Fragile items, temperature control, etc.",
+        defaultValue: "UK",
       },
     ],
   },
@@ -1166,37 +1109,20 @@ export const serviceForms = {
     description: "",
     fields: [
       {
-        name: "firstName",
-        label: "First Name",
-        type: "text",
+        name: "recipientAmount",
+        label: "Recipient gets",
+        type: "currency-input",
         required: true,
+        currencyOptions: ["CAD", "USD", "EUR", "INR", "GBP", "AUD"],
+        defaultCurrency: "CAD",
       },
       {
-        name: "lastName",
-        label: "Last Name",
-        type: "text",
+        name: "senderAmount",
+        label: "You send",
+        type: "currency-input",
         required: true,
-      },
-      {
-        name: "provider",
-        label: "Select Provider",
-        type: "select",
-        options: ["Western Union", "MoneyGram", "Other"],
-        required: true,
-      },
-      {
-        name: "email",
-        label: "Email Address",
-        type: "email",
-        required: true,
-        placeholder: "Enter your email",
-      },
-      {
-        name: "phone",
-        label: "Phone Number",
-        type: "tel",
-        required: true,
-        placeholder: "Enter your phone number",
+        currencyOptions: ["INR", "CAD", "USD", "EUR", "GBP", "AUD"],
+        defaultCurrency: "INR",
       },
     ],
   },
@@ -1318,36 +1244,8 @@ export const serviceForms = {
     description: "Stay connected anywhere, anytime across 180+ countries",
     fields: [
       {
-        name: "fullName",
-        label: "Full Name",
-        type: "text",
-        required: true,
-        placeholder: "Enter your full name",
-      },
-      {
-        name: "email",
-        label: "Email Address",
-        type: "email",
-        required: true,
-        placeholder: "Enter your email",
-      },
-      {
-        name: "phone",
-        label: "Phone Number",
-        type: "tel",
-        required: true,
-        placeholder: "Enter your phone number",
-      },
-      {
-        name: "nationality",
-        label: "Nationality",
-        type: "text",
-        required: true,
-        placeholder: "Your nationality",
-      },
-      {
-        name: "destinationCountry",
-        label: "Destination Country",
+        name: "country",
+        label: "Country",
         type: "select",
         options: [
           "United Kingdom",
@@ -1358,61 +1256,32 @@ export const serviceForms = {
           "Netherlands",
           "Ireland",
           "New Zealand",
+          "France",
+          "Italy",
+          "Spain",
           "Other",
         ],
         required: true,
+        defaultValue: "United Kingdom",
       },
       {
-        name: "simType",
-        label: "SIM Type",
+        name: "provider",
+        label: "Select Provider",
         type: "select",
         options: [
-          "Data Only",
-          "Voice + Data",
-          "Unlimited Data",
-          "Pay-as-you-go",
-          "Monthly Plan",
+          "Vodafone",
+          "Orange",
+          "T-Mobile",
+          "Three",
+          "EE",
+          "O2",
+          "Rogers",
+          "Bell",
+          "Telstra",
+          "Optus",
+          "Other",
         ],
         required: true,
-      },
-      {
-        name: "dataRequirement",
-        label: "Data Requirement",
-        type: "select",
-        options: [
-          "1-5 GB/month",
-          "5-10 GB/month",
-          "10-20 GB/month",
-          "20+ GB/month",
-          "Unlimited",
-        ],
-        required: true,
-      },
-      {
-        name: "duration",
-        label: "Duration of Stay",
-        type: "select",
-        options: [
-          "1-3 months",
-          "3-6 months",
-          "6-12 months",
-          "1+ years",
-          "Flexible",
-        ],
-        required: true,
-      },
-      {
-        name: "activationDate",
-        label: "When do you need the SIM?",
-        type: "date",
-        required: true,
-      },
-      {
-        name: "additionalNotes",
-        label: "Additional Notes",
-        type: "textarea",
-        required: false,
-        placeholder: "Any specific requirements or preferences",
       },
     ],
   },
@@ -1532,24 +1401,28 @@ export const serviceForms = {
         label: "First Name",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "lastName",
         label: "Last Name",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "nationality",
         label: "Nationality",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "destionCountry",
         label: "Destination Country",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "email",
@@ -1578,24 +1451,28 @@ export const serviceForms = {
         label: "First Name",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "lastName",
         label: "Last Name",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "nationality",
         label: "Nationality",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "destinationCountry",
         label: "Destination Country",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "provider",
@@ -1658,24 +1535,28 @@ export const serviceForms = {
         label: "First Name",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "lastName",
         label: "Last Name",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "nationality",
         label: "Nationality",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "destinationCountry",
         label: "Destination Country",
         type: "text",
         required: true,
+        colSpan: 1,
       },
       {
         name: "provider",
@@ -1693,8 +1574,10 @@ export const serviceForms = {
       {
         name: "phone",
         label: "Phone Number",
-        type: "number",
+        type: "tel",
         required: true,
+        placeholder: "Enter your phone number",
+        colSpan: 2, // Half width
       },
     ],
   },
@@ -1711,6 +1594,7 @@ export const defaultForm = {
       type: "text",
       required: true,
       placeholder: "Enter your full name",
+      // No colSpan specified = full width (2 columns)
     },
     {
       name: "email",
@@ -1718,6 +1602,7 @@ export const defaultForm = {
       type: "email",
       required: true,
       placeholder: "Enter your email",
+      // No colSpan specified = full width (2 columns)
     },
     {
       name: "phone",
@@ -1725,6 +1610,7 @@ export const defaultForm = {
       type: "tel",
       required: true,
       placeholder: "Enter your phone number",
+      // No colSpan specified = full width (2 columns)
     },
     {
       name: "nationality",

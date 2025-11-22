@@ -21,7 +21,7 @@ const ServiceFormSection = ({ formConfig, slug }) => {
             ></div>,
             document.body
           )}
-        <div className="absolute left-1/2 top-2/3 transform -translate-x-1/2 -translate-y-1/2 z-20">
+        <div className="absolute left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 z-20">
           <FlightBookingForm
             showModal={showModal}
             setShowModal={setShowModal}

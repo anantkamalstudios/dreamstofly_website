@@ -140,7 +140,7 @@ const ServiceCountry = ({ countryData }) => {
     <section className="pt-5">
       <div className="container mx-auto px-4">
         <div className="mb-16 relative overflow-hidden">
-          <div className="p-8 lg:p-12 relative">
+          <div className="p-10 lg:p-24 relative">
             <div className="relative z-10">
               <div className="text-center mb-12">
                 <h3 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-4">

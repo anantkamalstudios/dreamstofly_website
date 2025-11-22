@@ -2,8 +2,8 @@ import React from "react";
 
 const TrustedAndLoved = ({ stats }) => {
   return (
-    <div className="w-full  py-20">
-      <div className="max-w-6xl mx-auto bg-gray-50 py-10 px-20">
+    <div className="w-full py-20">
+      <div className="w-full mx-auto py-10 px-20">
         {/* Header */}
         <h2 className="text-4xl md:text-5xl font-semibold text-center text-gray-900 mb-16">
           Trusted & loved
