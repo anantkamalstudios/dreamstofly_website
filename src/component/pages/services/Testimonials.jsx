@@ -60,8 +60,6 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev >= reviews.length - 3 ? 0 : prev + 1));
   };
 
-  const visibleReviews = reviews.slice(currentIndex, currentIndex + 3);
-
   return (
     <section className="py-16 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
@@ -94,10 +92,7 @@ const Testimonials = () => {
                     x="0"
                     y="20"
                     className="fill-blue-600 font-bold"
-                    style={{
-                      fontSize: "18px",
-                      fontFamily: "Arial, sans-serif",
-                    }}
+                    style={{ fontSize: "18px" }}
                   >
                     G
                   </text>
@@ -105,10 +100,7 @@ const Testimonials = () => {
                     x="14"
                     y="20"
                     className="fill-red-600 font-bold"
-                    style={{
-                      fontSize: "18px",
-                      fontFamily: "Arial, sans-serif",
-                    }}
+                    style={{ fontSize: "18px" }}
                   >
                     o
                   </text>
@@ -116,10 +108,7 @@ const Testimonials = () => {
                     x="24"
                     y="20"
                     className="fill-yellow-500 font-bold"
-                    style={{
-                      fontSize: "18px",
-                      fontFamily: "Arial, sans-serif",
-                    }}
+                    style={{ fontSize: "18px" }}
                   >
                     o
                   </text>
@@ -127,10 +116,7 @@ const Testimonials = () => {
                     x="36"
                     y="20"
                     className="fill-blue-600 font-bold"
-                    style={{
-                      fontSize: "18px",
-                      fontFamily: "Arial, sans-serif",
-                    }}
+                    style={{ fontSize: "18px" }}
                   >
                     g
                   </text>
@@ -138,10 +124,7 @@ const Testimonials = () => {
                     x="48"
                     y="20"
                     className="fill-green-600 font-bold"
-                    style={{
-                      fontSize: "18px",
-                      fontFamily: "Arial, sans-serif",
-                    }}
+                    style={{ fontSize: "18px" }}
                   >
                     l
                   </text>
@@ -149,10 +132,7 @@ const Testimonials = () => {
                     x="54"
                     y="20"
                     className="fill-red-600 font-bold"
-                    style={{
-                      fontSize: "18px",
-                      fontFamily: "Arial, sans-serif",
-                    }}
+                    style={{ fontSize: "18px" }}
                   >
                     e
                   </text>
@@ -160,7 +140,7 @@ const Testimonials = () => {
                     x="0"
                     y="28"
                     className="fill-gray-500"
-                    style={{ fontSize: "9px", fontFamily: "Arial, sans-serif" }}
+                    style={{ fontSize: "9px" }}
                   >
                     Reviews
                   </text>
@@ -173,62 +153,74 @@ const Testimonials = () => {
             <button
               onClick={handlePrev}
               className="w-12 h-12 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center hover:border-gray-300 transition-colors"
-              aria-label="Previous reviews"
             >
               <ChevronLeft className="w-6 h-6 text-gray-700" />
             </button>
             <button
               onClick={handleNext}
               className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors"
-              aria-label="Next reviews"
             >
               <ChevronRight className="w-6 h-6 text-white" />
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleReviews.map((review) => (
-            <div
-              key={review.id}
-              className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-5 h-5 fill-yellow-400"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                    </svg>
-                  ))}
-                </div>
-                <span className="text-gray-900 font-medium">
-                  Rated {review.rating} out of 5
-                </span>
-              </div>
-
-              <p className="text-gray-700 leading-relaxed mb-6">
-                {review.text}
-              </p>
-
-              <div className="flex items-center gap-1">
-                <img
-                  src={review.avatar}
-                  alt={review.author}
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <div className="font-semibold text-gray-900">
-                    {review.author}
+        {/* Slider wrapper */}
+        <div className="overflow-hidden">
+          <div
+            className="flex gap-6 transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / 3)}%)`,
+              width: `${(reviews.length / 3) * 100}%`,
+            }}
+          >
+            {reviews.map((review) => (
+              <div
+                key={review.id}
+                className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow w-1/3"
+              >
+                {/* Rating */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className="w-5 h-5 fill-yellow-400"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                    ))}
                   </div>
-                  <div className="text-xs text-gray-400">{review.location}</div>
+                  <span className="text-gray-900 font-medium">
+                    Rated {review.rating} out of 5
+                  </span>
+                </div>
+
+                {/* Review Text */}
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  {review.text}
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-1">
+                  <img
+                    src={review.avatar}
+                    alt={review.author}
+                    className="w-10 h-10 rounded-full"
+                  />
+                  <div>
+                    <div className="font-semibold text-gray-900">
+                      {review.author}
+                    </div>
+                    <div className="text-xs text-gray-400">
+                      {review.location}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

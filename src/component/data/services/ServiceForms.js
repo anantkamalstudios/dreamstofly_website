@@ -1,6 +1,7 @@
 export const serviceForms = {
   "student-flight-ticket": {
     title: "Book Flight Tickets",
+    icon: "/images/formicon/suit.png",
     description: "",
     fields: [
       {
@@ -34,6 +35,7 @@ export const serviceForms = {
 
   "visa-assistance": {
     title: "Visa Application Assistance",
+    icon: "/images/formicon/suit.png",
     description: "Complete visa application support with expert guidance",
     fields: [
       {
@@ -89,6 +91,7 @@ export const serviceForms = {
 
   "student-accommodation": {
     title: "Student Accommodation Search",
+    icon: "/images/formicon/suit.png",
     description: "Find the perfect home, close to university and close to life",
     fields: [
       {
@@ -220,6 +223,7 @@ export const serviceForms = {
 
   "airport-pickup": {
     title: "Airport Pickup Service",
+    icon: "/images/formicon/suit.png",
     description: "Reliable airport transfer to your accommodation",
     fields: [
       {
@@ -295,6 +299,7 @@ export const serviceForms = {
 
   "bank-account-setup": {
     title: "Bank Account Setup Assistance",
+    icon: "/images/formicon/suit.png",
     description: "Get help opening a local bank account",
     fields: [
       {
@@ -384,6 +389,7 @@ export const serviceForms = {
 
   "health-insurance": {
     title: "Buy Health Insurance",
+    icon: "/images/formicon/suit.png",
     description: "",
     fields: [
       {
@@ -440,6 +446,7 @@ export const serviceForms = {
 
   "sop-maker": {
     title: "Statement of Purpose Writing Service",
+    icon: "/images/formicon/suit.png",
     description: "Professional SOP writing and editing assistance",
     fields: [
       {
@@ -534,6 +541,7 @@ export const serviceForms = {
 
   "test-preparation": {
     title: "Test Preparation Services",
+    icon: "/images/formicon/suit.png",
     description: "Comprehensive preparation for IELTS, TOEFL, GRE, and more",
     fields: [
       {
@@ -643,6 +651,7 @@ export const serviceForms = {
 
   "study-abroad-counseling": {
     title: "Study Abroad Counseling",
+    icon: "/images/formicon/suit.png",
     description: "Personalized guidance for your study abroad journey",
     fields: [
       {
@@ -745,6 +754,7 @@ export const serviceForms = {
 
   "student-beans": {
     title: "Student Beans",
+    icon: "/images/formicon/suit.png",
     description: "Unlock the Student discounts on Accommodation",
     fields: [
       {
@@ -829,6 +839,7 @@ export const serviceForms = {
 
   "room-essentials": {
     title: "Book Room Essentials",
+    icon: "/images/formicon/suit.png",
     description: "",
     fields: [
       {
@@ -862,6 +873,7 @@ export const serviceForms = {
 
   "luggage-storage": {
     title: "Luggage Storage",
+    icon: "/images/formicon/suit.png",
     description: "Safe & Secure extra storage space at convenient locations",
     fields: [
       {
@@ -948,6 +960,7 @@ export const serviceForms = {
 
   "free-online-courses": {
     title: "Free Online Courses",
+    icon: "/images/formicon/suit.png",
     description:
       "Unlock your potential and take your skills to next level with these courses",
     fields: [
@@ -1049,6 +1062,7 @@ export const serviceForms = {
 
   "guarantor-services": {
     title: "Guarantor Services",
+    icon: "/images/formicon/suit.png",
     description: "Verified guarantors for the ultimate safety net",
     fields: [
       {
@@ -1148,6 +1162,7 @@ export const serviceForms = {
 
   "money-transfer": {
     title: "International Money Transfer",
+    icon: "/images/formicon/suit.png",
     description: "",
     fields: [
       {
@@ -1188,6 +1203,7 @@ export const serviceForms = {
 
   "room-replacement": {
     title: "Room Replacement",
+    icon: "/images/formicon/suit.png",
     description: "One-of-a-kind solution to help you find a next perfect room",
     fields: [
       {
@@ -1298,6 +1314,7 @@ export const serviceForms = {
 
   "international-sim": {
     title: "International SIM",
+    icon: "/images/formicon/suit.png",
     description: "Stay connected anywhere, anytime across 180+ countries",
     fields: [
       {
@@ -1402,6 +1419,7 @@ export const serviceForms = {
 
   "travel-insurance": {
     title: "Travel Insurance",
+    icon: "/images/formicon/suit.png",
     description:
       "Emergencies don't come knocking, better to be safe than sorry",
     fields: [
@@ -1506,6 +1524,7 @@ export const serviceForms = {
 
   "forex-services": {
     title: "Get Forex Solutions",
+    icon: "/images/formicon/suit.png",
     description: "",
     fields: [
       {
@@ -1551,6 +1570,7 @@ export const serviceForms = {
 
   "hungry-hub": {
     title: "Select destination country",
+    icon: "/images/formicon/suit.png",
     description: "",
     fields: [
       {
@@ -1600,8 +1620,37 @@ export const serviceForms = {
       },
     ],
   },
+
+  "job-search": {
+    title: "Job Search",
+    icon: "/images/formicon/suit.png",
+    description:
+      "Navigate your job search abroad with confidence. Select your destination country and explore tailored opportunities.",
+    fields: [
+      {
+        name: "country",
+        label: "jobs",
+        type: "select",
+        required: true,
+        options: [
+          "UK",
+          "India",
+          "USA",
+          "Canada",
+          "Australia",
+          "Germany",
+          "New Zealand",
+          "Singapore",
+          "UAE",
+          "Ireland",
+        ],
+      },
+    ],
+  },
+
   "student-financing": {
     title: "Application  Form",
+    icon: "/images/formicon/suit.png",
     description: "",
     fields: [
       {
@@ -1653,6 +1702,7 @@ export const serviceForms = {
 
 export const defaultForm = {
   title: "Service Inquiry",
+  icon: "/images/formicon/suit.png",
   description: "Get in touch about our services",
   fields: [
     {

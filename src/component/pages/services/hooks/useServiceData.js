@@ -26,5 +26,5 @@ export const useServiceData = () => {
     }
   }, [slug, navigate]);
 
-  return { service, serviceDetails, formConfig, loading };
+  return { service, serviceDetails, formConfig, loading, slug };
 };

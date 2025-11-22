@@ -9,7 +9,8 @@ import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
 
 const FlightTicket = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, formConfig, loading, slug } =
+    useServiceData();
 
   if (loading) {
     return (
@@ -25,7 +26,7 @@ const FlightTicket = () => {
     {
       img: "/images/services/search.png",
       title: "Search",
-      desc: "Enter your departure and arrival destination, along with your tentative dates and tupes of  tickets.",
+      desc: "Enter your departure and arrival destination, along with your tentative dates and types of tickets.",
     },
     {
       img: "/images/services/select.png",
@@ -47,18 +48,39 @@ const FlightTicket = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <ServiceHero
-        service={service}
-        details={serviceDetails}
-        formConfig={formConfig}
-      />
-      <ServiceCountry countryData={countryData} />
-      <TravelPartners />
-      <HowItWorks steps={steps} />
-      <Testimonials />
-      <RelatedServices />
-      <FAQAccordion />
+    <div className="min-h-screen w-full overflow-x-hidden">
+      <div className="w-full">
+        <ServiceHero
+          service={service}
+          details={serviceDetails}
+          formConfig={formConfig}
+          slug={slug}
+        />
+      </div>
+
+      <div className="pt-10 sm:pt-16 md:pt-24 lg:pt-32 px-4 sm:px-6 md:px-10 lg:px-0">
+        <ServiceCountry />
+      </div>
+
+      <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-10 sm:mt-16">
+        <TravelPartners />
+      </div>
+
+      <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-10 sm:mt-16">
+        <HowItWorks steps={steps} />
+      </div>
+
+      <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-10 sm:mt-16">
+        <Testimonials />
+      </div>
+
+      <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-10 sm:mt-16">
+        <RelatedServices />
+      </div>
+
+      <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-10 sm:mt-16 mb-16">
+        <FAQAccordion />
+      </div>
     </div>
   );
 };

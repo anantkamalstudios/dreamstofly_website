@@ -345,9 +345,47 @@ export const serviceDetails = {
       "Comprehensive support",
     ],
   },
+
+  "job-search": {
+    title: "Job Search",
+    subtitle: "Explore from over 10m jobs across different industry verticals",
+    heroImage: "/images/services/jobsearch.png",
+    price: "From $120",
+    duration: "Ongoing support",
+    description:
+      "Navigate your study abroad journey with confidence through our personalized counseling services. From university selection to application strategies, we guide you every step of the way.",
+    features: [
+      "University selection guidance",
+      "Application strategy planning",
+      "Document preparation support",
+      "Interview preparation",
+      "Visa application assistance",
+      "Pre-departure orientation",
+    ],
+    requirements: [
+      "Academic background details",
+      "Career goals and interests",
+      "Budget and timeline preferences",
+      "Target country preferences",
+      "Specific program interests",
+    ],
+    process: [
+      "Initial consultation",
+      "Profile assessment",
+      "University shortlisting",
+      "Application planning",
+      "Ongoing support and guidance",
+      "Post-admission assistance",
+    ],
+    benefits: [
+      "Expert guidance throughout",
+      "Increased admission chances",
+      "Time and cost savings",
+      "Comprehensive support",
+    ],
+  },
 };
 
-// Default details for services not specifically configured
 export const defaultServiceDetails = {
   title: "Service Details",
   subtitle: "Get in touch about our services",

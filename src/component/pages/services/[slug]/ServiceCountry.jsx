@@ -128,16 +128,16 @@ const ServiceCountry = ({ countryData }) => {
           />
         </div>
         <img
-          src="/images/services/topRight.svg"
+          src="/images/services/topright.png"
           alt="Top Right Decoration"
-          className="absolute -top-0 left-40 w-full h-full opacity-50 pointer-events-none select-none"
+          className="absolute top-8 left-36 w-full h-full opacity-50 pointer-events-none select-none"
         />
       </div>
     </div>
   );
 
   return (
-    <section className="bg-gray-50 pt-5">
+    <section className="pt-5">
       <div className="container mx-auto px-4">
         <div className="mb-16 relative overflow-hidden">
           <div className="p-8 lg:p-12 relative">
