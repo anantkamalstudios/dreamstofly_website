@@ -66,7 +66,7 @@ const ServiceCountry = () => {
   ];
 
   const CountryCard = ({ country }) => (
-    <div className="bg-white/80 backdrop-blur-sm rounded-full p-5 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white/90 min-w-max group">
+    <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white/90 min-w-max group">
       <div className="flex items-center gap-4">
         <div className="relative">
           {country.image ? (

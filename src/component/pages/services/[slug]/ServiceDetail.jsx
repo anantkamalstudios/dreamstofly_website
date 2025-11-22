@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getServiceBySlug } from "../../../data/services/ServicesData";
 import { getServiceDetails } from "../../../data/services/ServiceDetails";
 import { getFormConfig } from "../../../data/services/ServiceForms";
-import ServiceForm from "./ServiceForm";
+// import ServiceForm from "./ServiceForm";
 import ServiceLayout from "../../../layouts/ServiceLayout";
 import ServiceHero from "./ServiceHero";
 import ServiceCTA from "./ServiceCTA";
