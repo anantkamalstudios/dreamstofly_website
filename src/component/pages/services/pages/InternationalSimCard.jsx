@@ -58,6 +58,20 @@ const InternationalSimCard = () => {
     },
   ];
 
+  const stats = [
+    {
+      number: "12K+",
+      label: "Succes Journey",
+    },
+    {
+      number: "16+",
+      label: "Awards Winning",
+    },
+    {
+      number: "20+",
+      label: "Years Of Experience",
+    },
+  ];
   if (!service || !serviceDetails) return null;
   return (
     <div className="min-h-screen">
@@ -72,7 +86,7 @@ const InternationalSimCard = () => {
       <Testimonials />
       <RelatedServices />
       <FAQAccordion />
-      <TrustedAndLoved />
+      <TrustedAndLoved stats={stats} />
     </div>
   );
 };

@@ -20,6 +20,47 @@ const VisaServicePage = () => {
   }
 
   if (!service || !serviceDetails) return null;
+  const stats = [
+    {
+      number: "12K+",
+      label: "Succes Journey",
+    },
+    {
+      number: "16+",
+      label: "Awards Winning",
+    },
+    {
+      number: "20+",
+      label: "Years Of Experience",
+    },
+  ];
+
+  const steps = [
+    {
+      icon: "/images/services/moneyTransfer1.jpg",
+      title: "Fill in the details",
+      description:
+        "Provide all the necessary information. Our visa expert will contact you for a consultant session.",
+    },
+    {
+      icon: "/images/services/payment1.jpg",
+      title: "Initiate payment & upload documents",
+      description:
+        "Make the payment for the service and upload all the required documents to begin the visa application process.",
+    },
+    {
+      icon: "/images/services/visa1.jpg",
+      title: "Track application",
+      description:
+        "Get credentials to track your visa application status and get step-by-step guidance from our visa expert throughout the visa process.",
+    },
+  ];
+
+  const countryData = {
+    title: "Countries We Help Immigrate",
+    discription:
+      "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
+  };
 
   return (
     <div>
@@ -29,11 +70,11 @@ const VisaServicePage = () => {
         formConfig={formConfig}
       />
       <OurCommitments />
-      <ServiceCountry />
+      <ServiceCountry countryData={countryData} />
       <WhyChooseUs />
-      <HowItWorksPage />
+      <HowItWorksPage steps={steps} />
       <Testimonials />
-      <TrustedAndLoved />
+      <TrustedAndLoved stats={stats} />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Testimonials from "../Testimonials";
 import RelatedServicesPage from "../components/RelatedServicesPage";
 import FAQAccordion from "../components/FAQAccordion";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import HowItWorks from "../components/HowItWorks";
 
 const StudentInternship = () => {
   const { service, serviceDetails, formConfig, loading } = useServiceData();
@@ -40,6 +41,40 @@ const StudentInternship = () => {
     },
   ];
 
+  const stats = [
+    {
+      number: "12K+",
+      label: "Students interactions",
+    },
+    {
+      number: "16+",
+      label: "Verified properties",
+    },
+    {
+      number: "20+",
+      label: "Global student community",
+    },
+  ];
+
+  const steps = [
+    {
+      img: "/images/services/search.png",
+      title: "Click Apply Now",
+      desc: "Apply and Signup with your university email id",
+    },
+    {
+      img: "/images/services/select.png",
+      title: "Verification",
+      desc: "Verify your account and start browsing Internships & Jobs",
+    },
+    {
+      img: "/images/services/book.png",
+      title: "Dashboard Access",
+      desc: "Apply Job and access resources like CV builder, Immigration and much more",
+      extraClasses: "md:col-span-2 lg:col-span-1",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <ServiceHero
@@ -49,10 +84,11 @@ const StudentInternship = () => {
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />
+      <HowItWorks steps={steps} />
       <Testimonials />
       <RelatedServicesPage />
       <FAQAccordion />
-      <TrustedAndLoved />
+      <TrustedAndLoved stats={stats} />
     </div>
   );
 };

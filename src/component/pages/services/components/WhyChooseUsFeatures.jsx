@@ -1,28 +1,7 @@
 import React from "react";
 import { Laptop, Hand, Headphones } from "lucide-react";
 
-const WhyChooseUsFeatures = () => {
-  const features = [
-    {
-      icon: "/images/services/search.png",
-      title: "Jobs Over 70 Countries",
-      description:
-        "Whether it's the UK, USA, or any country in between, we've got you covered!",
-    },
-    {
-      icon: "/images/services/select.png",
-      title: "All Sources on One Platform",
-      description:
-        "Find jobs from corporate websites, social networking sites, classifieds, and many other sources.",
-    },
-    {
-      icon: "/images/services/book.png",
-      title: "Effortless Process",
-      description:
-        "Search for your preferred industry, company, and role with ease. Upload your profile and apply for the job directly.",
-    },
-  ];
-
+const WhyChooseUsFeatures = ({ features }) => {
   return (
     <div className="w-full bg-gray-50 py-16 px-4">
       <div className="max-w-7xl mx-auto">

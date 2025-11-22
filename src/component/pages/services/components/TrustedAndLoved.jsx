@@ -1,21 +1,6 @@
 import React from "react";
 
-const TrustedAndLoved = () => {
-  const stats = [
-    {
-      number: "12K+",
-      label: "Succes Journey",
-    },
-    {
-      number: "16+",
-      label: "Awards Winning",
-    },
-    {
-      number: "20+",
-      label: "Years Of Experience",
-    },
-  ];
-
+const TrustedAndLoved = ({ stats }) => {
   return (
     <div className="w-full  py-20">
       <div className="max-w-6xl mx-auto bg-gray-50 py-10 px-20">

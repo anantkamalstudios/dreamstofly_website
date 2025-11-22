@@ -41,6 +41,12 @@ const FlightTicket = () => {
     },
   ];
 
+  const countryData = {
+    title: "Popular Destination Choices",
+    discription:
+      "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
+  };
+
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <div className="w-full">

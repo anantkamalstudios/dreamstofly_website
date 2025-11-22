@@ -5,8 +5,8 @@ import OurCommitments from "../components/OurCommitments";
 import ServiceCountry from "../[slug]/ServiceCountry";
 import HowItWorksPage from "../components/HowItWorksPage";
 import FAQSection from "../../accomodation/components/FAQSection";
-import TrustedAndLoved from "../components/TrustedAndLoved";
 import Testimonials from "../Testimonials";
+import TrustedAndLoved from "../components/TrustedAndLoved";
 
 const InternationalMoneyTransfer = () => {
   const { service, serviceDetails, formConfig, loading } = useServiceData();
@@ -21,6 +21,33 @@ const InternationalMoneyTransfer = () => {
 
   if (!service || !serviceDetails) return null;
 
+  const steps = [
+    {
+      icon: "/images/services/moneyTransfer1.jpg",
+      title: "Provide student's details",
+      description:
+        "Enter the personal details of the student along with rental and university proof and the amount you want to transfer abroad.",
+    },
+    {
+      icon: "/images/services/moneyTransfer2.png",
+      title: "Provide sender's details",
+      description:
+        "Enter your own details, residential proof and identiity proof.",
+    },
+    {
+      icon: "/images/services/moneyTransfer3.png",
+      title: "We transfer the money",
+      description:
+        "We will have the order transferres the same or next business day.",
+    },
+  ];
+
+  const countryData = {
+    title: "Countries We Help Immigrate",
+    discription:
+      "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
+  };
+
   return (
     <div className="min-h-screen">
       <ServiceHero
@@ -29,8 +56,8 @@ const InternationalMoneyTransfer = () => {
         formConfig={formConfig}
       />
       <OurCommitments />
-      <ServiceCountry />
-      <HowItWorksPage />
+      <ServiceCountry countryData={countryData} />
+      <HowItWorksPage steps={steps} />
       <FAQSection />
       <TrustedAndLoved />
       <Testimonials />

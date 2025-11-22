@@ -22,6 +22,47 @@ const HealthInsurancePage = () => {
 
   if (!service || !serviceDetails) return null;
 
+  const stats = [
+    {
+      number: "12K+",
+      label: "Succes Journey",
+    },
+    {
+      number: "16+",
+      label: "Awards Winning",
+    },
+    {
+      number: "20+",
+      label: "Years Of Experience",
+    },
+  ];
+
+  const steps = [
+    {
+      icon: "/images/services/moneyTransfer1.jpg",
+      title: "Compare  insurance covers",
+      description: "Compare insurance policies wider to choose, best for you.",
+    },
+    {
+      icon: "/images/services/payment1.jpg",
+      title: "Make easy payment",
+      description:
+        "Payment is a very simple and easy to pay. Instant payment confirmation.",
+    },
+    {
+      icon: "/images/services/payment2.png",
+      title: "Activate policy",
+      description:
+        "Tada! Your policy is activated. No worry about hospital expanses.",
+    },
+  ];
+
+    const countryData = {
+      title: "Countries We Help Immigrate",
+      discription:
+        "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
+    };
+
   return (
     <div className="min-h-screen">
       <ServiceHero
@@ -30,12 +71,12 @@ const HealthInsurancePage = () => {
         formConfig={formConfig}
       />
       <OurCommitments />
-      <ServiceCountry />
+      <ServiceCountry countryData={countryData} />
       <ServiceBenefitsPage />
-      <HowItWorksPage />
+      <HowItWorksPage steps={steps} />
       <FAQSection />
       <Testimonials />
-      <TrustedAndLoved />
+      <TrustedAndLoved stats={stats} />
     </div>
   );
 };

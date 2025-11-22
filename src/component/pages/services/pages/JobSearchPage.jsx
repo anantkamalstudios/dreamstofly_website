@@ -38,6 +38,32 @@ const JobSearchPage = () => {
 
   if (!service || !serviceDetails) return null;
 
+  const jobSearchFeatures = [
+    {
+      icon: "/images/services/search.png",
+      title: "Signup through link via web or download app",
+      description:
+        "Download the app via SMS received or signup through web as per the details.",
+    },
+    {
+      icon: "/images/services/select.png",
+      title: "Enter details and get KYC verified",
+      description:
+        "Provide all the necessary information, complete your KYC process as per the process.",
+    },
+    {
+      icon: "/images/services/book.png",
+      title: "Enjoy happy banking",
+      description: "Get your Bank account active instantly and ready to use.",
+    },
+  ];
+
+  const countryData = {
+    title: "Popular Destination Choices",
+    discription:
+      "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
+  };
+
   return (
     <div className="min-h-screen">
       <ServiceHero
@@ -45,9 +71,9 @@ const JobSearchPage = () => {
         details={serviceDetails}
         formConfig={formConfig}
       />
-      <ServiceCountry />
+      <ServiceCountry countryData={countryData} />
       <TravelPartnersFeatures features={features} />
-      <WhyChooseUsFeatures />
+      <WhyChooseUsFeatures features={jobSearchFeatures} />
       <Testimonials />
     </div>
   );

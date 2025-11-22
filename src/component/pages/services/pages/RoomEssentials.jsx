@@ -59,6 +59,21 @@ const RoomEssentials = () => {
       extraClasses: "md:col-span-2 lg:col-span-1",
     },
   ];
+
+    const stats = [
+      {
+        number: "12K+",
+        label: "Succes Journey",
+      },
+      {
+        number: "16+",
+        label: "Awards Winning",
+      },
+      {
+        number: "20+",
+        label: "Years Of Experience",
+      },
+    ];
   return (
     <div className="min-h-screen">
       <ServiceHero
@@ -72,7 +87,7 @@ const RoomEssentials = () => {
       <ProductsWeOffer />
       <Testimonials />
       <FAQAccordion />
-      <TrustedAndLoved />
+      <TrustedAndLoved stats={stats} />
     </div>
   );
 };

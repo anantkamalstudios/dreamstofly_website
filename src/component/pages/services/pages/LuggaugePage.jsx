@@ -60,6 +60,21 @@ const LuggaugePage = () => {
     },
   ];
 
+    const stats = [
+      {
+        number: "12K+",
+        label: "Succes Journey",
+      },
+      {
+        number: "16+",
+        label: "Awards Winning",
+      },
+      {
+        number: "20+",
+        label: "Years Of Experience",
+      },
+    ];
+
   return (
     <div className="min-h-screen">
       <ServiceHero
@@ -73,7 +88,7 @@ const LuggaugePage = () => {
       <ServiceBenefits />
       <Testimonials />
       <FAQAccordion />
-      <TrustedAndLoved />
+      <TrustedAndLoved stats={stats} />
     </div>
   );
 };
