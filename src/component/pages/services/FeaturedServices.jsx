@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -72,21 +72,17 @@ const countriesData = [
 
 const CountryCard = ({ country }) => {
   return (
-    <div
-      className={`${country.bgColor} rounded-2xl p-6 shadow-sm border border-gray-100 h-full transition-all duration-300 hover:shadow-md hover:-translate-y-1`}
-    >
-      <div
-        className={`w-16 h-16 ${country.flagBg} rounded-full flex items-center justify-center mb-6 mx-auto`}
-      >
+    <div className=" rounded-2xl p-6 shadow-sm border border-gray-100 h-full transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+      <div className="w-16 h-16 rounded-full flex items-center justify-start mb-6">
         <img
           src={country.flagImage}
           alt={`${country.name} flag`}
-          className="w-10 h-10 object-contain"
+          className="object-contain"
         />
       </div>
 
       {/* Country Name */}
-      <h3 className="text-xl font-semibold text-gray-900 text-center mb-6">
+      <h3 className="text-xl font-semibold text-gray-900 mb-6">
         {country.name}
       </h3>
 
@@ -94,8 +90,8 @@ const CountryCard = ({ country }) => {
       <div className="space-y-8">
         {country.features.map((feature, index) => (
           <div key={index} className="flex items-center gap-3">
-            <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <Check className="w-3 h-3 text-green-600" />
+            <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+              <Check className=" text-green-600" />
             </div>
             <span className="text-gray-600 text-sm font-medium">{feature}</span>
           </div>
@@ -107,56 +103,63 @@ const CountryCard = ({ country }) => {
 
 const FeaturedServices = () => {
   return (
-    <div className="container mx-auto px-4">
-      {/* Header */}
-      <div className="mb-8">
-        <div className="text-sm text-gray-500 mb-2 flex items-center gap-2">
-          <span>AVAILABLE COUNTRIES</span>
-          <img
-            src="/images/services/heading_object.png"
-            alt="Heading Object"
-            className="w-auto h-auto"
-          />
+    <div className="w-full relative">
+      <div className="max-w-7xl container mx-auto px-4 relative">
+        {/* Header */}
+        <div className="mb-8">
+          <div className="text-sm text-gray-400 mb-4 flex items-center gap-2">
+            <span>AVAILABLE COUNTRIES</span>
+            <img
+              src="/images/services/heading_object.png"
+              alt="Heading Object"
+              className="w-auto h-auto"
+            />
+          </div>
+          <div className="flex justify-between items-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              Urban Escapes City Hopping
+              <br />
+              Adventures
+            </h1>
+            <button className="flex gap-1 text-white bg-blue-600 px-6 py-4 rounded-full items-center">
+              View More <ArrowRight />{" "}
+            </button>
+          </div>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-          Urban Escapes City Hopping
-          <br />
-          Adventures
-        </h1>
-      </div>
 
-      {/* Swiper Container */}
-      <div className="relative">
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          spaceBetween={24}
-          slidesPerView={1}
-          loop={true}
-          speed={3500}
-          autoplay={{
-            delay: 1,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-          }}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-            1280: {
-              slidesPerView: 4,
-            },
-          }}
-          className="!pb-12"
-        >
-          {countriesData.map((country) => (
-            <SwiperSlide key={country.id}>
-              <CountryCard country={country} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* Swiper Container */}
+        <div className="relative">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            loop={true}
+            speed={3500}
+            autoplay={{
+              delay: 1,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: false,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+              1280: {
+                slidesPerView: 4,
+              },
+            }}
+            className="!pb-12"
+          >
+            {countriesData.map((country) => (
+              <SwiperSlide key={country.id}>
+                <CountryCard country={country} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </div>
   );

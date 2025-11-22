@@ -9,10 +9,10 @@ const ServicesExperiences = () => {
           {/* Left visual column */}
           <div className="relative flex justify-center">
             {/* background circle */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] md:w-[460px] md:h-[460px] lg:w-[520px] lg:h-[520px] rounded-full bg-orange-100/60" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100px] h-[100px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full bg-orange-100/60" />
 
             {/* portrait */}
-            <div className="relative z-10 w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] md:w-[460px] md:h-[460px] lg:w-[520px] lg:h-[520px] rounded-full overflow-hidden shadow-lg">
+            <div className="relative z-10 rounded-full overflow-hidden">
               <img
                 src="/images/services/service_exp.png"
                 alt="Traveler"
@@ -92,7 +92,7 @@ const ServicesExperiences = () => {
             <div className="uppercase tracking-widest text-orange-500 font-semibold mb-2 md:mb-3">
               Our Experience
             </div>
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 md:mb-6 text-gray-900">
+            <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-4 md:mb-6 text-gray-900">
               Our Stories Have <br className="hidden md:block" /> Adventures
             </h2>
             <p className="text-gray-600 leading-relaxed mb-8 md:mb-10 max-w-xl">
@@ -104,27 +104,30 @@ const ServicesExperiences = () => {
             {/* metrics */}
             <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-xl">
               <div>
-                <div className="text-2xl md:text-4xl font-extrabold text-orange-500">
+                <div className="text-2xl md:text-4xl font-semibold text-orange-500">
                   12K+
                 </div>
-                <div className="mt-1 md:mt-2 text-gray-800 font-medium text-sm md:text-base">
-                  Succes Journey
+                <div className="mt-1 md:mt-2 text-gray-500 font-normal text-lg md:text-xl">
+                  Success
+                  <br /> Journey
                 </div>
               </div>
               <div>
-                <div className="text-2xl md:text-4xl font-extrabold text-orange-500">
+                <div className="text-2xl md:text-4xl font-semibold text-orange-500">
                   16+
                 </div>
-                <div className="mt-1 md:mt-2 text-gray-800 font-medium text-sm md:text-base">
-                  Awards Winning
+                <div className="mt-1 md:mt-2 text-gray-500 font-normal text-lg md:text-xl">
+                  Awards
+                  <br /> Winning
                 </div>
               </div>
               <div>
-                <div className="text-2xl md:text-4xl font-extrabold text-orange-500">
+                <div className="text-2xl md:text-4xl font-semibold text-orange-500">
                   20+
                 </div>
-                <div className="mt-1 md:mt-2 text-gray-800 font-medium text-sm md:text-base">
-                  Years Of Experience
+                <div className="mt-1 md:mt-2 text-gray-500 font-normal text-lg md:text-xl">
+                  Years Of
+                  <br /> Experience
                 </div>
               </div>
             </div>

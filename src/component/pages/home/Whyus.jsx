@@ -1,77 +1,88 @@
-
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import stats from "../../data/home/WhyUs";
+import axios from "axios";
 
 export default function WhyUs() {
+  const [statsData, setStatsData] = useState([]);
+  const BASE_URL = import.meta.env.VITE_HOME_WHYUS;
 
-    const Counter = ({ target }) => {
-        const [count, setCount] = useState(0);
+  useEffect(() => {
+    try {
+      const fetchData = async () => {
+        const res = await axios.get(`${BASE_URL}`);
+        setStatsData(res?.data?.data);
+      };
+      fetchData();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
-        useEffect(() => {
-            let start = 0;
-            const end = parseInt(target);
-            if (start === end) return;
+  const Counter = ({ target }) => {
+    const [count, setCount] = useState(0);
 
-            let duration = 2000;
-            let incrementTime = Math.abs(Math.floor(duration / end));
+    useEffect(() => {
+      let start = 0;
+      const end = parseInt(target);
+      if (start === end) return;
 
-            let timer = setInterval(() => {
-                start += 1;
-                setCount(start);
-                if (start === end) clearInterval(timer);
-            }, incrementTime);
+      let duration = 2000;
+      let incrementTime = Math.abs(Math.floor(duration / end));
 
-            return () => clearInterval(timer);
-        }, [target]);
+      let timer = setInterval(() => {
+        start += 1;
+        setCount(start);
+        if (start === end) clearInterval(timer);
+      }, incrementTime);
 
-        return <span>{count}</span>;
-    };
+      return () => clearInterval(timer);
+    }, [target]);
 
-    const cardVariants = {
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0 },
-    };
+    return <span>{count}</span>;
+  };
 
-    return (
-        <section className="py-12 bg-white">
-            <div className="max-w-6xl mx-auto px-4 text-center">
-                {/* Heading */}
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-                    Why us?
-                </h2>
-                <p className="text-gray-500 mt-2 mb-10 text-sm md:text-base">
-                    By the Students, For the Students!
-                </p>
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {stats.map((item, index) => (
-                        <motion.div
-                            key={item.id}
-                            className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 flex flex-col items-center"
-                            variants={cardVariants}
-                            initial="hidden"
-                            animate="visible"
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            <img
-                                src={item.icon}
-                                alt={item.label}
-                                className="w-16 h-16 mb-4"
-                            />
-                            <h3 className="text-xl font-bold text-gray-800">
-                                <Counter target={item.number} />
-                            </h3>
-                            <p className="text-gray-600 text-sm mt-2">
-                                {item.label}
-                            </p>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className="py-12 bg-white">
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        {/* Heading */}
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+          Why us?
+        </h2>
+        <p className="text-gray-500 mt-2 mb-10 text-sm md:text-base">
+          By the Students, For the Students!
+        </p>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {statsData?.map((item, index) => (
+            <motion.div
+              key={item.id}
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 flex flex-col items-center"
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <img
+                src={`${import.meta.env.VITE_HOME_IMAGE_URL}${item.image}`}
+                alt={item.title}
+                className="w-16 h-16 mb-4"
+              />
+              <h3 className="text-xl font-bold text-gray-800">
+                <Counter target={item.counter_value} />
+              </h3>
+              <p className="text-gray-600 text-sm mt-2">{item.title}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
-
