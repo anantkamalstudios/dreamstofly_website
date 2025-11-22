@@ -40,6 +40,12 @@ const FlightTicket = () => {
     },
   ];
 
+  const countryData = {
+    title: "Popular Destination Choices",
+    discription:
+      "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
+  };
+
   return (
     <div className="min-h-screen">
       <ServiceHero
@@ -47,7 +53,7 @@ const FlightTicket = () => {
         details={serviceDetails}
         formConfig={formConfig}
       />
-      <ServiceCountry />
+      <ServiceCountry countryData={countryData} />
       <TravelPartners />
       <HowItWorks steps={steps} />
       <Testimonials />

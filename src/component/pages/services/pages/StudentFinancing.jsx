@@ -39,6 +39,41 @@ const StudentFinancing = () => {
     },
   ];
 
+  const stats = [
+    {
+      number: "12K+",
+      label: "Succes Journey",
+    },
+    {
+      number: "16+",
+      label: "Awards Winning",
+    },
+    {
+      number: "20+",
+      label: "Years Of Experience",
+    },
+  ];
+
+  const financeFeatures = [
+    {
+      icon: "/images/services/search.png",
+      title: "Fill the form",
+      description:
+        "Fill in your and your co-signer's details. A student financing representative will reach out to you shortly.",
+    },
+    {
+      icon: "/images/services/select.png",
+      title: "Submit required documents",
+      description: "Upload the required documents to begin the process.",
+    },
+    {
+      icon: "/images/services/book.png",
+      title: "Loan Approval",
+      description:
+        "Get disbursement in up to 7 working days, once your loan is approved.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <ServiceHero
@@ -48,9 +83,9 @@ const StudentFinancing = () => {
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />
-      <WhyChooseUsFeatures />
+      <WhyChooseUsFeatures features={financeFeatures} />
       <Testimonials />
-      <TrustedAndLoved />
+      <TrustedAndLoved stats={stats} />
     </div>
   );
 };

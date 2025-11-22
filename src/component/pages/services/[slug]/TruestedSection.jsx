@@ -1,6 +1,6 @@
 import React from "react";
 
-const TrustedSection = () => {
+const TrustedSection = ({ image }) => {
   return (
     <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 py-16">
       <div className="container mx-auto px-4">
@@ -72,7 +72,7 @@ const TrustedSection = () => {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80"
+                src={image}
                 alt="Food"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: "center" }}

@@ -3,22 +3,22 @@ import { Award, BadgeCheck, Gift, Scale } from "lucide-react";
 const ServiceBenefitsPage = () => {
   const benefits = [
     {
-      icon: <BadgeCheck className="w-12 h-12 text-red-500" />,
+      icon: "/images/services/health1.png",
       title: "Meet visa requirements",
       description: "All policies are approved by the Australian government.",
     },
     {
-      icon: <Gift className="w-12 h-12 text-red-500" />,
+      icon: "/images/services/health2.png",
       title: "Save Costs",
       description: "Spare yourself the hassle of unnecessary costs.",
     },
     {
-      icon: <Scale className="w-12 h-12 text-red-500" />,
+      icon: "/images/services/health3.png",
       title: "Compare Policies",
       description: "Compare features, costs & coverage of various policies.",
     },
     {
-      icon: <Award className="w-12 h-12 text-red-500" />,
+      icon: "/images/services/whychooseus3.png",
       title: "Instant Confirmation",
       description: "Receive the OHSC certificate within minutes.",
     },
@@ -34,7 +34,9 @@ const ServiceBenefitsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex gap-6 items-start">
-              <div className="flex-shrink-0">{benefit.icon}</div>
+              <div className="flex-shrink-0">
+                <img src={benefit.icon} alt="" className="w-8" />
+              </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {benefit.title}

@@ -1,11 +1,11 @@
 import React from "react";
 import { CheckCircle, Clock, Shield, Star, Users, Target } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 
-const ServiceCountry = () => {
+const ServiceCountry = ({ countryData }) => {
   const topRowCountries = [
     {
       name: "Austria",
@@ -144,16 +144,14 @@ const ServiceCountry = () => {
             <div className="relative z-10">
               <div className="text-center mb-12">
                 <h3 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-4">
-                  Countries We Help Immigrate
+                  {countryData.title}
                 </h3>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  We provide comprehensive immigration services to help you
-                  achieve your dreams of living and working abroad.
+                  {countryData.description}
                 </p>
               </div>
 
               <div className="relative space-y-8">
-                {/* First Swiper - Moving Left to Right */}
                 <div className="overflow-hidden">
                   <Swiper
                     modules={[Autoplay]}

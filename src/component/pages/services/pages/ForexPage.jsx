@@ -44,19 +44,34 @@ const ForexPage = () => {
   const steps = [
     {
       img: "/images/services/search.png",
-      title: "Compare prices",
-      desc: "Enter your pickup and destination locations and compare the prices offered by various transport companies.",
+      title: "Filling your requirement",
+      desc: "Details about the total amount and the market price you are expecting.",
     },
     {
       img: "/images/services/select.png",
-      title: "Book ride",
-      desc: "Select the company and type of ride that you want. You will receive an instant confirmation.",
+      title: "Connect with FOREX experts",
+      desc: "Our partner representative will call you back to fullfill your requirement.",
     },
     {
       img: "/images/services/book.png",
-      title: "Enjoy timely pickup",
-      desc: "You can communicate with your driver about any change in time and be sure that you will receive a timely pickup.",
+      title: "Tada! You got FOREX card",
+      desc: "Get your card or destination currency delivered to your doorstep.",
       extraClasses: "md:col-span-2 lg:col-span-1",
+    },
+  ];
+
+  const stats = [
+    {
+      number: "12K+",
+      label: "Succes Journey",
+    },
+    {
+      number: "16+",
+      label: "Awards Winning",
+    },
+    {
+      number: "20+",
+      label: "Years Of Experience",
     },
   ];
 
@@ -72,7 +87,7 @@ const ForexPage = () => {
       <HowItWorks steps={steps} />
       <Testimonials />
       <FAQAccordion />
-      <TrustedAndLoved />
+      <TrustedAndLoved stats={stats} />
     </div>
   );
 };
