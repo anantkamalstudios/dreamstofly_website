@@ -41,6 +41,7 @@ export const services = [
     featured: true,
     price: "From £299",
     slug: "student-flight-ticket",
+    backgroundImage: "/images/tickets.png",
   },
   {
     id: 3,
@@ -71,6 +72,7 @@ export const services = [
     featured: false,
     price: "From £5",
     slug: "money-transfer",
+    backgroundImage: "/images/moneytransfer.png",
   },
   {
     id: 6,
@@ -92,6 +94,7 @@ export const services = [
     featured: false,
     price: "From £100",
     slug: "student-financing",
+    backgroundImage: "/images/financing.png",
   },
   {
     id: 8,
@@ -102,6 +105,7 @@ export const services = [
     featured: false,
     price: "From £50",
     slug: "room-essentials",
+    backgroundImage: "/images/roomEssentials.png",
   },
   {
     id: 9,
@@ -112,6 +116,7 @@ export const services = [
     featured: false,
     price: "From £45",
     slug: "airport-pickup",
+    backgroundImage: "/images/airportPickup.png",
   },
   {
     id: 10,
@@ -122,6 +127,7 @@ export const services = [
     featured: false,
     price: "From £75",
     slug: "room-replacement",
+    backgroudImage: "/images/roomEssentials.png",
   },
   {
     id: 11,
@@ -132,6 +138,7 @@ export const services = [
     featured: false,
     price: "From £15",
     slug: "international-sim",
+    backgroundImage: "/images/internationalSIM.png",
   },
   {
     id: 12,
@@ -142,6 +149,7 @@ export const services = [
     featured: false,
     price: "From £25",
     slug: "travel-insurance",
+    backgroundImage: "/images/travelInsurence.png",
   },
   {
     id: 13,
@@ -152,6 +160,7 @@ export const services = [
     featured: true,
     price: "From £50/month",
     slug: "health-insurance",
+    backgroundImage: "/images/healthInsurance.png",
   },
   {
     id: 14,
@@ -162,6 +171,7 @@ export const services = [
     featured: false,
     price: "From £10/day",
     slug: "luggage-storage",
+    backgroundImage: "/images/luggageStorage.png",
   },
   {
     id: 15,
@@ -172,6 +182,7 @@ export const services = [
     featured: false,
     price: "From £10",
     slug: "forex-services",
+    backgroundImage: "/images/forex.png",
   },
   {
     id: 16,
@@ -182,6 +193,7 @@ export const services = [
     featured: false,
     price: "From £75",
     slug: "job-search",
+    backgroundImage: "/images/jobSearch.png",
   },
   {
     id: 17,
@@ -192,6 +204,7 @@ export const services = [
     featured: false,
     price: "Free",
     slug: "hungry-hub",
+    backgroundImage: "/images/hungryhub.png",
   },
   {
     id: 18,
@@ -202,6 +215,7 @@ export const services = [
     featured: false,
     price: "From £200",
     slug: "student-internships",
+    backgroundImage: "/images/studentInternship.png",
   },
   {
     id: 19,

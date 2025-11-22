@@ -28,7 +28,7 @@ import ToeflIBT from "./component/pages/examprep/Toefl_IBT";
 import DuolingoTest from "./component/pages/examprep/DuolingoTest";
 import GREPrep from "./component/pages/examprep/GREPrep";
 import Services from "./component/pages/services/Services";
-import ServiceDetail from "./component/pages/services/[slug]/ServiceDetail";
+import ServiceRouter from "./component/pages/services/ServiceRouter";
 import ScrollToTop from "./component/ScrollToTop";
 import SOPHomePage from "./component/pages/sopmaker/SOPHomePage";
 import LorMaker from "./component/pages/sopmaker/LorMaker";
@@ -74,7 +74,7 @@ export default function App() {
               <Route path="/free-cources" element={<FreeCourses />} />
               <Route path="/travel" element={<Travel />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/services/:slug" element={<ServiceDetail />} />
+              <Route path="/services/:slug" element={<ServiceRouter />} />
 
               <Route path="/about" element={<Aboutus />} />
               <Route path="/career" element={<CareerPage />} />

@@ -1,6 +1,8 @@
+import { useState } from "react";
+
 function ProductsWeOffer() {
   const tabs = ["UniKitOut", "Student Essentials", "StuBuddy"];
-  const [activeTab, setActiveTab] = React.useState(0);
+  const [activeTab, setActiveTab] = useState(0);
 
   const products = Array(8).fill({
     title: "Bedroom Kit",

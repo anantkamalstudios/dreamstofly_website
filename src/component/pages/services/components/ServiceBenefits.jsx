@@ -33,7 +33,7 @@ function ServiceBenefits() {
             key={index}
             className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
           >
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center p-6">
+            <div className="w-32 h-32 mb-6 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center p-6">
               {benefit.icon}
             </div>
 
