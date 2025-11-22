@@ -41,7 +41,7 @@ export const services = [
     featured: true,
     price: "From £299",
     slug: "student-flight-ticket",
-    backgroundImage: "/images/tickets.png",
+    backgroundImage: "/images/services/flightbg.png",
   },
   {
     id: 3,
@@ -193,7 +193,7 @@ export const services = [
     featured: false,
     price: "From £75",
     slug: "job-search",
-    backgroundImage: "/images/jobSearch.png",
+    backgroundImage: "/images/services/jobsearch.png",
   },
   {
     id: 17,

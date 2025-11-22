@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
-import slides from "./data/home/Herosection"; // not usefull any more
+import slides from "./data/home/Herosection";
 import axios from "axios";
 
 const HeroSection = () => {

@@ -57,6 +57,7 @@ const ServiceDetail = () => {
           service={service}
           details={serviceDetails}
           formConfig={formConfig}
+          slug={slug}
         />
 
         <OurCommitments />

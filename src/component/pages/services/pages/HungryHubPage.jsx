@@ -10,7 +10,7 @@ import TrustedAndLoved from "../components/TrustedAndLoved";
 import Testimonials from "../Testimonials";
 
 const HungryHubPage = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, formConfig, loading, slug } = useServiceData();
 
   if (loading) {
     return (
@@ -28,6 +28,7 @@ const HungryHubPage = () => {
         service={service}
         details={serviceDetails}
         formConfig={formConfig}
+        slug={slug}
       />
       <OurCommitments />
       <ServiceCountry />

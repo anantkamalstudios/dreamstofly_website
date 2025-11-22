@@ -1,63 +1,35 @@
-// import { Suspense } from "react";
-// import ServiceEnquiryForm from "../[slug]/ServiceEnquiryForm";
-
-// const ServiceFormSection = ({ formConfig }) => {
-//   if (!formConfig) return null;
-
-//   return (
-//     <div className="absolute right-10 top-10 z-20 pb-16">
-//       <div className="mx-auto px-4">
-//         <div className="grid lg:grid-cols-2 gap-12">
-//           <div className="hidden lg:block"></div>
-
-//           <div className="relative lg:-right-24">
-//             <Suspense
-//               fallback={
-//                 <div className="bg-white rounded-2xl shadow-2xl p-8 animate-pulse">
-//                   <div className="h-96 bg-gray-200 rounded"></div>
-//                 </div>
-//               }
-//             >
-//               <ServiceEnquiryForm formConfig={formConfig} />
-//             </Suspense>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-// export default ServiceFormSection;
-
-// import { Suspense } from "react";
-// import ServiceEnquiryForm from "../[slug]/ServiceEnquiryForm";
-
-// const ServiceFormSection = ({ formConfig }) => {
-//   if (!formConfig) return null;
-
-//   return (
-//     <div className="absolute right-10 top-10 z-20">
-//       <div className="w-auto min-w-[320px] max-w-3xl">
-//         <Suspense
-//           fallback={
-//             <div className="bg-white rounded-2xl shadow-2xl p-8 animate-pulse min-w-[320px]">
-//               <div className="h-96 bg-gray-200 rounded"></div>
-//             </div>
-//           }
-//         >
-//           <ServiceEnquiryForm formConfig={formConfig} />
-//         </Suspense>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ServiceFormSection;
-
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
+import { createPortal } from "react-dom";
 import ServiceEnquiryForm from "../[slug]/ServiceEnquiryForm";
+import FlightBookingForm from "../[slug]/FlightBookingForm";
 
-const ServiceFormSection = ({ formConfig }) => {
+const ServiceFormSection = ({ formConfig, slug }) => {
+  const [showModal, setShowModal] = useState(false);
+
   if (!formConfig) return null;
+
+  if (slug === "student-flight-ticket") {
+    return (
+      <>
+        {showModal &&
+          typeof window !== "undefined" &&
+          createPortal(
+            <div
+              className="fixed inset-0 bg-black bg-opacity-60 z-[9999] transition-opacity duration-300"
+              onClick={() => setShowModal(false)}
+              style={{ backdropFilter: "blur(2px)" }}
+            ></div>,
+            document.body
+          )}
+        <div className="absolute left-1/2 top-2/3 transform -translate-x-1/2 -translate-y-1/2 z-20">
+          <FlightBookingForm
+            showModal={showModal}
+            setShowModal={setShowModal}
+          />
+        </div>
+      </>
+    );
+  }
 
   return (
     <div className="absolute right-10 top-40 z-20">
