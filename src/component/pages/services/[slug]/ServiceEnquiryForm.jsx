@@ -224,7 +224,6 @@ const countryCodes = [
 ];
 
 const ServiceEnquiryForm = ({ formConfig }) => {
-  // Initialize formData with default values for select fields
   const [formData, setFormData] = useState(() => {
     const initialData = {};
     formConfig?.fields?.forEach((field) => {
@@ -236,6 +235,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showAllFields, setShowAllFields] = useState(false);
+  const [countryCodesState, setCountryCodesState] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -281,9 +281,12 @@ const ServiceEnquiryForm = ({ formConfig }) => {
     alert("Form submitted successfully! We'll get back to you soon.");
   };
 
-  const shouldBeInSameRow = (fieldName) => {
+  const shouldBeInSameRow = (field) => {
+    // If colSpan is explicitly set to 1, the field should be in the same row
+    if (field.colSpan === 1) return true;
+    // For backward compatibility, check the old field names
     const sameRowFields = ["fullName", "email", "phone", "nationality"];
-    return sameRowFields.includes(fieldName);
+    return sameRowFields.includes(field);
   };
 
   const shouldBeFullWidth = (fieldType) => {
@@ -407,7 +410,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-6 lg:p-8 w-[500px] items-start mt-10">
+    <div className="bg-white rounded-2xl shadow-xl p-6 lg:p-8 w-[500px] items-start mt-6">
       <div className="text-center mb-2">
         {formConfig.icon && (
           <div className="mb-3">
@@ -418,18 +421,18 @@ const ServiceEnquiryForm = ({ formConfig }) => {
             />
           </div>
         )}
-        <h3 className="text-xl font-bold text-gray-900 mb-2 text-left">
+        <h3 className="text-xl font-bold text-gray-900 mb-1 text-left">
           {formConfig.title || "Enquire Now"}
         </h3>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {getFieldsToDisplay().map((field, index) => (
             <div
               key={field.name}
               className={`${
-                shouldBeInSameRow(field.name)
+                shouldBeInSameRow(field)
                   ? "md:col-span-1"
                   : "md:col-span-2"
               }`}
@@ -443,7 +446,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
           ))}
         </div>
 
-        <div className="pt-2">
+        <div className="pt-1">
           <button
             type="submit"
             disabled={isSubmitting}
@@ -458,7 +461,6 @@ const ServiceEnquiryForm = ({ formConfig }) => {
             ) : (
               <>
                 {formConfig.buttonText || "Send Message"}
-                <Send className="w-4 h-4 ml-2" />
               </>
             )}
           </button>

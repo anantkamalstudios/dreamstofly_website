@@ -53,7 +53,6 @@ export default function FAQSection() {
                   <button
                     aria-expanded="true"
                     className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white shadow"
-                    onClick={() => setOpenIndex(null)} /* optional collapse */
                     title="Collapse"
                   >
                     <ChevronUp size={18} />

@@ -148,6 +148,110 @@
 
 // export default ServicesHero;
 
+// import React, { useState } from "react";
+// import { Search, Bell, ChevronDown, Menu } from "lucide-react";
+
+// export default function ServicesHero() {
+//   const [allCoursesOpen, setAllCoursesOpen] = useState(false);
+//   const [cityOpen, setCityOpen] = useState(false);
+//   const [exploreOpen, setExploreOpen] = useState(false);
+
+//   return (
+//     <div className="min-h-screen bg-white">
+//       <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible pt-4 lg:pt-6">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6">
+//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center  pt-2 lg:pt-4">
+//             <div className="text-white space-y-6 lg:space-y-8">
+//               {/* <div className="hidden lg:flex flex-col gap-3 absolute left-6 xl:left-12 top-1/2 -translate-y-1/2">
+//                 <div className="w-1.5 h-1.5 border border-white/50 rounded-full"></div>
+//                 <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+//                 <div className="w-1.5 h-1.5 border border-white/50 rounded-full"></div>
+//                 <div className="w-1.5 h-1.5 border border-white/50 rounded-full"></div>
+//               </div> */}
+//               <div>
+//                 <p className="text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider">
+//                   WELCOME TO DREAMS TO FLY
+//                 </p>
+//                 <h1 className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-serif">
+//                   The Future Belongs
+//                   <br />
+//                   To Those Who
+//                   <br />
+//                   Believe In The Beauty
+//                   <br />
+//                   Of Their Dreams
+//                 </h1>
+//               </div>
+
+//               <p className="text-blue-100 text-sm sm:text-base max-w-md leading-relaxed">
+//                 Get Services for every level of education that every student who
+//                 achieves for a bright future can get
+//               </p>
+
+//               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+//                 <button className="bg-white text-blue-600 px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-blue-50 flex items-center justify-center gap-2 text-sm">
+//                   APPLY NOW
+//                   <span>→</span>
+//                 </button>
+//                 <button className="border-2 border-white text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-white/10 text-sm">
+//                   LEARN MORE
+//                 </button>
+//               </div>
+//             </div>
+//             <div className="relative mt-8 lg:mt-0">
+//               <img
+//                 src="/images/services/service-hero.png"
+//                 alt="Graduate student"
+//                 className="relative z-10 rounded-tl-[60px] lg:rounded-tl-[100px] w-full object-contain"
+//               />
+//             </div>
+//           </div>
+//         </div>
+
+//         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[90%] max-w-6xl z-30">
+//           <div className="bg-white rounded-lg shadow-2xl py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
+//             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+//               <div className="text-center lg:border-r border-[#003E79]">
+//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
+//                   1050 +
+//                 </h3>
+//                 <p className="text-black text-xs sm:text-sm">
+//                   Students Enrolled
+//                 </p>
+//               </div>
+//               <div className="text-center lg:border-r border-[#003E79]">
+//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
+//                   3500 +
+//                 </h3>
+//                 <p className="text-black text-xs sm:text-sm">
+//                   Completed Courses
+//                 </p>
+//               </div>
+//               <div className="text-center lg:border-r border-[#003E79] border-t lg:border-t-0 pt-6 lg:pt-0">
+//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
+//                   500 +
+//                 </h3>
+//                 <p className="text-black text-xs sm:text-sm">
+//                   Registered Instructors
+//                 </p>
+//               </div>
+//               <div className="text-center border-t lg:border-t-0 pt-6 lg:pt-0">
+//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
+//                   100%
+//                 </h3>
+//                 <p className="text-black text-xs sm:text-sm">Success Rate</p>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Spacer for overlapping stats */}
+//       <div className="h-24 lg:h-32 bg-gray-50"></div>
+//     </div>
+//   );
+// }
+
 import React, { useState } from "react";
 import { Search, Bell, ChevronDown, Menu } from "lucide-react";
 
@@ -157,19 +261,13 @@ export default function ServicesHero() {
   const [exploreOpen, setExploreOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible pt-4 lg:pt-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center  pt-2 lg:pt-4">
-            <div className="text-white space-y-6 lg:space-y-8">
-              {/* <div className="hidden lg:flex flex-col gap-3 absolute left-6 xl:left-12 top-1/2 -translate-y-1/2">
-                <div className="w-1.5 h-1.5 border border-white/50 rounded-full"></div>
-                <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                <div className="w-1.5 h-1.5 border border-white/50 rounded-full"></div>
-                <div className="w-1.5 h-1.5 border border-white/50 rounded-full"></div>
-              </div> */}
+    <div className="max-h-screen bg-white mb-48">
+      <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible">
+        <div className="max-w-full mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-white space-y-6 lg:space-y-8 px-10 md:px-20">
               <div>
-                <p className="text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider">
+                <p className="text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider text-white">
                   WELCOME TO DREAMS TO FLY
                 </p>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-serif">
@@ -198,18 +296,34 @@ export default function ServicesHero() {
                 </button>
               </div>
             </div>
-            <div className="relative mt-8 lg:mt-0">
+
+            {/* Right Side - Girl Image with Yellow Quarter Circle */}
+            <div className="relative mt-8 lg:mt-0 flex items-end justify-end">
+              {/* Yellow Quarter Circle Background - Positioned behind girl */}
+              <div
+                className="absolute bottom-0 right-0 rounded-tl-full pointer-events-none"
+                style={{
+                  width: "55%",
+                  height: "55%",
+                  backgroundColor: "#EB662B",
+                  zIndex: 1,
+                }}
+              ></div>
+
+              {/* Girl Image - On top of yellow circle */}
               <img
                 src="/images/services/service-hero.png"
                 alt="Graduate student"
-                className="relative z-10 rounded-tl-[60px] lg:rounded-tl-[100px] w-full object-contain"
+                className="relative w-full object-contain rounded-tl-[60px] lg:rounded-tl-[100px]"
+                style={{ zIndex: 2 }}
               />
             </div>
           </div>
         </div>
 
+        {/* Stats Card - Overlapping bottom */}
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[90%] max-w-6xl z-30">
-          <div className="bg-white rounded-lg shadow-2xl py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
+          <div className="bg-white rounded-lg border border-gray-100 py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               <div className="text-center lg:border-r border-[#003E79]">
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
@@ -247,7 +361,7 @@ export default function ServicesHero() {
       </div>
 
       {/* Spacer for overlapping stats */}
-      <div className="h-24 lg:h-32 bg-gray-50"></div>
+      <div className="h-36 lg:h-32 mb-20"></div>
     </div>
   );
 }

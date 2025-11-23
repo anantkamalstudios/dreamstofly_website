@@ -15,6 +15,8 @@ const ServicesGrid = () => {
       window.open("https://freecourse.dreamstofly.com/", "_blank");
     } else if (slug === "exam-prep") {
       navigate(`/${slug}`);
+    } else if (slug === "student-accommodation") {
+      navigate("/accomodation");
     } else {
       navigate(`/services/${slug}`);
     }
@@ -22,14 +24,15 @@ const ServicesGrid = () => {
 
   return (
     <section className="py-16 md:py-2 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-10 md:mb-16 mx-auto">
-          <h1 className="text-3xl md:text-5xl font-semibold mb-4 text-black">
-            Seeking Adventure Thrills and <br /> Excitement Await
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-start mb-1 md:mb-4 mx-auto">
+          <h1 className="text-xl md:text-3xl font-semibold mb-1 text-black">
+            Our Services
           </h1>
+          <div className="h-2 w-28 bg-blue-500"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => {
             return (
               <div

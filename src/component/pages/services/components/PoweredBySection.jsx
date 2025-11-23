@@ -13,7 +13,7 @@ export default function PoweredBySection() {
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <div className="w-full bg-white py-12">
+    <div className="w-full bg-white py-12 mt-12">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-lg md:text-xl font-normal text-indigo-900 mb-12">
           Powered By

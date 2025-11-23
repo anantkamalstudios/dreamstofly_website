@@ -1,20 +1,9 @@
-/**
- * Service Forms Configuration
- *
- * Field Layout Control:
- * - Use `colSpan: 1` to make a field half-width (2 fields per row)
- * - Use `colSpan: 2` or omit it to make a field full-width (1 field per row)
- * - Textarea fields are automatically full-width regardless of colSpan
- *
- * Examples:
- * - firstName and lastName with colSpan: 1 each → will appear side by side
- * - fullName without colSpan → will appear full width on its own row
- */
 export const serviceForms = {
   "student-flight-ticket": {
     title: "Book Flight Tickets",
     icon: "/images/formicon/suit.png",
     description: "",
+    buttonText: "Book Now",
     fields: [
       {
         name: "firstName",
@@ -52,6 +41,7 @@ export const serviceForms = {
   "visa-assistance": {
     title: "Visa Enquiry",
     icon: "/images/formicon/suit.png",
+    buttonText: "Submit",
     description: "Complete visa application support with expert guidance",
     fields: [
       {
@@ -59,21 +49,21 @@ export const serviceForms = {
         label: "First Name",
         type: "text",
         required: true,
-        colSpan: 1, // Half width - same row as lastName
+        colSpan: 1,
       },
       {
         name: "lastName",
         label: "Last Name",
         type: "text",
         required: true,
-        colSpan: 1, // Half width - same row as firstName
+        colSpan: 1,
       },
       {
         name: "nationality",
         label: "Nationality",
         type: "text",
         required: true,
-        colSpan: 1, // Half width
+        colSpan: 1,
       },
       {
         name: "destinationCountry",
@@ -98,7 +88,7 @@ export const serviceForms = {
         type: "email",
         required: true,
         placeholder: "Enter your email",
-        colSpan: 2, // Half width
+        colSpan: 2,
       },
       {
         name: "phone",
@@ -106,7 +96,7 @@ export const serviceForms = {
         type: "tel",
         required: true,
         placeholder: "Enter your phone number",
-        colSpan: 2, // Half width
+        colSpan: 2,
       },
     ],
   },
@@ -114,6 +104,7 @@ export const serviceForms = {
   "student-accommodation": {
     title: "Student Accommodation Search",
     icon: "/images/formicon/suit.png",
+    buttonText: "Search Accommodation",
     description: "Find the perfect home, close to university and close to life",
     fields: [
       {
@@ -247,6 +238,7 @@ export const serviceForms = {
   "airport-pickup": {
     title: "Airport Pickup Service",
     icon: "/images/formicon/suit.png",
+    buttonText:"Find a Pickup",
     description: "Reliable airport transfer to your accommodation",
     fields: [
       {
@@ -382,6 +374,7 @@ export const serviceForms = {
   "health-insurance": {
     title: "Buy Health Insurance",
     icon: "/images/formicon/suit.png",
+    buttonText:"Submit",
     description: "",
     fields: [
       {
@@ -841,6 +834,7 @@ export const serviceForms = {
     title: "Book Room Essentials",
     icon: "/images/formicon/suit.png",
     description: "",
+    buttonText:"Submit",
     fields: [
       {
         name: "firstName",
@@ -875,6 +869,7 @@ export const serviceForms = {
     title: "Luggage Storage",
     icon: "/images/formicon/suit.png",
     description: "Safe & Secure extra storage space at convenient locations",
+    buttonText:"Book Now",
     fields: [
       {
         name: "country",
@@ -1106,6 +1101,7 @@ export const serviceForms = {
   "money-transfer": {
     title: "International Money Transfer",
     icon: "/images/formicon/suit.png",
+    buttonText:"Send Now",
     description: "",
     fields: [
       {
@@ -1239,13 +1235,14 @@ export const serviceForms = {
   },
 
   "international-sim": {
-    title: "International SIM",
+    title: "Purchase new SIM",
     icon: "/images/formicon/suit.png",
     description: "Stay connected anywhere, anytime across 180+ countries",
+    buttonText:"Purchase Now",
     fields: [
       {
         name: "country",
-        label: "Country",
+        label: "Destination Country",
         type: "select",
         options: [
           "United Kingdom",
@@ -1287,114 +1284,18 @@ export const serviceForms = {
   },
 
   "travel-insurance": {
-    title: "Travel Insurance",
+    title: "Buy a plan in mins",
     icon: "/images/formicon/suit.png",
-    description:
-      "Emergencies don't come knocking, better to be safe than sorry",
-    fields: [
-      {
-        name: "fullName",
-        label: "Full Name",
-        type: "text",
-        required: true,
-        placeholder: "Enter your full name",
-      },
-      {
-        name: "email",
-        label: "Email Address",
-        type: "email",
-        required: true,
-        placeholder: "Enter your email",
-      },
-      {
-        name: "phone",
-        label: "Phone Number",
-        type: "tel",
-        required: true,
-        placeholder: "Enter your phone number",
-      },
-      {
-        name: "dateOfBirth",
-        label: "Date of Birth",
-        type: "date",
-        required: true,
-      },
-      {
-        name: "nationality",
-        label: "Nationality",
-        type: "text",
-        required: true,
-        placeholder: "Your nationality",
-      },
-      {
-        name: "destinationCountry",
-        label: "Destination Country",
-        type: "select",
-        options: [
-          "United Kingdom",
-          "Canada",
-          "USA",
-          "Australia",
-          "Germany",
-          "Netherlands",
-          "Ireland",
-          "New Zealand",
-          "Other",
-        ],
-        required: true,
-      },
-      {
-        name: "tripDuration",
-        label: "Trip Duration",
-        type: "select",
-        options: [
-          "1-7 days",
-          "1-2 weeks",
-          "2-4 weeks",
-          "1-3 months",
-          "3+ months",
-        ],
-        required: true,
-      },
-      {
-        name: "coverageType",
-        label: "Coverage Type",
-        type: "select",
-        options: [
-          "Basic Coverage",
-          "Comprehensive Coverage",
-          "Premium Coverage",
-          "Custom Plan",
-        ],
-        required: true,
-      },
-      {
-        name: "tripPurpose",
-        label: "Trip Purpose",
-        type: "select",
-        options: [
-          "Study Abroad",
-          "Tourism",
-          "Business",
-          "Family Visit",
-          "Other",
-        ],
-        required: true,
-      },
-      {
-        name: "additionalCoverage",
-        label: "Additional Coverage Needed",
-        type: "textarea",
-        required: false,
-        placeholder: "Medical, baggage, flight cancellation, etc.",
-      },
-    ],
+    buttonText:"Book Now",
+    description: "",
+    fields: [],
   },
 
   "forex-services": {
     title: "Get Forex Solutions",
     icon: "/images/formicon/suit.png",
     description: "",
+    buttonText:"Submit",
     fields: [
       {
         name: "firstName",
@@ -1418,7 +1319,7 @@ export const serviceForms = {
         colSpan: 1,
       },
       {
-        name: "destionCountry",
+        name: "destinationCountry",
         label: "Destination Country",
         type: "text",
         required: true,
@@ -1445,6 +1346,7 @@ export const serviceForms = {
     title: "Select destination country",
     icon: "/images/formicon/suit.png",
     description: "",
+    buttonText:"Grab Offer Now",
     fields: [
       {
         name: "firstName",
@@ -1503,6 +1405,7 @@ export const serviceForms = {
     icon: "/images/formicon/suit.png",
     description:
       "Navigate your job search abroad with confidence. Select your destination country and explore tailored opportunities.",
+    buttonText:"Find My Job",
     fields: [
       {
         name: "country",
@@ -1529,6 +1432,7 @@ export const serviceForms = {
     title: "Application  Form",
     icon: "/images/formicon/suit.png",
     description: "",
+    buttonText:"Submit",
     fields: [
       {
         name: "firstName",
@@ -1578,6 +1482,42 @@ export const serviceForms = {
         required: true,
         placeholder: "Enter your phone number",
         colSpan: 2, // Half width
+      },
+    ],
+  },
+  "student-internships": {
+    title: "Internship Enquiry",
+    icon: "/images/formicon/suit.png",
+    buttonText:"Apply Now",
+    description: "",
+    fields: [
+      {
+        name: "country",
+        label: "Destination Country",
+        type: "select",
+        options: [
+          "United Kingdom",
+          "Canada",
+          "USA",
+          "Australia",
+          "Germany",
+          "Netherlands",
+          "Ireland",
+          "New Zealand",
+          "France",
+          "Italy",
+          "Spain",
+          "Other",
+        ],
+        required: true,
+        defaultValue: "United Kingdom",
+      },
+      {
+        name: "provider",
+        label: "Select Provider",
+        type: "select",
+        options: ["ICICI"],
+        required: true,
       },
     ],
   },

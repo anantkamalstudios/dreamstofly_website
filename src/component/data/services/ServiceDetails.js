@@ -43,7 +43,8 @@ export const serviceDetails = {
       "bg-gradient-to-b from-[#0C519B] to-[#041C35] bg-clip-text text-transparent",
     subTitleColor: "#1D61E7",
     title: "Visa Application Assistance",
-    subtitle: "Complete Visa Support with Expert Guidance",
+    subtitle:
+      "Seamless end-to-end Visa Solutions for your study abroad journey",
     heroImage: "/images/services/visa.jpeg",
     price: "From $99",
     duration: "2-8 weeks",
@@ -247,8 +248,8 @@ export const serviceDetails = {
   "health-insurance": {
     titleColor: "#fff",
     subTitleColor: "#fff",
-    title: "Health Insurance for Students",
-    subtitle: "Comprehensive Health Coverage Abroad",
+    title: "Health Insurance",
+    subtitle: "In sickness and in health, we’ve got you covered",
     heroImage: "/images/services/healthinsurance.jpeg",
     price: "From $50/month",
     duration: "Instant coverage",
@@ -493,7 +494,7 @@ export const serviceDetails = {
     titleColor: "#0A1A2F",
     subTitleColor: "#1C2A3A",
     title: "Restaurant discounts",
-    subtitle: "Explore from over 10m jobs across different industry verticals",
+    subtitle: "2 for 1 meals at 1000s of restaurants",
     heroImage: "/images/services/default-service.jpeg",
     price: "From $120",
     duration: "Ongoing support",
@@ -528,6 +529,37 @@ export const serviceDetails = {
       "Time and cost savings",
       "Comprehensive support",
     ],
+  },
+  "forex-services": {
+    subTitleColor: "#fff",
+    titleColor: "#fff",
+    title: "Forex",
+    subtitle:
+      "Purchas, sell, and tranfer innternational currency from anywhere",
+  },
+  "international-sim": {
+    subTitleColor: "#fff",
+    titleColor: "#fff",
+    title: "International SIM Card",
+    subtitle: "Stay connected anywhere, anytime across 180+ countries",
+  },
+  "airport-pickup": {
+    subTitleColor: "#fff",
+    titleColor: "#fff",
+    title: "Airport Pickup",
+    subtitle: "Book a safe & comfy ride to and from the airport",
+  },
+  "luggage-storage": {
+    subTitleColor: "#fff",
+    titleColor: "#fff",
+    title: "Luggage Storage",
+    subtitle: "Safe & Secure extra storage space at convenient locations",
+  },
+  "travel-insurance": {
+    subTitleColor: "#fff",
+    titleColor: "#fff",
+    title: "Travel Insurance",
+    subtitle: "Emergencies don't come knocking, better to be safe than sorry",
   },
 };
 
