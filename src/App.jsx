@@ -35,6 +35,8 @@ import LorMaker from "./component/pages/sopmaker/LorMaker";
 import AccomodationMainPage from "./component/pages/accomodation/AccomodationMainPage";
 import CourseFinderDetailPage from "./component/pages/courseFinder/CourseFinderDetailPage";
 import UniversityDetailPage from "./component/pages/courseFinder/UniversityDetailPage";
+import AccommodationListing from "./component/pages/accomodation/AccommodationListing";
+import AccomodationDetail from "./component/pages/accomodation/components/AccomodationDetail";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -88,6 +90,14 @@ export default function App() {
               <Route path="/DuolingoTest" element={<DuolingoTest />} />
               <Route path="/GREPrep" element={<GREPrep />} />
               <Route path="/accomodation" element={<AccomodationMainPage />} />
+              <Route
+                path="/accomodation/:slug/residency"
+                element={<AccommodationListing />}
+              />
+              <Route
+                path="/accomodation/:id/details"
+                element={<AccomodationDetail />}
+              />
             </Routes>
           </MainLayout>
         </ScrollToTop>

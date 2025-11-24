@@ -24,7 +24,7 @@ const AccomodationHeader = () => {
   return (
     <div className="w-full">
       <div
-        className="relative h-[90vh] bg-cover bg-no-repeat bg-center flex flex-col gap-8"
+        className="relative h-[90vh] max-xl:h-[70vh]  bg-cover bg-no-repeat bg-center flex flex-col gap-8"
         style={{ backgroundImage: `url(${asset.accomodationHeader})` }}
       >
         {/* nav div */}

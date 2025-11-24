@@ -15,6 +15,7 @@ const AccomodationMainPage = () => {
       <AccomodationHeader />
       <AccommodationOverview />
       <PopularDestination />
+      <hr className="mx-14 border-gray-300" />
       <Testimonials />
       <FeelAtHomeHero />
       <StudyAbroadBanner />
