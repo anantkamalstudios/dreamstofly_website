@@ -12,14 +12,14 @@ const ScholarshipsSection = ({
     "To help students navigate this challenging process, we recommend the following articles:";
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-4xl mx-auto p-2 md:p-3">
       {title && (
         <h2 className="text-xl font-semibold text-gray-800 mb-4">{title}</h2>
       )}
 
       {/* Subtitle Box */}
       {subtitle && (
-        <div className="bg-blue-50 border-2 border-blue-400 rounded-lg p-4 mb-4">
+        <div className="bg-blue-50 border-2 border-blue-400 rounded-lg p-2 md:p-3 mb-4">
           <h3 className="text-blue-600 font-semibold text-base">{subtitle}</h3>
         </div>
       )}
@@ -37,7 +37,7 @@ const ScholarshipsSection = ({
 // Example usage component
 const Scholarship = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="max-w-4xl mx-auto bg-gray-50 py-8">
       <ScholarshipsSection title="Scholarships" subtitle="Scholarships" />
     </div>
   );

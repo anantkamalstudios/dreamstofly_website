@@ -1,9 +1,21 @@
 import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MapPin, TrophyIcon } from "lucide-react";
+import { MapPin } from "lucide-react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const UniversityCard = ({ course }) => {
+  const navigate = useNavigate();
+  
+  const handleViewUniversity = () => {
+    const slug = course.slug || course.title.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/university/${slug}`);
+  };
+
+  const handleViewCourse = () => {
+    const slug = course.slug || course.title.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/course/${slug}`);
+  };
   return (
     <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-200">
       {/* TOP SECTION */}
@@ -43,11 +55,17 @@ const UniversityCard = ({ course }) => {
 
       {/* BUTTONS */}
       <div className="flex justify-end gap-4 mt-6">
-        <button className="px-6 py-2 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">
+        <button 
+          onClick={handleViewUniversity}
+          className="px-6 py-2 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition"
+        >
           View University
         </button>
 
-        <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+        <button 
+          onClick={handleViewCourse}
+          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
           View Course
         </button>
       </div>
