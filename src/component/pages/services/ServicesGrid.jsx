@@ -23,7 +23,7 @@ const ServicesGrid = () => {
   };
 
   return (
-    <section className="py-16 md:py-2 bg-white">
+    <section className="md:py-2 bg-none">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-start mb-1 md:mb-4 mx-auto">
           <h1 className="text-xl md:text-3xl font-semibold mb-1 text-black">
