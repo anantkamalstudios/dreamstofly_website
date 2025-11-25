@@ -322,7 +322,7 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        placeholder="Dipika"
+                        placeholder="First Name"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
@@ -335,7 +335,7 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        placeholder="Ilag"
+                        placeholder="Last Name"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
@@ -400,7 +400,7 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="dipika@gmail.com"
+                      placeholder="abc@gmail.com"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
@@ -430,7 +430,6 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="7623439577"
                         className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
