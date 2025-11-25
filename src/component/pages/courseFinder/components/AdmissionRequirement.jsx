@@ -9,15 +9,15 @@ const AdmissionRequirements = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 lg:p-8 bg-white">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">
+    <div className="w-full max-w-4xl mx-auto p-4 md:px-6 lg:px-8 bg-none">
+      <h2 className="text-2xl md:text-3xl font-medium mb-6 md:mb-8">
         Admission Requirements
       </h2>
 
       <div className="space-y-4">
         <button
           onClick={() => toggleSection("exam")}
-          className="w-full border-2 border-blue-500 rounded-lg p-4 md:p-5 text-left hover:bg-blue-50 transition-colors"
+          className="w-full border-2 border-blue-500 rounded-md p-2 md:p-3 text-left"
         >
           <div className="flex justify-between items-center">
             <span className="text-blue-600 font-medium text-base md:text-lg">
@@ -38,7 +38,7 @@ const AdmissionRequirements = () => {
 
         <button
           onClick={() => toggleSection("dates")}
-          className="w-full border-2 border-blue-500 rounded-lg p-4 md:p-5 text-left hover:bg-blue-50 transition-colors"
+          className="w-full border-2 border-blue-500 rounded-md p-2 md:p-3 text-left"
         >
           <div className="flex justify-between items-center">
             <span className="text-blue-600 font-medium text-base md:text-lg">

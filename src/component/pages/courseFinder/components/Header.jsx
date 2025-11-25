@@ -34,15 +34,15 @@ import { motion } from "framer-motion";
 
 const Header = ({ data }) => {
   return (
-    <div className="bg-gradient-to-r from-blue-900 to-blue-400 text-white">
-      <div className="max-w-8xl mx-auto flex flex-col sm:flex-row items-center gap-6">
-        <div className="flex flex-row items-center gap-6 basis-[70%] py-6 px-12">
+    <div className="bg-[#003E79] text-white">
+      <div className="flex flex-col sm:flex-row items-center gap-6">
+        <div className="max-w-5xl mx-auto flex flex-row items-center gap-6 basis-[70%] py-6 px-12">
           {/* LOGO */}
           {data.leftLogo && (
             <img
               src={data.leftLogo}
               alt="logo"
-              className="w-24 h-20 object-cover flex-shrink-0"
+              className="w-24 h-24 object-cover flex-shrink-0"
             />
           )}
 
@@ -68,7 +68,7 @@ const Header = ({ data }) => {
             <img
               src={data.rightImage}
               alt="header visual"
-              className="max-h-full object-cover rounded-lg"
+              className="w-full object-cover rounded-lg"
             />
           </div>
         )}

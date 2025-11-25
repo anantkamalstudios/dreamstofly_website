@@ -24,29 +24,12 @@ const CourseFinderDetailPage = () => {
     { id: "more", label: "More Programmes" },
   ];
 
-  // const renderContent = () => {
-  //   switch (activeTab) {
-  //     case "overview":
-  //       return <ProgrammeOverview />;
-  //     case "admission":
-  //       return <AdmissionRequirements />;
-  //     case "scholarships":
-  //       return <Scholarship />;
-  //     case "more":
-  //       return <MoreProgrammes />;
-  //     default:
-  //       return null;
-  //   }
-  // };
-
   const headerData = {
     title: "Clinical Education PGCert",
     subtitle:
       "Knowledge Centre Campus (Liverpool City Centre Campus)) Liverpool, United Kingdom ",
-    rightImage:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    leftLogo:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    rightImage: "/images/courseFinder/courseFinder3.png",
+    leftLogo: "/images/courseFinder/courseFinder2.png",
   };
 
   const SidebarData = [
@@ -55,9 +38,9 @@ const CourseFinderDetailPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Header data={headerData} />
-      <div className="max-w-8xl mx-auto p-4 md:p-6 lg:p-8 bg-white">
+      <div className="max-w-full mx-auto p-4 md:p-6 lg:p-8 bg-gray-50">
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_3.6fr] gap-6">
           <aside>
             <SidebarTop data={SidebarData} />

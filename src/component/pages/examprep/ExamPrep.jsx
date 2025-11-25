@@ -21,7 +21,6 @@ import { faBed } from "@fortawesome/free-solid-svg-icons";
 
 const ExamPrep = () => {
   const [isVisible, setIsVisible] = useState(false);
-
   const scrollRef = useRef(null);
   const controls = useAnimation();
   const [isPaused, setIsPaused] = useState(false);
@@ -32,69 +31,58 @@ const ExamPrep = () => {
     if (!container) return;
 
     let scrollAmount = 0;
-    const speed = 0.5;
+    const speed = 1; // Increased speed for better visibility
+    let animationId;
 
     const animate = () => {
       if (!isPaused) {
         scrollAmount += speed;
         container.scrollLeft = scrollAmount;
-        if (container.scrollLeft >= container.scrollWidth / 2) {
+        
+        // Reset scroll position when reaching the end
+        if (scrollAmount >= container.scrollWidth / 2) {
           scrollAmount = 0;
+          container.scrollLeft = 0;
         }
       }
-      requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
-    animate();
+    animationId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationId);
+    };
   }, [isPaused]);
 
   // Smooth button scroll animation
-  const handleScroll = async (direction) => {
+  const handleScroll = (direction) => {
     const container = scrollRef.current;
     if (!container) return;
+    
     setIsPaused(true);
-
+    const scrollAmount = 300; // Fixed scroll amount
     const current = container.scrollLeft;
-    const distance = direction === "left" ? -250 : 250;
-    const target = current + distance;
-
-    // Animate smooth scroll using framer-motion
-    await controls.start({
-      x: [0, direction === "left" ? 250 : -250],
-      transition: { duration: 0.5, ease: "easeInOut" },
-    });
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    
+    let target;
+    if (direction === "left") {
+      target = Math.max(0, current - scrollAmount);
+    } else {
+      target = Math.min(maxScroll, current + scrollAmount);
+    }
 
     container.scrollTo({
       left: target,
       behavior: "smooth",
     });
 
-    // Resume auto-scroll
-    setTimeout(() => setIsPaused(false), 3000);
+    // Resume auto-scroll after a short delay
+    setTimeout(() => setIsPaused(false), 2000);
   };
 
   useEffect(() => {
     setIsVisible(true);
-
-    // Add CSS for scrolling animation
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      .animate-scroll {
-        animation: scroll 20s linear infinite;
-      }
-      .animate-scroll:hover {
-        animation-play-state: paused;
-      }
-    `;
-    document.head.appendChild(style);
-
-    return () => {
-      document.head.removeChild(style);
-    };
   }, []);
 
   const trustpilotFeatures = [
@@ -176,43 +164,38 @@ const ExamPrep = () => {
   ];
 
   const partners = [
-    { name: "FOOD HUB", color: "bg-red-500" },
-    { name: "noah", color: "bg-orange-500" },
-    { name: "EBIX", color: "bg-gray-700" },
-    { name: "HDFC CREDILA", color: "bg-blue-600" },
-    { name: "Garantme", color: "bg-indigo-800" },
-    { name: "COHORT GO", color: "bg-yellow-500" },
-    { name: "TM", color: "bg-blue-800" },
-    { name: "AUXILO", color: "bg-yellow-100 text-gray-800" },
-    { name: "Welcome", color: "bg-green-400" },
+    { img: "/images/examprep/aspenOnline.png" },
+    { img: "/images/examprep/highlight.png" },
+    { img: "/images/examprep/n.png" },
+    { img: "/images/examprep/missy.png" },
+    { img: "/images/examprep/peppermint.png" },
+    { img: "/images/examprep/pixielabs.png" },
   ];
 
   const stats = [
     {
-      icon: (
-        <FontAwesomeIcon icon={faBed} className="w-10 h-10 text-[#115779]" />
-      ),
       number: "2 Mn+",
       label: "Beds",
       color: "from-purple-400 to-purple-600",
+      img:"/images/examprep/vector1.png"
     },
     {
-      icon: <Building2 className="w-10 h-10 text-[#115779]" />,
       number: "65K+",
       label: "Properties",
       color: "from-blue-400 to-blue-600",
+       img:"/images/examprep/vector2.png"
     },
     {
-      icon: <GraduationCap className="w-10 h-10 text-[#115779]" />,
       number: "2 Mn",
       label: "Students Assisted",
       color: "from-indigo-400 to-indigo-600",
+       img:"/images/examprep/vector3.png"
     },
     {
-      icon: <Landmark className="w-10 h-10 text-[#115779]" />,
       number: "515+",
       label: "Global Cities",
       color: "from-green-400 to-green-600",
+       img:"/images/examprep/vector4.png"
     },
   ];
 
@@ -429,7 +412,7 @@ const ExamPrep = () => {
         </div>
       </div>
       {/* Stats Section */}
-      <div className="py-4 md:py-8 lg:py-12 bg-gray-300">
+      <div className="py-4 md:py-8 lg:py-12 bg-gray-300 mx-1 my-1 md:mx-6 md:my-4 lg:mx-12 lg:my-8 ">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-full text-center mb-4 md:mb-7 lg:mb-8">
             <h1 className="text-lg md:text-2xl lg:text-3xl text-[#115779] font-semibold ">
@@ -442,8 +425,8 @@ const ExamPrep = () => {
                 key={index}
                 className="text-center p-6 bg-white flex flex-col justify-center items-center gap-1  sm:gap-2"
               >
-                <div className="w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center text-white">
-                  {stat.icon}
+                <div className="w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center">
+                  <img src={stat.img} alt="" className="w-full h-full object-cover" />
                 </div>
                 <p className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 max-w-fit">
                   {stat.number}
@@ -507,40 +490,8 @@ const ExamPrep = () => {
         </div>
       </div>
       {/* Partners Section */}
-      {/* <div className="py-12 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-              Our Partners
-            </h2>
-            <p className="text-gray-600">
-              Trusted partnerships for your success
-            </p>
-          </div>
-          <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-8">
-              {[...partners, ...partners].map((partner, index) => (
-                <div
-                  key={index}
-                  className={`flex-shrink-0 w-20 h-20 ${partner.color} rounded-2xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-300`}
-                >
-                  <span
-                    className={`text-xs font-semibold text-center px-2 ${
-                      partner.color.includes("text-gray-800")
-                        ? "text-gray-800"
-                        : "text-white"
-                    }`}
-                  >
-                    {partner.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="py-12 bg-gray-50 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full mx-auto px-4 sm:px-10 lg:px-20">
           {/* Heading */}
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
@@ -551,46 +502,45 @@ const ExamPrep = () => {
             </p>
           </div>
 
-          {/* Scrollable Container */}
-          <div ref={scrollRef} className="overflow-x-hidden scrollbar-hide">
+          {/* Partners Container */}
+          <div className="relative">
             {/* Left/Right Buttons */}
-            <div className="relative">
-              {/* Left/Right Buttons */}
-              <button
-                onClick={() => handleScroll("left")}
-                className="absolute left-0 top-1/2 -translate-y-1/2 bg-blue-600 p-3 rounded-full z-10 shadow-lg hover:bg-blue-700 transition-colors"
-              >
-                <ChevronLeft className="w-5 h-5 text-white" />
-              </button>
-              <button
-                onClick={() => handleScroll("right")}
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-blue-600 p-3 rounded-full z-10 shadow-lg hover:bg-blue-700 transition-colors"
-              >
-                <ChevronRight className="w-5 h-5 text-white" />
-              </button>
-
-              {/* Scrollable Container */}
-              <div
-                ref={scrollRef}
-                className="overflow-x-hidden scrollbar-hide mx-16"
-              >
-                <motion.div
-                  animate={controls}
-                  className="flex space-x-8 py-2 items-center justify-center"
-                >
-                  {[...partners, ...partners].map((partner, index) => (
-                    <div
-                      key={index}
-                      className="flex-shrink-0 w-32 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-300"
-                    >
-                      <span className="text-sm font-semibold text-gray-800 text-center px-2">
-                        {partner.name}
-                      </span>
-                    </div>
-                  ))}
-                </motion.div>
+            <button
+              onClick={() => handleScroll("left")}
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-blue-600 p-3 rounded-full z-10 shadow-lg hover:bg-blue-700 transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5 text-white" />
+            </button>
+            
+            {/* Scrollable Container */}
+            <div 
+              ref={scrollRef}
+              className="overflow-x-hidden scrollbar-hide mx-auto max-w-7xl"
+            >
+              <div className="flex space-x-8 py-2">
+                {/* Duplicate the partners array to create infinite scroll effect */}
+                {[...partners, ...partners].map((partner, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-32 rounded-lg flex items-center justify-center transition-shadow duration-300"
+                  >
+                    <img 
+                      src={partner.img} 
+                      alt={partner.img} 
+                      className="h-full w-full object-contain p-2"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
+
+            <button
+              onClick={() => handleScroll("right")}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-blue-600 p-3 rounded-full z-10 shadow-lg hover:bg-blue-700 transition-colors"
+            >
+              <ChevronRight className="w-5 h-5 text-white" />
+            </button>
           </div>
         </div>
       </div>
@@ -599,7 +549,6 @@ const ExamPrep = () => {
       <section className="py-12 px-8 relative overflow-hidden text-black flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-10">
         <div className="flex justify-center items-center">
           <img
-            // src={`${import.meta.env.VITE_IMAGE_URL}${ctaSection?.image}`}
             src="https://www.freepik.com/free-vector/flat-university-concept-background_4672585.htm#fromView=search&page=1&position=1&uuid=5167b31a-905d-4efd-a8e6-3b4b0054fc39&query=study"
             alt=""
             className="w-[400px] h-[400px] object-contain rounded-lg"

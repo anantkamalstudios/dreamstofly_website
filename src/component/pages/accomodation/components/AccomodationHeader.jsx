@@ -5,6 +5,7 @@ import { HiHome } from "react-icons/hi2";
 import { FaPhoneAlt } from "react-icons/fa";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { BsWhatsapp } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const AccomodationHeader = () => {
   const tags = [
     {
@@ -32,9 +33,13 @@ const AccomodationHeader = () => {
           <FaPhoneAlt className="text-white w-6 h-6" />
           <BsWhatsapp className="text-white w-8 h-8 bg-green-500 rounded-full" />
           {/* button */}
-          <button className="py-2 px-6 rounded-3xl bg-white text-black">
+         
+          <Link 
+            to="/accomodation/list-your-property" 
+            className="py-2 px-6 rounded-3xl bg-white text-black hover:bg-gray-100 transition-colors"
+          >
             List Your Property
-          </button>
+          </Link>
         </div>
 
         <img

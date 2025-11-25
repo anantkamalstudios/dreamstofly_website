@@ -7,10 +7,10 @@ const MoreProgrammes = () => {
   const [selectedMBA, setSelectedMBA] = useState("MBA");
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 lg:p-8 bg-white">
-      <div className="border-2 border-blue-500 rounded-lg overflow-hidden">
-        <div className="bg-white p-4 md:p-6 border-b-2 border-blue-500">
-          <h2 className="text-xl md:text-2xl font-bold">
+    <div className="w-full max-w-4xl mx-auto bg-none">
+      <div className="overflow-hidden">
+        <div className="bg-none p-4 md:p-6 ">
+          <h2 className="text-xl md:text-2xl font-medium">
             More programmes from the university
           </h2>
         </div>
@@ -23,7 +23,7 @@ const MoreProgrammes = () => {
               placeholder="Search university Courses"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+              className="w-full pl-10 pr-4 py-3 border border-blue-500 text-sm md:text-base focus:outline-none focus:ring-blue-500"
             />
           </div>
 
@@ -31,7 +31,7 @@ const MoreProgrammes = () => {
             <select
               value={selectedMaster}
               onChange={(e) => setSelectedMaster(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-600 font-medium text-sm md:text-base bg-white"
+              className="w-full px-4 py-3 border border-blue-500 appearance-none focus:outline-none focus:ring-blue-500 text-blue-600 font-medium text-sm md:text-base bg-white"
             >
               <option value="Master">Master</option>
               <option value="Bachelor">Bachelor</option>
@@ -44,7 +44,7 @@ const MoreProgrammes = () => {
             <select
               value={selectedMBA}
               onChange={(e) => setSelectedMBA(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-600 font-medium text-sm md:text-base bg-white"
+              className="w-full px-4 py-3 border border-blue-500 appearance-none focus:outline-none focus:ring-blue-500 text-blue-600 font-medium text-sm md:text-base bg-white"
             >
               <option value="MBA">MBA</option>
               <option value="MSc">MSc</option>

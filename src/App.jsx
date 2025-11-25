@@ -37,6 +37,8 @@ import CourseFinderDetailPage from "./component/pages/courseFinder/CourseFinderD
 import UniversityDetailPage from "./component/pages/courseFinder/UniversityDetailPage";
 import AccommodationListing from "./component/pages/accomodation/AccommodationListing";
 import AccomodationDetail from "./component/pages/accomodation/components/AccomodationDetail";
+import ListYourPropertyPage from "./component/pages/accomodation/ListYourPropertyPage";
+import AccommodationForm from "./component/pages/accomodation/AccomodationFormPage";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -98,6 +100,16 @@ export default function App() {
                 path="/accomodation/:id/details"
                 element={<AccomodationDetail />}
               />
+              <Route
+                path="/accomodation/list-your-property"
+                element={<ListYourPropertyPage />}
+              />
+              <Route
+                path="/accommodation/start-listing"
+                element={<AccommodationForm />}
+              />
+              <Route path="/university/:slug" element={<UniversityDetailPage />} />
+              <Route path="/course/:slug" element={<CourseFinderDetailPage />} />
             </Routes>
           </MainLayout>
         </ScrollToTop>
