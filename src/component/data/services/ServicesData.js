@@ -149,7 +149,7 @@ export const services = [
     featured: false,
     price: "From £25",
     slug: "travel-insurance",
-    backgroundImage: "/images/travelInsurence.png",
+    backgroundImage: "/images/18.jpg",
   },
   {
     id: 13,
@@ -182,7 +182,7 @@ export const services = [
     featured: false,
     price: "From £10",
     slug: "forex-services",
-    backgroundImage: "/images/forex.png",
+    backgroundImage: "/images/11.jpg",
   },
   {
     id: 16,
