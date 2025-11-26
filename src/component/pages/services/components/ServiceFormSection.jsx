@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import ServiceEnquiryForm from "../[slug]/ServiceEnquiryForm";
 import FlightBookingForm from "../[slug]/FlightBookingForm";
 import InternationalMoneyTransferForm from "../[slug]/InternationalMoneyTransferForm";
