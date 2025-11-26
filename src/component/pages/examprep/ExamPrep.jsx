@@ -38,7 +38,7 @@ const ExamPrep = () => {
       if (!isPaused) {
         scrollAmount += speed;
         container.scrollLeft = scrollAmount;
-        
+
         // Reset scroll position when reaching the end
         if (scrollAmount >= container.scrollWidth / 2) {
           scrollAmount = 0;
@@ -59,12 +59,12 @@ const ExamPrep = () => {
   const handleScroll = (direction) => {
     const container = scrollRef.current;
     if (!container) return;
-    
+
     setIsPaused(true);
     const scrollAmount = 300; // Fixed scroll amount
     const current = container.scrollLeft;
     const maxScroll = container.scrollWidth - container.clientWidth;
-    
+
     let target;
     if (direction === "left") {
       target = Math.max(0, current - scrollAmount);
@@ -177,25 +177,25 @@ const ExamPrep = () => {
       number: "2 Mn+",
       label: "Beds",
       color: "from-purple-400 to-purple-600",
-      img:"/images/examprep/vector1.png"
+      img: "/images/examprep/vector1.png",
     },
     {
       number: "65K+",
       label: "Properties",
       color: "from-blue-400 to-blue-600",
-       img:"/images/examprep/vector2.png"
+      img: "/images/examprep/vector2.png",
     },
     {
       number: "2 Mn",
       label: "Students Assisted",
       color: "from-indigo-400 to-indigo-600",
-       img:"/images/examprep/vector3.png"
+      img: "/images/examprep/vector3.png",
     },
     {
       number: "515+",
       label: "Global Cities",
       color: "from-green-400 to-green-600",
-       img:"/images/examprep/vector4.png"
+      img: "/images/examprep/vector4.png",
     },
   ];
 
@@ -389,7 +389,7 @@ const ExamPrep = () => {
         </div>
       </div>
       {/* Travel CTA */}
-      <div className="relative w-full bg-[url('https://images.unsplash.com/photo-1759915995309-404c743bfbf9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0')] bg-cover bg-center bg-no-repeat h-80 sm:h-[350px] md:h-[450px] lg:h-[500px]">
+      <div className="relative w-full bg-[url(/images/examprep/banner.png)] bg-cover bg-center bg-no-repeat h-80 sm:h-[350px] md:h-[450px] lg:h-[500px]">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center md:items-stretch justify-center px-4 sm:px-6 lg:px-8 py-4 lg:py-10">
           <div
@@ -426,7 +426,11 @@ const ExamPrep = () => {
                 className="text-center p-6 bg-white flex flex-col justify-center items-center gap-1  sm:gap-2"
               >
                 <div className="w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center">
-                  <img src={stat.img} alt="" className="w-full h-full object-cover" />
+                  <img
+                    src={stat.img}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <p className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 max-w-fit">
                   {stat.number}
@@ -511,9 +515,9 @@ const ExamPrep = () => {
             >
               <ChevronLeft className="w-5 h-5 text-white" />
             </button>
-            
+
             {/* Scrollable Container */}
-            <div 
+            <div
               ref={scrollRef}
               className="overflow-x-hidden scrollbar-hide mx-auto max-w-7xl"
             >
@@ -524,9 +528,9 @@ const ExamPrep = () => {
                     key={index}
                     className="flex-shrink-0 w-32 rounded-lg flex items-center justify-center transition-shadow duration-300"
                   >
-                    <img 
-                      src={partner.img} 
-                      alt={partner.img} 
+                    <img
+                      src={partner.img}
+                      alt={partner.img}
                       className="h-full w-full object-contain p-2"
                       loading="lazy"
                     />
@@ -549,7 +553,7 @@ const ExamPrep = () => {
       <section className="py-12 px-8 relative overflow-hidden text-black flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-10">
         <div className="flex justify-center items-center">
           <img
-            src="https://www.freepik.com/free-vector/flat-university-concept-background_4672585.htm#fromView=search&page=1&position=1&uuid=5167b31a-905d-4efd-a8e6-3b4b0054fc39&query=study"
+            src="/images/examprep/examprep.png"
             alt=""
             className="w-[400px] h-[400px] object-contain rounded-lg"
           />
