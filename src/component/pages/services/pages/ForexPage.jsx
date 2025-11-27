@@ -95,36 +95,36 @@ const ForexPage = () => {
 
   const features = [
     {
-      icon: "/images/services/forex1.png",
+      icon: "/images/services/airport1.png",
       title: "Best Exchange Rates",
     },
     {
-      icon: "/images/services/forex2.png",
+      icon: "/images/services/airport2.jpg",
       title: "Zero Commission",
     },
     {
-      icon: "/images/services/forex3.png",
+      icon: "/images/services/airport3.jpg",
       title: "Same Day Service",
     },
     {
-      icon: "/images/services/forex4.png",
+      icon: "/images/services/airport4.jpg",
       title: "Multiple Currencies",
     },
   ];
 
   const steps = [
     {
-      img: "/images/services/search.png",
+      icon: "/images/services/search.png",
       title: "Book your order",
       desc: "Select your preferred currency and amount you want to buy or sell.",
     },
     {
-      img: "/images/services/select.png",
+      icon: "/images/services/select.png",
       title: "Get live rates",
       desc: "Check the live exchange rates and confirm your order.",
     },
     {
-      img: "/images/services/book.png",
+      icon: "/images/services/book.png",
       title: "Collect your currency",
       desc: "Pick up your currency from our nearest branch or get it delivered.",
       extraClasses: "md:col-span-2 lg:col-span-1",

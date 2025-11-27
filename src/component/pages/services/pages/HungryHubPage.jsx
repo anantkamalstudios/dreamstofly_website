@@ -128,23 +128,21 @@ const HungryHubPage = () => {
   const howItWorks = [
     {
       step: 1,
-      title: "Choose Your Meal",
+      title: "Provide student's details",
       description: "Browse our extensive menu and select your favorite dishes",
+      icon: "/images/services/moneyTransfer1.jpg",
     },
     {
       step: 2,
       title: "Place Your Order",
       description: "Enter your delivery details and payment information",
+      icon: "/images/services/moneyTransfer2.png",
     },
     {
       step: 3,
       title: "Track Delivery",
       description: "Follow your order in real-time as it makes its way to you",
-    },
-    {
-      step: 4,
-      title: "Enjoy Your Meal!",
-      description: "Sit back, relax, and enjoy your delicious food",
+      icon: "/images/services/moneyTransfer3.png",
     },
   ];
 

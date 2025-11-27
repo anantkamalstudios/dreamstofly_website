@@ -56,22 +56,22 @@ const JobSearchPage = () => {
 
   const features = [
     {
-      icon: "/images/services/job1.png",
+      icon: "/images/services/vector1.png",
       title: "Job Matching",
       description: "We match your skills with the right job opportunities",
     },
     {
-      icon: "/images/services/job2.png",
+      icon: "/images/services/vector2.png",
       title: "Visa Assistance",
       description: "Help with work visa and documentation process",
     },
     {
-      icon: "/images/services/job3.png",
+      icon: "/images/services/vector3.png",
       title: "Interview Prep",
       description: "Get prepared with mock interviews and tips",
     },
     {
-      icon: "/images/services/job4.png",
+      icon: "/images/services/vector4.png",
       title: "Relocation Support",
       description: "Assistance with accommodation and settling in",
     },

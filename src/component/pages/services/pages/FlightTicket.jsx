@@ -105,17 +105,17 @@ const FlightTicket = () => {
 
   const steps = [
     {
-      img: "/images/services/search.png",
+      icon: "/images/services/search.png",
       title: "Search",
       desc: "Enter your departure and arrival destination, along with your tentative dates and types of tickets.",
     },
     {
-      img: "/images/services/select.png",
+      icon: "/images/services/select.png",
       title: "Select",
       desc: "Select the flight that is the most compatible with your budget and preferences from all the available flights.",
     },
     {
-      img: "/images/services/book.png",
+      icon: "/images/services/book.png",
       title: "Book",
       desc: "Book tickets with special fares, apply discount coupon during checkout or contact team for assistance.",
       extraClasses: "md:col-span-2 lg:col-span-1",

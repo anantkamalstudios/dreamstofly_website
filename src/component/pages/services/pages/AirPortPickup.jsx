@@ -102,17 +102,17 @@ const AirPortPickup = () => {
 
   const steps = [
     {
-      img: "/images/services/search.png",
+      icon: "/images/services/search.png",
       title: "Compare prices",
       desc: "Enter your pickup and destination locations and compare the prices offered by various transport companies.",
     },
     {
-      img: "/images/services/select.png",
+      icon: "/images/services/select.png",
       title: "Book ride",
       desc: "Select the company and type of ride that you want. You will receive an instant confirmation.",
     },
     {
-      img: "/images/services/book.png",
+      icon: "/images/services/book.png",
       title: "Enjoy timely pickup",
       desc: "You can communicate with your driver about any change in time and be sure that you will receive a timely pickup.",
       extraClasses: "md:col-span-2 lg:col-span-1",

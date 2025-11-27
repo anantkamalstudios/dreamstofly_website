@@ -75,36 +75,36 @@ const InternationalSimCard = () => {
 
   const features = [
     {
-      icon: "/images/services/sim1.png",
+      icon: "/images/services/airport1.png",
       title: "Instant Activation",
     },
     {
-      icon: "/images/services/sim2.png",
+      icon: "/images/services/airport2.jpg",
       title: "Affordable Rates",
     },
     {
-      icon: "/images/services/sim3.png",
+      icon: "/images/services/airport3.jpg",
       title: "24/7 Support",
     },
     {
-      icon: "/images/services/sim4.png",
+      icon: "/images/services/airport4.jpg",
       title: "Wide Coverage",
     },
   ];
 
   const steps = [
     {
-      img: "/images/services/search.png",
+      icon: "/images/services/search.png",
       title: "Select Your Plan",
       desc: "Choose the perfect data and call package for your destination.",
     },
     {
-      img: "/images/services/select.png",
+      icon: "/images/services/select.png",
       title: "Place Your Order",
       desc: "Provide your travel details and delivery information.",
     },
     {
-      img: "/images/services/book.png",
+      icon: "/images/services/book.png",
       title: "Receive & Activate",
       desc: "Get your SIM card before you travel and activate upon arrival.",
       extraClasses: "md:col-span-2 lg:col-span-1",

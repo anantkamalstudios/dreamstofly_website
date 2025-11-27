@@ -60,17 +60,17 @@ const TravelInsurance = () => {
 
   const steps = [
     {
-      img: "/images/services/search.png",
+      icon: "/images/services/search.png",
       title: "Medical emergency",
       desc: "Expenses incurred for hospitalization in case of accidents.",
     },
     {
-      img: "/images/services/select.png",
+      icon: "/images/services/select.png",
       title: "Baggage loss",
       desc: "You will be offered that you need to buy immediately.",
     },
     {
-      img: "/images/services/book.png",
+      icon: "/images/services/book.png",
       title: "Compassionate visit",
       desc: "Financial aid/support for guardians to travel in case of emergency",
       extraClasses: "md:col-span-2 lg:col-span-1",
