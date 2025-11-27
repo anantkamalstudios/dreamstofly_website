@@ -315,7 +315,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 lg:mb-12 gap-4 lg:gap-6">
-          <div className="flex flex-col gap-4 lg:gap-0 lg:flex-row lg:items-center lg:gap-6">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6">
             <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
               Our students love us!
             </h4>
