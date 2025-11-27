@@ -123,18 +123,17 @@ const LuggaugePage = () => {
     {
       icon: "/images/services/search.png",
       title: "Book Your Service",
-      description: "Fill in the details and book your luggage service online.",
+      desc: "Fill in the details and book your luggage service online.",
     },
     {
       icon: "/images/services/select.png",
       title: "Schedule Pickup",
-      description: "Choose a convenient time for us to pick up your luggage.",
+      desc: "Choose a convenient time for us to pick up your luggage.",
     },
     {
       icon: "/images/services/book.png",
       title: "Relax & Track",
-      description:
-        "Sit back and track your luggage in real-time until delivery.",
+      desc: "Sit back and track your luggage in real-time until delivery.",
     },
   ];
 

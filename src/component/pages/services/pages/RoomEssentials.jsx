@@ -126,17 +126,17 @@ const RoomEssentials = () => {
     {
       icon: "/images/services/search.png",
       title: "Browse Products",
-      description: "Select from our wide range of room essentials",
+      desc: "Select from our wide range of room essentials",
     },
     {
       icon: "/images/services/select.png",
       title: "Add to Cart",
-      description: "Choose your items and add them to your cart",
+      desc: "Choose your items and add them to your cart",
     },
     {
       icon: "/images/services/book.png",
       title: "Checkout",
-      description: "Complete your purchase with secure payment",
+      desc: "Complete your purchase with secure payment",
     },
   ];
 

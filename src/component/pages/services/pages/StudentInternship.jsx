@@ -93,17 +93,17 @@ const StudentInternship = () => {
     {
       icon: "/images/services/search.png",
       title: "Apply Online",
-      description: "Submit your application and resume",
+      desc: "Submit your application and resume",
     },
     {
       icon: "/images/services/select.png",
       title: "Interview",
-      description: "Attend an interview with our team",
+      desc: "Attend an interview with our team",
     },
     {
       icon: "/images/services/book.png",
       title: "Get Placed",
-      description: "Start your internship journey",
+      desc: "Start your internship journey",
     },
   ];
 
