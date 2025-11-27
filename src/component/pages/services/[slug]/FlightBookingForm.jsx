@@ -144,7 +144,7 @@ const FlightBookingForm = ({ showModal, setShowModal }) => {
   };
 
   return (
-    <div className="w-full max-w-7xl relative" style={{ minHeight: "400px" }}>
+    <div className="w-[1300px] relative" style={{ minHeight: "400px" }}>
       {/* Flight Tab - This sits on top */}
       <div className="flex justify-center">
         <button className="flex items-center gap-2 px-14 py-5 bg-white text-gray-800 font-medium">
@@ -412,19 +412,11 @@ const FlightBookingForm = ({ showModal, setShowModal }) => {
                   </div>
                 </div>
 
-                {/* Fourth Row: Cancel and Submit Buttons (Right Aligned) */}
-                <div className="flex justify-end gap-3">
-                  <button
-                    type="button"
-                    onClick={handleCloseModal}
-                    className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition-all"
-                  >
-                    Cancel
-                  </button>
+                <div className="w-full">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-6 py-3 bg-[#0d8aff] hover:bg-[#0073df] text-white rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="w-full px-6 py-3 bg-[#0d8aff] hover:bg-[#0073df] text-white rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     {isSubmitting ? (
                       <>

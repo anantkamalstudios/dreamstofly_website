@@ -23,7 +23,7 @@ const ServicesGrid = () => {
   };
 
   return (
-    <section className="md:py-2 bg-none">
+    <section className="md:py-2 bg-gray-100">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-start mb-1 md:mb-4 mx-auto">
           <h1 className="text-xl md:text-3xl font-semibold mb-1 text-black">
@@ -37,7 +37,7 @@ const ServicesGrid = () => {
             return (
               <div
                 key={service.id}
-                className="group bg-white rounded-lg shadow-sm border border-gray-200 p-8 flex flex-col items-center hover:shadow-md transition-all duration-300 cursor-pointer"
+                className="group bg-white shadow-lg border border-gray-200 p-8 flex flex-col items-center hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-[#193F64] hover:text-white text-gray-900 hover:scale-105"
                 onMouseEnter={() => setHoveredCard(service.id)}
                 onMouseLeave={() => setHoveredCard(null)}
                 onClick={() => handleCardClick(service)}
@@ -53,29 +53,29 @@ const ServicesGrid = () => {
 
                 {/* Fixed height title container */}
                 <div className="h-16 flex items-center justify-center mb-2">
-                  <h3 className="text-xl font-bold text-gray-900 text-center px-2">
+                  <h3 className="text-xl font-bold text-center px-2">
                     {service.title}
                   </h3>
                 </div>
 
                 {/* Horizontal line at fixed position */}
-                <div className="w-full h-px bg-gray-600 mb-2"></div>
+                <div className="w-full h-px bg-gray-600 mb-2 group-hover:bg-white"></div>
 
                 {/* Description and yellow bar container */}
                 <div className="w-full mb-6 flex-grow">
                   {/* Fixed height description */}
-                  <div className="h-12 mb-2">
-                    <p className="text-gray-700 text-sm leading-relaxed text-start">
-                      {service.desc}
-                    </p>
-                  </div>
+                  {/* <div className="h-12 mb-2"> */}
+                  <p className=" text-sm leading-relaxed text-start group-hover:text-white">
+                    {service.desc}
+                  </p>
+                  {/* </div> */}
 
                   {/* Yellow accent bar */}
                   <div className="w-24 h-1.5 bg-yellow-400"></div>
                 </div>
 
                 {/* Button at bottom */}
-                <button className="border-2 border-[#0073DF] text-[#193F64] px-6 py-2.5 rounded text-sm font-semibold flex items-center gap-2 hover:bg-blue-600 hover:text-white transition-colors duration-300 uppercase tracking-wide">
+                <button className="border-2 text-[#193F64] border-[#0073DF] px-6 py-2.5 text-sm font-semibold flex items-center gap-2 hover:text-white transition-colors duration-300 uppercase tracking-wide group-hover:bg-white group-hover:text-[#0073DF] group-hover:border-[#193F64]">
                   EXPLORE MORE
                   <span className="text-lg">→</span>
                 </button>

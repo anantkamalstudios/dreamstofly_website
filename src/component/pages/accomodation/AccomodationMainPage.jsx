@@ -11,7 +11,7 @@ import FAQSection from "./components/FAQSection";
 
 const AccomodationMainPage = () => {
   return (
-    <div>
+    <div className="bg-[#F3F3F3]">
       <AccomodationHeader />
       <AccommodationOverview />
       <PopularDestination />

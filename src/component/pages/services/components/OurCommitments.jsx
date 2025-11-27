@@ -149,21 +149,9 @@ const OurCommitments = () => {
                     "
                   >
                     <div
-                      className="
-    absolute top-2 left-1/2 -translate-x-1/2 -translate-y-1/2
-    p-[6px]
-    rounded-full
-    bg-gradient-to-t from-[#0073DF] to-[#003E79]
-    z-10
-  "
-                    >
+                      className="absolute top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-[6px] rounded-full bg-gradient-to-t rom-[#0073DF] to-[#003E79] z-10" >
                       <div
-                        className="
-      w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36
-      rounded-full
-      bg-white flex items-center justify-center shadow-md
-    "
-                      >
+                        className="w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 rounded-full bg-white flex items-center justify-center shadow-md">
                         <img
                           src={item.img}
                           alt={item.title}

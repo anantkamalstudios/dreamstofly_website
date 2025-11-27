@@ -144,10 +144,10 @@ const ServiceCountry = ({ countryData }) => {
             <div className="relative z-10">
               <div className="text-center mb-6">
                 <h3 className="text-4xl font-semibold text-[#115779] mb-4">
-                  {countryData.title}
+                  {countryData?.title || ""}
                 </h3>
                 <p className="text-md text-gray-600 max-w-2xl mx-auto">
-                  {countryData.discription}
+                  {countryData?.discription || ""}
                 </p>
               </div>
 

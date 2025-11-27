@@ -555,10 +555,47 @@ export const serviceDetails = {
     title: "Luggage Storage",
     subtitle: "Safe & Secure extra storage space at convenient locations",
   },
+  "e-money-app": {
+    subTitleColor: "#fff",
+    titleColor: "#fff",
+    title: "Student E-Money App",
+    subtitle: "Manage your money easily while studying abroad",
+    heroImage: "/images/emoney.jpeg",
+    price: "Free",
+    duration: "Instant Access",
+    description:
+      "Get access to a student-friendly e-money app that helps you manage your finances while studying abroad. Enjoy zero foreign transaction fees, real-time spending notifications, and easy money transfers.",
+    features: [
+      "Zero foreign transaction fees",
+      "Real-time spending notifications",
+      "Easy international money transfers",
+      "Multi-currency support",
+      "24/7 customer support",
+      "Budget tracking tools",
+    ],
+    requirements: [
+      "Valid student ID",
+      "Proof of enrollment",
+      "Government-issued ID",
+      "Proof of address",
+    ],
+    process: [
+      "Download the app from App Store or Google Play",
+      "Complete the sign-up process",
+      "Verify your student status",
+      "Start using your digital wallet",
+    ],
+    benefits: [
+      "No monthly fees",
+      "Competitive exchange rates",
+      "Free ATM withdrawals worldwide",
+      "Split bills with friends easily",
+    ],
+  },
   "travel-insurance": {
     subTitleColor: "#fff",
     titleColor: "#fff",
-    title: "Travel Insurance",
+    title: "",
     subtitle: "Emergencies don't come knocking, better to be safe than sorry",
   },
 };

@@ -114,7 +114,7 @@ import { Check, Shield, Tag, FileX, CheckCircle } from "lucide-react";
 
 export default function FeelAtHomeHero() {
   return (
-    <div className="bg-gray-50 p-8 min-h-screen flex items-center">
+    <div className="p-8 h-fit flex items-center">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-6 items-start">
           {/* Left card */}

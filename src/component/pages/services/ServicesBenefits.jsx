@@ -126,15 +126,14 @@ import React from "react";
 
 export default function ServicesBenefits() {
   return (
-    <div className="w-full min-h-scree p-4 md:p-1 flex items-center justify-center my-5">
-      {/* Outer Blue Border Container */}
-      <div className="w-full max-w-7xl relative bg-white">
-        {/* Right Light Background Box - Layer 1 (behind everything) */}
+    <div className="w-full min-h-fit py-4 md:p-1 flex items-center justify-center my-5 xl:px-10 lg:px-8 px-4">
+      <div className="w-full max-w-full relative bg-white ">
         <div
           className="absolute top-0 right-0 h-full rounded-2xl"
           style={{
-            width: "70%",
-            backgroundColor: "#f6fafd",
+            width: "65%",
+            backgroundColor: "#0073DF",
+            opacity: 0.05,
             zIndex: 1,
           }}
         ></div>
@@ -142,22 +141,17 @@ export default function ServicesBenefits() {
         {/* Main Content Grid - Layer 2 */}
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 py-10 px-6 md:px-12">
           <div className="relative z-10 flex items-center">
-            <div
-              className="w-full max-w-md rounded-3xl relative overflow-hidden"
-              style={{
-                aspectRatio: "1/1",
-                height: "450px",
-              }}
-            >
+            <div className="relative w-[510px] h-[510px] rounded-3xl overflow-hidden">
               <img
                 src="/images/Rectangle 24159.png"
                 alt="background"
                 className="absolute inset-0 w-full h-full object-cover"
               />
+
               <img
                 src="/images/image.png"
                 alt="girls"
-                className="absolute left-4 bottom-0 w-[92%] h-auto object-contain"
+                className="absolute h-full w-full object-contain"
                 style={{ filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.2))" }}
               />
             </div>
@@ -178,96 +172,63 @@ export default function ServicesBenefits() {
               </p>
             </div>
 
-            <div className="hidden lg:flex lg:absolute lg:-right-8 lg:top-48 gap-6">
+            <div className="hidden lg:flex lg:absolute lg:right-0 lg:top-60 gap-6">
               {/* Card 1 - Ultimate flexibility */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[250px]">
-                <div className="flex justify-center mb-4">
-                  <svg width="65" height="65" viewBox="0 0 65 65" fill="none">
-                    <rect
-                      x="15"
-                      y="25"
-                      width="35"
-                      height="22"
-                      rx="2"
-                      stroke="#ff6542"
-                      strokeWidth="2.5"
-                      fill="none"
-                      strokeDasharray="4 4"
-                    />
-                    <circle cx="25" cy="36" r="4" fill="#ff6542" />
-                    <circle cx="40" cy="36" r="4" fill="#ff6542" />
-                  </svg>
+              <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[280px]">
+                <div className="flex justify-center mb-4 h-16 w-16">
+                  <img
+                    src="/images/services/ticket.png"
+                    alt=""
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h3
-                  className="text-lg font-bold mb-2 text-center"
+                  className="text-lg font-medium mb-2 text-start"
                   style={{ color: "#0a1f44" }}
                 >
                   Ultimate flexibility
                 </h3>
-                <p className="text-sm text-center" style={{ color: "#5a6c7d" }}>
+                <p className="text-sm text-start" style={{ color: "#5a6c7d" }}>
                   You're in control, with free cancellation and payment.
                 </p>
               </div>
 
               {/* Card 2 - Memorable experiences */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[250px]">
-                <div className="flex justify-center mb-4">
-                  <svg width="65" height="65" viewBox="0 0 65 65" fill="none">
-                    <ellipse
-                      cx="32.5"
-                      cy="22"
-                      rx="7"
-                      ry="10"
-                      stroke="#ff6542"
-                      strokeWidth="2.5"
-                      fill="none"
-                    />
-                    <path
-                      d="M25.5 22L19 40M39.5 22L46 40"
-                      stroke="#ff6542"
-                      strokeWidth="2.5"
-                    />
-                    <path
-                      d="M19 40C19 40 23 45 32.5 45C42 45 46 40 46 40"
-                      stroke="#ff6542"
-                      strokeWidth="2.5"
-                      fill="none"
-                    />
-                    <rect x="30" y="43" width="5" height="7" fill="#ff6542" />
-                  </svg>
+              <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[280px]">
+                <div className="flex justify-center mb-4 h-16 w-16">
+                  <img
+                    src="/images/services/hot-air-balloon.png"
+                    alt=""
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h3
-                  className="text-lg font-bold mb-2 text-center"
+                  className="text-lg font-medium mb-2 text-start"
                   style={{ color: "#0a1f44" }}
                 >
                   Memorable experiences
                 </h3>
-                <p className="text-sm text-center" style={{ color: "#5a6c7d" }}>
+                <p className="text-sm text-start" style={{ color: "#5a6c7d" }}>
                   Browse and book tours and activities so incredible.
                 </p>
               </div>
 
               {/* Card 3 - Quality at our core */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[250px]">
-                <div className="flex justify-center mb-4">
-                  <svg width="65" height="65" viewBox="0 0 65 65" fill="none">
-                    <path
-                      d="M32.5 15L37 27L40 29L34 34L36 45L32.5 40L29 45L31 34L25 29L28 27L32.5 15Z"
-                      stroke="#ff6542"
-                      strokeWidth="2.5"
-                      fill="none"
-                    />
-                    <circle cx="27" cy="24" r="2" fill="#ff6542" />
-                    <circle cx="38" cy="24" r="2" fill="#ff6542" />
-                  </svg>
+              <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[280px]">
+                <div className="flex justify-center mb-4 h-16 w-16">
+                  <img
+                    src="/images/services/diamond.png"
+                    alt=""
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h3
-                  className="text-lg font-bold mb-2 text-center"
+                  className="text-lg font-medium mb-2 text-start"
                   style={{ color: "#0a1f44" }}
                 >
                   Quality at our core
                 </h3>
-                <p className="text-sm text-center" style={{ color: "#5a6c7d" }}>
+                <p className="text-sm text-start" style={{ color: "#5a6c7d" }}>
                   High quality standards. Millions of reviews.
                 </p>
               </div>

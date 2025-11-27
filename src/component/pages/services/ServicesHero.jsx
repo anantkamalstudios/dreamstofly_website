@@ -375,17 +375,17 @@ export default function ServicesHero() {
   const [exploreOpen, setExploreOpen] = useState(false);
 
   return (
-    <div className="bg-white mb-6 md:mb-8 lg:mb-12">
-      <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible h-auto md:h-[80vh] lg:h-[92vh] xl:h-[82vh]">
+    <div className="bg-gray-100 pb-6 md:pb-8 lg:pb-12">
+      <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible h-auto md:h-[87vh] lg:h-[100vh] xl:h-[90vh]">
         <div className="max-w-full mx-auto h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full py-12 md:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full py-8 md:py-0">
             {/* Left Side - Text Content */}
             <div className="text-white space-y-6 lg:space-y-8 px-6 sm:px-10 md:px-20 flex flex-col justify-center">
               <div>
                 <p className="text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider text-white">
                   WELCOME TO DREAMS TO FLY
                 </p>
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight font-serif">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-wide font-serif">
                   The Future Belongs
                   <br />
                   To Those Who
@@ -402,11 +402,11 @@ export default function ServicesHero() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button className="bg-white text-blue-600 px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-blue-50 flex items-center justify-center gap-2 text-sm transition-all">
+                <button className="bg-white text-blue-600 px-6 sm:px-10 py-2.5 sm:py-3 font-medium hover:bg-blue-50 flex items-center justify-center gap-2 text-sm transition-all">
                   APPLY NOW
                   <span>→</span>
                 </button>
-                <button className="border-2 border-white text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-white/10 text-sm transition-all">
+                <button className="border-2 border-white text-white px-6 sm:px-10 py-2.5 sm:py-3  font-medium hover:bg-white/10 text-sm transition-all">
                   LEARN MORE
                 </button>
               </div>
@@ -438,10 +438,10 @@ export default function ServicesHero() {
 
         {/* Stats Card - Overlapping bottom */}
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[90%] sm:w-[85%] max-w-6xl z-30">
-          <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2 sm:py-4 lg:py-6 px-4 sm:px-6 lg:px-12">
+          <div className="bg-white shadow-xl border border-gray-100 py-2 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-12">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
               {/* Students Enrolled */}
-              <div className="text-center lg:border-r border-[#003E79]">
+              <div className="text-start lg:border-r border-[#003E79]">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-[#003E79] mb-1 sm:mb-2">
                   1050 +
                 </h3>
@@ -451,7 +451,7 @@ export default function ServicesHero() {
               </div>
 
               {/* Completed Courses */}
-              <div className="text-center lg:border-r border-[#003E79]">
+              <div className="text-start lg:border-r border-[#003E79]">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-[#003E79] mb-1 sm:mb-2">
                   3500 +
                 </h3>
@@ -461,7 +461,7 @@ export default function ServicesHero() {
               </div>
 
               {/* Registered Instructors */}
-              <div className="text-center lg:border-r-[#003E79] border-t-2 lg:border-t-0 border-gray-200 pt-4 sm:pt-6 lg:pt-0">
+              <div className="text-start lg:border-r border-[#003E79] pt-4 sm:pt-6 lg:pt-0">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-[#003E79] mb-1 sm:mb-2">
                   500 +
                 </h3>
@@ -471,7 +471,7 @@ export default function ServicesHero() {
               </div>
 
               {/* Success Rate */}
-              <div className="text-center border-t-2 lg:border-t-0 border-gray-200 pt-4 sm:pt-6 lg:pt-0">
+              <div className="text-start border-t-2 lg:border-t-0 border-gray-200 pt-4 sm:pt-6 lg:pt-0">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-[#003E79] mb-1 sm:mb-2">
                   100%
                 </h3>
@@ -485,7 +485,7 @@ export default function ServicesHero() {
       </div>
 
       {/* Spacer for overlapping stats - Responsive height */}
-      <div className="h-20 sm:h-10 md:h-28 lg:h-16"></div>
+      <div className="h-20 sm:h-10 md:h-28 lg:h-16 bg-gray-100"></div>
     </div>
   );
 }

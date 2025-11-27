@@ -34,7 +34,7 @@ export default function FAQSection() {
   const right = faqs.filter((_, idx) => idx !== openIndex);
 
   return (
-    <section className="w-full bg-[#f3f4f6] py-16">
+    <section className="w-full py-16">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-semibold text-center mb-10">
           Frequently ask Questions?

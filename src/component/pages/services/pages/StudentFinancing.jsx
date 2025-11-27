@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import PoweredBySection from "../components/PoweredBySection";
@@ -7,8 +7,87 @@ import WhyChooseUsFeatures from "../components/WhyChooseUsFeatures";
 import Testimonials from "../Testimonials";
 import TrustedAndLoved from "../components/TrustedAndLoved";
 
+// Form configuration for Student Financing
+const studentFinancingForm = {
+  title: "Application Form",
+  icon: "/images/formicon/suit.png",
+  description: "",
+  buttonText: "Submit",
+  fields: [
+    {
+      name: "firstName",
+      label: "First Name",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "lastName",
+      label: "Last Name",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "nationality",
+      label: "Nationality",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "destinationCountry",
+      label: "Destination Country",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "provider",
+      label: "Select Provider",
+      type: "select",
+      options: ["Provider1", "Provider2"],
+      colSpan: 2,
+      required: true,
+    },
+    {
+      name: "email",
+      label: "Email Address",
+      type: "email",
+      required: true,
+      placeholder: "Enter your email",
+      colSpan: 2,
+    },
+    {
+      name: "phone",
+      label: "Phone Number",
+      type: "phone",
+      required: true,
+      placeholder: "Enter your phone number",
+      colSpan: 2,
+    },
+  ],
+};
+
 const StudentFinancing = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [showPopup, setShowPopup] = useState(false);
+  const [firstFormData, setFirstFormData] = useState(null);
+
+  const handleFirstFormSubmit = (formData) => {
+    setFirstFormData(formData);
+    setShowPopup(true);
+  };
+
+  const handlePopupSubmit = (popupFormData) => {
+    const combinedData = {
+      ...firstFormData,
+      ...popupFormData,
+    };
+    console.log("Student financing application:", combinedData);
+    // Here you can send the data to your API
+    setShowPopup(false);
+  };
 
   if (loading) {
     return (
@@ -23,55 +102,48 @@ const StudentFinancing = () => {
   const features = [
     {
       icon: "/images/services/vector1.png",
-      title: "Financing for education and living expenses",
+      title: "Competitive Interest Rates",
+      description: "Affordable interest rates for students",
     },
     {
       icon: "/images/services/vector2.png",
-      title: "Completely online process",
+      title: "Flexible Repayment",
+      description: "Repay after you complete your studies",
     },
     {
       icon: "/images/services/vector3.png",
-      title: "Interest rates start from 9.85%",
+      title: "No Collateral",
+      description: "No need for property or asset as collateral",
     },
     {
       icon: "/images/services/vector4.png",
-      title: "Tax Benefits u/s 80 E",
+      title: "Quick Approval",
+      description: "Fast processing and approval of loans",
+    },
+  ];
+
+  const steps = [
+    {
+      icon: "/images/services/search.png",
+      title: "Apply Online",
+      description: "Fill out our simple application form",
+    },
+    {
+      icon: "/images/services/select.png",
+      title: "Submit Documents",
+      description: "Provide required academic and financial documents",
+    },
+    {
+      icon: "/images/services/book.png",
+      title: "Get Approved",
+      description: "Receive approval and get funded",
     },
   ];
 
   const stats = [
-    {
-      number: "12K+",
-      label: "Succes Journey",
-    },
-    {
-      number: "16+",
-      label: "Awards Winning",
-    },
-    {
-      number: "20+",
-      label: "Years Of Experience",
-    },
-  ];
-
-  const financeFeatures = [
-    {
-      icon: "/images/services/search.png",
-      title: "Fill the form",
-      description:
-        "Fill in your and your co-signer's details. A student financing representative will reach out to you shortly.",
-    },
-    {
-      icon: "/images/services/select.png",
-      title: "Submit required documents",
-      description: "Upload the required documents to begin the process.",
-    },
-    {
-      icon: "/images/services/book.png",
-      title: "Loan Approval",
-      description:
-        "Get disbursement in up to 7 working days, once your loan is approved.",
-    },
+    { number: "10K+", label: "Students Funded" },
+    { number: "$50M+", label: "Total Loans Disbursed" },
+    { number: "95%", label: "Approval Rate" },
   ];
 
   return (
@@ -79,11 +151,14 @@ const StudentFinancing = () => {
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          ...studentFinancingForm,
+          onSubmit: handleFirstFormSubmit,
+        }}
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />
-      <WhyChooseUsFeatures features={financeFeatures} />
+      <WhyChooseUsFeatures features={steps} />
       <Testimonials />
       <TrustedAndLoved stats={stats} />
     </div>

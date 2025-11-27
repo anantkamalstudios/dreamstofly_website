@@ -34,9 +34,9 @@ import React from "react";
 
 const StudyAbroadBanner = () => {
   return (
-    <div className="overflow-hidden">
+    <div>
       <div
-        className="rounded-2xl mx-0 md:mx-14 lg:mx-28 mt-8 overflow-hidden"
+        className="p-6 mx-0 md:mx-14 lg:mx-28 my-8 overflow-hidden"
         style={{
           backgroundImage: "url('/images/accomodation/studyabroadbanner.png')",
           backgroundSize: "cover",

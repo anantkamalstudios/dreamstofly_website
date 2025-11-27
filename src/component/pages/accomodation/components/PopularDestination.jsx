@@ -41,10 +41,10 @@ const PopularDestination = () => {
   };
 
   return (
-    <div className="w-full bg-gray-50 p-8 min-h-screen">
+    <div className="w-full p-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
+        <div className=" flex-col lg:flex-row lg:items-center lg:justify-between mb-12 gap-6">
           <h1 className="text-4xl font-bold text-gray-900">
             Popular Destinations
           </h1>

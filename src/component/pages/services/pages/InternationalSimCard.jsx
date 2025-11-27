@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import PoweredBySection from "../components/PoweredBySection";
 import TravelPartnersFeatures from "../components/TravelPartnersFeatures";
@@ -9,8 +9,59 @@ import RelatedServices from "../components/RelatedServices";
 import ServiceHero from "../[slug]/ServiceHero";
 import TrustedAndLoved from "../components/TrustedAndLoved";
 
+// Form configuration for International SIM Card
+const simCardForm = {
+  title: "Purchase new SIM",
+  icon: "/images/formicon/suit.png",
+  description: "",
+  buttonText: "Order Now",
+  fields: [
+    {
+      name: "destination",
+      label: "Destination Country",
+      type: "select",
+      required: true,
+      options: [
+        "USA",
+        "UK",
+        "Canada",
+        "Australia",
+        "Germany",
+        "France",
+        "Other",
+      ],
+      colSpan: 2,
+    },
+    {
+      name: "provider",
+      label: "Provider",
+      type: "select",
+      required: true,
+      options: ["Provider1", "Provider2", "Provider3", "Provider4"],
+      colSpan: 2,
+    },
+  ],
+};
+
 const InternationalSimCard = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [showPopup, setShowPopup] = useState(false);
+  const [firstFormData, setFirstFormData] = useState(null);
+
+  const handleFirstFormSubmit = (formData) => {
+    setFirstFormData(formData);
+    setShowPopup(true);
+  };
+
+  const handlePopupSubmit = (popupFormData) => {
+    const combinedData = {
+      ...firstFormData,
+      ...popupFormData,
+    };
+    console.log("SIM Card order request:", combinedData);
+    // Here you can send the data to your API
+    setShowPopup(false);
+  };
 
   if (loading) {
     return (
@@ -20,72 +71,76 @@ const InternationalSimCard = () => {
     );
   }
 
+  if (!service || !serviceDetails) return null;
+
   const features = [
     {
-      icon: "/images/services/airport1.png",
-      title: "Unlimited incoming calls",
+      icon: "/images/services/sim1.png",
+      title: "Instant Activation",
     },
     {
-      icon: "/images/services/airport2.jpg",
-      title: "Online recharge from anywhere",
+      icon: "/images/services/sim2.png",
+      title: "Affordable Rates",
     },
     {
-      icon: "/images/services/airport3.jpg",
-      title: "Affordable internet packs",
+      icon: "/images/services/sim3.png",
+      title: "24/7 Support",
     },
     {
-      icon: "/images/services/airport4.jpg",
-      title: "Coverage in 50+ countries",
+      icon: "/images/services/sim4.png",
+      title: "Wide Coverage",
     },
   ];
 
   const steps = [
     {
       img: "/images/services/search.png",
-      title: "Select a plan",
-      desc: "Choose a SIM & a plan as per your requirement.",
+      title: "Select Your Plan",
+      desc: "Choose the perfect data and call package for your destination.",
     },
     {
       img: "/images/services/select.png",
-      title: "Confirm your details",
-      desc: "Fill in your details and proceed for payment.",
+      title: "Place Your Order",
+      desc: "Provide your travel details and delivery information.",
     },
     {
       img: "/images/services/book.png",
-      title: "Instant Activation",
-      desc: "SIM will be activated instantly and you can start using it as soon as you arrive in the new country.",
+      title: "Receive & Activate",
+      desc: "Get your SIM card before you travel and activate upon arrival.",
       extraClasses: "md:col-span-2 lg:col-span-1",
     },
   ];
 
   const stats = [
     {
-      number: "12K+",
-      label: "Succes Journey",
+      number: "100+",
+      label: "Countries Covered",
     },
     {
-      number: "16+",
-      label: "Awards Winning",
+      number: "24/7",
+      label: "Customer Support",
     },
     {
-      number: "20+",
-      label: "Years Of Experience",
+      number: "1M+",
+      label: "Happy Customers",
     },
   ];
-  if (!service || !serviceDetails) return null;
+
   return (
     <div className="min-h-screen">
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          ...simCardForm,
+          onSubmit: handleFirstFormSubmit,
+        }}
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />
       <HowItWorks steps={steps} />
       <Testimonials />
       <RelatedServices />
-      <FAQAccordion />
       <TrustedAndLoved stats={stats} />
     </div>
   );

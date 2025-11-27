@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import PoweredBySection from "../components/PoweredBySection";
@@ -8,9 +8,86 @@ import ProductsWeOffer from "../components/ProductsWeOffer";
 import Testimonials from "../Testimonials";
 import FAQAccordion from "../components/FAQAccordion";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import ServicesPopUpForm from "../components/ServicesPopUpForm";
+
+// Form configuration for Room Essentials
+const roomEssentialsForm = {
+  title: "Order Room Essentials",
+  icon: "/images/formicon/room-essentials.png",
+  description: "Get all your room essentials delivered to your doorstep",
+  buttonText: "Order Now",
+  fields: [
+    {
+      name: "fullName",
+      label: "Full Name",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "email",
+      label: "Email Address",
+      type: "email",
+      required: true,
+      placeholder: "Enter your email",
+      colSpan: 1,
+    },
+    {
+      name: "phone",
+      label: "Phone Number",
+      type: "tel",
+      required: true,
+      placeholder: "Enter your phone number",
+      colSpan: 1,
+    },
+    {
+      name: "deliveryAddress",
+      label: "Delivery Address",
+      type: "textarea",
+      required: true,
+      colSpan: 2,
+    },
+    {
+      name: "deliveryDate",
+      label: "Preferred Delivery Date",
+      type: "date",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "deliveryTime",
+      label: "Preferred Time Slot",
+      type: "select",
+      required: true,
+      options: [
+        "Morning (9 AM - 12 PM)",
+        "Afternoon (12 PM - 4 PM)",
+        "Evening (4 PM - 8 PM)",
+      ],
+      colSpan: 1,
+    },
+  ],
+};
 
 const RoomEssentials = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [showPopup, setShowPopup] = useState(false);
+  const [firstFormData, setFirstFormData] = useState(null);
+
+  const handleFirstFormSubmit = (formData) => {
+    setFirstFormData(formData);
+    setShowPopup(true);
+  };
+
+  const handlePopupSubmit = (popupFormData) => {
+    const combinedData = {
+      ...firstFormData,
+      ...popupFormData,
+    };
+    console.log("Room essentials order:", combinedData);
+    // Here you can send the data to your API
+    setShowPopup(false);
+  };
 
   if (loading) {
     return (
@@ -24,70 +101,80 @@ const RoomEssentials = () => {
 
   const features = [
     {
-      icon: "/images/services/essential1.png",
-      title: "Premium quality product",
+      icon: "/images/services/vector1.png",
+      title: "Wide Range of Products",
+      description: "Everything you need for your room in one place",
     },
     {
-      icon: "/images/services/essential2.png",
-      title: "Unbeatable price",
+      icon: "/images/services/vector2.png",
+      title: "Fast Delivery",
+      description: "Quick delivery to your doorstep",
     },
     {
-      icon: "/images/services/essential3.png",
-      title: "100% money back",
+      icon: "/images/services/vector3.png",
+      title: "Affordable Prices",
+      description: "Competitive prices for students",
     },
     {
-      icon: "/images/services/essential4.png",
-      title: "Option to choose delivery date",
+      icon: "/images/services/vector4.png",
+      title: "24/7 Support",
+      description: "We're here to help anytime",
     },
   ];
 
   const steps = [
     {
-      img: "/images/services/roomEssential1.jpg",
-      title: "Choose your kit",
-      desc: "Browse through the selection of student essentials and choose your desired kit for purchase.",
+      icon: "/images/services/search.png",
+      title: "Browse Products",
+      description: "Select from our wide range of room essentials",
     },
     {
-      img: "/images/services/roomEssential2.jpg",
-      title: "Fill in your details",
-      desc: "Provide your shipping details along with residential proof and university proof.",
+      icon: "/images/services/select.png",
+      title: "Add to Cart",
+      description: "Choose your items and add them to your cart",
     },
     {
-      img: "/images/services/roomEssential3.jpg",
-      title: "Payment & Delivery",
-      desc: "Make the payment for your desired items and schedule the date of delivery",
-      extraClasses: "md:col-span-2 lg:col-span-1",
+      icon: "/images/services/book.png",
+      title: "Checkout",
+      description: "Complete your purchase with secure payment",
     },
   ];
 
-    const stats = [
-      {
-        number: "12K+",
-        label: "Succes Journey",
-      },
-      {
-        number: "16+",
-        label: "Awards Winning",
-      },
-      {
-        number: "20+",
-        label: "Years Of Experience",
-      },
-    ];
+  const stats = [
+    { number: "5K+", label: "Happy Customers" },
+    { number: "98%", label: "Satisfaction Rate" },
+    { number: "24/7", label: "Support" },
+  ];
+
   return (
     <div className="min-h-screen">
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          ...roomEssentialsForm,
+          onSubmit: handleFirstFormSubmit,
+        }}
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />
       <HowItWorks steps={steps} />
-      <ProductsWeOffer />
+      <ProductsWeOffer products={serviceDetails.products} />
       <Testimonials />
-      <FAQAccordion />
+      <FAQAccordion faqs={serviceDetails.faqs} />
       <TrustedAndLoved stats={stats} />
+
+      {/* Popup Form */}
+      <ServicesPopUpForm
+        isOpen={showPopup}
+        onClose={() => setShowPopup(false)}
+        onSubmit={handlePopupSubmit}
+      />
+
+      {/* Blur overlay when popup is open */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40" />
+      )}
     </div>
   );
 };

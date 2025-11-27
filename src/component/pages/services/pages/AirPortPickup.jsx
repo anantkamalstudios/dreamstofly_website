@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import PoweredBySection from "../components/PoweredBySection";
@@ -6,9 +6,91 @@ import TravelPartnersFeatures from "../components/TravelPartnersFeatures";
 import HowItWorks from "../components/HowItWorks";
 import Testimonials from "../Testimonials";
 import FAQAccordion from "../components/FAQAccordion";
+import ServicesPopUpForm from "../components/ServicesPopUpForm";
+
+const airportPickupForm = {
+  title: "Application Form",
+  icon: "/images/formicon/suit.png",
+  description: "",
+  buttonText: "Book Now",
+  fields: [
+    {
+      name: "country",
+      label: "Country",
+      type: "select",
+      options: ["USA", "UK"],
+      required: true,
+      colSpan: 2,
+    },
+    {
+      name: "provider",
+      label: "Select Provider",
+      type: "select",
+      options: ["Provider1", "Provider2"],
+      required: true,
+      colSpan: 2,
+    },
+  ],
+};
+
+const airportPickupPopupForm = {
+  title: "Get Airport Service",
+  icon: "/images/formicon/suit.png",
+  description:
+    "Leave us your contact details and one of our agents will get in touch with you soon.",
+  buttonText: "Submit",
+  fields: [
+    {
+      label: "First name",
+      type: "text",
+      name: "firstName",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      label: "Last name",
+      type: "text",
+      name: "lastName",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      label: "Email address",
+      type: "email",
+      name: "email",
+      required: true,
+      colSpan: 2,
+    },
+    {
+      label: "Phone",
+      type: "phone",
+      name: "phone",
+      required: true,
+      colSpan: 2,
+    },
+  ],
+};
 
 const AirPortPickup = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [showPopup, setShowPopup] = useState(false);
+  const [firstFormData, setFirstFormData] = useState(null);
+
+  const handleSubmit = (formData) => {
+    setFirstFormData(formData);
+    setShowPopup(true);
+  };
+
+  const handlePopupSubmit = (popupFormData) => {
+    // Combine both forms data
+    const combinedData = {
+      ...firstFormData,
+      ...popupFormData,
+    };
+    console.log("Airport pickup request submitted:", combinedData);
+    // Here you can send the data to your API
+    setShowPopup(false);
+  };
 
   if (loading) {
     return (
@@ -18,24 +100,24 @@ const AirPortPickup = () => {
     );
   }
 
-    const steps = [
-      {
-        img: "/images/services/search.png",
-        title: "Compare prices",
-        desc: "Enter your pickup and destination locations and compare the prices offered by various transport companies.",
-      },
-      {
-        img: "/images/services/select.png",
-        title: "Book ride",
-        desc: "Select the company and type of ride that you want. You will receive an instant confirmation.",
-      },
-      {
-        img: "/images/services/book.png",
-        title: "Enjoy timely pickup",
-        desc: "You can communicate with your driver about any change in time and be sure that you will receive a timely pickup.",
-        extraClasses: "md:col-span-2 lg:col-span-1",
-      },
-    ];
+  const steps = [
+    {
+      img: "/images/services/search.png",
+      title: "Compare prices",
+      desc: "Enter your pickup and destination locations and compare the prices offered by various transport companies.",
+    },
+    {
+      img: "/images/services/select.png",
+      title: "Book ride",
+      desc: "Select the company and type of ride that you want. You will receive an instant confirmation.",
+    },
+    {
+      img: "/images/services/book.png",
+      title: "Enjoy timely pickup",
+      desc: "You can communicate with your driver about any change in time and be sure that you will receive a timely pickup.",
+      extraClasses: "md:col-span-2 lg:col-span-1",
+    },
+  ];
 
   const features = [
     {
@@ -62,13 +144,31 @@ const AirPortPickup = () => {
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          ...airportPickupForm,
+          onSubmit: handleSubmit,
+        }}
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />
       <HowItWorks steps={steps} />
       <Testimonials />
       <FAQAccordion />
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <ServicesPopUpForm
+              onClose={() => setShowPopup(false)}
+              onSubmit={handlePopupSubmit}
+              initialData={firstFormData}
+              formConfig={airportPickupPopupForm}
+            />
+          </div>
+        </div>
+      )}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40" />
+      )}
     </div>
   );
 };

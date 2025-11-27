@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import PoweredBySection from "../components/PoweredBySection";
@@ -7,9 +7,27 @@ import Testimonials from "../Testimonials";
 import HowItWorks from "../components/HowItWorks";
 import FAQAccordion from "../components/FAQAccordion";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import { useNavigate } from "react-router-dom";
+
+const travelInsuranceForm = {
+  title: "Buy a plan in mins",
+  icon: "/images/formicon/suit.png",
+  description: "",
+  buttonText: "Book Now",
+  fields: [],
+};
 
 const TravelInsurance = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const navigate = useNavigate();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [firstFormData, setFirstFormData] = useState(null);
+
+  const handleSubmit = (formData) => {
+    // Navigate to the insurance form page with form data
+    navigate("/services/travel-insurance/insurenceform", {
+      state: { formData },
+    });
+  };
 
   if (loading) {
     return (
@@ -59,26 +77,29 @@ const TravelInsurance = () => {
     },
   ];
 
-    const stats = [
-      {
-        number: "12K+",
-        label: "Succes Journey",
-      },
-      {
-        number: "16+",
-        label: "Awards Winning",
-      },
-      {
-        number: "20+",
-        label: "Years Of Experience",
-      },
-    ];
+  const stats = [
+    {
+      number: "12K+",
+      label: "Succes Journey",
+    },
+    {
+      number: "16+",
+      label: "Awards Winning",
+    },
+    {
+      number: "20+",
+      label: "Years Of Experience",
+    },
+  ];
   return (
     <div className="min-h-screen">
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          ...travelInsuranceForm,
+          onSubmit: handleSubmit,
+        }}
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />

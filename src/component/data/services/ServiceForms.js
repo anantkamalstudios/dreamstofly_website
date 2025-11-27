@@ -238,7 +238,7 @@ export const serviceForms = {
   "airport-pickup": {
     title: "Airport Pickup Service",
     icon: "/images/formicon/suit.png",
-    buttonText:"Find a Pickup",
+    buttonText: "Find a Pickup",
     description: "Reliable airport transfer to your accommodation",
     fields: [
       {
@@ -374,7 +374,7 @@ export const serviceForms = {
   "health-insurance": {
     title: "Buy Health Insurance",
     icon: "/images/formicon/suit.png",
-    buttonText:"Submit",
+    buttonText: "Submit",
     description: "",
     fields: [
       {
@@ -834,7 +834,7 @@ export const serviceForms = {
     title: "Book Room Essentials",
     icon: "/images/formicon/suit.png",
     description: "",
-    buttonText:"Submit",
+    buttonText: "Submit",
     fields: [
       {
         name: "firstName",
@@ -869,7 +869,7 @@ export const serviceForms = {
     title: "Luggage Storage",
     icon: "/images/formicon/suit.png",
     description: "Safe & Secure extra storage space at convenient locations",
-    buttonText:"Book Now",
+    buttonText: "Book Now",
     fields: [
       {
         name: "country",
@@ -1101,7 +1101,7 @@ export const serviceForms = {
   "money-transfer": {
     title: "International Money Transfer",
     icon: "/images/formicon/suit.png",
-    buttonText:"Send Now",
+    buttonText: "Send Now",
     description: "",
     fields: [
       {
@@ -1238,7 +1238,7 @@ export const serviceForms = {
     title: "Purchase new SIM",
     icon: "/images/formicon/suit.png",
     description: "Stay connected anywhere, anytime across 180+ countries",
-    buttonText:"Purchase Now",
+    buttonText: "Purchase Now",
     fields: [
       {
         name: "country",
@@ -1286,7 +1286,7 @@ export const serviceForms = {
   "travel-insurance": {
     title: "Buy a plan in mins",
     icon: "/images/formicon/suit.png",
-    buttonText:"Book Now",
+    buttonText: "Book Now",
     description: "",
     fields: [],
   },
@@ -1295,7 +1295,7 @@ export const serviceForms = {
     title: "Get Forex Solutions",
     icon: "/images/formicon/suit.png",
     description: "",
-    buttonText:"Submit",
+    buttonText: "Submit",
     fields: [
       {
         name: "firstName",
@@ -1346,7 +1346,7 @@ export const serviceForms = {
     title: "Select destination country",
     icon: "/images/formicon/suit.png",
     description: "",
-    buttonText:"Grab Offer Now",
+    buttonText: "Grab Offer Now",
     fields: [
       {
         name: "firstName",
@@ -1405,7 +1405,7 @@ export const serviceForms = {
     icon: "/images/formicon/suit.png",
     description:
       "Navigate your job search abroad with confidence. Select your destination country and explore tailored opportunities.",
-    buttonText:"Find My Job",
+    buttonText: "Find My Job",
     fields: [
       {
         name: "country",
@@ -1432,7 +1432,7 @@ export const serviceForms = {
     title: "Application  Form",
     icon: "/images/formicon/suit.png",
     description: "",
-    buttonText:"Submit",
+    buttonText: "Submit",
     fields: [
       {
         name: "firstName",
@@ -1488,7 +1488,7 @@ export const serviceForms = {
   "student-internships": {
     title: "Internship Enquiry",
     icon: "/images/formicon/suit.png",
-    buttonText:"Apply Now",
+    buttonText: "Apply Now",
     description: "",
     fields: [
       {
@@ -1518,6 +1518,21 @@ export const serviceForms = {
         type: "select",
         options: ["ICICI"],
         required: true,
+      },
+    ],
+  },
+  "e-money-app": {
+    title: "E-Money App Sign Up",
+    icon: "/images/formicon/wallet.png",
+    buttonText: "Get Started",
+    description: "Sign up for your student e-money account in minutes",
+    fields: [
+      {
+        name: "firstName",
+        label: "First Name",
+        type: "text",
+        required: true,
+        colSpan: 1,
       },
     ],
   },

@@ -1,9 +1,9 @@
 import { useState, Suspense } from "react";
 import ServiceEnquiryForm from "../[slug]/ServiceEnquiryForm";
 import FlightBookingForm from "../[slug]/FlightBookingForm";
-import InternationalMoneyTransferForm from "../[slug]/InternationalMoneyTransferForm";
 import ModalOverlay from "./ModalOverlay";
-import MoneyTransferForm from "./MoneyTransferForm";
+import MoneyTransferForm from "../components/MoneyTransferForm";
+import InternationalMoneyTransferForm from "../[slug]/InternationalMoneyTransferForm";
 
 const ServiceFormSection = ({ formConfig, slug }) => {
   const [showModal, setShowModal] = useState(false);
@@ -14,7 +14,7 @@ const ServiceFormSection = ({ formConfig, slug }) => {
     return (
       <>
         {showModal && <ModalOverlay onClose={() => setShowModal(false)} />}
-        <div className="absolute left-1/2 top-3/4 xl:-bottom-[200px] transform -translate-x-1/2 -translate-y-1/2 z-20">
+        <div className="absolute left-1/2 top-3/4 xl:bottom-0 transform -translate-x-1/2 -translate-y-1/2 z-20">
           <FlightBookingForm
             showModal={showModal}
             setShowModal={setShowModal}
@@ -35,9 +35,8 @@ const ServiceFormSection = ({ formConfig, slug }) => {
       </>
     );
   }
-
   return (
-    <div className="absolute right-10 top-40 z-20">
+    <div className="absolute right-10 top-32 z-20">
       <div className="w-full max-w-md lg:max-w-lg">
         <Suspense
           fallback={
@@ -46,7 +45,12 @@ const ServiceFormSection = ({ formConfig, slug }) => {
             </div>
           }
         >
-          <ServiceEnquiryForm formConfig={formConfig} />
+          <ServiceEnquiryForm
+            formConfig={{
+              ...formConfig,
+              onSubmit: formConfig.onSubmit,
+            }}
+          />
         </Suspense>
       </div>
     </div>

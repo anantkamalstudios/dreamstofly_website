@@ -39,6 +39,7 @@ import AccommodationListing from "./component/pages/accomodation/AccommodationLi
 import AccomodationDetail from "./component/pages/accomodation/components/AccomodationDetail";
 import ListYourPropertyPage from "./component/pages/accomodation/ListYourPropertyPage";
 import AccommodationForm from "./component/pages/accomodation/AccomodationFormPage";
+import TravelInsuranceBook from "./component/pages/services/pages/TravelInsuranceBook";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -79,6 +80,10 @@ export default function App() {
               <Route path="/travel" element={<Travel />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:slug" element={<ServiceRouter />} />
+              <Route
+                path="/services/travel-insurance/insurenceform"
+                element={<TravelInsuranceBook />}
+              />
 
               <Route path="/about" element={<Aboutus />} />
               <Route path="/career" element={<CareerPage />} />
@@ -108,8 +113,14 @@ export default function App() {
                 path="/accommodation/start-listing"
                 element={<AccommodationForm />}
               />
-              <Route path="/university/:slug" element={<UniversityDetailPage />} />
-              <Route path="/course/:slug" element={<CourseFinderDetailPage />} />
+              <Route
+                path="/university/:slug"
+                element={<UniversityDetailPage />}
+              />
+              <Route
+                path="/course/:slug"
+                element={<CourseFinderDetailPage />}
+              />
             </Routes>
           </MainLayout>
         </ScrollToTop>

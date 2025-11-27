@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import PoweredBySection from "../components/PoweredBySection";
@@ -8,9 +8,53 @@ import RelatedServicesPage from "../components/RelatedServicesPage";
 import FAQAccordion from "../components/FAQAccordion";
 import TrustedAndLoved from "../components/TrustedAndLoved";
 import HowItWorks from "../components/HowItWorks";
+import LoginRegisterPopup from "../../../Loginregister/LoginRegisterPopup";
+
+// Form configuration for Student Internship
+const internshipForm = {
+  title: "Internship Enquiry",
+  icon: "/images/formicon/suit.png",
+  description: "",
+  buttonText: "Apply Now",
+  fields: [
+    {
+      name: "destinationCountry",
+      label: "Destination Country",
+      type: "select",
+      required: true,
+      options: ["UK", "CANADA", "INDIA", "USA"],
+      colSpan: 2,
+    },
+    {
+      name: "provider",
+      label: "Provider",
+      type: "select",
+      required: true,
+      options: ["ICICI", "UBIN", "HDFC"],
+      colSpan: 2,
+    },
+  ],
+};
 
 const StudentInternship = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [showPopup, setShowPopup] = useState(false);
+  const [firstFormData, setFirstFormData] = useState(null);
+
+  const handleSubmit = (formData) => {
+    setFirstFormData(formData);
+    setShowPopup(true);
+  };
+
+  const handlePopupSubmit = (popupFormData) => {
+    const combinedData = {
+      ...firstFormData,
+      ...popupFormData,
+    };
+    console.log("Internship application:", combinedData);
+    // Here you can send the data to your API
+    setShowPopup(false);
+  };
 
   if (loading) {
     return (
@@ -25,54 +69,48 @@ const StudentInternship = () => {
   const features = [
     {
       icon: "/images/services/vector1.png",
-      title: "Job Seekers Toolkit for Students",
+      title: "Industry Experience",
+      description: "Gain hands-on experience in your field of study",
     },
     {
       icon: "/images/services/vector2.png",
-      title: "Visa Sponsored Jobs & Placement Opportunities",
+      title: "Professional Network",
+      description: "Build connections with industry professionals",
     },
     {
       icon: "/images/services/vector3.png",
-      title: "Career Ignition and Guidence",
+      title: "Skill Development",
+      description: "Enhance your skills and boost your resume",
     },
     {
       icon: "/images/services/vector4.png",
-      title: "Expert Advice for Immigiration",
-    },
-  ];
-
-  const stats = [
-    {
-      number: "12K+",
-      label: "Students interactions",
-    },
-    {
-      number: "16+",
-      label: "Verified properties",
-    },
-    {
-      number: "20+",
-      label: "Global student community",
+      title: "Career Opportunities",
+      description: "Potential for full-time employment after graduation",
     },
   ];
 
   const steps = [
     {
-      img: "/images/services/search.png",
-      title: "Click Apply Now",
-      desc: "Apply and Signup with your university email id",
+      icon: "/images/services/search.png",
+      title: "Apply Online",
+      description: "Submit your application and resume",
     },
     {
-      img: "/images/services/select.png",
-      title: "Verification",
-      desc: "Verify your account and start browsing Internships & Jobs",
+      icon: "/images/services/select.png",
+      title: "Interview",
+      description: "Attend an interview with our team",
     },
     {
-      img: "/images/services/book.png",
-      title: "Dashboard Access",
-      desc: "Apply Job and access resources like CV builder, Immigration and much more",
-      extraClasses: "md:col-span-2 lg:col-span-1",
+      icon: "/images/services/book.png",
+      title: "Get Placed",
+      description: "Start your internship journey",
     },
+  ];
+
+  const stats = [
+    { number: "2K+", label: "Interns Placed" },
+    { number: "80%", label: "Conversion to Full-time" },
+    { number: "100+", label: "Partner Companies" },
   ];
 
   return (
@@ -80,15 +118,30 @@ const StudentInternship = () => {
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          ...internshipForm,
+          onSubmit: handleSubmit,
+        }}
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />
       <HowItWorks steps={steps} />
       <Testimonials />
       <RelatedServicesPage />
-      <FAQAccordion />
+      <FAQAccordion faqs={serviceDetails.faqs} />
       <TrustedAndLoved stats={stats} />
+
+      {/* Popup Form */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            {showPopup && <LoginRegisterPopup setShowModal={setShowPopup} />}
+          </div>
+        </div>
+      )}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40" />
+      )}
     </div>
   );
 };

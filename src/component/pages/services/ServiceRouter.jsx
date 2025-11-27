@@ -24,7 +24,7 @@ import EMoneyApp from "./pages/EMoneyApp";
 /**
  * Map service slugs to their dedicated page components
  * If a service slug is not in this map, it will fall back to ServiceDetail component
- * 
+ *
  * To add a new service page:
  * 1. Create the page component in ./pages/
  * 2. Import it above
@@ -47,7 +47,7 @@ const servicePageMap = {
   "room-essentials": RoomEssentials,
   "room-replacement": RoomReplacement,
   "international-sim": InternationalSimCard,
-  "student-accommodation": EMoneyApp, // Update this if you have a dedicated accommodation page
+  "e-money-app": EMoneyApp, // Update this if you have a dedicated accommodation page
   // Services that will use ServiceDetail (fallback):
   // "student-beans", "test-preparation", "free-online-courses", "study-abroad-counseling"
 };
@@ -62,4 +62,3 @@ const ServiceRouter = () => {
 };
 
 export default ServiceRouter;
-

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import ServiceCountry from "../[slug]/ServiceCountry";
@@ -8,9 +8,90 @@ import Testimonials from "../Testimonials";
 import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
 
+// Form configuration for Flight Ticket booking
+const flightTicketForm = {
+  title: "Book Flight Tickets",
+  icon: "/images/formicon/flight.png",
+  description: "Find the best deals on student flights",
+  buttonText: "Search Flights",
+  fields: [
+    {
+      name: "tripType",
+      label: "Trip Type",
+      type: "select",
+      required: true,
+      options: ["One Way", "Round Trip", "Multi-City"],
+      colSpan: 1,
+    },
+    {
+      name: "from",
+      label: "From",
+      type: "text",
+      required: true,
+      placeholder: "City or Airport",
+      colSpan: 1,
+    },
+    {
+      name: "to",
+      label: "To",
+      type: "text",
+      required: true,
+      placeholder: "City or Airport",
+      colSpan: 1,
+    },
+    {
+      name: "departureDate",
+      label: "Departure",
+      type: "date",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "returnDate",
+      label: "Return",
+      type: "date",
+      required: false,
+      colSpan: 1,
+    },
+    {
+      name: "passengers",
+      label: "Passengers",
+      type: "number",
+      required: true,
+      min: 1,
+      defaultValue: 1,
+      colSpan: 1,
+    },
+    {
+      name: "cabinClass",
+      label: "Cabin Class",
+      type: "select",
+      required: true,
+      options: ["Economy", "Premium Economy", "Business", "First Class"],
+      colSpan: 1,
+    },
+  ],
+};
+
 const FlightTicket = () => {
-  const { service, serviceDetails, formConfig, loading, slug } =
-    useServiceData();
+  const { service, serviceDetails, loading, slug } = useServiceData();
+  const [showPopup, setShowPopup] = useState(false);
+  const [firstFormData, setFirstFormData] = useState(null);
+
+  const handleFirstFormSubmit = (formData) => {
+    setFirstFormData(formData);
+    setShowPopup(true);
+  };
+
+  const handlePopupSubmit = (popupFormData) => {
+    const combinedData = {
+      ...firstFormData,
+      ...popupFormData,
+    };
+    console.log("Flight booking data:", combinedData);
+    // Here you can send the data to your API
+    setShowPopup(false);
+  };
 
   if (loading) {
     return (
@@ -48,15 +129,16 @@ const FlightTicket = () => {
   };
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
-      <div className="w-full">
-        <ServiceHero
-          service={service}
-          details={serviceDetails}
-          formConfig={formConfig}
-          slug={slug}
-        />
-      </div>
+    <div className="min-h-screen">
+      <ServiceHero
+        service={service}
+        details={serviceDetails}
+        formConfig={{
+          ...flightTicketForm,
+          onSubmit: handleFirstFormSubmit,
+        }}
+        slug={slug}
+      />
 
       <div className="pt-2 sm:pt-16 md:pt-24 lg:pt-32 px-4 sm:px-6 md:px-10 lg:px-0">
         <ServiceCountry countryData={countryData} />
