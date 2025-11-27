@@ -23,7 +23,7 @@ export default function HowItWorks({ steps }) {
                 }`}
               >
                 <div className="w-24 h-24 sm:w-28 sm:h-28 mb-6 flex items-center justify-center">
-                  <img src={step.img} alt={step.title} />
+                  <img src={step.icon} alt={step.title} />
                 </div>
 
                 <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">

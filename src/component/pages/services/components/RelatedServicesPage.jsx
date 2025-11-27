@@ -1,22 +1,17 @@
 import React from "react";
 import { GraduationCap, Search, ArrowRight } from "lucide-react";
+import accomodation from "../../../../assets/services/1.svg";
+import InternationalMoneyTransfer from "../../../../assets/services/18.svg";
 
 const RelatedServicesPage = () => {
   const services = [
     {
-      icon: "/images/services/services1.png",
+      icon: accomodation,
       title: "Accommodation",
       description:
         "Find the perfect home, close to university and close to life",
       link: "EXPLORE MORE",
       bgColor: "bg-[#F9CB27]",
-    },
-    {
-      icon: "/images/services/services2.png",
-      title: "International Money Transfer",
-      description: "Transfer funds for tuition & accommodation with uttar ease",
-      link: "EXPLORE MORE",
-      bgColor: "bg-[#3485FF]",
     },
   ];
 
@@ -33,11 +28,11 @@ const RelatedServicesPage = () => {
               key={index}
               className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 md:p-8 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300"
             >
-              <div className="mb-4 md:mb-6 h-12 md:h-16 flex items-center justify-center">
+              <div className="mb-4 md:mb-6 h-16 md:h-20 flex items-center justify-center">
                 <img
                   src={service.icon}
                   alt=""
-                  className="h-12 md:h-16 object-contain"
+                  className="h-16 md:h-20 object-contain"
                 />
               </div>
               <div className="h-16 md:h-20 flex items-center justify-center mb-3 md:mb-4">

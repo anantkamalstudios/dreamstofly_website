@@ -39,7 +39,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4">
       <div
-        className="bg-white rounded-xl sm:rounded-2xl shadow-2xl max-w-5xl w-full relative flex flex-col  overflow-hidden"
+        className="bg-white rounded-xl sm:rounded-2xl shadow-2xl max-w-lg w-full relative flex flex-col  overflow-hidden"
         style={{ height: "auto", maxHeight: "90vh" }}
       >
         <button
@@ -49,33 +49,15 @@ export default function LoginRegisterPopup({ setShowModal }) {
           <X size={20} />
         </button>
 
-        <div className="grid md:grid-cols-2 gap-0 flex-1 overflow-hidden">
-          {/* Left Side - Promotional Image Only */}
-          <div className="hidden md:flex relative overflow-hidden bg-gradient-to-br from-blue-500 via-purple-600 to-purple-800">
-            <img
-              src="/images/loginBanner.png"
-              alt=""
-              className="w-full h-full object-center"
-            />
-          </div>
-
-          {/* Right Side - Form */}
+        <div className=" gap-0 flex-1 overflow-hidden">
           <div className="p-4 sm:p-6 md:p-8 bg-white overflow-y-auto">
-            <div className="mb-3 sm:mb-4 flex items-center justify-between">
-              <div className="text-xs sm:text-sm text-gray-800">Welcome</div>
-              {/* <div className="flex items-center gap-1 sm:gap-2">
-                <Plane className="text-blue-500 w-5 h-5 sm:w-6 sm:h-6" />
-                <div className="text-xl sm:text-2xl">✈️</div>
-              </div> */}
+            <div className="mb-3 sm:mb-2 flex items-center justify-center">
+              <img src="/images/DreamsToFlyLogo.png" alt="" className=" w-" />
             </div>
-
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1">
-              {isLogin ? "Login to Your" : "Start Your Journey to"}
-            </h2>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-500 mb-4 sm:mb-6">
+            <h2 className="text-md sm:text-xl md:text-xl font-normal mb-10 text-center">
+              {isLogin ? "Login to Your " : "Start Your Journey to "}
               Dreams to Fly
-            </h3>
-
+            </h2>
             <div className="absolute top-8 right-12 sm:right-20 hidden lg:block"></div>
 
             <div className="space-y-3 sm:space-y-4">
@@ -186,16 +168,34 @@ export default function LoginRegisterPopup({ setShowModal }) {
                     OR
                   </div>
                   <div className="flex justify-center gap-2 sm:gap-3">
-                    <button className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors shadow">
-                      <span className="text-lg sm:text-xl">G</span>
-                    </button>
-                    <button className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors shadow">
-                      <span className="text-lg sm:text-xl text-blue-600">
-                        f
+                    <button className="w-full h-12 bg-gray-100 rounded-lg flex items-center justify-center gap-3 hover:bg-gray-200 transition-colors shadow">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          fill="#FFC107"
+                          d="M43.6 20.5H42V20H24v8h11.3C33.7 33.3 29.3 36 24 36c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 6 .9 8.3 3l5.7-5.7C34 4.5 29.1 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c11.6 0 21-9.4 21-21c0-1.4-.1-2.7-.4-3.9z"
+                        />
+                        <path
+                          fill="#FF3D00"
+                          d="M6.3 14.7l6.6 4.8C14.5 15 18.9 12 24 12c3.1 0 6 .9 8.3 3l5.7-5.7C34 4.5 29.1 3 24 3c-7.9 0-14.7 4.4-17.7 10.7z"
+                        />
+                        <path
+                          fill="#4CAF50"
+                          d="M24 45c5.2 0 10-2 13.5-5.3l-6.2-5.3c-2 1.3-4.6 2.1-7.3 2.1c-5.2 0-9.6-3.3-11.2-7.9l-6.6 5C9.2 40.7 16 45 24 45z"
+                        />
+                        <path
+                          fill="#1976D2"
+                          d="M43.6 20.5H42V20H24v8h11.3c-1 2.9-3 5.3-5.5 6.9l6.2 5.3C39.3 37 42 31 42 24c0-1.4-.1-2.7-.4-3.9z"
+                        />
+                      </svg>
+
+                      <span className="text-gray-700 font-medium">
+                        Continue with Google
                       </span>
-                    </button>
-                    <button className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors shadow">
-                      <span className="text-lg sm:text-xl"></span>
                     </button>
                   </div>
                 </div>

@@ -44,7 +44,7 @@ const PopularDestination = () => {
     <div className="w-full p-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className=" flex-col lg:flex-row lg:items-center lg:justify-between mb-12 gap-6">
+        <div className="flex items-center justify-between mb-12 gap-6">
           <h1 className="text-4xl font-bold text-gray-900">
             Popular Destinations
           </h1>

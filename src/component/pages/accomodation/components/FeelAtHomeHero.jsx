@@ -118,10 +118,10 @@ export default function FeelAtHomeHero() {
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-6 items-start">
           {/* Left card */}
-          <div className="grid gap-2">
+          <div className="relative grid gap-2 h-full">
             <div className="bg-white rounded-2xl shadow-xl p-8 relative overflow-visible flex flex-col lg:flex-row gap-6">
-              <div className="lg:w-1/2 flex flex-col justify-center">
-                <h2 className="text-3xl lg:text-4xl font-semibold text-slate-900 leading-tight">
+              <div className="lg:w-3/4 flex flex-col justify-center">
+                <h2 className="text-3xl lg:text-4xl font-medium text-slate-900 leading-tight">
                   Where every student
                   <br />
                   feels at home!
@@ -184,16 +184,12 @@ export default function FeelAtHomeHero() {
               </div>
 
               {/* Image area (on the right) */}
-              <div className="lg:w-1/2 relative flex items-center justify-center">
-                {/* Decorative blobs behind image */}
-                <div className="absolute -top-6 -right-6 w-36 h-36 bg-yellow-100 rounded-full opacity-70 filter blur-2xl" />
-                <div className="absolute -bottom-6 -left-6 w-36 h-36 bg-purple-100 rounded-full opacity-70 filter blur-2xl" />
-
+              <div className="absolute right-0  flex items-center justify-center">
                 <div className="rounded-3xl overflow-hidden w-full max-w-md lg:max-w-none">
                   <img
-                    src="https://images.unsplash.com/photo-1496871455396-14e56815f1f4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNpdHl8ZW58MHx8MHx8fDA%3D"
+                    src="/images/accomodation/FeelAtHome.png"
                     alt="student"
-                    className="w-full h-72 object-cover lg:h-96"
+                    className="w-full h-full object-cover lg:h-96"
                   />
                 </div>
               </div>
