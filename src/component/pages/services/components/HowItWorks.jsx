@@ -1,7 +1,7 @@
 export default function HowItWorks({ steps }) {
   return (
     <div className="min-h-full flex items-center justify-center px-4 py-8">
-      <div className="w-full max-w-7xl bg-white rounded-2xl shadow-[0_12px_40px_0_rgba(0,115,223,0.16)] p-8 sm:p-12 lg:p-16">
+      <div className="w-full bg-white rounded-2xl shadow-[0_10px_30px_0_rgba(0,115,223,0.16)] p-8 sm:p-12 lg:p-16">
         <h1 className="text-3xl font-medium sm:text-4xl lg:text-5xl text-center text-gray-800 mb-12 sm:mb-16">
           How it works
         </h1>
@@ -11,17 +11,13 @@ export default function HowItWorks({ steps }) {
             <div
               key={index}
               className="
-                p-5 shadow-sm rounded-xl bg-white
+                p-5 shadow-sm rounded-xl bg-white border border-gray-100
                 transform-gpu transition-all duration-500  
                 hover:-translate-y-2 hover:rotate-1 hover:scale-[1.03]
                 hover:shadow-xl
               "
             >
-              <div
-                className={`flex flex-col items-center text-center ${
-                  step.extraClasses || ""
-                }`}
-              >
+              <div className="flex flex-col items-center text-center ">
                 <div className="w-24 h-24 sm:w-28 sm:h-28 mb-6 flex items-center justify-center">
                   <img src={step.icon} alt={step.title} />
                 </div>

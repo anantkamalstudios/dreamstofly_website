@@ -25,7 +25,7 @@ const MoneyTransferForm = ({ setShowModal }) => {
   };
 
   return (
-    <div className="absolute right-10 top-40 z-20">
+    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
       <div className="w-full max-w-2xl">
         <div className="bg-white rounded-xl shadow-lg w-full px-8 py-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-6">

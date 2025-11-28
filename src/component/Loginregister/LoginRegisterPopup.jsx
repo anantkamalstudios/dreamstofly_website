@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { X, Eye, EyeOff, Plane } from "lucide-react";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function LoginRegisterPopup({ setShowModal }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -37,30 +38,34 @@ export default function LoginRegisterPopup({ setShowModal }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-1 sm:p-2">
       <div
-        className="bg-white rounded-xl sm:rounded-2xl shadow-2xl max-w-lg w-full relative flex flex-col  overflow-hidden"
-        style={{ height: "auto", maxHeight: "90vh" }}
-      >
+        className="bg-white rounded-md sm:rounded-lg shadow-2xl max-w-lg w-full relative flex flex-col h-fit sm:h-auto">
         <button
           onClick={() => setShowModal(false)}
-          className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 text-gray-500 hover:text-gray-700 bg-white rounded-full p-1.5 sm:p-2 shadow-md"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 text-gray-800 hover:text-gray-900 font-bold bg-white rounded-full p-1.5 sm:p-2"
         >
-          <X size={20} />
+          <AiOutlineClose size={24} />
         </button>
 
-        <div className=" gap-0 flex-1 overflow-hidden">
-          <div className="p-4 sm:p-6 md:p-8 bg-white overflow-y-auto">
-            <div className="mb-3 sm:mb-2 flex items-center justify-center">
-              <img src="/images/DreamsToFlyLogo.png" alt="" className=" w-" />
+        <div className=" gap-0 flex-1 overflow-hidden p-2 md:p-4 lg:p-6 xl:p-8  ">
+          <div className="relative p-4 sm:p-6 md:p-8 bg-white overflow-y-auto">
+            <div className=" my-2 sm:my-3 flex items-center justify-center w-36 sm:w-44 mx-auto">
+              <img
+                src="/images/DreamsToFlyLogo.png"
+                alt=""
+                className=" w-full h-full object-cover"
+              />
             </div>
-            <h2 className="text-md sm:text-xl md:text-xl font-normal mb-10 text-center">
+            <h2 className="text-md sm:text-lg font-normal mb-4 text-center">
               {isLogin ? "Login to Your " : "Start Your Journey to "}
               Dreams to Fly
             </h2>
-            <div className="absolute top-8 right-12 sm:right-20 hidden lg:block"></div>
+            <div className="absolute top-0 right-0 hidden lg:block">
+              <img src="/images/login2.png" alt="" />
+            </div>
 
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-2 sm:space-y-3">
               {!isLogin && (
                 <div>
                   <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-1.5">
@@ -72,7 +77,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     placeholder="dipika"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
               )}
@@ -87,9 +92,25 @@ export default function LoginRegisterPopup({ setShowModal }) {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="dipika@gmail.com"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                 />
               </div>
+
+              {!isLogin && (
+                <div>
+                  <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-1.5">
+                    Referral Code
+                  </label>
+                    <input
+                      type="text"
+                      name="referralCode"
+                      value={formData.referralCode}
+                      onChange={handleInputChange}
+                      placeholder="Referral code"
+                      className="w-full px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none pr-10 sm:pr-12"
+                    />
+                </div>
+              )}
 
               <div>
                 <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-1.5">
@@ -102,7 +123,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
                     value={formData.password}
                     onChange={handleInputChange}
                     placeholder="Password@123"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none pr-10 sm:pr-12"
+                    className="w-full px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none pr-10 sm:pr-12"
                   />
                   <button
                     onClick={() => setShowPassword(!showPassword)}
@@ -129,7 +150,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
                       value={formData.confirmPassword}
                       onChange={handleInputChange}
                       placeholder="Password@123"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none pr-10 sm:pr-12"
+                      className="w-full px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none pr-10 sm:pr-12"
                     />
                     <button
                       onClick={() =>
@@ -157,7 +178,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-blue-600 text-white py-2 sm:py-2.5 rounded-lg text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors shadow-md"
+                className="w-full bg-blue-600 text-white py-1 sm:py-2 rounded-lg text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors shadow-md"
               >
                 {isLogin ? "Login" : "Create account"}
               </button>

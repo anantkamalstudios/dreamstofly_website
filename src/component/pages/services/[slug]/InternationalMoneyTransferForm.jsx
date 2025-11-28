@@ -45,7 +45,7 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
 
   if (!showModal) return null;
 
-  return createPortal(
+  return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
@@ -279,9 +279,8 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
           </form>
         </div>
       </div>
-    </div>,
-    document.body
-  );
+    </div>
+  )
 };
 
 export default InternationalMoneyTransferForm;

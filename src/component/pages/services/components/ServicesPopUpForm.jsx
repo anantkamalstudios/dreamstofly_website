@@ -9,6 +9,31 @@ const ServicesPopUpForm = ({
 }) => {
   const [formData, setFormData] = useState(initialData);
 
+  const countryCodes = [
+    { code: "+91", country: "India", flag: "🇮🇳" },
+    { code: "+1", country: "USA/Canada", flag: "🇺🇸" },
+    { code: "+44", country: "UK", flag: "🇬🇧" },
+    { code: "+61", country: "Australia", flag: "🇦🇺" },
+    { code: "+49", country: "Germany", flag: "🇩🇪" },
+    { code: "+31", country: "Netherlands", flag: "🇳🇱" },
+    { code: "+353", country: "Ireland", flag: "🇮🇪" },
+    { code: "+64", country: "New Zealand", flag: "🇳🇿" },
+    { code: "+971", country: "UAE", flag: "🇦🇪" },
+    { code: "+65", country: "Singapore", flag: "🇸🇬" },
+    { code: "+86", country: "China", flag: "🇨🇳" },
+    { code: "+81", country: "Japan", flag: "🇯🇵" },
+    { code: "+82", country: "South Korea", flag: "🇰🇷" },
+    { code: "+33", country: "France", flag: "🇫🇷" },
+    { code: "+39", country: "Italy", flag: "🇮🇹" },
+    { code: "+34", country: "Spain", flag: "🇪🇸" },
+    { code: "+7", country: "Russia", flag: "🇷🇺" },
+    { code: "+27", country: "South Africa", flag: "🇿🇦" },
+    { code: "+55", country: "Brazil", flag: "🇧🇷" },
+    { code: "+52", country: "Mexico", flag: "🇲🇽" },
+  ];
+  
+  const [countryCodesState, setCountryCodesState] = useState({});
+
   const handleInputChange = (id, value) => {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
@@ -44,19 +69,26 @@ const ServicesPopUpForm = ({
 
       case "phone":
         return (
-          <div className="flex gap-2">
-            <div className="flex items-center px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 min-w-fit">
-              <ChevronDown className="w-4 h-4 mr-1 text-gray-600" />
-              <span className="text-sm text-gray-700">+91</span>
-            </div>
+          <div className="flex border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all duration-300">
+            <select
+              value={countryCodesState[name] || "+91"}
+              onChange={(e) => handleCountryCodeChange(name, e.target.value)}
+              className="px-3 py-auto border-r border-gray-300 bg-gray-50 text-sm font-medium text-gray-700 focus:outline-none cursor-pointer text-center"
+              style={{ minWidth: "80px" }}
+            >
+              {countryCodes.map((country) => (
+                <option key={country.code} value={country.code}>
+                  {country.flag} {country.code}
+                </option>
+              ))}
+            </select>
             <input
               type="tel"
-              id={field.id}
-              placeholder={field.placeholder}
-              className={commonClasses}
-              value={formData[field.id] || ""}
-              onChange={(e) => handleInputChange(field.id, e.target.value)}
-              required={field.required}
+              name={name}
+              value={formData[name] || ""}
+              onChange={handleInputChange}
+              placeholder=" "
+              className="flex-1 px-4 pt-3 pb-3 text-sm border-0 focus:outline-none focus:ring-0 peer"
             />
           </div>
         );

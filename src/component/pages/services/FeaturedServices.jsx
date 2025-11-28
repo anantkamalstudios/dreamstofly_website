@@ -107,7 +107,7 @@ const FeaturedServices = () => {
       <div className="max-w-7xl container mx-auto px-4 relative">
         {/* Header */}
         <div className="mb-8">
-          <div className="text-sm text-gray-400 mb-4 flex items-center gap-2">
+          <div className="text-sm text-gray-400 my-4 flex items-center gap-2">
             <span>AVAILABLE COUNTRIES</span>
             <img
               src="/images/services/heading_object.png"

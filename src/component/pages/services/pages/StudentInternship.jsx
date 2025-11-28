@@ -4,11 +4,11 @@ import ServiceHero from "../[slug]/ServiceHero";
 import PoweredBySection from "../components/PoweredBySection";
 import TravelPartnersFeatures from "../components/TravelPartnersFeatures";
 import Testimonials from "../Testimonials";
-import RelatedServicesPage from "../components/RelatedServicesPage";
 import FAQAccordion from "../components/FAQAccordion";
 import TrustedAndLoved from "../components/TrustedAndLoved";
 import HowItWorks from "../components/HowItWorks";
 import LoginRegisterPopup from "../../../Loginregister/LoginRegisterPopup";
+import RelatedServices from "../components/RelatedServices";
 
 // Form configuration for Student Internship
 const internshipForm = {
@@ -127,7 +127,7 @@ const StudentInternship = () => {
       <TravelPartnersFeatures features={features} />
       <HowItWorks steps={steps} />
       <Testimonials />
-      <RelatedServicesPage />
+      <RelatedServices />
       <FAQAccordion faqs={serviceDetails.faqs} />
       <TrustedAndLoved stats={stats} />
 

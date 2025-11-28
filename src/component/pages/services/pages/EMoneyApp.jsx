@@ -9,7 +9,6 @@ import TrustedAndLoved from "../components/TrustedAndLoved";
 import { getServiceBySlug } from "../../../data/services/ServicesData";
 import { getServiceDetails } from "../../../data/services/ServiceDetails";
 import Testimonials from "../Testimonials";
-import RelatedServicesPage from "../components/RelatedServicesPage";
 import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
 

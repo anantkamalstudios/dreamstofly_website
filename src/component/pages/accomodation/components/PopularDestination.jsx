@@ -45,7 +45,7 @@ const PopularDestination = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-12 gap-6">
-          <h1 className="text-4xl font-bold text-gray-900">
+          <h1 className="text-2xl sm:text-4xl font-medium sm:font-bold text-gray-900">
             Popular Destinations
           </h1>
           <button className="py-3 px-6 rounded-full bg-blue-600 text-white flex items-center gap-2 hover:bg-blue-700 transition-colors">

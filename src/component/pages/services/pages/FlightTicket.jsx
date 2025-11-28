@@ -7,6 +7,7 @@ import HowItWorks from "../components/HowItWorks";
 import Testimonials from "../Testimonials";
 import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
+import FlightBookingHeroPage from "../components/FlightBookingHeroPage";
 
 // Form configuration for Flight Ticket booking
 const flightTicketForm = {
@@ -128,9 +129,21 @@ const FlightTicket = () => {
       "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
   };
 
+  //  const servicesss = {
+  //    backgroundImage:
+  //      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200",
+  //  };
+
+  //  const detailssss = {
+  //    title: "Student Flight Ticket Booking",
+  //    subtitle: "Exclusive Student Discounts on International Flights",
+  //    titleColor: "#fff",
+  //    subTitleColor: "#f0f0f0",
+  //  };
+
   return (
     <div className="min-h-screen">
-      <ServiceHero
+      {/* <ServiceHero
         service={service}
         details={serviceDetails}
         formConfig={{
@@ -138,28 +151,23 @@ const FlightTicket = () => {
           onSubmit: handleFirstFormSubmit,
         }}
         slug={slug}
-      />
-
+      /> */}
+      <FlightBookingHeroPage service={service} details={serviceDetails} />
       <div className="pt-2 sm:pt-16 md:pt-24 lg:pt-32 px-4 sm:px-6 md:px-10 lg:px-0">
         <ServiceCountry countryData={countryData} />
       </div>
-
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-4 md:mt-8">
         <TravelPartners />
       </div>
-
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-8">
         <HowItWorks steps={steps} />
       </div>
-
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-8">
         <Testimonials />
       </div>
-
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-8">
         <RelatedServices />
       </div>
-
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-16 mb-8">
         <FAQAccordion />
       </div>

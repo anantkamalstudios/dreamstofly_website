@@ -68,6 +68,7 @@ const hungryHubForm = {
       required: true,
       placeholder: "Enter your phone number",
       colSpan: 2,
+      placeholder:""
     },
   ],
 };
@@ -147,9 +148,9 @@ const HungryHubPage = () => {
   ];
 
   const countryData = {
-    title: "Cities We Serve",
-    description:
-      "We deliver to major cities across the country with our network of partner restaurants",
+    title: "Countries We Help Immigrate",
+    discription:
+      "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
   };
 
   const stats = [

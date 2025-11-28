@@ -118,7 +118,7 @@ const ServiceCountry = ({ countryData }) => {
   );
 
   const TopAirplaneIcon = () => (
-    <div className="absolute -top-36 right-28 transform -translate-y-1/2 z-20">
+    <div className="absolute -top-28 right-0 md:right-32 transform -translate-y-1/2 z-20 hidden lg:block w-48 h-48 opacity-100 pointer-events-none select-none">
       <div className="relative">
         <div className="w-full h-full transform -rotate-12">
           <img
@@ -137,13 +137,13 @@ const ServiceCountry = ({ countryData }) => {
   );
 
   return (
-    <section className="pt-5">
-      <div className="container mx-auto px-4">
-        <div className="mb-8 relative overflow-hidden">
-          <div className="p-10 lg:px-24 lg:py-12 relative">
+    <section className="pt-2">
+      <div className="container mx-auto">
+        <div className="mb-3 relative overflow-hidden">
+          <div className=" px-2 md:px-4 lg:px-6 lg:py-12 relative">
             <div className="relative z-10">
               <div className="text-center mb-6">
-                <h3 className="text-4xl font-semibold text-[#115779] mb-4">
+                <h3 className="text-xl lg:text-2xl  xl:text-3xl font-semibold text-[#115779] mb-4">
                   {countryData?.title || ""}
                 </h3>
                 <p className="text-md text-gray-600 max-w-2xl mx-auto">
@@ -190,7 +190,6 @@ const ServiceCountry = ({ countryData }) => {
                   </Swiper>
                 </div>
 
-                {/* Second Swiper - Moving Right to Left (Opposite Direction) */}
                 <div className="overflow-hidden">
                   <Swiper
                     modules={[Autoplay]}

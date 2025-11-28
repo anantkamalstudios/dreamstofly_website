@@ -7,89 +7,7 @@ import HowItWorksPage from "../components/HowItWorksPage";
 import FAQSection from "../../accomodation/components/FAQSection";
 import Testimonials from "../Testimonials";
 import TrustedAndLoved from "../components/TrustedAndLoved";
-
-// Form configuration for International Money Transfer
-const moneyTransferForm = {
-  title: "Send Money Abroad",
-  icon: "/images/formicon/money-transfer.png",
-  description: "Fast, secure and low-cost international money transfers",
-  buttonText: "Send Money Now",
-  fields: [
-    {
-      name: "fromCountry",
-      label: "Sending From",
-      type: "select",
-      required: true,
-      options: [
-        "USA",
-        "UK",
-        "Canada",
-        "Australia",
-        "Germany",
-        "France",
-        "Other",
-      ],
-      colSpan: 1,
-    },
-    {
-      name: "toCountry",
-      label: "Sending To",
-      type: "select",
-      required: true,
-      options: [
-        "India",
-        "USA",
-        "UK",
-        "Canada",
-        "Australia",
-        "Germany",
-        "France",
-        "Other",
-      ],
-      colSpan: 1,
-    },
-    {
-      name: "amount",
-      label: "Amount to Send",
-      type: "number",
-      required: true,
-      placeholder: "Enter amount",
-      min: 1,
-      colSpan: 1,
-    },
-    {
-      name: "receiveAmount",
-      label: "Recipient Gets",
-      type: "number",
-      readOnly: true,
-      colSpan: 1,
-      value: "Calculating...",
-    },
-    {
-      name: "senderName",
-      label: "Your Full Name",
-      type: "text",
-      required: true,
-      colSpan: 1,
-    },
-    {
-      name: "senderEmail",
-      label: "Your Email",
-      type: "email",
-      required: true,
-      placeholder: "Enter your email",
-      colSpan: 1,
-    },
-    {
-      name: "senderPhone",
-      label: "Your Phone Number",
-      type: "tel",
-      required: true,
-      placeholder: "Enter your phone number",
-      colSpan: 1,
-    },
-  ],
-};
+import InternationalMoneyHeroPage from "../components/InternationalMoneyHeroPage";
 
 const InternationalMoneyTransfer = () => {
   const { service, serviceDetails, loading } = useServiceData();
@@ -165,14 +83,15 @@ const InternationalMoneyTransfer = () => {
 
   return (
     <div className="min-h-screen">
-      <ServiceHero
+      {/* <ServiceHero
         service={service}
         details={serviceDetails}
         formConfig={{
           ...moneyTransferForm,
           onSubmit: handleFirstFormSubmit,
         }}
-      />
+      /> */}
+      <InternationalMoneyHeroPage service={service} details={serviceDetails} />
       <OurCommitments />
       <ServiceCountry countryData={countryData} />
       <HowItWorksPage steps={steps} />

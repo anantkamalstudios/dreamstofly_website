@@ -27,7 +27,7 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="w-full py-16 px-4 bg-[#0073DF0F]">
+    <div className="w-full py-2 md:py-4 lg:py-6 xl:py-8 px-4 bg-[#0073DF0F]">
       <div className="max-w-4xl mx-auto">
         <div className="p-6 md:p-10">
           <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-8">
@@ -35,7 +35,7 @@ const FAQAccordion = () => {
           </h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <divs key={index} className="overflow-hidden">
+              <div key={index} className="overflow-hidden">
                 <button
                   onClick={() => toggleAccordion(index)}
                   className="mt-4 w-full flex items-center justify-between p-4 md:px-14 md:py-4 text-left bg-white"
@@ -63,7 +63,7 @@ const FAQAccordion = () => {
                     {faq.answer}
                   </div>
                 </div>
-              </divs>
+              </div>
             ))}
           </div>
         </div>

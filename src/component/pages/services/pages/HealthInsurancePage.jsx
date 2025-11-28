@@ -181,12 +181,13 @@ const HealthInsurancePage = () => {
           onSubmit: handleSubmit,
         }}
       />
-      <OurCommitments />
-      <ServiceCountry countryData={countryData} />
-      <ServiceBenefitsPage />
-      <HowItWorksPage steps={steps} />
-      <FAQSection />
-
+        <OurCommitments />
+        <ServiceCountry countryData={countryData} />
+        <ServiceBenefitsPage />
+        <HowItWorksPage steps={steps} />
+        <FAQSection />
+        <Testimonials />
+        <TrustedAndLoved stats={stats} />
       {/* Popup Form */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -203,8 +204,6 @@ const HealthInsurancePage = () => {
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40" />
       )}
-      <Testimonials />
-      <TrustedAndLoved stats={stats} />
     </div>
   );
 };
