@@ -66,7 +66,6 @@ const hungryHubForm = {
       label: "Phone Number",
       type: "tel",
       required: true,
-      placeholder: "Enter your phone number",
       colSpan: 2,
       placeholder:""
     },
