@@ -52,8 +52,6 @@ const InternationalMoneyHeroPage = ({ service = {}, details = {} }) => {
 
   return (
     <>
-      {/* Render the InternationalMoneyTransferForm modal */}
-
       <section
         className="relative w-full overflow-hidden"
         style={{
@@ -73,10 +71,8 @@ const InternationalMoneyHeroPage = ({ service = {}, details = {} }) => {
         <div className="container mx-auto px-6 md:px-14 py-8 lg:py-16 relative z-10">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             {/* Hero Content */}
-            <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl">
-              <h1 className="text-white text-3xl font-bold">
-                {details.title}
-              </h1>
+            <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl font-bellefair">
+              <h1 className="text-white text-2xl md:text-4xl lg:text-5xl xl:text-6xl">{details.title}</h1>
 
               <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-white">
                 {details.subtitle}
@@ -84,7 +80,7 @@ const InternationalMoneyHeroPage = ({ service = {}, details = {} }) => {
             </div>
 
             {/* Form Card */}
-            <div className="w-full lg:w-auto lg:flex-shrink-0 ml-auto">
+            <div className="w-full lg:w-auto lg:flex-shrink-0 ml-auto font-vollkorn">
               <div className="bg-white rounded-2xl shadow-2xl px-8 py-4 max-w-2xl">
                 {/* Icon */}
                 <div className="mb-6">

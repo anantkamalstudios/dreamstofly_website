@@ -31,7 +31,7 @@ const ServicesPopUpForm = ({
     { code: "+55", country: "Brazil", flag: "🇧🇷" },
     { code: "+52", country: "Mexico", flag: "🇲🇽" },
   ];
-  
+
   const [countryCodesState, setCountryCodesState] = useState({});
 
   const handleInputChange = (id, value) => {
@@ -41,7 +41,6 @@ const ServicesPopUpForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Call the parent's onSubmit handler with form data
     if (onSubmit) {
       onSubmit(formData);
     }
@@ -146,7 +145,7 @@ const ServicesPopUpForm = ({
   return (
     // <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 animate-fade-in">
     // <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-hidden animate-slide-up">
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 font-arsenal">
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-hidden relative">
         <button
           onClick={onClose}
@@ -180,7 +179,7 @@ const ServicesPopUpForm = ({
                 >
                   <label
                     htmlFor={field.id}
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-base font-medium text-gray-900 mb-1"
                   >
                     {field.label}
                     {field.required && (

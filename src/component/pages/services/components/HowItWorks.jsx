@@ -1,6 +1,6 @@
 export default function HowItWorks({ steps }) {
   return (
-    <div className="min-h-full flex items-center justify-center px-4 py-8">
+    <div className="min-h-full flex items-center justify-center px-4 py-8 font-vollkorn">
       <div className="w-full bg-white rounded-2xl shadow-[0_10px_30px_0_rgba(0,115,223,0.16)] p-8 sm:p-12 lg:p-16">
         <h1 className="text-3xl font-medium sm:text-4xl lg:text-5xl text-center text-gray-800 mb-12 sm:mb-16">
           How it works
@@ -26,7 +26,7 @@ export default function HowItWorks({ steps }) {
                   {step.title}
                 </h2>
 
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-poppins">
                   {step.desc}
                 </p>
               </div>

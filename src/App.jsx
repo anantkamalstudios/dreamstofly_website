@@ -67,7 +67,7 @@ export default function App() {
                 path="/university-detail"
                 element={<UniversityDetailPage />}
               />
-              <Route path="/sop-maker" element={<SOPHomePage />} />
+              <Route path="/sop-lor-maker" element={<SOPHomePage />} />
               <Route path="/sop-form" element={<SopMaker />} />
               <Route path="/lor-form" element={<LorMaker />} />
               <Route path="/connect" element={<Connect />} />

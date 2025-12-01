@@ -27,7 +27,7 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="w-full py-2 md:py-4 lg:py-6 xl:py-8 px-4 bg-[#0073DF0F]">
+    <div className="w-full py-2 md:py-4 lg:py-6 xl:py-8 px-4 bg-[#0073DF0F] font-vollkorn">
       <div className="max-w-4xl mx-auto">
         <div className="p-6 md:p-10">
           <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-8">
@@ -41,7 +41,7 @@ const FAQAccordion = () => {
                   className="mt-4 w-full flex items-center justify-between p-4 md:px-14 md:py-4 text-left bg-white"
                   aria-expanded={openIndex === index}
                 >
-                  <span className="text-sm md:text-base font-normal text-gray-900 pr-4">
+                  <span className="text-sm md:text-lg font-normal text-gray-900 pr-4">
                     {faq.question}
                   </span>
                   <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-900">
@@ -59,7 +59,7 @@ const FAQAccordion = () => {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="p-4 md:p-6 pt-0 text-sm md:text-base text-gray-600 leading-relaxed">
+                  <div className="p-4 md:p-6 pt-0 text-sm md:text-sm text-gray-600 leading-relaxed font-poppins">
                     {faq.answer}
                   </div>
                 </div>

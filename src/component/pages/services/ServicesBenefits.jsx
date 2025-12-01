@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function ServicesBenefits() {
+export default function ServicesBenefits({ whyChoose }) {
+  const data = JSON.parse(whyChoose?.cards);
+  console.log(data);
+
   return (
     <div className="w-full min-h-fit py-4 md:p-1 flex items-center justify-center my-5 xl:px-10 lg:px-8 px-4">
       <div className="w-full max-w-full relative bg-white ">
@@ -25,7 +28,9 @@ export default function ServicesBenefits() {
               />
 
               <img
-                src="/images/image.png"
+                src={`${import.meta.env.VITE_IMAGE_BASE_URL}${
+                  whyChoose?.image
+                }`}
                 alt="girls"
                 className="absolute h-full w-full object-contain"
                 style={{ filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.2))" }}
@@ -36,78 +41,41 @@ export default function ServicesBenefits() {
           {/* Right Content Area - Title, Subtitle, Cards - Layer 2 */}
           <div className="relative z-20 flex flex-col justify-center lg:pl-12 rounded-2xl">
             {/* Title and Subtitle */}
-            <div className="text-center mb-10 relative -top-20">
-              <h2
-                className="text-4xl lg:text-3xl font-semibold mb-3 rounded-2xl"
-                style={{ color: "#0a1f44" }}
-              >
-                Why choose Dreams To Fly
+            <div className="text-center mb-10 md:relative md:-top-20">
+              <h2 className="text-4xl lg:text-3xl font-semibold mb-3 rounded-2xl text-[#0a1f44] font-roboto">
+                {whyChoose?.heading}
               </h2>
-              <p className="text-base" style={{ color: "#5a6c7d" }}>
-                Most viewed and all-time top-selling services
+              <p className="text-base text-[#5a6c7d] font-poppins">
+                {whyChoose?.subheading}
               </p>
             </div>
 
             <div className="hidden lg:flex lg:absolute lg:right-0 lg:top-60 gap-6">
-              {/* Card 1 - Ultimate flexibility */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[280px]">
-                <div className="flex justify-center mb-4 h-16 w-16">
-                  <img
-                    src="/images/services/ticket.png"
-                    alt=""
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3
-                  className="text-lg font-medium mb-2 text-start"
-                  style={{ color: "#0a1f44" }}
+              {data.map((card, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[280px]"
                 >
-                  Ultimate flexibility
-                </h3>
-                <p className="text-sm text-start" style={{ color: "#5a6c7d" }}>
-                  You're in control, with free cancellation and payment.
-                </p>
-              </div>
+                  <div className="flex justify-center mb-4 h-16 w-16">
+                    <img
+                      src={`${import.meta.env.VITE_IMAGE_BASE_URL}${card.icon}`}
+                      alt={card.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
 
-              {/* Card 2 - Memorable experiences */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[280px]">
-                <div className="flex justify-center mb-4 h-16 w-16">
-                  <img
-                    src="/images/services/hot-air-balloon.png"
-                    alt=""
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3
-                  className="text-lg font-medium mb-2 text-start"
-                  style={{ color: "#0a1f44" }}
-                >
-                  Memorable experiences
-                </h3>
-                <p className="text-sm text-start" style={{ color: "#5a6c7d" }}>
-                  Browse and book tours and activities so incredible.
-                </p>
-              </div>
+                  <h3 className="text-lg font-medium mb-2 text-start font-roboto text-[#0a1f44]">
+                    {card.title}
+                  </h3>
 
-              {/* Card 3 - Quality at our core */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow w-[280px]">
-                <div className="flex justify-center mb-4 h-16 w-16">
-                  <img
-                    src="/images/services/diamond.png"
-                    alt=""
-                    className="w-full h-full object-contain"
-                  />
+                  <p
+                    className="text-sm text-start font-poppins"
+                    style={{ color: "#5a6c7d" }}
+                  >
+                    {card.description}
+                  </p>
                 </div>
-                <h3
-                  className="text-lg font-medium mb-2 text-start"
-                  style={{ color: "#0a1f44" }}
-                >
-                  Quality at our core
-                </h3>
-                <p className="text-sm text-start" style={{ color: "#5a6c7d" }}>
-                  High quality standards. Millions of reviews.
-                </p>
-              </div>
+              ))}
             </div>
 
             <div className="flex lg:hidden flex-col md:flex-row gap-6 mt-4">
@@ -130,12 +98,15 @@ export default function ServicesBenefits() {
                   </svg>
                 </div>
                 <h3
-                  className="text-lg font-bold mb-2 text-center"
+                  className="text-lg font-bold mb-2 text-center font-roboto"
                   style={{ color: "#0a1f44" }}
                 >
                   Ultimate flexibility
                 </h3>
-                <p className="text-sm text-center" style={{ color: "#5a6c7d" }}>
+                <p
+                  className="text-sm text-center font-poppins"
+                  style={{ color: "#5a6c7d" }}
+                >
                   You're in control, with free cancellation and payment.
                 </p>
               </div>
@@ -166,12 +137,15 @@ export default function ServicesBenefits() {
                   </svg>
                 </div>
                 <h3
-                  className="text-lg font-bold mb-2 text-center"
+                  className="text-lg font-bold mb-2 text-center font-roboto"
                   style={{ color: "#0a1f44" }}
                 >
                   Memorable experiences
                 </h3>
-                <p className="text-sm text-center" style={{ color: "#5a6c7d" }}>
+                <p
+                  className="text-sm text-center font-poppins"
+                  style={{ color: "#5a6c7d" }}
+                >
                   Browse and book tours and activities so incredible.
                 </p>
               </div>
@@ -189,12 +163,15 @@ export default function ServicesBenefits() {
                   </svg>
                 </div>
                 <h3
-                  className="text-lg font-bold mb-2 text-center"
+                  className="text-lg font-bold mb-2 text-center font-roboto"
                   style={{ color: "#0a1f44" }}
                 >
                   Quality at our core
                 </h3>
-                <p className="text-sm text-center" style={{ color: "#5a6c7d" }}>
+                <p
+                  className="text-sm text-center font-poppins"
+                  style={{ color: "#5a6c7d" }}
+                >
                   High quality standards. Millions of reviews.
                 </p>
               </div>

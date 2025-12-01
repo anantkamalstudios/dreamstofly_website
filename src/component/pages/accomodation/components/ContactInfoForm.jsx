@@ -122,7 +122,7 @@ const ContactInfoForm = () => {
     //   </div>
     // </div>
 
-    <div className="flex items-center justify-center w-full my-6">
+    <div className="flex items-center justify-center w-full my-6 font-vollkorn">
       <div className="bg-white rounded-2xl shadow-lg flex flex-col md:flex-row w-full max-w-6xl gap-4 md:gap-0 overflow-hidden">
         {/* LEFT BLUE PANEL */}
         <div className="bg-gradient-to-b from-[#0073DF] to-[#003E79] w-full md:w-[45%] rounded-2xl md:rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden flex flex-col justify-between">

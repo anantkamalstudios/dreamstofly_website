@@ -3,7 +3,7 @@ import { Laptop, Hand, Headphones } from "lucide-react";
 
 const WhyChooseUsFeatures = ({ features }) => {
   return (
-    <div className="w-full bg-gray-50 py-16 px-4">
+    <div className="w-full bg-gray-50 py-16 px-4 font-vollkorn">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-medium text-center text-gray-900 mb-16">
           Why choose us
@@ -17,10 +17,10 @@ const WhyChooseUsFeatures = ({ features }) => {
               <div className="mb-8 w-24 h-24 sm:w-28 sm:h-28">
                 <img src={feature.icon} alt="" />
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-6">
+              <h3 className="text-xl font-medium text-gray-900 mb-6">
                 {feature.title}
               </h3>
-              <p className="text-gray-700 leading-relaxed text-justify">
+              <p className="text-gray-700 leading-relaxed text-justify font-poppins">
                 {feature.description}
               </p>
             </div>

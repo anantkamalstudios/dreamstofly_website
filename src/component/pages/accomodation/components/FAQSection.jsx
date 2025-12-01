@@ -36,7 +36,7 @@ export default function FAQSection() {
   return (
     <section className="w-full py-16">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-10">
+        <h2 className="text-3xl font-semibold text-center mb-10 font-vollkorn">
           Frequently ask Questions?
         </h2>
 
@@ -60,7 +60,7 @@ export default function FAQSection() {
                 </div>
               </div>
 
-              <p className="mt-4 text-sm md:text-base text-gray-600 leading-relaxed">
+              <p className="mt-4 text-sm md:text-base text-gray-600 leading-relaxed font-poppins">
                 {left.a}
               </p>
             </div>

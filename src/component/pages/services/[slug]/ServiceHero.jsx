@@ -1,43 +1,3 @@
-// import ServiceFormSection from "../components/ServiceFormSection";
-// import ServiceHeroHeader from "../components/ServiceHeroHeader";
-
-// const ServiceHero = ({ service, details, formConfig, slug }) => {
-//   const serviceSlug = slug || service?.slug;
-
-//   return (
-//     <div className="">
-//       <ServiceHeroHeader service={service} details={details} />
-//       {formConfig && (
-//         <ServiceFormSection formConfig={formConfig} slug={serviceSlug} />
-//       )}
-//     </div>
-//   );
-// };
-// export default ServiceHero;
-
-// import ServiceFormSection from "../components/ServiceFormSection";
-// import ServiceHeroHeader from "../components/ServiceHeroHeader";
-
-// const ServiceHero = ({ service, details, formConfig, slug }) => {
-//   const serviceSlug = slug || service?.slug;
-
-//   return (
-//     <div className="relative">
-//       <ServiceHeroHeader
-//         service={service}
-//         details={details}
-//         formConfig={formConfig}
-//         slug={serviceSlug}
-//       />
-//     </div>
-//   );
-// };
-// export default ServiceHero;
-
-// ============================================
-// ServiceHero.jsx - Simplified wrapper
-// ============================================
-
 import ServiceFormSection from "../components/ServiceFormSection";
 const ServiceHero = ({ service, details, formConfig, slug }) => {
   const serviceSlug = slug || service?.slug;
@@ -46,7 +6,7 @@ const ServiceHero = ({ service, details, formConfig, slug }) => {
 
   const getTitleStyle = () => {
     const titleColor = details.titleColor || "#fff";
-    const baseClasses = "text-4xl lg:text-5xl font-bold leading-tight";
+    const baseClasses = "text-3xl md:text-4xl lg:text-6xl leading-tight";
 
     if (
       titleColor.includes("bg-") ||
@@ -75,18 +35,17 @@ const ServiceHero = ({ service, details, formConfig, slug }) => {
       style={{
         backgroundImage: `url(${service.backgroundImage})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundSize: "100% 100%",
         backgroundPosition: "center",
-        minHeight: "70vh",
+        maxHeight: "fit-content",
       }}
     >
-      {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/30"></div>
 
       <div className="container mx-auto px-6 md:px-14 py-8 lg:py-16 relative z-10">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           {/* Hero Content */}
-          <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl">
+          <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl font-bellefair">
             <h1 {...titleStyle}>{details.title}</h1>
 
             <p

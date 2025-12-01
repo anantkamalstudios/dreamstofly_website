@@ -38,7 +38,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-1 sm:p-2">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-1 sm:p-2 font-vollkorn">
       <div
         className="bg-white rounded-md sm:rounded-lg shadow-2xl max-w-lg w-full relative flex flex-col h-fit sm:h-auto">
         <button
@@ -76,7 +76,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    placeholder="dipika"
+                    placeholder="John Doe"
                     className="w-full px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
@@ -91,7 +91,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="dipika@gmail.com"
+                  placeholder="abc@gmail.com"
                   className="w-full px-3 sm:px-4 py-1 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                 />
               </div>
@@ -178,7 +178,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-blue-600 text-white py-1 sm:py-2 rounded-lg text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors shadow-md"
+                className="w-full bg-blue-600 text-white py-1 sm:py-2 rounded-md text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors shadow-md"
               >
                 {isLogin ? "Login" : "Create account"}
               </button>

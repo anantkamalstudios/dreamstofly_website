@@ -138,12 +138,12 @@ const ServiceCountry = ({ countryData }) => {
 
   return (
     <section className="pt-2">
-      <div className="container mx-auto">
+      <div className="container mx-auto font-vollkorn">
         <div className="mb-3 relative overflow-hidden">
           <div className=" px-2 md:px-4 lg:px-6 lg:py-12 relative">
             <div className="relative z-10">
               <div className="text-center mb-6">
-                <h3 className="text-xl lg:text-2xl  xl:text-3xl font-semibold text-[#115779] mb-4">
+                <h3 className="text-2xl lg:text-4xl  xl:text-5xl font-normal text-[#115779] mb-4">
                   {countryData?.title || ""}
                 </h3>
                 <p className="text-md text-gray-600 max-w-2xl mx-auto">

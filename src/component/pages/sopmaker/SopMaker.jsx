@@ -8,6 +8,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import axios from "axios";
+import { useServicesData } from "../../../hooks/useServicesData";
 
 const SopMaker = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -105,6 +106,12 @@ const SopMaker = () => {
     },
   ];
 
+  const { data, loading, error } = useServicesData(
+    "/api/sor_lor/get_sop_hero_section"
+  );
+
+  const sopData = data?.data;
+
   const progress = ((currentStep + 1) / sections.length) * 100;
   const currentSection = sections[currentStep];
   const Icon = currentSection.icon;
@@ -145,18 +152,15 @@ const SopMaker = () => {
       <div className="relative bg-[#003E79] w-full flex flex-col-reverse md:flex-row items-center justify-between px-2 md:px-10">
         <div className="text-white text-center md:text-left max-w-3xl mx-auto md:mx-20 lg:mx-28 xl:mx-32">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-2">
-            Statement Of Purpose
+            {sopData?.title}
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3">
-            (SOP Maker)
-          </h2>
-          <p className="text-blue-100 text-sm sm:text-base md:text-md">
-            Generate authoritative recommendation letters in minutes with guided
-            fields.
+
+          <p className="text-blue-100 text-sm sm:text-base md:text-lg">
+            {sopData?.subtitle}
           </p>
         </div>
         <img
-          src="/images/SOP_LOR/SOPLORHero2.png"
+          src={`${import.meta.env.VITE_IMAGE_BASE_URL}${sopData?.image}`}
           alt=""
           className="w-52 sm:w-64 md:w-80 lg:w-[380px] object-contain mb-6 md:mb-0"
         />

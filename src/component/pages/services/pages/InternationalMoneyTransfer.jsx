@@ -83,14 +83,6 @@ const InternationalMoneyTransfer = () => {
 
   return (
     <div className="min-h-screen">
-      {/* <ServiceHero
-        service={service}
-        details={serviceDetails}
-        formConfig={{
-          ...moneyTransferForm,
-          onSubmit: handleFirstFormSubmit,
-        }}
-      /> */}
       <InternationalMoneyHeroPage service={service} details={serviceDetails} />
       <OurCommitments />
       <ServiceCountry countryData={countryData} />

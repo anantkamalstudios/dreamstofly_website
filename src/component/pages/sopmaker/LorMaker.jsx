@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ChevronRight,
   ChevronLeft,
@@ -7,33 +7,43 @@ import {
   Users,
   CheckCircle,
 } from "lucide-react";
+import axios from "axios";
+import { useServicesData } from "../../../hooks/useServicesData";
+import Loader from "../../../common/Loader";
+import Error from "../../../common/Error";
 
 const LorMaker = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [lorFormData, setLorFormData] = useState({
     recommender: {
-      recommenderName: "",
+      recommender_name: "",
       designation: "",
       organization: "",
-      applicantName: "",
-      position: "",
+      applicant_name: "",
+      position_role: "",
       relationship: "",
       duration: "",
     },
     performance: {
-      professionalAchievement: "",
+      achievement: "",
       strength: "",
-      keyCompetencies: "",
-      specificExample: "",
-      peerComparison: "",
+      competencies: "",
+      example: "",
+      peer_comparison: "",
     },
     RecommandationSummary: {
-      overallImpression: "",
-      endorsemantStatement: "",
-      reasonForRecommandation: "",
-      closingRemarks: "",
+      overall_impression: "",
+      endorsement: "",
+      reason: "",
+      closing_remarks: "",
     },
   });
+
+  const { data, loading, error } = useServicesData(
+    "/api/sor_lor/get_lor_hero_section"
+  );
+
+  const lorData = data?.data;
 
   const sections = [
     {
@@ -42,11 +52,11 @@ const LorMaker = () => {
       title: "Recommender & Applicant Information",
       icon: Users,
       fields: [
-        { name: "recommenderName", label: "Recommender Name", type: "text" },
+        { name: "recommender_name", label: "Recommender Name", type: "text" },
         { name: "designation", label: "Designation", type: "text" },
         { name: "organization", label: "Organization", type: "text" },
-        { name: "applicantName", label: "Applicant Name", type: "text" },
-        { name: "position", label: "Position/Role", type: "text" },
+        { name: "applicant_name", label: "Applicant Name", type: "text" },
+        { name: "position_role", label: "Position/Role", type: "text" },
         { name: "relationship", label: "Relationship", type: "text" },
         { name: "duration", label: "Duration of Association", type: "text" },
       ],
@@ -58,14 +68,14 @@ const LorMaker = () => {
       icon: Award,
       fields: [
         {
-          name: "professionalAchievement",
+          name: "achievement",
           label: "Professional Achievement",
           type: "text",
         },
         { name: "strength", label: "Strength", type: "text" },
-        { name: "keyCompetencies", label: "Key Competencies", type: "text" },
-        { name: "specificExample", label: "Specific Example", type: "text" },
-        { name: "peerComparison", label: "Peer Comparison", type: "text" },
+        { name: "competencies", label: "Key Competencies", type: "text" },
+        { name: "example", label: "Specific Example", type: "text" },
+        { name: "peer_comparison", label: "Peer Comparison", type: "text" },
       ],
     },
     {
@@ -75,21 +85,21 @@ const LorMaker = () => {
       icon: CheckCircle,
       fields: [
         {
-          name: "overallImpression",
+          name: "overall_impression",
           label: "Overall Impression",
           type: "text",
         },
         {
-          name: "endorsemantStatement",
+          name: "endorsement",
           label: "Endorsement Statement",
           type: "text",
         },
         {
-          name: "reasonForRecommandation",
+          name: "reason",
           label: "Reason for Recommendation",
           type: "text",
         },
-        { name: "closingRemarks", label: "Closing Remarks", type: "text" },
+        { name: "closing_remarks", label: "Closing Remarks", type: "text" },
       ],
     },
     {
@@ -123,9 +133,20 @@ const LorMaker = () => {
     return result;
   };
 
-  const handleSubmit = () => {
-    const data = getFlatlorFormData(lorFormData);
-    console.log(data);
+  const handleSubmit = async () => {
+    const payload = getFlatlorFormData(lorFormData);
+    const response = await axios.post(
+      "https://devlopment.dreamstofly.com/api/lor/generate",
+      payload,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          token:
+            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMjcxNiIsImVtYWlsIjoicnV0dWphQGV4YW1wbGUuY29tIiwibmFtZSI6IlJ1dHVqYSIsImlhdCI6MTc2NDU4Nzk3NCwiZXhwIjoxNzY0Njc0Mzc0fQ.v7eMxLk_fYYhsWaN6myLEhw29C-oB_lKHxpx80FRTAc",
+        },
+      }
+    );
+    console.log(response);
   };
 
   const handleNext = () => {
@@ -136,23 +157,23 @@ const LorMaker = () => {
     if (currentStep > 0) setCurrentStep(currentStep - 1);
   };
 
+  if (loading) <Loader />;
+
+  if (error) <Error />;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="relative bg-[#003E79] w-full flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-10">
         <div className="text-white text-center md:text-left max-w-3xl mx-auto md:mx-20 lg:mx-28 xl:mx-32">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-2">
-            Letter of Recommendation
+            {lorData?.title}
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3">
-            (LOR Maker)
-          </h2>
-          <p className="text-blue-100 text-sm sm:text-base md:text-md">
-            Generate authoritative recommendation letters in minutes with guided
-            fields.
+          <p className="text-blue-100 text-sm sm:text-base md:text-lg">
+            {lorData?.subtitle}
           </p>
         </div>
         <img
-          src="/images/SOP_LOR/SOPLORHero2.png"
+          src={`${import.meta.env.VITE_IMAGE_BASE_URL}${lorData?.image}`}
           alt=""
           className="w-52 sm:w-64 md:w-80 lg:w-[380px] object-contain mb-6 md:mb-0"
         />

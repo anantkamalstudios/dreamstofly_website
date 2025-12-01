@@ -80,24 +80,24 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="p-6 sm:p-8 lg:p-10">
+    <section className="py-6 px-12 sm:py-8 sm:px-16 lg:py-10 lg:px-20">
       <div className="mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 lg:mb-12 gap-4 lg:gap-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6">
-            <h4 className="text-xl sm:text-2xl lg:text-3xl font-semibold sm:font-bold text-gray-900">
+            <h4 className="text-xl sm:text-2xl lg:text-3xl font-semibold sm:font-bold text-gray-900 font-roboto">
               Our students love us!
             </h4>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
               <div className="h-12 w-px bg-gray-300 hidden lg:block"></div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 font-poppins">
                 <Smile className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
-                <span className="text-xl sm:text-2xl font-semibold sm:font-bold text-gray-900">
+                <span className="text-xl sm:text-2xl font-normal sm:font-semibold text-gray-900">
                   2M+
                 </span>
-                <span className="text-sm sm:text-base text-gray-600 font-medium">
+                <span className="text-sm sm:text-sm text-gray-600 font-medium font-poppins" >
                   Happy Students
                 </span>
               </div>
@@ -105,7 +105,7 @@ const Testimonials = () => {
               <div className="h-12 w-px bg-gray-300 hidden sm:block"></div>
 
               <div className="flex items-center gap-2 sm:gap-3">
-                <span className="text-xs sm:text-sm text-gray-700 font-medium">
+                <span className="text-xs sm:text-sm text-gray-700 font-medium font-poppins">
                   Rated 4.8 out of 5 on
                 </span>
                 <svg className="h-6 sm:h-8" viewBox="0 0 88 29" fill="none">
@@ -199,7 +199,7 @@ const Testimonials = () => {
             {reviews.map((review) => (
               <div
                 key={review.id}
-                className="bg-white rounded-xl lg:rounded-2xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow flex-shrink-0"
+                className="bg-white rounded-xl lg:rounded-2xl p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow flex-shrink-0 font-poppins"
                 style={{
                   width: `calc(${100 / slidesToShow}% - ${
                     ((slidesToShow - 1) *
@@ -221,7 +221,7 @@ const Testimonials = () => {
                       </svg>
                     ))}
                   </div>
-                  <span className="text-sm sm:text-base text-gray-900 font-medium">
+                  <span className="text-sm sm:text-base text-gray-900 font-normal">
                     Rated {review.rating} out of 5
                   </span>
                 </div>
@@ -239,7 +239,7 @@ const Testimonials = () => {
                     className="w-10 h-10 rounded-full flex-shrink-0"
                   />
                   <div>
-                    <div className="text-sm sm:text-base font-semibold text-gray-900">
+                    <div className="text-sm sm:text-base font-medium text-gray-900">
                       {review.author}
                     </div>
                     <div className="text-xs text-gray-400">

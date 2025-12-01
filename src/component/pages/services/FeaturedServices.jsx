@@ -2,80 +2,83 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { ArrowRight, Check } from "lucide-react";
+import { parseFeatures } from "../../../api/config";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-import ind from "/images/services/ind.png";
-import ca from "/images/services/cand.png";
-import au from "/images/services/aust.png";
-import gb from "/images/services/uk.png";
-import us from "/images/services/ind.png";
-import de from "/images/services/ind.png";
+// import ind from "/images/services/ind.png";
+// import ca from "/images/services/cand.png";
+// import au from "/images/services/aust.png";
+// import gb from "/images/services/uk.png";
+// import us from "/images/services/ind.png";
+// import de from "/images/services/ind.png";
 
-const countriesData = [
-  {
-    id: 1,
-    name: "Canada",
-    flag: "🇨🇦",
-    flagImage: ca,
-    features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
-    bgColor: "bg-gradient-to-br from-red-50 to-white",
-    flagBg: "bg-red-100",
-  },
-  {
-    id: 2,
-    name: "India",
-    flag: "🇮🇳",
-    flagImage: ind,
-    features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
-    bgColor: "bg-gradient-to-br from-orange-50 to-white",
-    flagBg: "bg-orange-100",
-  },
-  {
-    id: 3,
-    name: "Australia",
-    flag: "🇦🇺",
-    flagImage: au,
-    features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
-    bgColor: "bg-gradient-to-br from-red-50 to-white",
-    flagBg: "bg-red-100",
-  },
-  {
-    id: 4,
-    name: "United Kingdom",
-    flag: "🇬🇧",
-    flagImage: gb,
-    features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
-    bgColor: "bg-gradient-to-br from-blue-50 to-white",
-    flagBg: "bg-blue-100",
-  },
-  {
-    id: 5,
-    name: "United States",
-    flag: "🇺🇸",
-    flagImage: us,
-    features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
-    bgColor: "bg-gradient-to-br from-blue-50 to-white",
-    flagBg: "bg-blue-100",
-  },
-  {
-    id: 6,
-    name: "Germany",
-    flag: "🇩🇪",
-    flagImage: de,
-    features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
-    bgColor: "bg-gradient-to-br from-yellow-50 to-white",
-    flagBg: "bg-yellow-100",
-  },
-];
+// const countriesData = [
+//   {
+//     id: 1,
+//     name: "Canada",
+//     flag: "🇨🇦",
+//     flagImage: ca,
+//     features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
+//     bgColor: "bg-gradient-to-br from-red-50 to-white",
+//     flagBg: "bg-red-100",
+//   },
+//   {
+//     id: 2,
+//     name: "India",
+//     flag: "🇮🇳",
+//     flagImage: ind,
+//     features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
+//     bgColor: "bg-gradient-to-br from-orange-50 to-white",
+//     flagBg: "bg-orange-100",
+//   },
+//   {
+//     id: 3,
+//     name: "Australia",
+//     flag: "🇦🇺",
+//     flagImage: au,
+//     features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
+//     bgColor: "bg-gradient-to-br from-red-50 to-white",
+//     flagBg: "bg-red-100",
+//   },
+//   {
+//     id: 4,
+//     name: "United Kingdom",
+//     flag: "🇬🇧",
+//     flagImage: gb,
+//     features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
+//     bgColor: "bg-gradient-to-br from-blue-50 to-white",
+//     flagBg: "bg-blue-100",
+//   },
+//   {
+//     id: 5,
+//     name: "United States",
+//     flag: "🇺🇸",
+//     flagImage: us,
+//     features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
+//     bgColor: "bg-gradient-to-br from-blue-50 to-white",
+//     flagBg: "bg-blue-100",
+//   },
+//   {
+//     id: 6,
+//     name: "Germany",
+//     flag: "🇩🇪",
+//     flagImage: de,
+//     features: ["Mistakes To Avoid", "Your Startup", "Knew About Fonts"],
+//     bgColor: "bg-gradient-to-br from-yellow-50 to-white",
+//     flagBg: "bg-yellow-100",
+//   },
+// ];
 
 const CountryCard = ({ country }) => {
+  const features = parseFeatures(country.description);
+
   return (
     <div className=" rounded-2xl p-6 shadow-sm border border-gray-100 h-full transition-all duration-300 hover:shadow-md hover:-translate-y-1">
       <div className="w-16 h-16 rounded-full flex items-center justify-start mb-6">
         <img
-          src={country.flagImage}
+          src={`${import.meta.env.VITE_IMAGE_BASE_URL}${country.image}`}
           alt={`${country.name} flag`}
           className="object-contain"
         />
@@ -88,7 +91,7 @@ const CountryCard = ({ country }) => {
 
       {/* Features List */}
       <div className="space-y-8">
-        {country.features.map((feature, index) => (
+        {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-3">
             <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
               <Check className=" text-green-600" />
@@ -101,10 +104,10 @@ const CountryCard = ({ country }) => {
   );
 };
 
-const FeaturedServices = () => {
+const FeaturedServices = ({ countriesData }) => {
   return (
     <div className="w-full relative">
-      <div className="max-w-7xl container mx-auto px-4 relative">
+      <div className="max-w-7xl container mx-auto px-4 pt-2 md:pt-4 lg:pt-6 relative font-vollkorn">
         {/* Header */}
         <div className="mb-8">
           <div className="text-sm text-gray-400 my-4 flex items-center gap-2">
@@ -116,7 +119,7 @@ const FeaturedServices = () => {
             />
           </div>
           <div className="flex justify-between items-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
               Urban Escapes City Hopping
               <br />
               Adventures
@@ -153,11 +156,13 @@ const FeaturedServices = () => {
             }}
             className="!pb-12"
           >
-            {countriesData.map((country) => (
-              <SwiperSlide key={country.id}>
-                <CountryCard country={country} />
-              </SwiperSlide>
-            ))}
+            {countriesData
+              .filter((country) => country.status === 1)
+              .map((country) => (
+                <SwiperSlide key={country.id}>
+                  <CountryCard country={country} />
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </div>

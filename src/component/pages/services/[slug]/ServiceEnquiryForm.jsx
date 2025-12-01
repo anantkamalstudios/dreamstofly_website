@@ -821,7 +821,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-xl p-6 lg:p-8 w-full lg:w-[500px]">
-      <div className="text-center mb-2">
+      <div className="text-center mb-2 font-vollkorn">
         {formConfig.icon && (
           <div className="mb-3">
             <img
@@ -836,7 +836,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
         </h3>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 font-vollkorn">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {formConfig.fields.map((field) => (
             <div
@@ -848,7 +848,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
           ))}
         </div>
 
-        <div className="pt-1">
+        <div className="pt-1 font-vollkorn">
           <button
             type="submit"
             disabled={isSubmitting}

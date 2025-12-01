@@ -9,7 +9,7 @@ export default function Topbar() {
 
   const links = [
     { name: "HOME", href: "/" },
-    { name: "SOP MAKER", href: "/sop-maker" },
+    { name: "SOP/LOR", href: "/sop-lor-maker" },
     { name: "CONNECT", href: "/connect" },
     { name: "POST ADMIT SERVICES", href: "/post-admit-services" },
     { name: "BLOGS", href: "/blogs" },
