@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { TbPlane } from "react-icons/tb";
-import { ArrowUpRight } from "lucide-react";
-// import { services } from "../../data/services/ServicesData";
 
 const ServicesGrid = ({ services }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -15,8 +12,6 @@ const ServicesGrid = ({ services }) => {
       window.open("https://freecourse.dreamstofly.com/", "_blank");
     } else if (slug === "exam-prep") {
       navigate(`/${slug}`);
-    } else if (slug === "student-accommodation") {
-      navigate("/accomodation");
     } else {
       navigate(`/services/${slug}`);
     }

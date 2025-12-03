@@ -16,18 +16,15 @@ const LoginRegisterPage = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [showOtpModal, setShowOtpModal] = useState(false);
 
-  // Form states
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  // Error states
   const [emailError, setEmailError] = useState("");
   const [passwordStrength, setPasswordStrength] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
-  // Animated header text
   const phrases = ["Success", "Dreams", "Achievement", "Excellence"];
   const [currentText, setCurrentText] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -35,30 +32,32 @@ const LoginRegisterPage = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      const currentPhrase = phrases[phraseIndex];
-      if (!isDeleting) {
-        if (charIndex < currentPhrase.length) {
-          setCurrentText(currentPhrase.substring(0, charIndex + 1));
-          setCharIndex((prev) => prev + 1);
+    const timeout = setTimeout(
+      () => {
+        const currentPhrase = phrases[phraseIndex];
+        if (!isDeleting) {
+          if (charIndex < currentPhrase.length) {
+            setCurrentText(currentPhrase.substring(0, charIndex + 1));
+            setCharIndex((prev) => prev + 1);
+          } else {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
         } else {
-          setTimeout(() => setIsDeleting(true), 2000);
+          if (charIndex > 0) {
+            setCurrentText(currentPhrase.substring(0, charIndex - 1));
+            setCharIndex((prev) => prev - 1);
+          } else {
+            setIsDeleting(false);
+            setPhraseIndex((prev) => (prev + 1) % phrases.length);
+          }
         }
-      } else {
-        if (charIndex > 0) {
-          setCurrentText(currentPhrase.substring(0, charIndex - 1));
-          setCharIndex((prev) => prev - 1);
-        } else {
-          setIsDeleting(false);
-          setPhraseIndex((prev) => (prev + 1) % phrases.length);
-        }
-      }
-    }, isDeleting ? 50 : 100);
+      },
+      isDeleting ? 50 : 100
+    );
 
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, phraseIndex, phrases]);
 
-  // Email validation
   const validateEmail = (value) => {
     setEmail(value);
     if (!value.includes("@") || !value.includes(".")) {
@@ -125,7 +124,6 @@ const LoginRegisterPage = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50/50 px-4">
       {/* Card Container */}
       <div className="w-full max-w-6xl bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-        
         {/* Left: Image Slider */}
         <div className="relative w-full md:w-1/2 h-72 md:h-auto">
           {slides.map((slide, index) => (
@@ -213,7 +211,11 @@ const LoginRegisterPage = () => {
                 onClick={() => setShowPassword((prev) => !prev)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
               >
-                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                {showPassword ? (
+                  <EyeOff className="w-5 h-5" />
+                ) : (
+                  <Eye className="w-5 h-5" />
+                )}
               </button>
             </div>
             {password && (
@@ -248,7 +250,11 @@ const LoginRegisterPage = () => {
                 onClick={() => setShowConfirmPassword((prev) => !prev)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
               >
-                {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                {showConfirmPassword ? (
+                  <EyeOff className="w-5 h-5" />
+                ) : (
+                  <Eye className="w-5 h-5" />
+                )}
               </button>
             </div>
             {confirmPasswordError && (

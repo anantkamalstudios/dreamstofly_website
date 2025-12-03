@@ -32,7 +32,6 @@ import ServiceRouter from "./component/pages/services/ServiceRouter";
 import ScrollToTop from "./component/ScrollToTop";
 import SOPHomePage from "./component/pages/sopmaker/SOPHomePage";
 import LorMaker from "./component/pages/sopmaker/LorMaker";
-import AccomodationMainPage from "./component/pages/accomodation/AccomodationMainPage";
 import CourseFinderDetailPage from "./component/pages/courseFinder/CourseFinderDetailPage";
 import UniversityDetailPage from "./component/pages/courseFinder/UniversityDetailPage";
 import AccommodationListing from "./component/pages/accomodation/AccommodationListing";
@@ -40,6 +39,9 @@ import AccomodationDetail from "./component/pages/accomodation/components/Accomo
 import ListYourPropertyPage from "./component/pages/accomodation/ListYourPropertyPage";
 import AccommodationForm from "./component/pages/accomodation/AccomodationFormPage";
 import TravelInsuranceBook from "./component/pages/services/pages/TravelInsuranceBook";
+import CalculatorMainPage from "./component/pages/calculator/CalculatorMainPage";
+import SGPAToCGPAConversion from "./component/pages/calculator/SGPAToCGPAConversion";
+import SGPAToPercentagePage from "./component/pages/calculator/SGPAToPercentagePage";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -96,7 +98,6 @@ export default function App() {
               <Route path="/ToeflIBT" element={<ToeflIBT />} />
               <Route path="/DuolingoTest" element={<DuolingoTest />} />
               <Route path="/GREPrep" element={<GREPrep />} />
-              <Route path="/accomodation" element={<AccomodationMainPage />} />
               <Route
                 path="/accomodation/:slug/residency"
                 element={<AccommodationListing />}
@@ -120,6 +121,27 @@ export default function App() {
               <Route
                 path="/course/:slug"
                 element={<CourseFinderDetailPage />}
+              />
+              <Route
+                path="/cgpa-to-gpa-conversion"
+                element={<CalculatorMainPage />}
+              />
+              <Route
+                path="/pte-to-ielts-conversion"
+                element={<CalculatorMainPage />}
+              />
+              <Route
+                path="/act-to-sat-score"
+                element={<CalculatorMainPage />}
+              />
+              <Route path="/gmat-conversion" element={<CalculatorMainPage />} />
+              <Route
+                path="/sgpa-to-cgpa-conversion"
+                element={<SGPAToCGPAConversion />}
+              />
+              <Route
+                path="/sgpa-to-percentage-conversion"
+                element={<SGPAToPercentagePage />}
               />
             </Routes>
           </MainLayout>

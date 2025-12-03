@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -81,10 +82,33 @@ const Login = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!emailError && !passwordError && email && password) {
-      alert(`Login successful!\nEmail: ${email}`);
+    if (!email || !password || emailError || passwordError) return;
+
+    try {
+      const res = await axios.post(
+        "https://devlopment.dreamstofly.com/users/login_api",
+        {
+          email: email,
+          password: password,
+        }
+      );
+
+      if (res.status === 200 || res.status === 201) {
+        localStorage.setItem("token", res.data.token);
+        alert("Login successful!");
+        // Navigate to home or dashboard after successful login
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
+      alert(
+        error.response?.data?.message ||
+          "Login failed. Please check your credentials and try again."
+      );
     }
   };
 

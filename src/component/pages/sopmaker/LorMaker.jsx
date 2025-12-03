@@ -140,9 +140,8 @@ const LorMaker = () => {
       payload,
       {
         headers: {
-          "Content-Type": "application/json",
           token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMjcxNiIsImVtYWlsIjoicnV0dWphQGV4YW1wbGUuY29tIiwibmFtZSI6IlJ1dHVqYSIsImlhdCI6MTc2NDU4Nzk3NCwiZXhwIjoxNzY0Njc0Mzc0fQ.v7eMxLk_fYYhsWaN6myLEhw29C-oB_lKHxpx80FRTAc",
+            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMjcxOCIsImVtYWlsIjoicmFtQGV4YW1wbGUuY29tIiwibmFtZSI6InJhbSIsImlhdCI6MTc2NDY3MDI1NywiZXhwIjoxNzY0NzU2NjU3fQ.duJILRsSll7esmEwar2f9ZuM-iUCU1UueZSX5zSpchU",
         },
       }
     );

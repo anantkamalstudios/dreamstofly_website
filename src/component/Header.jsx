@@ -35,7 +35,6 @@ const Header = () => {
     setIsMobileGoalOpen(false);
   };
 
-  // 🔹 Close menu when clicked outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
@@ -52,7 +51,6 @@ const Header = () => {
     <header className="bg-[#02133e] text-white shadow-lg relative">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <Link to={"/"} className="flex items-center">
             <img
               src={logo}
@@ -61,16 +59,14 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Search + Goal */}
           <div className="hidden lg:flex items-center space-x-6 flex-1 max-w-4xl ml-8">
-            {/* Select Goal & City */}
             <div
-              className="relative"
+              className="relative flex justify-center items-center"
               onMouseEnter={() => setIsGoalOpen(true)}
               onMouseLeave={() => setIsGoalOpen(false)}
             >
               <button
-                className="flex items-center  hover:text-blue-300 text-sm whitespace-nowrap"
+                className="flex items-center h-full py-3  hover:text-blue-300 text-sm whitespace-nowrap "
                 onClick={() => setIsGoalOpen(!isGoalOpen)}
               >
                 <Target className="h-4 w-4 mr-1" />
@@ -79,7 +75,7 @@ const Header = () => {
               </button>
 
               {isGoalOpen && (
-                <div className="absolute top-full left-0 bg-white text-gray-300 shadow-2xl rounded-lg py-6 w-96 z-50 mt-2">
+                <div className="absolute top-9 left-0 bg-white text-gray-300 shadow-2xl rounded-lg py-6 w-96 z-50 mt-2">
                   <div className="px-6 pb-4 border-b border-gray-200">
                     <h3 className="font-semibold text-gray-800 mb-4 text-lg">
                       Select Your Goal
@@ -173,7 +169,7 @@ const Header = () => {
               </button>
 
               {isExploreOpen && (
-                <div className="absolute top-full right-0 bg-white text-gray-300 shadow-2xl rounded-lg py-6 w-80 z-50 mt-2">
+                <div className="absolute top-8 right-0 bg-white text-gray-300 shadow-2xl rounded-lg py-6 w-80 z-50 mt-2">
                   <div className="px-6 grid grid-cols-2 gap-6">
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-4 text-base">
@@ -305,11 +301,11 @@ const Header = () => {
                   "Science",
                   "Commerce",
                 ].map((goal) => (
-                  <p key={goal} className="hover:text-orange-400">
+                  <p key={goal} className="text-white hover:text-orange-400">
                     {goal}
                   </p>
                 ))}
-                <p className="mt-2 font-semibold">Cities:</p>
+                <p className="mt-2 text-white font-semibold">Cities:</p>
                 {[
                   "Delhi NCR",
                   "Bangalore",
@@ -318,7 +314,7 @@ const Header = () => {
                   "Pune",
                   "Chennai",
                 ].map((city) => (
-                  <p key={city} className="hover:text-orange-400">
+                  <p key={city} className="text-white hover:text-orange-400">
                     {city}
                   </p>
                 ))}
@@ -339,15 +335,15 @@ const Header = () => {
             </button>
             {isMobileExploreOpen && (
               <div className="pl-4 text-sm text-gray-300 space-y-2">
-                <p className="font-semibold">Colleges</p>
+                <p className="font-semibold text-white">Colleges</p>
                 {["Top Colleges", "Engineering", "MBA", "Medical"].map((c) => (
-                  <p key={c} className="hover:text-orange-400">
+                  <p key={c} className="text-white hover:text-orange-400">
                     {c}
                   </p>
                 ))}
-                <p className="mt-2 font-semibold">Exams</p>
+                <p className="mt-2 font-semibold text-white">Exams</p>
                 {["JEE Main", "NEET", "CAT"].map((e) => (
-                  <p key={e} className="hover:text-orange-400">
+                  <p key={e} className="hover:text-orange-400 text-white">
                     {e}
                   </p>
                 ))}

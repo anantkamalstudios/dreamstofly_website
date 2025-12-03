@@ -10,9 +10,7 @@ export const useServicesData = (endpoint) => {
     try {
       setLoading(true);
       setError(null);
-
-      const timestamp = new Date().getTime();
-      const response = await apiGet(`${endpoint}?t=${timestamp}`);
+      const response = await apiGet(`${endpoint}`);
       console.log(response);
 
       if (response?.data) {

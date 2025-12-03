@@ -176,6 +176,7 @@ import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import slides from "./data/home/Herosection";
 import axios from "axios";
+import Loader from "../common/Loader";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -230,7 +231,9 @@ const HeroSection = () => {
             />
           ))
         ) : (
-          <div>Loading...</div>
+          <div className="w-full h-full flex justify-center items-center">
+            <Loader />
+          </div>
         )}
       </div>
 
@@ -242,11 +245,11 @@ const HeroSection = () => {
             words={
               heroSectionData && heroSectionData.length > 0
                 ? [`${heroSectionData[currentSlide]?.title}`]
-                : ["Loading..."]
+                : [""]
             }
             loop={3}
             cursor
-            cursorStyle="|"
+            cursorStyle=""
             typeSpeed={50}
             deleteSpeed={50}
             delaySpeed={1000}
