@@ -84,8 +84,8 @@ const SOPHomePage = () => {
                   {card.title}
                 </h2>
 
-                <p className="text-black text-sm leading-relaxed mb-8">
-                  {card.description}
+                <p className="text-black text-base leading-relaxed mb-8">
+                  {card.subtitle}
                 </p>
                 <div className="flex justify-start items-center">
                   <Link

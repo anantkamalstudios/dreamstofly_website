@@ -8,25 +8,46 @@ import FAQSection from "../../accomodation/components/FAQSection";
 import Testimonials from "../Testimonials";
 import TrustedAndLoved from "../components/TrustedAndLoved";
 import InternationalMoneyHeroPage from "../components/InternationalMoneyHeroPage";
+import axios from "axios";
 
 const InternationalMoneyTransfer = () => {
   const { service, serviceDetails, loading } = useServiceData();
   const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [formData, setFormData] = useState({});
 
-  const handleFirstFormSubmit = (formData) => {
-    setFirstFormData(formData);
-    setShowPopup(true);
-  };
+  const handleSubmit = async (submissionData) => {
+    const dataToSubmit = submissionData || formData;
+    console.log("Received submission data:", dataToSubmit);
 
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
+    const payload = {
+      first_name: dataToSubmit.first_name,
+      last_name: dataToSubmit.last_name,
+      email: dataToSubmit.email,
+      phone: `${dataToSubmit.countryCode}${dataToSubmit.phone}`,
+      property: dataToSubmit.provider,
+      payment_method: dataToSubmit.payment_method,
+      recipient_gets: dataToSubmit.recipient_gets,
+      recipient_currency: dataToSubmit.recipient_currency,
+      you_send: dataToSubmit.you_send,
+      send_currency: dataToSubmit.send_currency,
+      fx_rate: dataToSubmit.fx_rate,
+      converted_amount: dataToSubmit.converted_amount,
     };
-    console.log("Money transfer data:", combinedData);
-    // Here you can send the data to your API
-    setShowPopup(false);
+
+    console.log("Submitting prepared payload:", payload);
+
+    try {
+      const res = await axios.post(
+        "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/international_money_lead",
+        payload
+      );
+      console.log("API Response:", res);
+      alert("form submitted successfully! We'll get back to you soon.");
+      setShowPopup(false);
+    } catch (error) {
+      console.error("API Error:", error);
+      alert("Error submitting form. Please try again.");
+    }
   };
 
   if (loading) {
@@ -83,7 +104,15 @@ const InternationalMoneyTransfer = () => {
 
   return (
     <div className="min-h-screen">
-      <InternationalMoneyHeroPage service={service} details={serviceDetails} />
+      <InternationalMoneyHeroPage
+        service={service}
+        details={serviceDetails}
+        formData={formData}
+        setFormData={setFormData}
+        handleSubmit={handleSubmit}
+        setShowPopup={setShowPopup}
+        showPopup={showPopup}
+      />
       <OurCommitments />
       <ServiceCountry countryData={countryData} />
       <HowItWorksPage steps={steps} />

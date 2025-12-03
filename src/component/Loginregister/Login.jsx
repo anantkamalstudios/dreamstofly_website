@@ -30,7 +30,7 @@ const Login = () => {
   useEffect(() => {
     const slider = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 4000); // change every 4s
+    }, 4000);
     return () => clearInterval(slider);
   }, []);
 
@@ -97,10 +97,11 @@ const Login = () => {
         }
       );
 
+      console.log(res);
+
       if (res.status === 200 || res.status === 201) {
-        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("token", res?.data?.data?.token);
         alert("Login successful!");
-        // Navigate to home or dashboard after successful login
         navigate("/");
       }
     } catch (error) {

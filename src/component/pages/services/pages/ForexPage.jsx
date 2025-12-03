@@ -8,6 +8,7 @@ import HowItWorks from "../components/HowItWorks";
 import Testimonials from "../Testimonials";
 import FAQAccordion from "../components/FAQAccordion";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import axios from "axios";
 
 // Form configuration for Forex Services
 const forexForm = {
@@ -17,14 +18,14 @@ const forexForm = {
   buttonText: "Submit",
   fields: [
     {
-      name: "firstName",
+      name: "firstname",
       label: "First Name",
       type: "text",
       required: true,
       colSpan: 1,
     },
     {
-      name: "lastName",
+      name: "lastname",
       label: "Last Name",
       type: "text",
       required: true,
@@ -38,7 +39,7 @@ const forexForm = {
       colSpan: 1,
     },
     {
-      name: "destinationCountry",
+      name: "country",
       label: "Destination Country",
       type: "text",
       required: true,
@@ -53,7 +54,7 @@ const forexForm = {
       colSpan: 2,
     },
     {
-      name: "phone",
+      name: "mobile",
       label: "Phone Number",
       type: "tel",
       required: true,
@@ -65,22 +66,16 @@ const forexForm = {
 
 const ForexPage = () => {
   const { service, serviceDetails, loading } = useServiceData();
-  const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [firstFormData, setFirstFormData] = useState({});
 
-  const handleFirstFormSubmit = (formData) => {
-    setFirstFormData(formData);
-    setShowPopup(true);
-  };
-
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Forex service request:", combinedData);
-    // Here you can send the data to your API
-    setShowPopup(false);
+  const handleFirstFormSubmit = async () => {
+    console.log("first from data from hungruhub =>", firstFormData);
+    const res = await axios.post(
+      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/forex_lead",
+      firstFormData
+    );
+    console.log(res);
+    alert("form submitted successfully! We'll get back to you soon.");
   };
 
   if (loading) {
@@ -162,8 +157,10 @@ const ForexPage = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
-          ...forexForm,
+          formData: firstFormData,
+          setFormData: setFirstFormData,
           onSubmit: handleFirstFormSubmit,
+          ...forexForm,
         }}
       />
       <PoweredBySection />

@@ -9,6 +9,7 @@ import TrustedAndLoved from "../components/TrustedAndLoved";
 import HowItWorksPage from "../components/HowItWorksPage";
 import FAQSection from "../../accomodation/components/FAQSection";
 import ServicesPopUpForm from "../components/ServicesPopUpForm";
+import axios from "axios";
 
 const healthInsuranceForm = {
   title: "Buy Health Insurance",
@@ -42,42 +43,42 @@ const healthInsurancePopupForm = {
   buttonText: "Submit",
   fields: [
     {
-      name: "firstName",
+      name: "firstname",
       label: "First Name",
       type: "text",
       required: true,
       colSpan: 1,
     },
     {
-      name: "lastName",
+      name: "lastname",
       label: "Last Name",
       type: "text",
       required: true,
       colSpan: 1,
     },
+    // {
+    //   name: "adults",
+    //   label: "Adults",
+    //   type: "number",
+    //   required: true,
+    //   colSpan: 1,
+    // },
+    // {
+    //   name: "children",
+    //   label: "Children",
+    //   type: "number",
+    //   required: true,
+    //   colSpan: 1,
+    // },
     {
-      name: "adults",
-      label: "Adults",
-      type: "number",
-      required: true,
-      colSpan: 1,
-    },
-    {
-      name: "children",
-      label: "Children",
-      type: "number",
-      required: true,
-      colSpan: 1,
-    },
-    {
-      name: "startDate",
+      name: "start_date",
       label: "Start Date",
       type: "date",
       required: true,
       colSpan: 1,
     },
     {
-      name: "endDate",
+      name: "end_date",
       label: "End Date",
       type: "date",
       required: true,
@@ -91,7 +92,7 @@ const healthInsurancePopupForm = {
       colSpan: 2,
     },
     {
-      name: "phone",
+      name: "mobile",
       label: "Phone",
       type: "phone",
       required: true,
@@ -103,20 +104,23 @@ const healthInsurancePopupForm = {
 const HealthInsurancePage = () => {
   const { service, serviceDetails, loading } = useServiceData();
   const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [firstFormData, setFirstFormData] = useState({});
+  const [popupFormData, setPopupFormData] = useState({});
 
-  const handleSubmit = (formData) => {
-    setFirstFormData(formData);
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from airportPickup =>", firstFormData);
     setShowPopup(true);
   };
 
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Health insurance form submitted:", combinedData);
-    // Here you can send the data to your API
+  const handlePopupSubmit = async () => {
+    console.log("Airport pickup request submitted:=> ", popupFormData);
+    const res = await axios.post(
+      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/health_insurance_lead",
+      popupFormData
+    );
+    console.log(res);
+    alert("form submitted successfully! We'll get back to you soon.");
+
     setShowPopup(false);
   };
 
@@ -177,17 +181,19 @@ const HealthInsurancePage = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
+          onSubmit: handleFirstFormSubmit,
           ...healthInsuranceForm,
-          onSubmit: handleSubmit,
         }}
       />
-        <OurCommitments />
-        <ServiceCountry countryData={countryData} />
-        <ServiceBenefitsPage />
-        <HowItWorksPage steps={steps} />
-        <FAQSection />
-        <Testimonials />
-        <TrustedAndLoved stats={stats} />
+      <OurCommitments />
+      <ServiceCountry countryData={countryData} />
+      <ServiceBenefitsPage />
+      <HowItWorksPage steps={steps} />
+      <FAQSection />
+      <Testimonials />
+      <TrustedAndLoved stats={stats} />
       {/* Popup Form */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -195,7 +201,8 @@ const HealthInsurancePage = () => {
             <ServicesPopUpForm
               onClose={() => setShowPopup(false)}
               onSubmit={handlePopupSubmit}
-              initialData={firstFormData}
+              formData={popupFormData}
+              setFormData={setPopupFormData}
               formConfig={healthInsurancePopupForm}
             />
           </div>

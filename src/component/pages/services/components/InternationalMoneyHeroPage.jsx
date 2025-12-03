@@ -2,37 +2,20 @@ import React, { useState } from "react";
 import { Briefcase, ChevronDown, X } from "lucide-react";
 import InternationalMoneyTransferForm from "../[slug]/InternationalMoneyTransferForm";
 
-const InternationalMoneyHeroPage = ({ service = {}, details = {} }) => {
+const InternationalMoneyHeroPage = ({
+  service = {},
+  details = {},
+  formData,
+  setFormData,
+  handleSubmit,
+  showPopup,
+  setShowPopup,
+}) => {
   const [recipientAmount, setRecipientAmount] = useState("500");
   const [senderAmount, setSenderAmount] = useState("32140.32");
   const [recipientCurrency, setRecipientCurrency] = useState("CAD");
   const [senderCurrency, setSenderCurrency] = useState("INR");
   const exchangeRate = 64.2806;
-  const [showModal, setShowModal] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [modalFormData, setModalFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    dateOfBirth: "",
-    coverageType: "",
-    existingConditions: "",
-    additionalInfo: "",
-  });
-
-  const countries = [
-    "United States",
-    "United Kingdom",
-    "Canada",
-    "Australia",
-    "Germany",
-    "France",
-    "India",
-    "UAE",
-    "Singapore",
-    "Other",
-  ];
 
   const handleRecipientChange = (e) => {
     const value = e.target.value;
@@ -72,14 +55,15 @@ const InternationalMoneyHeroPage = ({ service = {}, details = {} }) => {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             {/* Hero Content */}
             <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl font-bellefair">
-              <h1 className="text-white text-2xl md:text-4xl lg:text-5xl xl:text-6xl">{details.title}</h1>
+              <h1 className="text-white text-2xl md:text-4xl lg:text-5xl xl:text-6xl">
+                {details.title}
+              </h1>
 
               <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-white">
                 {details.subtitle}
               </p>
             </div>
 
-            {/* Form Card */}
             <div className="w-full lg:w-auto lg:flex-shrink-0 ml-auto font-vollkorn">
               <div className="bg-white rounded-2xl shadow-2xl px-8 py-4 max-w-2xl">
                 {/* Icon */}
@@ -143,7 +127,18 @@ const InternationalMoneyHeroPage = ({ service = {}, details = {} }) => {
                   </p>
                 </div>
                 <button
-                  onClick={() => setShowModal(true)}
+                  onClick={() => {
+                    setFormData((prev) => ({
+                      ...prev,
+                      recipient_gets: parseFloat(recipientAmount),
+                      recipient_currency: recipientCurrency,
+                      you_send: parseFloat(senderAmount),
+                      send_currency: senderCurrency,
+                      fx_rate: exchangeRate,
+                      converted_amount: parseFloat(recipientAmount),
+                    }));
+                    setShowPopup(true);
+                  }}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
                 >
                   Send Now
@@ -156,8 +151,11 @@ const InternationalMoneyHeroPage = ({ service = {}, details = {} }) => {
 
       {/* Modal */}
       <InternationalMoneyTransferForm
-        showModal={showModal}
-        setShowModal={setShowModal}
+        showModal={showPopup}
+        setShowModal={setShowPopup}
+        formData={formData}
+        setFormData={setFormData}
+        handleFormSubmit={handleSubmit}
       />
     </>
   );

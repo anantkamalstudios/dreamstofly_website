@@ -9,6 +9,7 @@ import FAQAccordion from "../components/FAQAccordion";
 import Testimonials from "../Testimonials";
 import TrustedAndLoved from "../components/TrustedAndLoved";
 import ServicesPopUpForm from "../components/ServicesPopUpForm";
+import axios from "axios";
 
 const luggageForm = {
   title: "Luggage Storage",
@@ -36,14 +37,14 @@ const luggagePopupForm = {
     {
       label: "First name",
       type: "text",
-      name: "firstName",
+      name: "firstname",
       required: true,
       colSpan: 1,
     },
     {
       label: "Last name",
       type: "text",
-      name: "lastName",
+      name: "lastname",
       required: true,
       colSpan: 1,
     },
@@ -57,7 +58,7 @@ const luggagePopupForm = {
     {
       label: "Phone",
       type: "phone",
-      name: "phone",
+      name: "mobile",
       required: true,
       colSpan: 2,
     },
@@ -67,20 +68,23 @@ const luggagePopupForm = {
 const LuggaugePage = () => {
   const { service, serviceDetails, loading } = useServiceData();
   const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [firstFormData, setFirstFormData] = useState({});
+  const [popupFormData, setPopupFormData] = useState({});
 
-  const handleSubmit = (formData) => {
-    setFirstFormData(formData);
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from airportPickup =>", firstFormData);
     setShowPopup(true);
   };
 
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Luggage service request:", combinedData);
-    // Here you can send the data to your API
+  const handlePopupSubmit = async () => {
+    console.log("Airport pickup request submitted:=> ", popupFormData);
+    const res = await axios.post(
+      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/luggage_storage_lead",
+      popupFormData
+    );
+    console.log(res);
+    alert("form submitted successfully! We'll get back to you soon.");
+
     setShowPopup(false);
   };
 
@@ -149,8 +153,10 @@ const LuggaugePage = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
+          onSubmit: handleFirstFormSubmit,
           ...luggageForm,
-          onSubmit: handleSubmit,
         }}
       />
       <PoweredBySection />
@@ -168,7 +174,8 @@ const LuggaugePage = () => {
             <ServicesPopUpForm
               onClose={() => setShowPopup(false)}
               onSubmit={handlePopupSubmit}
-              initialData={firstFormData}
+              formData={popupFormData}
+              setFormData={setPopupFormData}
               formConfig={luggagePopupForm}
             />
           </div>

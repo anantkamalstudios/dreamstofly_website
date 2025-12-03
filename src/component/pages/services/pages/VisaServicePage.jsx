@@ -7,8 +7,8 @@ import Testimonials from "../Testimonials";
 import WhyChooseUs from "../components/WhyChooseUs";
 import HowItWorksPage from "../components/HowItWorksPage";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import axios from "axios";
 
-// Form configuration for Visa Services
 const visaServiceForm = {
   title: "Visa Enquiry",
   icon: "/images/formicon/suit.png",
@@ -16,14 +16,14 @@ const visaServiceForm = {
   buttonText: "Apply Now",
   fields: [
     {
-      name: "firstName",
+      name: "firstname",
       label: "First Name",
       type: "text",
       required: true,
       colSpan: 1,
     },
     {
-      name: "lastName",
+      name: "lastname",
       label: "Last Name",
       type: "text",
       required: true,
@@ -34,6 +34,22 @@ const visaServiceForm = {
       label: "Nationality",
       type: "text",
       required: true,
+      colSpan: 1,
+    },
+    {
+      name: "mobile",
+      label: "Phone Number",
+      type: "tel",
+      required: true,
+      placeholder: "Enter your phone number",
+      colSpan: 1,
+    },
+    {
+      name: "university",
+      label: "Select University",
+      type: "select",
+      required: true,
+      options: ["University1", "University2", "University3", "University4"],
       colSpan: 1,
     },
     {
@@ -60,35 +76,21 @@ const visaServiceForm = {
       placeholder: "Enter your email",
       colSpan: 2,
     },
-    {
-      name: "phone",
-      label: "Phone Number",
-      type: "tel",
-      required: true,
-      placeholder: "Enter your phone number",
-      colSpan: 2,
-    },
   ],
 };
 
 const VisaServicePage = () => {
   const { service, serviceDetails, loading } = useServiceData();
-  const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [firstFormData, setFirstFormData] = useState({});
 
-  const handleFirstFormSubmit = (formData) => {
-    setFirstFormData(formData);
-    setShowPopup(true);
-  };
-
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Visa application data:", combinedData);
-    // Here you can send the data to your API
-    setShowPopup(false);
+  const handleFirstFormSubmit = async () => {
+    console.log("first from data from hungruhub =>", firstFormData);
+    const res = await axios.post(
+      "https://devlopment.dreamstofly.com/ServiceLead/Leads_controller/visa_lead",
+      firstFormData
+    );
+    console.log(res);
+    alert("form submitted successfully! We'll get back to you soon.");
   };
 
   if (loading) {
@@ -148,6 +150,8 @@ const VisaServicePage = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
           ...visaServiceForm,
           onSubmit: handleFirstFormSubmit,
         }}

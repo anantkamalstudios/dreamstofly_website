@@ -8,89 +8,26 @@ import Testimonials from "../Testimonials";
 import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
 import FlightBookingHeroPage from "../components/FlightBookingHeroPage";
-
-// Form configuration for Flight Ticket booking
-const flightTicketForm = {
-  title: "Book Flight Tickets",
-  icon: "/images/formicon/flight.png",
-  description: "Find the best deals on student flights",
-  buttonText: "Search Flights",
-  fields: [
-    {
-      name: "tripType",
-      label: "Trip Type",
-      type: "select",
-      required: true,
-      options: ["One Way", "Round Trip", "Multi-City"],
-      colSpan: 1,
-    },
-    {
-      name: "from",
-      label: "From",
-      type: "text",
-      required: true,
-      placeholder: "City or Airport",
-      colSpan: 1,
-    },
-    {
-      name: "to",
-      label: "To",
-      type: "text",
-      required: true,
-      placeholder: "City or Airport",
-      colSpan: 1,
-    },
-    {
-      name: "departureDate",
-      label: "Departure",
-      type: "date",
-      required: true,
-      colSpan: 1,
-    },
-    {
-      name: "returnDate",
-      label: "Return",
-      type: "date",
-      required: false,
-      colSpan: 1,
-    },
-    {
-      name: "passengers",
-      label: "Passengers",
-      type: "number",
-      required: true,
-      min: 1,
-      defaultValue: 1,
-      colSpan: 1,
-    },
-    {
-      name: "cabinClass",
-      label: "Cabin Class",
-      type: "select",
-      required: true,
-      options: ["Economy", "Premium Economy", "Business", "First Class"],
-      colSpan: 1,
-    },
-  ],
-};
+import axios from "axios";
 
 const FlightTicket = () => {
   const { service, serviceDetails, loading, slug } = useServiceData();
+  const [firstFormData, setFirstFormData] = useState({});
+  const [popupFormData, setPopupFormData] = useState({});
   const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
 
-  const handleFirstFormSubmit = (formData) => {
-    setFirstFormData(formData);
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from flight ticket =>", firstFormData);
     setShowPopup(true);
   };
+  const handlePopupFormSubmit = async () => {
+    console.log("popup formn adata => ", popupFormData);
+    const res = await axios.post(
+      "https://devlopment.dreamstofly.com/ServiceLead/Leads_controller/leads",
+      popupFormData
+    );
+    console.log(res);
 
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Flight booking data:", combinedData);
-    // Here you can send the data to your API
     setShowPopup(false);
   };
 
@@ -131,16 +68,18 @@ const FlightTicket = () => {
 
   return (
     <div className="min-h-screen">
-      {/* <ServiceHero
+      <FlightBookingHeroPage
         service={service}
         details={serviceDetails}
-        formConfig={{
-          ...flightTicketForm,
-          onSubmit: handleFirstFormSubmit,
-        }}
-        slug={slug}
-      /> */}
-      <FlightBookingHeroPage service={service} details={serviceDetails} />
+        firstFormData={firstFormData}
+        setFirstFormData={setFirstFormData}
+        handleFirstFormSubmit={handleFirstFormSubmit}
+        showPopup={showPopup}
+        setShowPopup={setShowPopup}
+        popupFormData={popupFormData}
+        setPopupFormData={setPopupFormData}
+        handlePopupFormSubmit={handlePopupFormSubmit}
+      />
       <div className="pt-2 sm:pt-16 md:pt-20 lg:pt-20 px-4 sm:px-6 md:px-10 lg:px-0">
         <ServiceCountry countryData={countryData} />
       </div>

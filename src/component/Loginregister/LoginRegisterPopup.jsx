@@ -71,7 +71,6 @@ export default function LoginRegisterPopup({ setShowModal }) {
       [name]: value,
     });
 
-    // Validate on change
     if (name === "email") {
       validateEmail(value);
     } else if (name === "password") {

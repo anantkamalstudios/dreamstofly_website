@@ -9,8 +9,8 @@ import TrustedAndLoved from "../components/TrustedAndLoved";
 import HowItWorks from "../components/HowItWorks";
 import LoginRegisterPopup from "../../../Loginregister/LoginRegisterPopup";
 import RelatedServices from "../components/RelatedServices";
+import axios from "axios";
 
-// Form configuration for Student Internship
 const internshipForm = {
   title: "Internship Enquiry",
   icon: "/images/formicon/suit.png",
@@ -39,21 +39,12 @@ const internshipForm = {
 const StudentInternship = () => {
   const { service, serviceDetails, loading } = useServiceData();
   const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [firstFormData, setFirstFormData] = useState({});
 
-  const handleSubmit = (formData) => {
-    setFirstFormData(formData);
+  const handleFirstFormSubmit = async () => {
     setShowPopup(true);
-  };
-
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Internship application:", combinedData);
-    // Here you can send the data to your API
-    setShowPopup(false);
+    console.log("first from data from hungruhub =>", firstFormData);
+    alert("form submitted successfully! We'll get back to you soon.");
   };
 
   if (loading) {
@@ -119,8 +110,10 @@ const StudentInternship = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
+          onSubmit: handleFirstFormSubmit,
           ...internshipForm,
-          onSubmit: handleSubmit,
         }}
       />
       <PoweredBySection />

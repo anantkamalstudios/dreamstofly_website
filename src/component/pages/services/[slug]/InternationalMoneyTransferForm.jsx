@@ -2,23 +2,44 @@ import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { X, ChevronDown, Info } from "lucide-react";
 
-const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
+const InternationalMoneyTransferForm = ({
+  showModal,
+  setShowModal,
+  formData: parentFormData,
+  setFormData: setParentFormData,
+  handleFormSubmit,
+}) => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     nationality: "",
-    destinationCountry: "",
+    country: "",
     provider: "",
     email: "",
     countryCode: "+91",
     phone: "",
-    paymentMethod: "wire",
-    accountAmount: "500 GBP",
-    amountToPay: "59747.21 INR + Charges",
-    fxRate: "1 GBP = 119.4944 INR",
+    payment_method: "wire",
+    accountAmount: parentFormData?.accountAmount || "500 GBP",
+    amountToPay: parentFormData?.amountToPay || "59747.21 INR + Charges",
+    fx_rate: parentFormData?.fxRate || "1 GBP = 119.4944 INR",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (parentFormData) {
+      setFormData((prev) => ({
+        ...prev,
+        accountAmount: parentFormData.accountAmount || prev.accountAmount,
+        amountToPay: parentFormData.amountToPay || prev.amountToPay,
+        fxRate: parentFormData.fxRate || prev.fxRate,
+      }));
+    }
+  }, [
+    parentFormData?.accountAmount,
+    parentFormData?.amountToPay,
+    parentFormData?.fxRate,
+  ]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,11 +57,31 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    alert("Money transfer request submitted successfully!");
-    closeModal();
+
+    try {
+      // Merge form data with parent form data
+      const submissionData = {
+        ...parentFormData,
+        ...formData,
+      };
+
+      // Update parent form data
+      if (setParentFormData) {
+        setParentFormData(submissionData);
+      }
+
+      // Call parent's API handler
+      if (handleFormSubmit) {
+        await handleFormSubmit(submissionData);
+      }
+
+      closeModal();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error submitting form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!showModal) return null;
@@ -83,10 +124,10 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
                 </label>
                 <input
                   type="text"
-                  name="firstName"
-                  value={formData.firstName}
+                  name="first_name"
+                  value={formData.first_name}
                   onChange={handleChange}
-                  placeholder="Dipika"
+                  placeholder=""
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
@@ -97,10 +138,10 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
                 </label>
                 <input
                   type="text"
-                  name="lastName"
-                  value={formData.lastName}
+                  name="last_name"
+                  value={formData.last_name}
                   onChange={handleChange}
-                  placeholder="Ilag"
+                  placeholder=""
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
@@ -128,8 +169,8 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
                 </label>
                 <input
                   type="text"
-                  name="destinationCountry"
-                  value={formData.destinationCountry}
+                  name="country"
+                  value={formData.country}
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
@@ -169,7 +210,7 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="dipika@gmail.com"
+                placeholder=""
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 required
               />
@@ -198,7 +239,7 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="7623439577"
+                  placeholder=""
                   className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
@@ -280,7 +321,7 @@ const InternationalMoneyTransferForm = ({ showModal, setShowModal }) => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default InternationalMoneyTransferForm;

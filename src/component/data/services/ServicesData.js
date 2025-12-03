@@ -41,7 +41,7 @@ export const services = [
     category: "Travel",
     featured: true,
     price: "From £299",
-    slug: "student-flight-ticket",
+    slug: "student-flight-tickets",
     backgroundImage: "/images/services/flightbg.png",
   },
   // {
@@ -72,7 +72,7 @@ export const services = [
     category: "Finance",
     featured: false,
     price: "From £5",
-    slug: "money-transfer",
+    slug: "international-money-transfer",
     backgroundImage: "/images/moneytransfer.png",
   },
   {
@@ -83,7 +83,7 @@ export const services = [
     category: "Immigration",
     featured: true,
     price: "From £99",
-    slug: "visa-assistance",
+    slug: "get-visa",
     backgroundImage: "/images/services/visa-assistance.jpg",
   },
   {
@@ -105,7 +105,7 @@ export const services = [
     category: "app",
     featured: false,
     price: "From £50",
-    slug: "e-money-app",
+    slug: "student-e-money-app",
     backgroundImage: "/images/emoney.jpeg",
   },
   {
@@ -160,7 +160,7 @@ export const services = [
     category: "Insurance",
     featured: true,
     price: "From £50/month",
-    slug: "health-insurance",
+    slug: "health-insurance-oshc",
     backgroundImage: "/images/healthInsurance.png",
   },
   {
@@ -182,7 +182,7 @@ export const services = [
     category: "Finance",
     featured: false,
     price: "From £10",
-    slug: "forex-services",
+    slug: "forex",
     backgroundImage: "/images/11.jpg",
   },
   {
@@ -204,7 +204,7 @@ export const services = [
     category: "Food",
     featured: false,
     price: "Free",
-    slug: "hungry-hub",
+    slug: "hungryhub",
     backgroundImage: "/images/hungryhub.png",
   },
   {
@@ -226,8 +226,7 @@ export const services = [
     category: "Education",
     featured: true,
     price: "From £80",
-    // slug: "test-preparation",
-    slug: "exam-prep",
+    slug: "test-preparation",
   },
   {
     id: 20,
@@ -237,8 +236,7 @@ export const services = [
     category: "Education",
     featured: false,
     price: "Free",
-    // slug: "free-online-courses",
-    slug: "free-cources",
+    slug: "free-online-courses",
   },
   // {
   //   id: 21,

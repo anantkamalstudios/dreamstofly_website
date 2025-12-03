@@ -72,20 +72,16 @@ const roomEssentialsForm = {
 const RoomEssentials = () => {
   const { service, serviceDetails, loading } = useServiceData();
   const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [firstFormData, setFirstFormData] = useState({});
+  const [popupFormData, setPopupFormData] = useState({});
 
-  const handleFirstFormSubmit = (formData) => {
-    setFirstFormData(formData);
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from airportPickup =>", firstFormData);
     setShowPopup(true);
   };
 
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Room essentials order:", combinedData);
-    // Here you can send the data to your API
+  const handlePopupSubmit = () => {
+    console.log("Airport pickup request submitted:=> ", popupFormData);
     setShowPopup(false);
   };
 
@@ -152,6 +148,8 @@ const RoomEssentials = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
           ...roomEssentialsForm,
           onSubmit: handleFirstFormSubmit,
         }}
@@ -163,18 +161,6 @@ const RoomEssentials = () => {
       <Testimonials />
       <FAQAccordion faqs={serviceDetails.faqs} />
       <TrustedAndLoved stats={stats} />
-
-      {/* Popup Form */}
-      <ServicesPopUpForm
-        isOpen={showPopup}
-        onClose={() => setShowPopup(false)}
-        onSubmit={handlePopupSubmit}
-      />
-
-      {/* Blur overlay when popup is open */}
-      {showPopup && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40" />
-      )}
     </div>
   );
 };

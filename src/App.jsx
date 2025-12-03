@@ -42,6 +42,8 @@ import TravelInsuranceBook from "./component/pages/services/pages/TravelInsuranc
 import CalculatorMainPage from "./component/pages/calculator/CalculatorMainPage";
 import SGPAToCGPAConversion from "./component/pages/calculator/SGPAToCGPAConversion";
 import SGPAToPercentagePage from "./component/pages/calculator/SGPAToPercentagePage";
+import PTEtoIELTSConversion from "./component/pages/calculator/PTEtoIELTSConversion";
+import ACTToSATConversion from "./component/pages/calculator/ACTToSATConversion";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -127,12 +129,8 @@ export default function App() {
                 element={<CalculatorMainPage />}
               />
               <Route
-                path="/pte-to-ielts-conversion"
-                element={<CalculatorMainPage />}
-              />
-              <Route
                 path="/act-to-sat-score"
-                element={<CalculatorMainPage />}
+                element={<ACTToSATConversion />}
               />
               <Route path="/gmat-conversion" element={<CalculatorMainPage />} />
               <Route
@@ -142,6 +140,10 @@ export default function App() {
               <Route
                 path="/sgpa-to-percentage-conversion"
                 element={<SGPAToPercentagePage />}
+              />
+              <Route
+                path="/pte-to-ielts-conversion"
+                element={<PTEtoIELTSConversion />}
               />
             </Routes>
           </MainLayout>

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import OtpModal from "./OtpModal";
+import axios from "axios";
 
 const LoginRegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -18,6 +19,8 @@ const LoginRegisterPage = () => {
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [referralCode, setReferralCode] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -92,16 +95,41 @@ const LoginRegisterPage = () => {
   const isFormValid =
     fullName &&
     email &&
+    mobile &&
     password &&
     confirmPassword &&
     !emailError &&
     !confirmPasswordError &&
     passwordStrength.startsWith("Strong");
 
-  const handleCreateAccount = (e) => {
+  const handleCreateAccount = async (e) => {
     e.preventDefault();
-    if (isFormValid) {
-      setShowOtpModal(true);
+    if (!isFormValid) return;
+
+    setShowOtpModal(false);
+    try {
+      const payload = {
+        name: fullName,
+        email: email,
+        mobile: mobile,
+        password: password,
+        refer_code: referralCode,
+      };
+
+      const res = await axios.post(
+        "https://devlopment.dreamstofly.com/users/register_api",
+        payload
+      );
+      console.log(res);
+      if (res && (res.status === 200 || res.status === 201)) {
+        setShowOtpModal(true);
+        localStorage.setItem("token", res?.data?.data?.token);
+      } else {
+        setShowOtpModal(true);
+      }
+    } catch (err) {
+      console.error("Registration error:", err);
+      alert("Registration failed. Please try again.");
     }
   };
 
@@ -194,6 +222,30 @@ const LoginRegisterPage = () => {
               />
             </div>
             {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
+
+            {/* Mobile */}
+            <div className="relative">
+              <input
+                type="tel"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+                placeholder="Mobile Number"
+                required
+                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+              />
+            </div>
+
+            {/* Refferal code */}
+            <div className="relative">
+              <input
+                type="tel"
+                value={referralCode}
+                onChange={(e) => setReferralCode(e.target.value)}
+                placeholder="Referral Code"
+                required
+                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+              />
+            </div>
 
             {/* Password */}
             <div className="relative">

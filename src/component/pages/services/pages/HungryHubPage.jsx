@@ -8,6 +8,7 @@ import RelatedServices from "../components/RelatedServices";
 import FAQSection from "../../accomodation/components/FAQSection";
 import Testimonials from "../Testimonials";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import axios from "axios";
 
 // Form configuration for HungryHub Service
 const hungryHubForm = {
@@ -17,14 +18,14 @@ const hungryHubForm = {
   buttonText: "Grab Offer Now",
   fields: [
     {
-      name: "firstName",
+      name: "firstname",
       label: "First Name",
       type: "text",
       required: true,
       colSpan: 1,
     },
     {
-      name: "lastName",
+      name: "lastname",
       label: "Last Name",
       type: "text",
       required: true,
@@ -38,7 +39,7 @@ const hungryHubForm = {
       colSpan: 1,
     },
     {
-      name: "destinationCountry",
+      name: "country",
       label: "Destination Country",
       type: "select",
       options: [
@@ -62,34 +63,36 @@ const hungryHubForm = {
       colSpan: 2,
     },
     {
-      name: "phone",
+      name: "mobile",
       label: "Phone Number",
       type: "tel",
       required: true,
-      colSpan: 2,
-      placeholder:""
+      colSpan: 1,
+      placeholder: "",
+    },
+    {
+      name: "provider",
+      label: "Provider",
+      type: "select",
+      options: ["Provider1", "Provider2"],
+      required: true,
+      colSpan: 1,
     },
   ],
 };
 
 const HungryHubPage = () => {
   const { service, serviceDetails, loading, slug } = useServiceData();
-  const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [firstFormData, setFirstFormData] = useState({});
 
-  const handleFirstFormSubmit = (formData) => {
-    setFirstFormData(formData);
-    setShowPopup(true);
-  };
-
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Food order request:", combinedData);
-    // Here you can send the data to your API
-    setShowPopup(false);
+  const handleFirstFormSubmit = async () => {
+    console.log("first from data from hungruhub =>", firstFormData);
+    const res = await axios.post(
+      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/hungry_hub_lead",
+      firstFormData
+    );
+    console.log(res);
+    alert("form submitted successfully! We'll get back to you soon.");
   };
 
   if (loading) {
@@ -173,8 +176,10 @@ const HungryHubPage = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
-          ...hungryHubForm,
+          formData: firstFormData,
+          setFormData: setFirstFormData,
           onSubmit: handleFirstFormSubmit,
+          ...hungryHubForm,
         }}
         slug={slug}
       />

@@ -11,6 +11,7 @@ import { getServiceDetails } from "../../../data/services/ServiceDetails";
 import Testimonials from "../Testimonials";
 import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
+import axios from "axios";
 
 const eMoneyAppForm = {
   title: "Select Destination Country",
@@ -52,14 +53,14 @@ const eMoneyAppPopupForm = {
   buttonText: "Submit",
   fields: [
     {
-      name: "firstName",
+      name: "firstname",
       label: "First name",
       type: "text",
       required: true,
       colSpan: 1,
     },
     {
-      name: "lastName",
+      name: "lastname",
       label: "Last name",
       type: "text",
       required: true,
@@ -83,7 +84,7 @@ const eMoneyAppPopupForm = {
     {
       label: "Phone",
       type: "phone",
-      name: "phone",
+      name: "mobile",
       required: true,
       colSpan: 2,
     },
@@ -93,21 +94,23 @@ const eMoneyAppPopupForm = {
 const EMoneyApp = () => {
   const { service, serviceDetails, loading } = useServiceData();
   const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
 
-  const handleSubmit = (formData) => {
-    setFirstFormData(formData);
+  const [firstFormData, setFirstFormData] = useState({});
+  const [popupFormData, setPopupFormData] = useState({});
+
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from e money =>", firstFormData);
     setShowPopup(true);
   };
 
-  const handlePopupSubmit = (popupFormData) => {
-    // Combine both forms data
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Airport pickup request submitted:", combinedData);
-    // Here you can send the data to your API
+  const handlePopupSubmit = async () => {
+    console.log("e money request submitted:=> ", popupFormData);
+    const res = await axios.post(
+      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/emoney_lead",
+      popupFormData
+    );
+    console.log(res);
+    alert("form submitted successfully! We'll get back to you soon.");
     setShowPopup(false);
   };
 
@@ -166,8 +169,10 @@ const EMoneyApp = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
+          onSubmit: handleFirstFormSubmit,
           ...eMoneyAppForm,
-          onSubmit: handleSubmit,
         }}
       />
 
@@ -186,7 +191,8 @@ const EMoneyApp = () => {
             <ServicesPopUpForm
               onClose={() => setShowPopup(false)}
               onSubmit={handlePopupSubmit}
-              initialData={firstFormData}
+              formData={popupFormData}
+              setFormData={setPopupFormData}
               formConfig={eMoneyAppPopupForm}
             />
           </div>

@@ -8,10 +8,10 @@ const ServicesGrid = ({ services }) => {
   const handleCardClick = (service) => {
     const slug = service.slug;
 
-    if (slug === "free-cources") {
+    if (slug === "free-cources" || slug === "free-online-courses") {
       window.open("https://freecourse.dreamstofly.com/", "_blank");
-    } else if (slug === "exam-prep") {
-      navigate(`/${slug}`);
+    } else if (slug === "exam-prep" || slug === "test-preparation") {
+      navigate(`/exam-prep`);
     } else {
       navigate(`/services/${slug}`);
     }

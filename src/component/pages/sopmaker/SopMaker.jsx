@@ -12,6 +12,7 @@ import { useServicesData } from "../../../hooks/useServicesData";
 
 const SopMaker = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const token = localStorage.getItem("token");
   const [sopFormData, setSopFormData] = useState({
     personalInfo: {
       fullName: "",
@@ -100,7 +101,7 @@ const SopMaker = () => {
     {
       id: 3,
       key: "review",
-      title: "Review Your Letter of Recommendation (LOR)",
+      title: "Review Your Statement Of Purpose (SOP)",
       icon: FileText,
       fields: [],
     },
@@ -289,7 +290,7 @@ const SopMaker = () => {
                 </div>
 
                 <div className="flex flex-col justify-start mt-10 max-w-72 gap-3">
-                  <p className="text-lg">Download LOR (PDF/DOCX)</p>
+                  <p className="text-lg">Download SOP (PDF/DOCX)</p>
                   <button
                     className="bg-[#0073DF] text-white px-8 py-4 rounded-md font-semibold text-lg inline-block"
                     onClick={handleSubmit}

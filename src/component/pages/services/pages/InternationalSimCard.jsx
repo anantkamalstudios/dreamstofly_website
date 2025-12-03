@@ -8,6 +8,8 @@ import FAQAccordion from "../components/FAQAccordion";
 import RelatedServices from "../components/RelatedServices";
 import ServiceHero from "../[slug]/ServiceHero";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import axios from "axios";
+import ServicesPopUpForm from "../components/ServicesPopUpForm";
 
 // Form configuration for International SIM Card
 const simCardForm = {
@@ -43,23 +45,62 @@ const simCardForm = {
   ],
 };
 
+const simCardPopupForm = {
+  title: "Get International SIM Card",
+  icon: "/images/formicon/suit.png",
+  description: "Leave us your contact details to serve you later.",
+  buttonText: "Submit",
+  fields: [
+    {
+      label: "First name",
+      type: "text",
+      name: "firstname",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      label: "Last name",
+      type: "text",
+      name: "lastname",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      label: "Email address",
+      type: "email",
+      name: "email",
+      required: true,
+      colSpan: 2,
+    },
+    {
+      label: "Phone",
+      type: "phone",
+      name: "mobile",
+      required: true,
+      colSpan: 2,
+    },
+  ],
+};
+
 const InternationalSimCard = () => {
   const { service, serviceDetails, loading } = useServiceData();
   const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [firstFormData, setFirstFormData] = useState({});
+  const [popupFormData, setPopupFormData] = useState({});
 
-  const handleFirstFormSubmit = (formData) => {
-    setFirstFormData(formData);
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from airportPickup =>", firstFormData);
     setShowPopup(true);
   };
 
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("SIM Card order request:", combinedData);
-    // Here you can send the data to your API
+  const handlePopupSubmit = async () => {
+    console.log("first from data from internatinal sim =>", firstFormData);
+    const res = await axios.post(
+      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/internationalsim_lead",
+      popupFormData
+    );
+    console.log(res);
+    alert("form submitted successfully! We'll get back to you soon.");
     setShowPopup(false);
   };
 
@@ -132,8 +173,10 @@ const InternationalSimCard = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
-          ...simCardForm,
+          formData: firstFormData,
+          setFormData: setFirstFormData,
           onSubmit: handleFirstFormSubmit,
+          ...simCardForm,
         }}
       />
       <PoweredBySection />
@@ -142,6 +185,23 @@ const InternationalSimCard = () => {
       <Testimonials />
       <RelatedServices />
       <TrustedAndLoved stats={stats} />
+
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <ServicesPopUpForm
+              onClose={() => setShowPopup(false)}
+              onSubmit={handlePopupSubmit}
+              formData={popupFormData}
+              setFormData={setPopupFormData}
+              formConfig={simCardPopupForm}
+            />
+          </div>
+        </div>
+      )}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40" />
+      )}
     </div>
   );
 };

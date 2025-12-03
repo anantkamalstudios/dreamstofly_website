@@ -133,16 +133,16 @@ const LorMaker = () => {
     return result;
   };
 
+  const token = localStorage.getItem("token");
+  console.log(token);
+
   const handleSubmit = async () => {
     const payload = getFlatlorFormData(lorFormData);
     const response = await axios.post(
       "https://devlopment.dreamstofly.com/api/lor/generate",
       payload,
       {
-        headers: {
-          token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMjcxOCIsImVtYWlsIjoicmFtQGV4YW1wbGUuY29tIiwibmFtZSI6InJhbSIsImlhdCI6MTc2NDY3MDI1NywiZXhwIjoxNzY0NzU2NjU3fQ.duJILRsSll7esmEwar2f9ZuM-iUCU1UueZSX5zSpchU",
-        },
+        headers: { token: `Bearer ${token}` },
       }
     );
     console.log(response);
