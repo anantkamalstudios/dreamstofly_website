@@ -9,7 +9,6 @@ import TrustedAndLoved from "../components/TrustedAndLoved";
 import HowItWorks from "../components/HowItWorks";
 import LoginRegisterPopup from "../../../Loginregister/LoginRegisterPopup";
 import RelatedServices from "../components/RelatedServices";
-import axios from "axios";
 
 const internshipForm = {
   title: "Internship Enquiry",
@@ -41,11 +40,14 @@ const StudentInternship = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [firstFormData, setFirstFormData] = useState({});
 
-  const handleFirstFormSubmit = async () => {
+  const handleFirstFormSubmit = () => {
     setShowPopup(true);
+    console.log(showPopup);
+
     console.log("first from data from hungruhub =>", firstFormData);
     alert("form submitted successfully! We'll get back to you soon.");
   };
+  console.log(showPopup);
 
   if (loading) {
     return (
@@ -128,13 +130,16 @@ const StudentInternship = () => {
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-            {showPopup && <LoginRegisterPopup setShowModal={setShowPopup} />}
+            <LoginRegisterPopup
+              showModal={showPopup}
+              setShowModal={setShowPopup}
+            />
           </div>
         </div>
       )}
-      {showPopup && (
+      {/* {showPopup && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40" />
-      )}
+      )} */}
     </div>
   );
 };

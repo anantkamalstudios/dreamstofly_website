@@ -6,30 +6,34 @@ import {
   Award,
   Users,
   CheckCircle,
+  Download,
 } from "lucide-react";
 import axios from "axios";
 import { useServicesData } from "../../../hooks/useServicesData";
+import { downloadSOPAsPDF } from "./pdfDownloadUtils";
 
 const SopMaker = () => {
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [generatedSOP, setGeneratedSOP] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
   const token = localStorage.getItem("token");
   const [sopFormData, setSopFormData] = useState({
     personalInfo: {
-      fullName: "",
-      targetUniversity: "",
-      desiredCourse: "",
+      fullname: "",
+      target_university: "",
+      desired_course: "",
     },
     academic: {
-      currentEducation: "",
-      workExperience: "",
-      keyAchievements: "",
+      current_education: "",
+      work_experience: "",
+      key_achievements: "",
     },
     goals: {
-      whyCourse: "",
-      whyUniversity: "",
-      careerGoals: "",
+      why_course: "",
+      why_university: "",
+      career_goals: "",
       motivation: "",
-      contribution: "",
+      contributions: "",
     },
   });
 
@@ -39,10 +43,10 @@ const SopMaker = () => {
       key: "personalInfo",
       title: "Personal Information",
       fields: [
-        { name: "fullName", label: "Full Name", type: "text" },
-        { name: "targetUniversity", label: "Target University", type: "text" },
+        { name: "fullname", label: "Full Name", type: "text" },
+        { name: "target_university", label: "Target University", type: "text" },
         {
-          name: "desiredCourse",
+          name: "desired_course",
           label: "Desired Course/Program",
           type: "text",
         },
@@ -54,13 +58,13 @@ const SopMaker = () => {
       title: "Academic & Professional Background",
       fields: [
         {
-          name: "currentEducation",
+          name: "current_education",
           label: "Current Education",
           type: "textarea",
         },
-        { name: "workExperience", label: "Work Experience", type: "textarea" },
+        { name: "work_experience", label: "Work Experience", type: "textarea" },
         {
-          name: "keyAchievements",
+          name: "key_achievements",
           label: "Key Achievements",
           type: "textarea",
         },
@@ -72,17 +76,17 @@ const SopMaker = () => {
       title: "Goals & Motivation",
       fields: [
         {
-          name: "whyCourse",
+          name: "why_course",
           label: "Why This Course",
           type: "text",
         },
         {
-          name: "whyUniversity",
+          name: "why_university",
           label: "Why This University",
           type: "text",
         },
         {
-          name: "careerGoals",
+          name: "career_goals",
           label: "Career Goals",
           type: "text",
         },
@@ -92,7 +96,7 @@ const SopMaker = () => {
           type: "text",
         },
         {
-          name: "contribution",
+          name: "contributions",
           label: "Your Contribution",
           type: "text",
         },
@@ -143,9 +147,48 @@ const SopMaker = () => {
     return result;
   };
 
-  const handleSubmit = () => {
-    const data = getFlatFormData(sopFormData);
-    console.log(data);
+  console.log(token);
+
+  const handleSubmit = async () => {
+    try {
+      setIsGenerating(true);
+
+      const payload = getFlatFormData(sopFormData);
+
+      const response = await axios.post(
+        "https://devlopment.dreamstofly.com/api/sop/generate",
+        payload,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      if (response.data.status === "success") {
+        setGeneratedSOP(response.data);
+        alert("SOP generated successfully! You can now download it.");
+      }
+    } catch (error) {
+      console.error("Error generating SOP:", error);
+      alert("Failed to generate SOP. Please try again.");
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const handleDownloadPDF = async () => {
+    if (!generatedSOP || !generatedSOP.sop_text) {
+      alert("No SOP text available to download");
+      return;
+    }
+
+    const applicantName = sopFormData.applicant_name || "Applicant";
+    const result = await downloadSOPAsPDF(generatedSOP.sop_text, applicantName);
+
+    if (result.success) {
+      alert("PDF downloaded successfully!");
+    } else {
+      alert("Failed to download PDF. Please try again.");
+    }
   };
 
   return (
@@ -292,11 +335,22 @@ const SopMaker = () => {
                 <div className="flex flex-col justify-start mt-10 max-w-72 gap-3">
                   <p className="text-lg">Download SOP (PDF/DOCX)</p>
                   <button
-                    className="bg-[#0073DF] text-white px-8 py-4 rounded-md font-semibold text-lg inline-block"
+                    className="bg-[#0073DF] text-white px-8 py-4 rounded-md font-semibold text-lg inline-flex items-center gap-2 hover:bg-blue-600 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                     onClick={handleSubmit}
+                    disabled={isGenerating}
                   >
-                    Generate Sample SOP
+                    {isGenerating ? "Generating..." : "Generate SOP"}
                   </button>
+
+                  {generatedSOP && (
+                    <button
+                      className="bg-green-600 text-white px-8 py-4 rounded-md font-semibold text-lg inline-flex items-center gap-2 hover:bg-green-700 transition-colors"
+                      onClick={handleDownloadPDF}
+                    >
+                      <Download className="w-5 h-5" />
+                      Download PDF
+                    </button>
+                  )}
                 </div>
               </div>
             ) : (

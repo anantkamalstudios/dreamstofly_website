@@ -6,13 +6,17 @@ import {
   Award,
   Users,
   CheckCircle,
+  Download,
 } from "lucide-react";
 import axios from "axios";
 import { useServicesData } from "../../../hooks/useServicesData";
 import Loader from "../../../common/Loader";
 import Error from "../../../common/Error";
+import { downloadLORAsPDF } from "./pdfDownloadUtils";
 
 const LorMaker = () => {
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [generatedLOR, setGeneratedLOR] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
   const [lorFormData, setLorFormData] = useState({
     recommender: {
@@ -137,15 +141,42 @@ const LorMaker = () => {
   console.log(token);
 
   const handleSubmit = async () => {
-    const payload = getFlatlorFormData(lorFormData);
-    const response = await axios.post(
-      "https://devlopment.dreamstofly.com/api/lor/generate",
-      payload,
-      {
-        headers: { token: `Bearer ${token}` },
+    try {
+      setIsGenerating(true);
+      const payload = getFlatlorFormData(lorFormData);
+      const response = await axios.post(
+        "https://devlopment.dreamstofly.com/api/lor/generate",
+        payload,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      if (response.data.status === "success") {
+        setGeneratedLOR(response.data);
+        alert("LOR generated successfully! You can now download it.");
       }
-    );
-    console.log(response);
+    } catch (error) {
+      console.error("Error generating LOR:", error);
+      alert("Failed to generate LOR. Please try again.");
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const handleDownloadPDF = async () => {
+    if (!generatedLOR || !generatedLOR.lor_text) {
+      alert("No LOR text available to download");
+      return;
+    }
+
+    const applicantName = lorFormData.applicant_name || "Applicant";
+    const result = await downloadLORAsPDF(generatedLOR.lor_text, applicantName);
+
+    if (result.success) {
+      alert("PDF downloaded successfully!");
+    } else {
+      alert("Failed to download PDF. Please try again.");
+    }
   };
 
   const handleNext = () => {
@@ -305,13 +336,26 @@ const LorMaker = () => {
                 </div>
 
                 <div className="flex flex-col justify-start mt-10 max-w-72 gap-3">
-                  <p className="text-lg">Download LOR (PDF/DOCX)</p>
-                  <button
-                    className="bg-[#0073DF] text-white px-8 py-4 rounded-md font-semibold text-lg inline-block"
-                    onClick={handleSubmit}
-                  >
-                    Generate Sample LOR
-                  </button>
+                  <div>
+                    <p className="text-lg">Download LOR (PDF/DOCX)</p>
+                    <button
+                      className="bg-[#0073DF] text-white px-8 py-4 rounded-md font-semibold text-lg inline-flex items-center gap-2 hover:bg-blue-600 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+                      onClick={handleSubmit}
+                      disabled={isGenerating}
+                    >
+                      {isGenerating ? "Generating..." : "Generate LOR"}
+                    </button>
+
+                    {generatedLOR && (
+                      <button
+                        className="bg-green-600 text-white px-8 py-4 rounded-md font-semibold text-lg inline-flex items-center gap-2 hover:bg-green-700 transition-colors"
+                        onClick={handleDownloadPDF}
+                      >
+                        <Download className="w-5 h-5" />
+                        Download PDF
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             ) : (

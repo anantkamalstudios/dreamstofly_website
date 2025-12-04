@@ -95,16 +95,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Services() {
   const [services, setServices] = useState([]);
+  const navigate = useNavigate();
   const BASE_URL = import.meta.env.VITE_HOME_SERVICES;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get(`${BASE_URL}`);
-        setServices(res?.data);
+        console.log(res);
+
+        setServices(res?.data?.data?.services_card);
       } catch (err) {
         console.error("Failed to fetch services:", err);
         setServices([]);
@@ -113,7 +117,16 @@ export default function Services() {
     fetchData();
   }, []);
 
-  // distribute services across 3 columns
+  const handleClick = (slug) => {
+    if (slug === "free-cources" || slug === "free-online-courses") {
+      window.open("https://freecourse.dreamstofly.com/", "_blank");
+    } else if (slug === "exam-prep" || slug === "test-preparation") {
+      navigate(`/exam-prep`);
+    } else {
+      navigate(`/services/${slug}`);
+    }
+  };
+
   const distributeInColumns = (arr, numCols) => {
     const cols = Array.from({ length: numCols }, () => []);
     arr.forEach((item, i) => cols[i % numCols].push(item));
@@ -124,9 +137,8 @@ export default function Services() {
 
   const colRefs = [useRef(null), useRef(null), useRef(null)];
 
-  // Scroll animation (only if ≥12 items)
   useEffect(() => {
-    if (services.length < 12) return; // ✅ stop animation for small lists
+    if (services.length < 12) return;
 
     const speed = 0.5;
     const rafIds = [];
@@ -182,6 +194,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.05, duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
+            onClick={() => handleClick(svc.slug)}
           >
             <img
               src={`${import.meta.env.VITE_HOME_IMAGE_URL}${svc.image}`}

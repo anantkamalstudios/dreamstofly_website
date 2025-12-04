@@ -251,8 +251,7 @@ const PostAdmitServices = () => {
       />
 
       {/* Hero Section */}
-      <section className="w-full relative px-6 md:px-12 flex flex-col md:flex-row justify-between items-stretch bg-gradient-to-b from-[#2DB4CF] via-[#1F7B8D] to-[#175B69] text-white h-[620px] md:h-[58vh] lg:h-[80vh]">
-        {/* LEFT TEXT */}
+      {/* <section className="w-full relative px-6 md:px-12 flex flex-col md:flex-row justify-between items-stretch bg-gradient-to-b from-[#2DB4CF] via-[#1F7B8D] to-[#175B69] text-white h-[620px] md:h-[58vh] lg:h-[70vh]">
         <div className="flex-1 flex flex-col justify-center px-5 lg:py-10 md:py-7 sm:py-4 py-2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -270,12 +269,39 @@ const PostAdmitServices = () => {
           </motion.div>
         </div>
 
-        {/* RIGHT IMAGE */}
         <div className="flex-1 flex items-center justify-center overflow-hidden">
           <img
             src={`${import.meta.env.VITE_IMAGE_URL}${heroSection?.image}`}
             alt=""
             className="h-full w-auto object-contain"
+          />
+        </div>
+      </section> */}
+      <section className="w-full relative px-6 md:px-12 flex flex-col md:flex-row justify-between items-stretch bg-gradient-to-b from-[#2DB4CF] via-[#1F7B8D] to-[#175B69] text-white h-[500px] md:h-[40vh] lg:h-[50vh] xl:h-[65vh]">
+        {/* LEFT TEXT */}
+        <div className="flex-1 flex flex-col justify-center px-5 py-6 md:py-10 lg:py-12 z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1
+              className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-white mb-3 md:mb-4"
+              dangerouslySetInnerHTML={{ __html: heroSection?.title }}
+            />
+            <p
+              className="text-base md:text-lg lg:text-xl xl:text-2xl max-w-2xl text-start leading-relaxed text-white/90"
+              dangerouslySetInnerHTML={{ __html: heroSection?.subtitle }}
+            />
+          </motion.div>
+        </div>
+
+        {/* RIGHT IMAGE - Fixed to bottom */}
+        <div className="flex-1 relative flex items-end justify-center md:justify-end overflow-hidden h-full">
+          <img
+            src={`${import.meta.env.VITE_IMAGE_URL}${heroSection?.image}`}
+            alt="Hero"
+            className="h-full w-auto object-contain object-bottom"
           />
         </div>
       </section>

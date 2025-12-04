@@ -3,6 +3,7 @@ export const API_BASE_URL = "https://dreamstofly.com/dreamstofly_backend";
 import axios from "axios";
 
 const baseURL = import.meta.env.VITE_BASE_URL;
+
 export async function apiGet(endpoint, params = {}, config = {}) {
   try {
     const response = await axios.get(`${baseURL}${endpoint}`, {

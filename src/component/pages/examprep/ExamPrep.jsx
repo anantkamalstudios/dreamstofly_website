@@ -115,32 +115,32 @@ const ExamPrep = () => {
     },
   ];
 
-  const stats = [
-    {
-      number: "2 Mn+",
-      label: "Beds",
-      color: "from-purple-400 to-purple-600",
-      img: "/images/examprep/vector1.png",
-    },
-    {
-      number: "65K+",
-      label: "Properties",
-      color: "from-blue-400 to-blue-600",
-      img: "/images/examprep/vector2.png",
-    },
-    {
-      number: "2 Mn",
-      label: "Students Assisted",
-      color: "from-indigo-400 to-indigo-600",
-      img: "/images/examprep/vector3.png",
-    },
-    {
-      number: "515+",
-      label: "Global Cities",
-      color: "from-green-400 to-green-600",
-      img: "/images/examprep/vector4.png",
-    },
-  ];
+  // const stats = [
+  //   {
+  //     number: "2 Mn+",
+  //     label: "Beds",
+  //     color: "from-purple-400 to-purple-600",
+  //     img: "/images/examprep/vector1.png",
+  //   },
+  //   {
+  //     number: "65K+",
+  //     label: "Properties",
+  //     color: "from-blue-400 to-blue-600",
+  //     img: "/images/examprep/vector2.png",
+  //   },
+  //   {
+  //     number: "2 Mn",
+  //     label: "Students Assisted",
+  //     color: "from-indigo-400 to-indigo-600",
+  //     img: "/images/examprep/vector3.png",
+  //   },
+  //   {
+  //     number: "515+",
+  //     label: "Global Cities",
+  //     color: "from-green-400 to-green-600",
+  //     img: "/images/examprep/vector4.png",
+  //   },
+  // ];
 
   const { data, loading, error, refetch } = useServicesData(
     "/CMS/ExamPreparation/get_exampreparation_data"
@@ -263,7 +263,7 @@ const ExamPrep = () => {
         </div>
       </div>
       {/* Stats Section */}
-      <div className="py-4 md:py-8 lg:py-12 bg-gray-300 mx-1 my-1 md:mx-6 md:my-4 lg:mx-12 lg:my-8 ">
+      {/* <div className="py-4 md:py-8 lg:py-12 bg-gray-300 mx-1 my-1 md:mx-6 md:my-4 lg:mx-12 lg:my-8 ">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-full text-center mb-4 md:mb-7 lg:mb-8">
             <h1 className="text-lg md:text-2xl lg:text-3xl text-[#115779] font-semibold font-vollkorn">
@@ -293,7 +293,7 @@ const ExamPrep = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Trustpilot Section */}
       <div className="py-8 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

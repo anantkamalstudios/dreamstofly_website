@@ -6,7 +6,6 @@ import Blogs from "./component/pages/blogs/Blogs";
 import MainModal from "./component/Loginregister/MainModal";
 import LoginRegisterPage from "./component/Loginregister/LoginRegisterPage";
 import Login from "./component/Loginregister/Login";
-import Register from "./component/Loginregister/Register";
 import CourseFinder from "./component/pages/courseFinder/CourseFinder";
 import BlogDetails from "./component/pages/blogs/BlogDetails";
 import SopMaker from "./component/pages/sopmaker/SopMaker";
@@ -44,6 +43,8 @@ import SGPAToCGPAConversion from "./component/pages/calculator/SGPAToCGPAConvers
 import SGPAToPercentagePage from "./component/pages/calculator/SGPAToPercentagePage";
 import PTEtoIELTSConversion from "./component/pages/calculator/PTEtoIELTSConversion";
 import ACTToSATConversion from "./component/pages/calculator/ACTToSATConversion";
+import GMTPage from "./component/pages/calculator/GMTPage";
+import ForgotPassword from "./component/Loginregister/ForgotPassword";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -59,7 +60,7 @@ export default function App() {
               <Route path="/Loginregister" element={<MainModal />} />
               <Route path="/register" element={<LoginRegisterPage />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/Forget-Password" element={<Register />} />
+              <Route path="/Forget-Password" element={<ForgotPassword />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
               <Route path="/course-finder" element={<CourseFinder />} />
@@ -132,7 +133,7 @@ export default function App() {
                 path="/act-to-sat-score"
                 element={<ACTToSATConversion />}
               />
-              <Route path="/gmat-conversion" element={<CalculatorMainPage />} />
+              <Route path="/gmat-conversion" element={<GMTPage />} />
               <Route
                 path="/sgpa-to-cgpa-conversion"
                 element={<SGPAToCGPAConversion />}
