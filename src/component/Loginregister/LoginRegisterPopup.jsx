@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { X, Eye, EyeOff, Plane } from "lucide-react";
 import { AiOutlineClose } from "react-icons/ai";
 import axios from "axios";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function LoginRegisterPopup({ setShowModal }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -21,6 +22,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
     confirmPassword: "",
   });
   const [passwordStrength, setPasswordStrength] = useState("");
+  const { fetchProfile } = useContext(AuthContext);
 
   const validateEmail = (email) => {
     if (!email.includes("@") || !email.includes(".")) {
@@ -105,6 +107,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
         );
         if (res.status === 200 || res.status === 201) {
           localStorage.setItem("token", res.data.token);
+          await fetchProfile();
           alert("Login successful!");
           setShowModal(false);
         }
@@ -123,6 +126,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
 
         if (res.status === 200 || 201) {
           localStorage.setItem("token", res.data.token);
+          await fetchProfile();
           alert("Registration successful!");
           setShowModal(false);
         }

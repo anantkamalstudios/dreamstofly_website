@@ -5,8 +5,8 @@ import UniversityCard from "./components/UniversityCard";
 
 const CourseFinder = () => {
   const [expandedFilters, setExpandedFilters] = useState({
-    university: true,
-    course: true,
+    university: false,
+    course: false,
     region: false,
     country: false,
     city: false,
@@ -43,7 +43,7 @@ const CourseFinder = () => {
     <div className="border border-blue-600 mb-3">
       <button
         onClick={() => toggleFilter(filterKey)}
-        className="w-full flex items-center justify-between p-3 bg-white hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between p-3 bg-white hover:bg-gray-50 transition-colors border-b-blue-600"
       >
         <span className="font-semibold text-gray-900 text-sm">{title}</span>
         <ChevronDown
@@ -63,12 +63,13 @@ const CourseFinder = () => {
     campus: "Knowledge Centre Campus (Liverpool City Centre Campus)",
     city: "Liverpool, United Kingdom",
     ranking: 147,
-    logo:"/images/courseFinder/courseFinder2.png"
+    logo: "/images/courseFinder/courseFinder2.png",
   });
 
   const HeaderData = {
     title: "Programme Directory Search",
-    subtitle: "Explore over 130,000 programmes worldwide and refine the directory to choose the courses that match your interests.",
+    subtitle:
+      "Explore over 130,000 programmes worldwide and refine the directory to choose the courses that match your interests.",
     rightImage: "/images/courseFinder/courseFinder1.png",
   };
 

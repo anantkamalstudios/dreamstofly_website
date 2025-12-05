@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ArrowDown, ArrowUp, ChevronDown, ChevronUp } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
 const FAQAccordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -30,9 +31,13 @@ const FAQAccordion = () => {
     <div className="w-full py-2 md:py-4 lg:py-6 xl:py-8 px-4 bg-[#0073DF0F] font-vollkorn">
       <div className="max-w-4xl mx-auto">
         <div className="p-6 md:p-10">
-          <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-8">
+          {/* <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-8">
             Frequently Asked Questions
-          </h2>
+          </h2> */}
+          <Heading
+            text="Frequently Asked Questions"
+            className="text-gray-900 text-center mb-8"
+          />
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className="overflow-hidden">

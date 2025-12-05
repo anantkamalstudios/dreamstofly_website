@@ -6,7 +6,6 @@ import TravelPartnersFeatures from "../components/TravelPartnersFeatures";
 import WhyChooseUsFeatures from "../components/WhyChooseUsFeatures";
 import Testimonials from "../Testimonials";
 
-// Form configuration for Job Search Service
 const jobSearchForm = {
   title: "Job Search",
   icon: "/images/formicon/suit.png",
@@ -27,22 +26,22 @@ const jobSearchForm = {
 const JobSearchPage = () => {
   const { service, serviceDetails, loading } = useServiceData();
   const [showPopup, setShowPopup] = useState(false);
-  const [firstFormData, setFirstFormData] = useState(null);
+  const [firstFormData, setFirstFormData] = useState({});
 
-  const handleFirstFormSubmit = (formData) => {
-    setFirstFormData(formData);
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from job search =>", firstFormData);
     setShowPopup(true);
   };
 
-  const handlePopupSubmit = (popupFormData) => {
-    const combinedData = {
-      ...firstFormData,
-      ...popupFormData,
-    };
-    console.log("Job search request:", combinedData);
-    // Here you can send the data to your API
-    setShowPopup(false);
-  };
+  // const handlePopupSubmit = (popupFormData) => {
+  //   const combinedData = {
+  //     ...firstFormData,
+  //     ...popupFormData,
+  //   };
+  //   console.log("Job search request:", combinedData);
+  //   // Here you can send the data to your API
+  //   setShowPopup(false);
+  // };
 
   if (loading) {
     return (
@@ -112,8 +111,10 @@ const JobSearchPage = () => {
         service={service}
         details={serviceDetails}
         formConfig={{
-          ...jobSearchForm,
+          formData: firstFormData,
+          setFormData: setFirstFormData,
           onSubmit: handleFirstFormSubmit,
+          ...jobSearchForm,
         }}
       />
       <ServiceCountry countryData={countryData} />

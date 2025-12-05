@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Search,
@@ -17,11 +17,13 @@ import {
   X,
 } from "lucide-react";
 import axios from "axios";
+import { AuthContext } from "../../context/AuthContext";
 
 const CollegeduniaApp = () => {
   const [selectedGoal, setSelectedGoal] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [token, setToken] = useState(null);
+  const { setUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -42,6 +44,7 @@ const CollegeduniaApp = () => {
     );
     if (res?.data?.status_code === 200) {
       localStorage.removeItem("token");
+      setUser(null);
       alert("Logout successful!");
     }
     setToken(null);

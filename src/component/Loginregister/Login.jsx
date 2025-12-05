@@ -267,8 +267,9 @@
 
 // export default Login;
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use, useContext } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -278,6 +279,7 @@ const Login = () => {
   const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const { fetchProfile } = useContext(AuthContext);
 
   // Slider state
   const images = [
@@ -338,6 +340,7 @@ const Login = () => {
 
       if (res.status === 200 || res.status === 201) {
         localStorage.setItem("token", data?.data?.token);
+        await fetchProfile();
         alert("Login successful!");
         window.location.href = "/";
       }

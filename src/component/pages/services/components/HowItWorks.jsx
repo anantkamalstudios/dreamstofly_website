@@ -1,10 +1,10 @@
+import Heading from "../../../../common/Heading";
+
 export default function HowItWorks({ steps }) {
   return (
     <div className="min-h-full flex items-center justify-center px-4 py-8 font-vollkorn">
       <div className="w-full bg-white rounded-2xl shadow-[0_10px_30px_0_rgba(0,115,223,0.16)] p-8 sm:p-12 lg:p-16">
-        <h1 className="text-3xl font-medium sm:text-4xl lg:text-5xl text-center text-gray-800 mb-12 sm:mb-16">
-          How it works
-        </h1>
+        <Heading text="How It Works" className="text-center mb-12 sm:mb-12" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, index) => (

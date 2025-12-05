@@ -162,47 +162,47 @@ export const serviceDetails = {
     ],
   },
 
-  "airport-pickup": {
-    titleColor: "#fff",
-    subTitleColor: "#fff",
-    title: "",
-    subtitle: "",
-    // title: "Airport Pickup Service",
-    // subtitle: "Reliable Airport Transfer to Your Accommodation",
-    heroImage: "/images/services/airportpickup.jpeg",
-    price: "From $45",
-    duration: "Same day service",
-    description:
-      "Start your study abroad journey stress-free with our reliable airport pickup service. Professional drivers will meet you at the airport and take you directly to your accommodation.",
-    features: [
-      "Meet and greet service",
-      "Flight tracking and updates",
-      "Professional drivers",
-      "Comfortable vehicles",
-      "Luggage assistance",
-      "24/7 availability",
-    ],
-    requirements: [
-      "Flight details and arrival time",
-      "Destination address",
-      "Number of passengers",
-      "Luggage information",
-      "Contact phone number",
-    ],
-    process: [
-      "Book pickup service online",
-      "Receive driver details",
-      "Driver meets at airport",
-      "Direct transfer to destination",
-      "Service completion confirmation",
-    ],
-    benefits: [
-      "Stress-free arrival",
-      "No waiting for public transport",
-      "Safe and reliable service",
-      "Professional assistance",
-    ],
-  },
+  // "airport-pickup": {
+  //   titleColor: "#fff",
+  //   subTitleColor: "#fff",
+  //   title: "",
+  //   subtitle: "",
+  //   // title: "Airport Pickup Service",
+  //   // subtitle: "Reliable Airport Transfer to Your Accommodation",
+  //   heroImage: "/images/services/airportpickup.jpeg",
+  //   price: "From $45",
+  //   duration: "Same day service",
+  //   description:
+  //     "Start your study abroad journey stress-free with our reliable airport pickup service. Professional drivers will meet you at the airport and take you directly to your accommodation.",
+  //   features: [
+  //     "Meet and greet service",
+  //     "Flight tracking and updates",
+  //     "Professional drivers",
+  //     "Comfortable vehicles",
+  //     "Luggage assistance",
+  //     "24/7 availability",
+  //   ],
+  //   requirements: [
+  //     "Flight details and arrival time",
+  //     "Destination address",
+  //     "Number of passengers",
+  //     "Luggage information",
+  //     "Contact phone number",
+  //   ],
+  //   process: [
+  //     "Book pickup service online",
+  //     "Receive driver details",
+  //     "Driver meets at airport",
+  //     "Direct transfer to destination",
+  //     "Service completion confirmation",
+  //   ],
+  //   benefits: [
+  //     "Stress-free arrival",
+  //     "No waiting for public transport",
+  //     "Safe and reliable service",
+  //     "Professional assistance",
+  //   ],
+  // },
 
   "bank-account-setup": {
     titleColor: "#fff",
@@ -245,7 +245,7 @@ export const serviceDetails = {
     ],
   },
 
-  "health-insurance": {
+  "health-insurance-oshc": {
     titleColor: "#fff",
     subTitleColor: "#fff",
     title: "Health Insurance",
@@ -449,7 +449,7 @@ export const serviceDetails = {
     ],
   },
 
-  "money-transfer": {
+  "international-money-transfer": {
     titleColor: "#fff",
     subTitleColor: "#fff",
     title: "International Money Transfer",
@@ -490,9 +490,9 @@ export const serviceDetails = {
     ],
   },
 
-  "hungry-hub": {
-    titleColor: "#0A1A2F",
-    subTitleColor: "#1C2A3A",
+  hungryhub: {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Restaurant discounts",
     subtitle: "2 for 1 meals at 1000s of restaurants",
     heroImage: "/images/services/default-service.jpeg",
@@ -530,7 +530,7 @@ export const serviceDetails = {
       "Comprehensive support",
     ],
   },
-  "forex-services": {
+  forex: {
     subTitleColor: "#fff",
     titleColor: "#fff",
     title: "Forex",
@@ -555,7 +555,7 @@ export const serviceDetails = {
     title: "Luggage Storage",
     subtitle: "Safe & Secure extra storage space at convenient locations",
   },
-  "e-money-app": {
+  "student-e-money-app": {
     subTitleColor: "#fff",
     titleColor: "#fff",
     title: "Student E-Money App",
@@ -595,7 +595,7 @@ export const serviceDetails = {
   "travel-insurance": {
     subTitleColor: "#fff",
     titleColor: "#fff",
-    title: "",
+    title: "Travel Insurence",
     subtitle: "Emergencies don't come knocking, better to be safe than sorry",
   },
 };

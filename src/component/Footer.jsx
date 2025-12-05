@@ -48,26 +48,17 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link
-                to="/about"
-                className="hover:text-blue-600 transition-colors"
-              >
+              <Link to="" className="hover:text-blue-600 transition-colors">
                 Help Center
               </Link>
             </li>
             <li>
-              <Link
-                to="/contact"
-                className="hover:text-blue-600 transition-colors"
-              >
+              <Link to="" className="hover:text-blue-600 transition-colors">
                 Dreamstofly USA
               </Link>
             </li>
             <li>
-              <Link
-                to="/terms"
-                className="hover:text-blue-600 transition-colors"
-              >
+              <Link to="" className="hover:text-blue-600 transition-colors">
                 Sitemap
               </Link>
             </li>
@@ -268,7 +259,8 @@ export default function Footer() {
         </div>
 
         <p className="text-xs text-gray-500 text-center md:text-left">
-          © 2025 Dreams to Fly Web Pvt. Ltd. All Rights Reserved
+          © {new Date().getFullYear()} Dreams to Fly Designed & Developed by
+          AnantKamal Software Labs
         </p>
 
         <div className="flex gap-3">

@@ -111,6 +111,7 @@
 // export default OurCommitments;
 
 import React from "react";
+import Heading from "../../../../common/Heading";
 
 const OurCommitments = () => {
   const items = [
@@ -124,9 +125,10 @@ const OurCommitments = () => {
     <div className="w-full bg-[linear-gradient(to_top,#beddfa_0%,#beddfa_35%,white_52%,white_60%,white_100%)] py-12 font-vollkorn">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-20">
-        <h2 className="text-2xl sm:text-3xl font-bold text-start ">
+        {/* <h2 className="text-2xl sm:text-3xl font-bold text-start ">
           Our commitments
-        </h2>
+        </h2> */}
+        <Heading text="Our commitments" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-20">

@@ -1,14 +1,14 @@
-import React from "react";
-import { FileText, CreditCard, Upload, MapPin } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
 const HowItWorksPage = ({ steps }) => {
   return (
     <div className="w-full bg-white py-16 px-4 sm:px-16 font-vollkorn">
       <div className="bg-[#fcfcfc] p-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4 ">
+          {/* <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4 ">
             How it works
-          </h2>
+          </h2> */}
+          <Heading text=" How it works" className="mb-4" />
           <p className="text-gray-600 text-lg w-full sm:max-w-3xl mx-auto">
             It's about you and your family, having a comfortable payment,
             exceptional service and a lender.
@@ -16,7 +16,10 @@ const HowItWorksPage = ({ steps }) => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 px-5">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col sm:flex-row items-start justify-start">
+            <div
+              key={index}
+              className="flex flex-col sm:flex-row items-start justify-start"
+            >
               <div className="mx-2 sm:mx-6 w-28 sm:w-32">
                 <img
                   src={step.icon}

@@ -361,9 +361,10 @@
 
 // export default LoginRegisterPage;
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import axios from "axios";
+import { AuthContext } from "../../context/AuthContext";
 
 const LoginRegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -379,6 +380,7 @@ const LoginRegisterPage = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordStrength, setPasswordStrength] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
+  const { fetchProfile } = useContext(AuthContext);
 
   const validateEmail = (value) => {
     setEmail(value);
@@ -439,6 +441,7 @@ const LoginRegisterPage = () => {
       console.log(res);
       if (res && (res.status === 200 || res.status === 201)) {
         localStorage.setItem("token", res?.data?.data?.token);
+        await fetchProfile();
         alert("Registration successful!");
       }
     } catch (err) {

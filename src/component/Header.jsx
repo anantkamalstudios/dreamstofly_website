@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import MainModal from "./Loginregister/MainModal";
 import {
@@ -13,6 +13,7 @@ import {
   X,
 } from "lucide-react";
 import logo from "../assets/Logow.png";
+import { AuthContext } from "../context/AuthContext";
 
 const Header = () => {
   const [isGoalOpen, setIsGoalOpen] = useState(false);
@@ -21,6 +22,8 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileGoalOpen, setIsMobileGoalOpen] = useState(false);
   const [isMobileExploreOpen, setIsMobileExploreOpen] = useState(false);
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   const mobileMenuRef = useRef(null);
 
@@ -246,7 +249,11 @@ const Header = () => {
                 onClick={() => setIsUserOpen(!isUserOpen)}
               >
                 <div className="w-8 h-8 bg-[#0073df] rounded-full flex items-center justify-center">
-                  <User className="h-5 w-5 text-white" />
+                  {user ? (
+                    <p>{user?.user?.name.charAt(0).toUpperCase()}</p>
+                  ) : (
+                    <User className="h-5 w-5 text-white" />
+                  )}
                 </div>
                 <ChevronDown className="h-4 w-4 text-white hidden lg:block" />
               </button>

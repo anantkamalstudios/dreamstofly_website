@@ -119,12 +119,12 @@ const FeaturedServices = ({ countriesData }) => {
             />
           </div>
           <div className="flex justify-between items-center">
-            <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold text-gray-900 leading-tight">
               Urban Escapes City Hopping
               <br />
               Adventures
             </h1>
-            <button className="flex gap-1 text-white bg-blue-600 px-6 py-4 rounded-full items-center">
+            <button className="flex justify-center gap-1 text-white bg-blue-600 px-1 py-1 sm:px-6 sm:py-4 rounded-full items-center">
               View More <ArrowRight />{" "}
             </button>
           </div>
