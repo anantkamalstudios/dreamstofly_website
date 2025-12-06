@@ -435,7 +435,7 @@ const LoginRegisterPage = () => {
       };
 
       const res = await axios.post(
-        "https://devlopment.dreamstofly.com/users/register_api",
+        `${import.meta.env.VITE_BASE_URL}/users/register_api`,
         payload
       );
       console.log(res);
@@ -466,7 +466,7 @@ const LoginRegisterPage = () => {
   }, [slides.length]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50/50 px-4 py-8 font-sans">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50/50 px-4 py-8">
       {/* Card Container */}
       <div className="w-full max-w-6xl bg-white rounded-md sm:rounded-lg shadow-2xl overflow-hidden flex flex-col md:flex-row">
         {/* Left: Image Slider */}

@@ -10,7 +10,7 @@ const AccommodationOverview = () => {
 
   return (
     <div className="w-full py-8 md:py-12">
-      <div className="w-full mx-auto px-4 md:px-16 font-vollkorn">
+      <div className="w-full mx-auto px-4 md:px-16 ">
         {/* Top Cards Section */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16">
           {/* Card 1 - Moving Abroad */}
@@ -49,7 +49,7 @@ const AccommodationOverview = () => {
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-1 font-bellefair">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-1 ">
                   {stat.value}
                 </div>
                 <div className="text-sm md:text-base font-medium text-gray-800">
@@ -71,10 +71,12 @@ const AccommodationOverview = () => {
               <p className="text-xs md:text-sm text-gray-800 font-medium">
                 Rated
               </p>
-              <p className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 font-bellefair">
+              <p className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 ">
                 4.8
               </p>
-              <p className="text-xs md:text-sm text-gray-800 font-medium">out of 5</p>
+              <p className="text-xs md:text-sm text-gray-800 font-medium">
+                out of 5
+              </p>
             </div>
             <div className="flex flex-col items-center justify-center">
               <svg

@@ -170,7 +170,6 @@ const ExamPrep = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6 text-white leading-tight"
-              style={{ fontFamily: "Georgia, serif" }}
             >
               {hero?.title || "Exam Preparation's"}
             </motion.h1>
@@ -201,7 +200,7 @@ const ExamPrep = () => {
       <div className="w-full min-h-screen bg-gray-50 py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-[#115779] inline-block px-4 py-2 sm:px-6 sm:py-3 font-vollkorn">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-[#115779] inline-block px-4 py-2 sm:px-6 sm:py-3 ">
             Popular Course
           </h2>
         </div>
@@ -246,7 +245,7 @@ const ExamPrep = () => {
       <div className="relative w-full bg-[url(/images/examprep/banner.png)] bg-cover bg-center bg-no-repeat h-80 sm:h-[350px] md:h-[450px] lg:h-[500px]">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center md:items-stretch justify-center px-4 sm:px-6 lg:px-8 py-4 lg:py-10">
-          <div className="w-full md:w-[65%] bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 flex flex-col justify-center text-center md:text-left font-roboto">
+          <div className="w-full md:w-[65%] bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 flex flex-col justify-center text-center md:text-left ">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               {explore_all_services?.title}
             </h2>
@@ -266,7 +265,7 @@ const ExamPrep = () => {
       {/* <div className="py-4 md:py-8 lg:py-12 bg-gray-300 mx-1 my-1 md:mx-6 md:my-4 lg:mx-12 lg:my-8 ">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-full text-center mb-4 md:mb-7 lg:mb-8">
-            <h1 className="text-lg md:text-2xl lg:text-3xl text-[#115779] font-semibold font-vollkorn">
+            <h1 className="text-lg md:text-2xl lg:text-3xl text-[#115779] font-semibold ">
               Every Client Matters
             </h1>
           </div>
@@ -274,7 +273,7 @@ const ExamPrep = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center p-6 bg-white flex flex-col justify-center items-center gap-1  sm:gap-2 font-poppins"
+                className="text-center p-6 bg-white flex flex-col justify-center items-center gap-1  sm:gap-2 "
               >
                 <div className="w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center">
                   <img
@@ -298,7 +297,7 @@ const ExamPrep = () => {
       <div className="py-8 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center mb-8">
-            <div className="flex items-center space-x-2 font-vollkorn">
+            <div className="flex items-center space-x-2 ">
               <Star className="w-8 h-8 text-green-500 fill-current" />
               <span className="text-2xl font-bold text-gray-900">
                 Trustpilot
@@ -320,7 +319,7 @@ const ExamPrep = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-poppins">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
             {trustpilotFeatures.map((feature, index) => (
               <div
                 key={index}
@@ -349,10 +348,10 @@ const ExamPrep = () => {
         <div className="max-w-full mx-auto px-4 sm:px-10 lg:px-20">
           {/* Heading */}
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2  font-vollkorn">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2  ">
               {partners_section?.title}
             </h2>
-            <p className="text-gray-600  font-vollkorn">
+            <p className="text-gray-600  ">
               {partners_section?.subtitle || ""}
             </p>
           </div>
@@ -414,8 +413,8 @@ const ExamPrep = () => {
             className="w-[400px] h-[400px] object-contain rounded-lg"
           />
         </div>
-        <div className="relative mx-auto font-vollkorn">
-          <h2 className="text-3xl md:text-4xl font-semibold  mb-5 font-vollkorn">
+        <div className="relative mx-auto ">
+          <h2 className="text-3xl md:text-4xl font-semibold  mb-5 ">
             {ready_section?.title}
           </h2>
           <p className="text-base text-black  mb-8 max-w-2xl mx-auto leading-relaxed text-start">

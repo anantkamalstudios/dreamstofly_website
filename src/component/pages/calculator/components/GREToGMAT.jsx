@@ -186,7 +186,7 @@ const GREtoGMAT = () => {
               Convert
             </button>
             {verbalScore && (
-              <div className="mt-6 p-4 bg-blue-50 border border-green-200 rounded-lg text-center">
+              <div className="mt-2 p-4 bg-blue-50 border border-green-200 rounded-lg">
                 <p className="text-sm text-gray-600">Your CGPA is:</p>
                 <p className="text-2xl font-bold text-blue-500">
                   {verbalScore}
@@ -234,7 +234,7 @@ const GREtoGMAT = () => {
               Convert
             </button>
             {quantScore && (
-              <div className="mt-6 p-4 bg-blue-50 border border-green-200 rounded-lg text-center">
+              <div className="mt-2 p-4 bg-blue-50 border border-green-200 rounded-lg">
                 <p className="text-sm text-gray-600">Your CGPA is:</p>
                 <p className="text-2xl font-bold text-blue-500">{quantScore}</p>
               </div>
@@ -244,7 +244,7 @@ const GREtoGMAT = () => {
 
         {/* Total GMAT Score */}
         {totalScore && (
-          <div className="mt-6 p-4 bg-blue-50 border border-green-200 rounded-lg text-center">
+          <div className="mt-2 p-4 bg-blue-50 border border-green-200 rounded-lg text-center">
             <p className="text-sm text-gray-600">Total Score is:</p>
             <p className="text-2xl font-bold text-blue-500">{totalScore}</p>
           </div>

@@ -45,6 +45,7 @@ import PTEtoIELTSConversion from "./component/pages/calculator/PTEtoIELTSConvers
 import ACTToSATConversion from "./component/pages/calculator/ACTToSATConversion";
 import GMTPage from "./component/pages/calculator/GMTPage";
 import ForgotPassword from "./component/Loginregister/ForgotPassword";
+import { useEffect } from "react";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";

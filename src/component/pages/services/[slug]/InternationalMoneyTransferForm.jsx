@@ -87,7 +87,7 @@ const InternationalMoneyTransferForm = ({
   if (!showModal) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 font-vollkorn">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 ">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black bg-opacity-60 transition-opacity duration-300"

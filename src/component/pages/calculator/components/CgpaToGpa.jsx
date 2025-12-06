@@ -43,9 +43,9 @@ const CgpaToGpa = ({
       </button>
 
       {resultValue && (
-        <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+        <div className="mt-2 p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <p className="text-sm text-gray-600 mb-1">Your GPA is:</p>
-          <p className="text-2xl font-bold text-green-600">{resultValue}</p>
+          <p className="text-2xl font-bold text-blue-600">{resultValue}</p>
         </div>
       )}
     </div>

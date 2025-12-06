@@ -51,7 +51,7 @@ const CollegeduniaApp = () => {
   };
 
   return (
-    <div className="max-w-sm mx-auto bg-gray-100  relative overflow-hidden">
+    <div className="max-w-sm mx-auto bg-gray-100  relative overflow-hidden rounded-lg">
       <div className="bg-white shadow-xl rounded-3xl mx-4 my-4 overflow-hidden ">
         <div className="bg-white px-4 py-6">
           <div className="text-center mb-4">
@@ -207,7 +207,8 @@ const CollegeduniaApp = () => {
         </div>
       </div>
 
-      <div className="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+      {/* <div className="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"> */}
+      <div className="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center p-4">
         <div className="bg-white rounded-lg p-6 max-w-sm w-full">
           <h3 className="font-semibold text-lg mb-4">Select Your Goal</h3>
           <div className="space-y-3">

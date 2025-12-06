@@ -346,7 +346,7 @@ const AccomodationHeader = () => {
 
   return (
     <div className="w-full">
-      <div className="relative bg-[#187ac7] font-bricolageGrotesque">
+      <div className="relative bg-[#187ac7]">
         {/* Top right actions */}
         <div className="absolute top-0 right-0 w-full p-3 md:p-4 flex justify-end items-center gap-2 md:gap-4 z-20">
           <FaPhoneAlt className="text-white w-4 h-4 md:w-5 md:h-5" />

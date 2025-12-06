@@ -42,7 +42,7 @@ const PopularDestination = () => {
 
   return (
     <div className="w-full p-8 min-h-screen">
-      <div className="max-w-7xl mx-auto font-vollkorn">
+      <div className="max-w-7xl mx-auto ">
         {/* Header */}
         <div className="flex items-center justify-between mb-12 gap-6">
           <h1 className="text-2xl sm:text-4xl font-medium sm:font-semibold text-gray-900">
@@ -61,7 +61,7 @@ const PopularDestination = () => {
               className="bg-white rounded-2xl shadow-sm p-6 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer"
             >
               <div className="text-4xl">{country.flag}</div>
-              <div className="font-semibold text-gray-900 font-poppins">{country.name}</div>
+              <div className="font-semibold text-gray-900 ">{country.name}</div>
             </div>
           ))}
         </div>
@@ -81,7 +81,7 @@ const PopularDestination = () => {
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute top-4 left-4">
-                <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold font-poppins">
+                <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold ">
                   {city.name}
                 </span>
               </div>

@@ -76,7 +76,7 @@ const FlightBookingHeroPage = ({
           {/* Overlay */}
           {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-blue-700/30"></div> */}
 
-          <div className="container mx-auto px-4 md:px-8 lg:px-14 py-12 lg:py-10 relative z-10 h-full flex flex-col justify-center font-bellefair">
+          <div className="container mx-auto px-4 md:px-8 lg:px-14 py-12 lg:py-10 relative z-10 h-full flex flex-col justify-center ">
             {/* Hero Title & Subtitle */}
             <div className="mb-32 md:mb-40 lg:mb-48">
               <h1 className="mb-3 text-white text-3xl md:text-5xl lg:text-6xl leading-tight">
@@ -94,7 +94,7 @@ const FlightBookingHeroPage = ({
           className="container mx-auto px-4 md:px-8 lg:px-14 relative z-20"
           style={{ marginTop: "-180px" }}
         >
-          <div className=" shadow-2xl overflow-hidden max-w-6xl mx-auto font-vollkorn">
+          <div className=" shadow-2xl overflow-hidden max-w-6xl mx-auto ">
             {/* Flight Tab */}
             <div className="bg-transparent border-b border-gray-200">
               <div className="flex items-center justify-center gap-2">

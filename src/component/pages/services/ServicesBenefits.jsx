@@ -198,7 +198,7 @@ export default function ServicesBenefits({ whyChoose }) {
                 <div className="grid grid-cols-3 gap-5">
                   {cards.map((card, index) => (
                     <div
-                      key={index}
+                      key={index + 1}
                       className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow z-40"
                       style={{
                         minWidth: "160px",

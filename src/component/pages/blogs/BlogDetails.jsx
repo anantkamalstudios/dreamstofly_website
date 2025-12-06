@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Calendar, User, Tag } from "lucide-react";
+import axios from "axios";
+import Loader from "../../../common/Loader";
 
 const BlogDetails = () => {
-  const { id } = useParams(); // get blog id from URL
+  const { id } = useParams();
   const [blog, setBlog] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,39 +13,43 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        // Fetch single blog
-        const res = await fetch(
-          `https://dreamstofly.com/dreamstofly_backend/Blogs/blog/${id}`
+        const res = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/Blogs/blog/${id}`
         );
-        const data = await res.json();
 
-        if (data?.data && data.data.length > 0) {
-          const item = data.data[0];
+        const apiData = res.data?.data;
+
+        if (apiData && apiData.length > 0) {
+          const item = apiData[0];
+
           const blogData = {
             id: item.blog_id,
             title: item.blog_title,
             image: item.blog_image,
-            content: item.blog_info,
+            content: item.blog_info, // HTML
             category: item.category_name,
             date: item.date_time,
             author: "Admin",
             tags: item.tags ? item.tags.split(",").map((t) => t.trim()) : [],
           };
+
           setBlog(blogData);
 
-          // Fetch related blogs
+          // Fetch related posts
           const relatedRes = await fetch(
-            "https://dreamstofly.com/dreamstofly_backend/Blogs/active_blogs"
+            "https://devlopment.dreamstofly.com/Blogs/active_blogs"
           );
-          const relatedData = await relatedRes.json();
-          if (relatedData?.data && Array.isArray(relatedData.data)) {
-            const related = relatedData.data
+          const relatedJson = await relatedRes.json();
+
+          if (relatedJson?.data && Array.isArray(relatedJson.data)) {
+            const related = relatedJson.data
               .filter((b) => b.blog_id !== blogData.id)
               .map((r) => ({
                 id: r.blog_id,
                 title: r.blog_title,
                 image: r.blog_image,
               }));
+
             setRelatedPosts(related);
           }
         } else {
@@ -60,8 +66,7 @@ const BlogDetails = () => {
     fetchBlog();
   }, [id]);
 
-  if (loading)
-    return <p className="text-center py-20 text-gray-500">Loading blog...</p>;
+  if (loading) <Loader />;
 
   if (!blog)
     return (
@@ -76,14 +81,16 @@ const BlogDetails = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <section className="relative h-80">
+      <section className="relative h-80 md:h-96 lg:h-[500px]">
         <img
-          src={`https://dreamstofly.com/dreamstofly_backend/uploads/${blog.image}`}
+          src={`${import.meta.env.VITE_IMAGE_BASE_URL}${blog.image}`}
           alt={blog.title}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white p-6">
-          <h1 className="text-3xl md:text-5xl font-bold">{blog.title}</h1>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60 flex flex-col items-center justify-center text-center text-white p-6">
+          <h1 className="text-3xl md:text-5xl font-bold max-w-4xl">
+            {blog.title}
+          </h1>
           <div className="flex gap-6 mt-4 text-sm opacity-90">
             <span className="flex items-center gap-2">
               <User className="w-4 h-4" /> {blog.author}
@@ -101,7 +108,7 @@ const BlogDetails = () => {
         <div className="lg:col-span-2">
           <article className="prose lg:prose-lg max-w-none">
             <img
-              src={`https://dreamstofly.com/dreamstofly_backend/uploads/${blog.image}`}
+              src={`${import.meta.env.VITE_IMAGE_BASE_URL}${blog.image}`}
               alt={blog.title}
               className="rounded-xl mb-6 shadow-md"
             />
@@ -114,9 +121,9 @@ const BlogDetails = () => {
           {/* Tags */}
           {blog.tags && blog.tags.length > 0 && (
             <div className="mt-8 flex flex-wrap gap-2">
-              {blog.tags.map((tag) => (
+              {blog.tags.map((tag, index) => (
                 <span
-                  key={tag}
+                  key={index}
                   className="flex items-center gap-1 px-3 py-1 text-sm bg-indigo-100 rounded-full text-indigo-700"
                 >
                   <Tag className="w-3 h-3" /> {tag}
@@ -132,7 +139,6 @@ const BlogDetails = () => {
           </div>
         </div>
 
-        {/* Sidebar */}
         <aside className="space-y-6">
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
@@ -146,7 +152,9 @@ const BlogDetails = () => {
                       className="flex gap-3 items-center hover:text-indigo-600 transition"
                     >
                       <img
-                        src={`https://dreamstofly.com/dreamstofly_backend/uploads/${related.image}`}
+                        src={`${import.meta.env.VITE_IMAGE_BASE_URL}${
+                          related.image
+                        }`}
                         alt={related.title}
                         className="w-16 h-12 object-cover rounded-md"
                       />

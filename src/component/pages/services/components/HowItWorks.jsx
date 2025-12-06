@@ -2,7 +2,7 @@ import Heading from "../../../../common/Heading";
 
 export default function HowItWorks({ steps }) {
   return (
-    <div className="min-h-full flex items-center justify-center px-4 py-8 font-vollkorn">
+    <div className="min-h-full flex items-center justify-center px-4 py-8 ">
       <div className="w-full bg-white rounded-2xl shadow-[0_10px_30px_0_rgba(0,115,223,0.16)] p-8 sm:p-12 lg:p-16">
         <Heading text="How It Works" className="text-center mb-12 sm:mb-12" />
 
@@ -26,7 +26,7 @@ export default function HowItWorks({ steps }) {
                   {step.title}
                 </h2>
 
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-poppins">
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed ">
                   {step.desc}
                 </p>
               </div>

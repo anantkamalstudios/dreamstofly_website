@@ -4,23 +4,23 @@ export default function ServicesHero({ hero, counter }) {
       <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible h-auto md:h-[87vh] lg:h-[100vh] xl:h-[90vh]">
         <div className="max-w-full mx-auto h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full py-8 md:py-0">
-            <div className="text-white space-y-6 lg:space-y-8 px-6 sm:px-10 md:px-20 flex flex-col justify-center">
+            <div className="text-white space-y-4 lg:space-y-6 px-5 sm:px-8 md:px-16 flex flex-col justify-center">
               <div>
-                <p className="font-arsenal text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider text-white">
+                <p className=" text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider text-white">
                   {hero?.subtitle}
                 </p>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-wide font-bellefair">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-wide">
                   {hero?.title}
                 </h1>
               </div>
 
               <div
-                className="text-sm sm:text-base lg:text-lg max-w-lg leading-relaxed font-arsenal text-white text-color-white"
+                className="text-sm sm:text-base lg:text-lg max-w-lg leading-relaxed  text-white text-color-white"
                 dangerouslySetInnerHTML={{ __html: hero?.description }}
               ></div>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button className="bg-white text-blue-600 px-6 sm:px-10 py-2.5 sm:py-3 font-medium hover:bg-blue-50 flex items-start justify-center gap-2 text-sm transition-all font-arsenal">
+                <button className="bg-white text-blue-600 px-6 sm:px-10 py-2.5 sm:py-3 font-medium hover:bg-blue-50 flex items-start justify-center gap-2 text-sm transition-all ">
                   {hero?.button_text}
                   <span>→</span>
                 </button>
@@ -56,37 +56,37 @@ export default function ServicesHero({ hero, counter }) {
           <div className="bg-white shadow-xl border border-gray-100 py-2 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-12">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
               <div className="text-start lg:border-r border-[#003E79]">
-                <h3 className="font-arsenal text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
+                <h3 className=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
                   {counter[1]?.counter_value}
                 </h3>
-                <p className="font-poppins text-gray-700 text-xs sm:text-sm lg:text-base">
+                <p className=" text-gray-700 text-xs sm:text-sm lg:text-base">
                   {counter[1]?.counter_text}
                 </p>
               </div>
 
               <div className="text-start lg:border-r border-[#003E79]">
-                <h3 className="font-arsenal text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
+                <h3 className=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
                   {counter[2]?.counter_value}
                 </h3>
-                <p className="font-poppins text-gray-700 text-xs sm:text-sm lg:text-base">
+                <p className=" text-gray-700 text-xs sm:text-sm lg:text-base">
                   {counter[2]?.counter_text}
                 </p>
               </div>
 
               <div className="text-start lg:border-r border-[#003E79] pt-4 sm:pt-6 lg:pt-0">
-                <h3 className="font-arsenal text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
+                <h3 className=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
                   {counter[3]?.counter_value}
                 </h3>
-                <p className="font-poppins  text-gray-700 text-xs sm:text-sm lg:text-base">
+                <p className="  text-gray-700 text-xs sm:text-sm lg:text-base">
                   {counter[3]?.counter_text}
                 </p>
               </div>
 
-              <div className="font-arsenal text-start border-t-2 lg:border-t-0 border-gray-200 pt-4 sm:pt-6 lg:pt-0">
+              <div className=" text-start border-t-2 lg:border-t-0 border-gray-200 pt-4 sm:pt-6 lg:pt-0">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
                   {counter[4]?.counter_value}
                 </h3>
-                <p className="font-poppins text-gray-700 text-xs sm:text-sm lg:text-base">
+                <p className=" text-gray-700 text-xs sm:text-sm lg:text-base">
                   {counter[4]?.counter_text}
                 </p>
               </div>

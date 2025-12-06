@@ -122,7 +122,7 @@ const OurCommitments = () => {
   ];
 
   return (
-    <div className="w-full bg-[linear-gradient(to_top,#beddfa_0%,#beddfa_35%,white_52%,white_60%,white_100%)] py-12 font-vollkorn">
+    <div className="w-full bg-[linear-gradient(to_top,#beddfa_0%,#beddfa_35%,white_52%,white_60%,white_100%)] py-12 ">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-20">
         {/* <h2 className="text-2xl sm:text-3xl font-bold text-start ">

@@ -28,7 +28,7 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="w-full py-2 md:py-4 lg:py-6 xl:py-8 px-4 bg-[#0073DF0F] font-vollkorn">
+    <div className="w-full py-2 md:py-4 lg:py-6 xl:py-8 px-4 bg-[#0073DF0F] ">
       <div className="max-w-4xl mx-auto">
         <div className="p-6 md:p-10">
           {/* <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-8">
@@ -64,7 +64,7 @@ const FAQAccordion = () => {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="p-4 md:p-6 pt-0 text-sm md:text-sm text-gray-600 leading-relaxed font-poppins">
+                  <div className="p-4 md:p-6 pt-0 text-sm md:text-sm text-gray-600 leading-relaxed ">
                     {faq.answer}
                   </div>
                 </div>

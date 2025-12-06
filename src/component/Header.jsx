@@ -250,7 +250,9 @@ const Header = () => {
               >
                 <div className="w-8 h-8 bg-[#0073df] rounded-full flex items-center justify-center">
                   {user ? (
-                    <p>{user?.user?.name.charAt(0).toUpperCase()}</p>
+                    <p className="text-white font-medium text-xl">
+                      {user?.user?.name.charAt(0).toUpperCase()}
+                    </p>
                   ) : (
                     <User className="h-5 w-5 text-white" />
                   )}
@@ -259,7 +261,7 @@ const Header = () => {
               </button>
 
               {isUserOpen && (
-                <div className="absolute top-full right-0 bg-white text-gray-300 shadow-2xl rounded-lg py-3 w-90 h-60 z-50 mt-2">
+                <div className="absolute top-full right-0 bg-white text-gray-300 shadow-2xl rounded-lg w-90 h-60 z-50">
                   <MainModal />
                 </div>
               )}

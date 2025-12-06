@@ -45,7 +45,7 @@ const ServiceHero = ({ service, details, formConfig, slug }) => {
       <div className="container mx-auto px-6 md:px-14 py-8 lg:py-16 relative z-10">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           {/* Hero Content */}
-          <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl font-bellefair">
+          <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl ">
             <h1 {...titleStyle}>{details.title}</h1>
 
             <p

@@ -175,13 +175,11 @@ const SGPAtoCGPAForm = () => {
     const sgpaValue = parseFloat(totalSGPA);
     const semestersValue = parseInt(totalSemesters);
 
-    // Validate total SGPA
     if (isNaN(sgpaValue) || sgpaValue <= 0 || sgpaValue > 100) {
       newErrors.sgpa = "Please enter a valid number between 0 - 100";
       hasError = true;
     }
 
-    // Validate total semesters
     if (isNaN(semestersValue) || semestersValue <= 0 || semestersValue > 10) {
       newErrors.semesters = "Please enter a valid number between 0 - 10";
       hasError = true;
@@ -224,7 +222,6 @@ const SGPAtoCGPAForm = () => {
           )}
         </div>
 
-        {/* Total Semesters */}
         <div className="mb-6">
           <label className="block text-blue-600 font-semibold mb-2">
             Total Semesters
@@ -249,9 +246,9 @@ const SGPAtoCGPAForm = () => {
         </button>
 
         {cgpa && (
-          <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
+          <div className="mt-2 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
             <p className="text-sm text-gray-600">Your CGPA is:</p>
-            <p className="text-2xl font-bold text-green-600">{cgpa}</p>
+            <p className="text-2xl font-bold text-blue-600">{cgpa}</p>
           </div>
         )}
       </div>

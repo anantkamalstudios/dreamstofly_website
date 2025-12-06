@@ -1,14 +1,107 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo1.png";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
+  const toolsAndServices = [
+    {
+      title: "Blogs",
+      slug: "/blogs",
+    },
+    {
+      title: "Grad School Finder",
+      slug: "/grad-school-finder",
+    },
+    {
+      title: "Course & College Finder",
+      slug: "/course-finder",
+    },
+    {
+      title: "Loan Finder",
+      slug: "/loan-finder",
+    },
+    {
+      title: "GRE Prep",
+      slug: "/gre-prep",
+    },
+  ];
+
+  const quickLinks = [
+    {
+      title: "Connect with Ambassadors",
+      slug: "",
+    },
+    {
+      title: "Study Abroad Intakes",
+      slug: "",
+    },
+    {
+      title: "Study Abroad Consultation",
+      slug: "",
+    },
+    {
+      title: "GRE",
+      slug: "",
+    },
+    {
+      title: "SOP & LORs",
+      slug: "/sop-lor-maker",
+    },
+    {
+      title: "Masters Abroad",
+      slug: "",
+    },
+    {
+      title: "Accommodation",
+      slug: "/services/accommodation",
+    },
+    {
+      title: "Coaching",
+      slug: "",
+    },
+    {
+      title: "Student Visa",
+      slug: "/services/get-visa",
+    },
+    {
+      title: "IELTS Coaching",
+      slug: "",
+    },
+    {
+      title: "GMAT",
+      slug: "",
+    },
+    {
+      title: "MS Abroad",
+      slug: "",
+    },
+  ];
+
+  const socialMediaLinks = [
+    {
+      icon: FaFacebook,
+      url: "https://www.facebook.com/dreamstofly7",
+    },
+    {
+      icon: FaXTwitter,
+      url: "https://x.com/dreamstofly_",
+    },
+    {
+      icon: FaInstagram,
+      url: "https://www.instagram.com/dreams.to.fly/",
+    },
+    {
+      icon: FaYoutube,
+      url: "https://www.youtube.com/@DreamsToFly_Official",
+    },
+    {
+      icon: FaLinkedinIn,
+      url: "https://www.linkedin.com/company/dreams-to-fly/jobs/",
+    },
+  ];
+
   return (
     <footer className="bg-[#F5F8F9] text-gray-700 text-sm">
       <div className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -144,21 +237,18 @@ export default function Footer() {
         <div>
           <h4 className="font-bold text-gray-900 mb-3">Tools & Services</h4>
           <ul className="space-y-1.5">
-            {[
-              "Blogs",
-              "Grad School Finder",
-              "Course & College Finder",
-              "Loan Finder",
-              "GRE Prep",
-            ].map((item, index) => (
+            {toolsAndServices.map((item, index) => (
               <li key={index}>
-                <a href="#" className="hover:text-blue-600 transition-colors">
-                  {item}
-                </a>
+                <Link
+                  to={item.slug}
+                  className="hover:text-blue-600 transition-colors"
+                >
+                  {item.title}
+                </Link>
               </li>
             ))}
           </ul>
-
+          {/* 
           <h4 className="font-bold text-gray-900 mt-5 mb-3">Our Partners</h4>
           <ul className="space-y-1.5">
             {["Amberstudent", "Coursera", "Geebee"].map((item, index) => (
@@ -168,7 +258,7 @@ export default function Footer() {
                 </a>
               </li>
             ))}
-          </ul>
+          </ul> */}
 
           <h4 className="font-bold text-gray-900 mt-5 mb-3">Our Products</h4>
           <ul className="space-y-1.5">
@@ -185,24 +275,14 @@ export default function Footer() {
         <div>
           <h4 className="font-bold text-gray-900 mb-3">Quick Links</h4>
           <ul className="space-y-1.5">
-            {[
-              "Connect with Ambassadors",
-              "Study Abroad Intakes",
-              "Study Abroad Consultation",
-              "GRE",
-              "SOP & LORs",
-              "Masters Abroad",
-              "Accommodation",
-              "Coaching",
-              "Student Visa",
-              "IELTS Coaching",
-              "GMAT",
-              "MS Abroad",
-            ].map((item, index) => (
+            {quickLinks.map((item, index) => (
               <li key={index}>
-                <a href="#" className="hover:text-blue-600 transition-colors">
-                  {item}
-                </a>
+                <Link
+                  to={item.slug}
+                  className="hover:text-blue-600 transition-colors"
+                >
+                  {item.title}
+                </Link>
               </li>
             ))}
           </ul>
@@ -237,17 +317,20 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex items-center gap-2 text-gray-600 mt-3">
-            {[FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLinkedinIn].map(
-              (Icon, i) => (
+            {socialMediaLinks.map((item, i) => {
+              const Icon = item.icon;
+              return (
                 <a
                   key={i}
-                  href="#"
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:bg-gray-200 transition p-2 rounded-full border border-gray-300"
                 >
                   <Icon size={14} />
                 </a>
-              )
-            )}
+              );
+            })}
           </div>
         </div>
       </div>

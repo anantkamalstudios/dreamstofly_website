@@ -21,7 +21,7 @@ const ServicesGrid = ({ services }) => {
     <section className="md:pt-2 md:pb-4 bg-gray-100">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-start mb-1 md:mb-4 mx-auto">
-          <h1 className="text-xl md:text-3xl font-semibold mb-1 text-black font-poppins">
+          <h1 className="text-xl md:text-3xl font-semibold mb-1 text-black ">
             Our Services
           </h1>
           <div className="h-2 w-28 bg-blue-500"></div>
@@ -48,7 +48,7 @@ const ServicesGrid = ({ services }) => {
                 </div>
 
                 <div className="h-16 flex items-center justify-center mb-2">
-                  <h3 className="text-xl font-bold text-center px-2 font-poppins">
+                  <h3 className="text-xl font-bold text-center px-2 ">
                     {service.title}
                   </h3>
                 </div>
@@ -56,12 +56,12 @@ const ServicesGrid = ({ services }) => {
 
                 <div className="w-full mb-6 flex-grow">
                   <div
-                    className=" text-sm leading-relaxed text-start font-poppins  group-hover:[&_*]:text-white"
+                    className=" text-sm leading-relaxed text-start   group-hover:[&_*]:text-white"
                     dangerouslySetInnerHTML={{ __html: service?.description }}
                   ></div>
                   <div className="w-24 h-1.5 bg-yellow-400"></div>
                 </div>
-                <button className="border-2 text-[#193F64] border-[#0073DF] px-6 py-2.5 text-sm font-semibold flex items-center gap-2 hover:text-white transition-colors duration-300 uppercase tracking-wide group-hover:bg-white group-hover:text-[#0073DF] group-hover:border-[#193F64] font-arsenal">
+                <button className="border-2 text-[#193F64] border-[#0073DF] px-6 py-2.5 text-sm font-semibold flex items-center gap-2 hover:text-white transition-colors duration-300 uppercase tracking-wide group-hover:bg-white group-hover:text-[#0073DF] group-hover:border-[#193F64] ">
                   {service?.button_text || "EXPLORE MORE"}
                   <span className="text-lg">→</span>
                 </button>

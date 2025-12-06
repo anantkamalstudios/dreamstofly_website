@@ -285,7 +285,7 @@
 
 //   return (
 //     <div className="bg-white rounded-lg shadow-xl p-6 lg:p-8 w-full lg:w-[500px]">
-//       <div className="text-center mb-2 font-vollkorn">
+//       <div className="text-center mb-2 ">
 //         {formConfig.icon && (
 //           <div className="mb-3">
 //             <img
@@ -300,7 +300,7 @@
 //         </h3>
 //       </div>
 
-//       <form onSubmit={handleSubmit} className="space-y-4 font-vollkorn">
+//       <form onSubmit={handleSubmit} className="space-y-4 ">
 //         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 //           {formConfig.fields.map((field) => (
 //             <div
@@ -312,7 +312,7 @@
 //           ))}
 //         </div>
 
-//         <div className="pt-1 font-vollkorn">
+//         <div className="pt-1 ">
 //           <button
 //             type="submit"
 //             disabled={isSubmitting}
@@ -614,7 +614,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-xl p-6 lg:p-8 w-full lg:w-[500px]">
-      <div className="text-center mb-2 font-vollkorn">
+      <div className="text-center mb-2 ">
         {formConfig.icon && (
           <div className="mb-3">
             <img
@@ -630,7 +630,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
       </div>
 
       <form
-        className="space-y-4 font-vollkorn"
+        className="space-y-4 "
         onSubmit={(e) => {
           e.preventDefault();
           formConfig.onSubmit();
@@ -647,7 +647,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
           ))}
         </div>
 
-        <div className="pt-1 font-vollkorn">
+        <div className="pt-1 ">
           <button
             type="submit"
             disabled={isSubmitting}

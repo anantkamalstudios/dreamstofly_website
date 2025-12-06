@@ -25,13 +25,13 @@ export default function ServicesExperiences() {
         {/* Newsletter Label */}
         <div className="flex items-center justify-start gap-4 mb-8">
           <div className="w-10 h-px bg-white"></div>
-          <span className="text-white text-xs tracking-[0.2em] uppercase font-light font-arsenal">
+          <span className="text-white text-xs tracking-[0.2em] uppercase font-light ">
             OUR NEWSLETTER
           </span>
         </div>
 
         {/* Heading */}
-        <h2 className="text-white text-4xl md:text-5xl leading-snug mb-10 font-light text-start font-bellefair">
+        <h2 className="text-white text-4xl md:text-5xl leading-snug mb-10 font-light text-start ">
           Begin Your Search Now And Embark On A Journey Toward Educational And
           Professional Growth.
         </h2>
@@ -44,11 +44,11 @@ export default function ServicesExperiences() {
             onChange={(e) => setEmail(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Email Address..."
-            className="flex-1 px-6 py-3 bg-transparent border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-60 outline-none focus:border-opacity-60 transition-all md:border-r-0 font-bellefair"
+            className="flex-1 px-6 py-3 bg-transparent border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-60 outline-none focus:border-opacity-60 transition-all md:border-r-0 "
           />
           <button
             onClick={handleSubmit}
-            className="px-8 py-3 bg-white text-xs tracking-wider uppercase font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all group cursor-pointer font-arsenal text-[#2b6b82]"
+            className="px-8 py-3 bg-white text-xs tracking-wider uppercase font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all group cursor-pointer  text-[#2b6b82]"
           >
             SUBMIT
             <svg

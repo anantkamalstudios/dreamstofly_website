@@ -2,7 +2,7 @@ import React from "react";
 
 const StudyAbroadBanner = () => {
   return (
-    <div className="font-vollkorn">
+    <div className="">
       <div
         className="p-6 mx-0 md:mx-14 lg:mx-28 my-8 overflow-hidden"
         style={{

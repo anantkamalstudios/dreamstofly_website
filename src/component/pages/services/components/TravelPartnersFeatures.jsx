@@ -3,7 +3,7 @@ import { MapPin, UserCheck, ThumbsUp, Workflow } from "lucide-react";
 
 const TravelPartnersFeatures = ({ features }) => {
   return (
-    <div className="w-full bg-blue-50  py-16 px-10 font-poppins">
+    <div className="w-full bg-blue-50  py-16 px-10 ">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => (
           <div

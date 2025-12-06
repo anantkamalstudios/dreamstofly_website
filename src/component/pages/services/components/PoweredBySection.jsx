@@ -14,7 +14,7 @@ export default function PoweredBySection() {
 
   return (
     <div className="w-full bg-white py-12 mt-4 md:mt-8 lg:mt-12 px-2 md:px-4 ld:px-6">
-      <h2 className="text-lg md:text-xl font-normal text-indigo-900 mb-12 font-vollkorn">
+      <h2 className="text-lg md:text-xl font-normal text-indigo-900 mb-12 ">
         Powered By
       </h2>
 

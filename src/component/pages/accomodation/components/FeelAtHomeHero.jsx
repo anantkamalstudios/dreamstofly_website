@@ -4,7 +4,7 @@ import { Check, Shield, Tag, FileX, CheckCircle } from "lucide-react";
 export default function FeelAtHomeHero() {
   return (
     <div className="p-8 h-fit flex items-center ">
-      <div className="max-w-7xl mx-auto w-full font-vollkorn">
+      <div className="max-w-7xl mx-auto w-full ">
         <div className="grid lg:grid-cols-2 gap-6 items-start">
           {/* Left card */}
           {/* <div className="relative grid gap-2 h-full">
@@ -15,7 +15,7 @@ export default function FeelAtHomeHero() {
                   <br />
                   feels at home!
                 </h2>
-                <p className="text-slate-600 mt-3 text-base lg:text-lg font-poppins">
+                <p className="text-slate-600 mt-3 text-base lg:text-lg ">
                   Get personalised options with your preferences in just a few
                   clicks.
                 </p>
@@ -24,7 +24,7 @@ export default function FeelAtHomeHero() {
                   <div className="bg-green-100 text-green-700 rounded-full p-2 inline-flex">
                     <Check className="w-4 h-4" />
                   </div>
-                  <span className="text-slate-700 font-medium font-poppins">
+                  <span className="text-slate-700 font-medium ">
                     Upto £200 Cashback
                   </span>
                 </div>
@@ -48,21 +48,21 @@ export default function FeelAtHomeHero() {
                 </div>
                 <div className=" lg:w-[300px] py-4 flex items-center justify-evenly gap-4 z-20">
                   <div className="text-center">
-                    <div className="text-xl lg:text-lg font-semibold text-slate-900 font-bellefair">
+                    <div className="text-xl lg:text-lg font-semibold text-slate-900 ">
                       1.5 M+
                     </div>
                     <div className="text-xs font-medium  text-slate-700">Beds</div>
                   </div>
                   <div className="h-8 border-l-2 border-[#EB662B]" />
                   <div className="text-center">
-                    <div className="text-xl lg:text-xl font-semibold text-slate-900 font-bellefair">
+                    <div className="text-xl lg:text-xl font-semibold text-slate-900 ">
                       10 K+
                     </div>
                     <div className="text-xs text-slate-700 font-medium">Properties</div>
                   </div>
                   <div className="h-8 border-l-2 border-[#EB662B]" />
                   <div className="text-center">
-                    <div className="text-xl lg:text-xl font-semibold text-slate-900 font-bellefair">
+                    <div className="text-xl lg:text-xl font-semibold text-slate-900 ">
                       700+
                     </div>
                     <div className="text-xs text-slate-700 font-medium">Cities</div>
@@ -92,7 +92,7 @@ export default function FeelAtHomeHero() {
                   <br />
                   feels at home!
                 </h2>
-                <p className="text-slate-600 mt-3 text-base lg:text-lg font-poppins">
+                <p className="text-slate-600 mt-3 text-base lg:text-lg ">
                   Get personalised options with your preferences in just a few
                   clicks.
                 </p>
@@ -101,7 +101,7 @@ export default function FeelAtHomeHero() {
                   <div className="bg-green-100 text-green-700 rounded-full p-2 inline-flex">
                     <Check className="w-4 h-4" />
                   </div>
-                  <span className="text-slate-700 font-medium font-poppins">
+                  <span className="text-slate-700 font-medium ">
                     Upto £200 Cashback
                   </span>
                 </div>
@@ -126,7 +126,7 @@ export default function FeelAtHomeHero() {
 
                 <div className="lg:w-[300px] py-4 flex items-center justify-evenly gap-4 z-20">
                   <div className="text-center">
-                    <div className="text-xl lg:text-lg font-semibold text-slate-900 font-bellefair">
+                    <div className="text-xl lg:text-lg font-semibold text-slate-900 ">
                       1.5 M+
                     </div>
                     <div className="text-xs font-medium text-slate-700">
@@ -135,7 +135,7 @@ export default function FeelAtHomeHero() {
                   </div>
                   <div className="h-8 border-l-2 border-[#EB662B]" />
                   <div className="text-center">
-                    <div className="text-xl lg:text-xl font-semibold text-slate-900 font-bellefair">
+                    <div className="text-xl lg:text-xl font-semibold text-slate-900 ">
                       10 K+
                     </div>
                     <div className="text-xs text-slate-700 font-medium">
@@ -144,7 +144,7 @@ export default function FeelAtHomeHero() {
                   </div>
                   <div className="h-8 border-l-2 border-[#EB662B]" />
                   <div className="text-center">
-                    <div className="text-xl lg:text-xl font-semibold text-slate-900 font-bellefair">
+                    <div className="text-xl lg:text-xl font-semibold text-slate-900 ">
                       700+
                     </div>
                     <div className="text-xs text-slate-700 font-medium">

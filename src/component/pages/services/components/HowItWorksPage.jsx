@@ -2,7 +2,7 @@ import Heading from "../../../../common/Heading";
 
 const HowItWorksPage = ({ steps }) => {
   return (
-    <div className="w-full bg-white py-16 px-4 sm:px-16 font-vollkorn">
+    <div className="w-full bg-white py-16 px-4 sm:px-16 ">
       <div className="bg-[#fcfcfc] p-8">
         <div className="text-center mb-16">
           {/* <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4 ">
@@ -31,7 +31,7 @@ const HowItWorksPage = ({ steps }) => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed font-poppins">
+                <p className="text-gray-600 leading-relaxed ">
                   {step.description}
                 </p>
               </div>

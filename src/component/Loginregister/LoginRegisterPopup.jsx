@@ -137,7 +137,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 sm:px-2 py-2 font-sans">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 sm:px-2 py-2">
       <div className="bg-white rounded-md sm:rounded-lg shadow-2xl max-w-lg w-full relative flex flex-col">
         <button
           onClick={() => setShowModal(false)}

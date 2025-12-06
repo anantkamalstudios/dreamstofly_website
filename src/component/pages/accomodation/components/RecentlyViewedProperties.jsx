@@ -160,7 +160,7 @@
 //   //   </div>
 //   // );
 // return (
-//   <div className="mt-12 max-w-7xl mx-auto px-4 font-vollkorn">
+//   <div className="mt-12 max-w-7xl mx-auto px-4 ">
 //     <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
 //       Recently Viewed Properties
 //     </h2>
