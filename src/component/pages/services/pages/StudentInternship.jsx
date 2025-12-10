@@ -119,7 +119,7 @@ const StudentInternship = () => {
         }}
       />
       <PoweredBySection />
-      <TravelPartnersFeatures features={features} />
+      <TravelPartnersFeatures title="Why Choose Us ?" features={features} />
       <HowItWorks steps={steps} />
       <Testimonials />
       <RelatedServices />

@@ -6,7 +6,8 @@ const ServiceHero = ({ service, details, formConfig, slug }) => {
 
   const getTitleStyle = () => {
     const titleColor = details.titleColor || "#fff";
-    const baseClasses = "text-3xl md:text-4xl lg:text-6xl leading-tight";
+    const baseClasses =
+      "text-3xl md:text-4xl lg:text-5xl leading-tight font-medium";
 
     if (
       titleColor.includes("bg-") ||
@@ -31,21 +32,22 @@ const ServiceHero = ({ service, details, formConfig, slug }) => {
 
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden flex items-center justify-center"
       style={{
         backgroundImage: `url(${service.backgroundImage})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "100% 100%",
+        backgroundSize: "cover",
         backgroundPosition: "center",
+        minHeight: "400px",
         maxHeight: "fit-content",
       }}
     >
       <div className="absolute inset-0 bg-black/30"></div>
 
-      <div className="container mx-auto px-6 md:px-14 py-8 lg:py-16 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+      <div className="container mx-auto px-6 md:px-14 py-4 lg:py-8 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           {/* Hero Content */}
-          <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl ">
+          <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl">
             <h1 {...titleStyle}>{details.title}</h1>
 
             <p

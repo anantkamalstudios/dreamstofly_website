@@ -531,7 +531,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
               <select
                 value={countryCodesState[name] || "+91"}
                 onChange={(e) => handleCountryCodeChange(name, e.target.value)}
-                className="px-3 py-auto border-r border-gray-300 bg-gray-50 text-sm font-medium text-gray-700 focus:outline-none cursor-pointer"
+                className="px-2 py-auto border-r border-gray-300 bg-gray-50 text-xs font-medium text-gray-700 focus:outline-none cursor-pointer"
                 style={{ minWidth: "80px" }}
               >
                 {countryCodes.map((country) => (
@@ -615,7 +615,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
   return (
     <div className="bg-white rounded-lg shadow-xl p-6 lg:p-8 w-full lg:w-[500px]">
       <div className="text-center mb-2 ">
-        {formConfig.icon && (
+        {/* {formConfig.icon && (
           <div className="mb-3">
             <img
               src={formConfig.icon}
@@ -623,7 +623,7 @@ const ServiceEnquiryForm = ({ formConfig }) => {
               className="w-12 h-12 object-contain"
             />
           </div>
-        )}
+        )} */}
         <h3 className="text-xl font-bold text-gray-900 mb-1 text-left">
           {formConfig.title || "Enquire Now"}
         </h3>

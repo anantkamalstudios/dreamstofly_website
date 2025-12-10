@@ -79,7 +79,7 @@ const FlightBookingHeroPage = ({
           <div className="container mx-auto px-4 md:px-8 lg:px-14 py-12 lg:py-10 relative z-10 h-full flex flex-col justify-center ">
             {/* Hero Title & Subtitle */}
             <div className="mb-32 md:mb-40 lg:mb-48">
-              <h1 className="mb-3 text-white text-3xl md:text-5xl lg:text-6xl leading-tight">
+              <h1 className="mb-3 text-white text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
                 {details.title}
               </h1>
               <p className="text-base md:text-lg lg:text-xl leading-relaxed max-w-xl text-white">

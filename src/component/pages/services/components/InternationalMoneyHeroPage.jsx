@@ -17,6 +17,7 @@ const InternationalMoneyHeroPage = ({
   const [recipientCurrency, setRecipientCurrency] = useState("CAD");
   const [senderCurrency, setSenderCurrency] = useState("INR");
   const exchangeRate = 64.2806;
+  console.log(details);
 
   const handleRecipientChange = (e) => {
     const value = e.target.value;
@@ -46,16 +47,17 @@ const InternationalMoneyHeroPage = ({
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "70vh",
+          minHeight: "400px",
+          maxHeight: "fit-content",
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        {/* <div className="absolute inset-0 bg-black/30"></div> */}
 
-        <div className="container mx-auto px-6 md:px-14 py-8 lg:py-16 relative z-10">
+        <div className="container mx-auto px-6 md:px-14 py-4 lg:py-8 relative z-10">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             {/* Hero Content */}
-            <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl ">
+            <div className="flex-1 space-y-6 lg:space-y-8 max-w-3xl my-auto">
               {/* <h1 className="text-white text-2xl md:text-4xl lg:text-5xl xl:text-6xl">
                 {details.title}
               </h1> */}
@@ -67,14 +69,7 @@ const InternationalMoneyHeroPage = ({
             </div>
 
             <div className="w-full lg:w-auto lg:flex-shrink-0 ml-auto ">
-              <div className="bg-white rounded-2xl shadow-2xl px-8 py-4 max-w-2xl">
-                {/* Icon */}
-                <div className="mb-6">
-                  <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
-                    <Briefcase className="w-6 h-6 text-gray-600" />
-                  </div>
-                </div>
-
+              <div className="bg-white rounded-lg shadow-2xl px-8 py-4 max-w-2xl">
                 {/* Form Title */}
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">
                   International Money Transfer
@@ -90,10 +85,10 @@ const InternationalMoneyHeroPage = ({
                       type="text"
                       value={recipientAmount}
                       onChange={handleRecipientChange}
-                      className="w-full px-4 py-3 pr-32 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 pr-32 border border-gray-300 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                     <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2 bg-white">
-                      <span className="text-lg font-medium text-gray-700">
+                      <span className="text-base font-medium text-gray-700">
                         {recipientCurrency}
                       </span>
                       <span className="text-2xl">
@@ -112,7 +107,7 @@ const InternationalMoneyHeroPage = ({
                       type="text"
                       value={senderAmount}
                       onChange={handleSenderChange}
-                      className="w-full px-4 py-3 pr-32 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 pr-32 border border-gray-300 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                     <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2 bg-white">
                       <span className="text-lg font-medium text-gray-700">

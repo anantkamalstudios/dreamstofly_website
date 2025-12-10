@@ -84,7 +84,7 @@ export const services = [
     featured: true,
     price: "From £99",
     slug: "get-visa",
-    backgroundImage: "/images/services/visa-assistance.jpg",
+    backgroundImage: "/images/visa-assistance.jpg",
   },
   {
     id: 7,
@@ -205,7 +205,7 @@ export const services = [
     featured: false,
     price: "Free",
     slug: "hungryhub",
-    backgroundImage: "/images/hungryhub.png",
+    backgroundImage: "/images/hungryhub.jpg",
   },
   {
     id: 18,

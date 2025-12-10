@@ -45,7 +45,13 @@ import PTEtoIELTSConversion from "./component/pages/calculator/PTEtoIELTSConvers
 import ACTToSATConversion from "./component/pages/calculator/ACTToSATConversion";
 import GMTPage from "./component/pages/calculator/GMTPage";
 import ForgotPassword from "./component/Loginregister/ForgotPassword";
-import { useEffect } from "react";
+import AdminPage from "./admin/AdminPage";
+import MyListingsPage from "./admin/pages/MyListingsPage";
+import AddProperties from "./admin/pages/AddProperties";
+import Dashboard from "./admin/pages/Dashboard";
+import EnquiryPage from "./admin/pages/EnquiryPage";
+import BookingRequestPage from "./admin/pages/BookingRequestPage";
+import AccountPage from "./admin/pages/AccountPage";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -147,6 +153,18 @@ export default function App() {
                 path="/pte-to-ielts-conversion"
                 element={<PTEtoIELTSConversion />}
               />
+              <Route path="/admin" element={<AdminPage />}>
+                <Route index element={<Dashboard />} />
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="addproperties" element={<AddProperties />} />
+                <Route
+                  path="booking-requests"
+                  element={<BookingRequestPage />}
+                />
+                <Route path="listing" element={<MyListingsPage />} />
+                <Route path="enquiry" element={<EnquiryPage />} />
+                <Route path="account" element={<AccountPage />} />
+              </Route>
             </Routes>
           </MainLayout>
         </ScrollToTop>

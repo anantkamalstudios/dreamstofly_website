@@ -1,5 +1,5 @@
 export const serviceDetails = {
-  "student-flight-ticket": {
+  "student-flight-tickets": {
     titleColor: "#fff",
     subTitleColor: "#fff",
     title: "Student Flight Ticket Booking",
@@ -38,10 +38,12 @@ export const serviceDetails = {
     ],
   },
 
-  "visa-assistance": {
+  "get-visa": {
     titleColor:
-      "bg-gradient-to-b from-[#0C519B] to-[#041C35] bg-clip-text text-transparent",
-    subTitleColor: "#1D61E7",
+      // "bg-gradient-to-b from-[#0C519B] to-[#041C35] bg-clip-text text-transparent",
+      "#fff",
+    // subTitleColor: "#1D61E7",
+    subTitleColor: "#fff",
     title: "Visa Application Assistance",
     subtitle:
       "Seamless end-to-end Visa Solutions for your study abroad journey",
@@ -536,6 +538,12 @@ export const serviceDetails = {
     title: "Forex",
     subtitle:
       "Purchas, sell, and tranfer innternational currency from anywhere",
+  },
+  "student-internships": {
+    subTitleColor: "#fff",
+    titleColor: "#fff",
+    title: "student internship",
+    subtitle: "Kickstart your career with real-world industry experience",
   },
   "international-sim": {
     subTitleColor: "#fff",

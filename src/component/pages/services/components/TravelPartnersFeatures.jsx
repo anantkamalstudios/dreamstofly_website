@@ -1,10 +1,13 @@
 import React from "react";
 import { MapPin, UserCheck, ThumbsUp, Workflow } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
-const TravelPartnersFeatures = ({ features }) => {
+const TravelPartnersFeatures = ({ title, features }) => {
   return (
     <div className="w-full bg-blue-50  py-16 px-10 ">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* <h1 className="mb-2 font-semibold text-2xl ml-10">{title}</h1> */}
+      <Heading text={title} className={"mb-4 ml-10"} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 md:px-12 lg:px-20">
         {features.map((feature, index) => (
           <div
             key={index}
