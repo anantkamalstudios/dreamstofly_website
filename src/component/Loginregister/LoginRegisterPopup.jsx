@@ -99,7 +99,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
     try {
       if (isLogin) {
         const res = await axios.post(
-          "https://devlopment.dreamstofly.com/users/login_api",
+          `${import.meta.env.VITE_BASE_URL}/users/login_api`,
           {
             email: formData.email,
             password: formData.password,
@@ -113,7 +113,7 @@ export default function LoginRegisterPopup({ setShowModal }) {
         }
       } else {
         const res = await axios.post(
-          "https://devlopment.dreamstofly.com/users/register_api",
+          `${import.meta.env.VITE_BASE_URL}/users/register_api`,
           {
             name: formData.name,
             email: formData.email,
@@ -292,13 +292,13 @@ export default function LoginRegisterPopup({ setShowModal }) {
                 </div>
               )}
 
-              {isLogin && (
+              {/* {isLogin && (
                 <div className="text-right">
                   <button className="text-blue-600 text-xs sm:text-sm font-semibold hover:underline">
                     Forgot password?
                   </button>
                 </div>
-              )}
+              )} */}
 
               <button
                 onClick={handleSubmit}

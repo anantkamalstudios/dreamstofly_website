@@ -10,6 +10,7 @@ import HowItWorksPage from "../components/HowItWorksPage";
 import FAQSection from "../../accomodation/components/FAQSection";
 import ServicesPopUpForm from "../components/ServicesPopUpForm";
 import axios from "axios";
+import Loader from "../../../../common/Loader";
 
 const healthInsuranceForm = {
   title: "Buy Health Insurance",
@@ -113,24 +114,23 @@ const HealthInsurancePage = () => {
   };
 
   const handlePopupSubmit = async () => {
-    console.log("Airport pickup request submitted:=> ", popupFormData);
-    const res = await axios.post(
-      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/health_insurance_lead",
-      popupFormData
-    );
-    console.log(res);
-    alert("form submitted successfully! We'll get back to you soon.");
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }//ServiceLead/Leads_controller/health_insurance_lead`,
+        popupFormData
+      );
+      if (res.status === 200) alert(res.data.message);
 
-    setShowPopup(false);
+      setShowPopup(false);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
 

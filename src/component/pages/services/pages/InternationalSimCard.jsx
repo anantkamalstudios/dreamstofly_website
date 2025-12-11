@@ -94,14 +94,19 @@ const InternationalSimCard = () => {
   };
 
   const handlePopupSubmit = async () => {
-    console.log("first from data from internatinal sim =>", firstFormData);
-    const res = await axios.post(
-      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/internationalsim_lead",
-      popupFormData
-    );
-    console.log(res);
-    alert("form submitted successfully! We'll get back to you soon.");
-    setShowPopup(false);
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }//ServiceLead/Leads_controller/internationalsim_lead`,
+        popupFormData
+      );
+      if (res.status === 200) alert(res.data.message);
+      setShowPopup(false);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   if (loading) {

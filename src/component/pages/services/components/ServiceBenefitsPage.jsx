@@ -1,4 +1,5 @@
 import { Award, BadgeCheck, Gift, Scale } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
 const ServiceBenefitsPage = () => {
   const benefits = [
@@ -27,9 +28,14 @@ const ServiceBenefitsPage = () => {
   return (
     <div className="w-full bg-gray-50 py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-16">
+        {/* <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-16">
           Service benefits
-        </h2>
+        </h2> */}
+
+        <Heading
+          text="Service benefits"
+          className="text-center mb-10 sm:mb-16"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
           {benefits.map((benefit, index) => (

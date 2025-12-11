@@ -65,14 +65,14 @@ const ForgotPassword = () => {
       setError("");
 
       const response = await axios.post(
-        "https://devlopment.dreamstofly.com/users/send_otp_api",
+        `${import.meta.env.VITE_BASE_URL}/users/send_otp_api`,
         { email }
       );
 
       if (!response.status_code === 200) throw new Error("Failed to send OTP");
       setStep(2);
     } catch (error) {
-      setError(error.message || "Failed to send OTP");
+      setError(error?.response?.data?.message || "Failed to send OTP");
     } finally {
       setLoading(false);
     }
@@ -85,7 +85,7 @@ const ForgotPassword = () => {
       const otpCode = otp.join("");
 
       const response = await axios.post(
-        "https://devlopment.dreamstofly.com/users/verify_otp_api",
+        `${import.meta.env.VITE_BASE_URL}/users/verify_otp_api`,
         {
           email,
           otp: otpCode,
@@ -96,7 +96,8 @@ const ForgotPassword = () => {
 
       setStep(3);
     } catch (error) {
-      setError(error.message || "Invalid OTP");
+      console.log(error);
+      setError(error?.response?.data?.message || "Invalid OTP");
     } finally {
       setLoading(false);
     }
@@ -116,7 +117,7 @@ const ForgotPassword = () => {
       setLoading(true);
       setError("");
       const response = await axios.post(
-        "https://devlopment.dreamstofly.com/users/reset_password_api",
+        `${import.meta.env.VITE_BASE_URL}/users/reset_password_api`,
         {
           email,
           new_password: newPassword,
@@ -125,6 +126,7 @@ const ForgotPassword = () => {
 
       if (!response.status_code === 200)
         throw new Error("Failed to change password");
+      alert(response?.data?.message);
       navigate("/login");
     } catch (error) {
       setError(error.message || "Failed to change password");

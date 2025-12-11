@@ -9,6 +9,7 @@ import TrustedAndLoved from "../components/TrustedAndLoved";
 import HowItWorks from "../components/HowItWorks";
 import LoginRegisterPopup from "../../../Loginregister/LoginRegisterPopup";
 import RelatedServices from "../components/RelatedServices";
+import Loader from "../../../../common/Loader";
 
 const internshipForm = {
   title: "Internship Enquiry",
@@ -41,21 +42,19 @@ const StudentInternship = () => {
   const [firstFormData, setFirstFormData] = useState({});
 
   const handleFirstFormSubmit = () => {
-    setShowPopup(true);
-    console.log(showPopup);
-
-    console.log("first from data from hungruhub =>", firstFormData);
-    alert("form submitted successfully! We'll get back to you soon.");
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setShowPopup(true);
+      console.log(showPopup);
+      return;
+    } else {
+      console.log("first from data from hungruhub =>", firstFormData);
+      alert("form submitted successfully! We'll get back to you soon.");
+    }
   };
   console.log(showPopup);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
 

@@ -52,6 +52,7 @@ import Dashboard from "./admin/pages/Dashboard";
 import EnquiryPage from "./admin/pages/EnquiryPage";
 import BookingRequestPage from "./admin/pages/BookingRequestPage";
 import AccountPage from "./admin/pages/AccountPage";
+import UserProtectedRoute from "./utils/UserProtectedRoute";
 
 // import About from "./component/pages/";
 // import Contact from "./pages/Contact";
@@ -80,8 +81,22 @@ export default function App() {
                 element={<UniversityDetailPage />}
               />
               <Route path="/sop-lor-maker" element={<SOPHomePage />} />
-              <Route path="/sop-form" element={<SopMaker />} />
-              <Route path="/lor-form" element={<LorMaker />} />
+              <Route
+                path="/sop-form"
+                element={
+                  <UserProtectedRoute>
+                    <SopMaker />
+                  </UserProtectedRoute>
+                }
+              />
+              <Route
+                path="/lor-form"
+                element={
+                  <UserProtectedRoute>
+                    <LorMaker />
+                  </UserProtectedRoute>
+                }
+              />
               <Route path="/connect" element={<Connect />} />
               <Route
                 path="/post-admit-services"

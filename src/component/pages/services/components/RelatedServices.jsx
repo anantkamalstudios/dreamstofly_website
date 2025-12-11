@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import InternationalMoneyTransfer from "../../../../assets/services/18.svg";
 import AirportPickup from "../../../../assets/services/11.svg";
+import Heading from "../../../../common/Heading";
 
 function RelatedServices() {
   const services = [
@@ -30,6 +31,8 @@ function RelatedServices() {
       {/* <h2 className="text-3xl sm:text-4xl font-normal text-center text-gray-900 mb-12">
         Related Services
       </h2> */}
+
+      <Heading text="Related Services" className="text-center mb-6 sm:mb-10" />
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
         {services.map((service, index) => (

@@ -77,15 +77,20 @@ const LuggaugePage = () => {
   };
 
   const handlePopupSubmit = async () => {
-    console.log("Airport pickup request submitted:=> ", popupFormData);
-    const res = await axios.post(
-      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/luggage_storage_lead",
-      popupFormData
-    );
-    console.log(res);
-    alert("form submitted successfully! We'll get back to you soon.");
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }//ServiceLead/Leads_controller/luggage_storage_lead`,
+        popupFormData
+      );
+      if (res.status === 200) alert(res.data.message);
 
-    setShowPopup(false);
+      setShowPopup(false);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   if (loading) {

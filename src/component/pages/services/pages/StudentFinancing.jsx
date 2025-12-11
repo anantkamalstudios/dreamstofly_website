@@ -7,6 +7,7 @@ import WhyChooseUsFeatures from "../components/WhyChooseUsFeatures";
 import Testimonials from "../Testimonials";
 import TrustedAndLoved from "../components/TrustedAndLoved";
 import axios from "axios";
+import Loader from "../../../../common/Loader";
 
 // Form configuration for Student Financing
 const studentFinancingForm = {
@@ -75,22 +76,21 @@ const StudentFinancing = () => {
   const [firstFormData, setFirstFormData] = useState({});
 
   const handleFirstFormSubmit = async () => {
-    console.log("first from data from financing =>", firstFormData);
-    const res = await axios.post(
-      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/student_financing_lead",
-      firstFormData
-    );
-    console.log(res);
-    alert("form submitted successfully! We'll get back to you soon.");
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }//ServiceLead/Leads_controller/student_financing_lead`,
+        firstFormData
+      );
+      if (res.status === 200) alert(res.data.message);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
 

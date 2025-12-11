@@ -11,11 +11,29 @@ function MyListingsPage() {
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [editingProperty, setEditingProperty] = useState(null);
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    title: "",
+    price: "",
+    bedrooms: "",
+    bathrooms: "",
+    area: "",
+    country: "",
+    city: "",
+    address: "",
+    description: "",
+    facilities: "",
+    special_offers: "",
+    house_policies: "",
+    payment_info: "",
+    location_map_link: "",
+    images: [],
+  });
   const [properties, setProperties] = useState([
     {
       id: 1,
-      image:
+      images: [
         "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
+      ],
       title: "Luxury Villa in London",
       country: "UK",
       city: "London",
@@ -24,8 +42,9 @@ function MyListingsPage() {
     },
     {
       id: 2,
-      image:
+      images: [
         "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop",
+      ],
       title: "Modern Apartment NYC",
       country: "USA",
       city: "New York",
@@ -34,8 +53,9 @@ function MyListingsPage() {
     },
     {
       id: 3,
-      image:
+      images: [
         "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&h=600&fit=crop",
+      ],
       title: "Cozy Cottage Manchester",
       country: "UK",
       city: "Manchester",
@@ -44,8 +64,9 @@ function MyListingsPage() {
     },
     {
       id: 4,
-      image:
+      images: [
         "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&h=600&fit=crop",
+      ],
       title: "Downtown Loft Toronto",
       country: "Canada",
       city: "Toronto",
@@ -54,8 +75,9 @@ function MyListingsPage() {
     },
     {
       id: 5,
-      image:
+      images: [
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
+      ],
       title: "Beach House LA",
       country: "USA",
       city: "Los Angeles",
@@ -197,7 +219,7 @@ function MyListingsPage() {
     );
     setEditingProperty(null);
 
-    console.log("Property updated successfully in MyListings");
+    console.log("Property updated successfully in MyListings", updatedProperty);
   };
 
   const handleDelete = (id) => {
@@ -215,6 +237,8 @@ function MyListingsPage() {
         onCancel={() => setEditingProperty(null)}
         source="mylistings"
         propertyFields={propertyFields}
+        formData={formData}
+        setFormData={setFormData}
       />
     );
   }
@@ -414,7 +438,7 @@ function MyListingsPage() {
                         </div>
                         <div className="col-span-2">
                           <img
-                            src={property.image}
+                            src={property.images[0]}
                             alt={property.title}
                             className="w-20 h-16 object-cover rounded-lg"
                           />
@@ -537,7 +561,7 @@ function MyListingsPage() {
                       className="w-4 h-4 text-blue-600 rounded mt-1 flex-shrink-0"
                     />
                     <img
-                      src={property.image}
+                      src={property.images[0]}
                       alt={property.title}
                       className="w-20 h-16 sm:w-24 sm:h-20 object-cover rounded-lg flex-shrink-0"
                     />

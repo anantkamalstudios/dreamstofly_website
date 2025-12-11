@@ -23,7 +23,6 @@ const Header = () => {
   const [isMobileGoalOpen, setIsMobileGoalOpen] = useState(false);
   const [isMobileExploreOpen, setIsMobileExploreOpen] = useState(false);
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   const mobileMenuRef = useRef(null);
 
@@ -51,15 +50,11 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-[#02133e] text-white shadow-lg relative">
+    <header className="bg-[#02133e] text-white shadow-lg relative w-full">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link to={"/"} className="flex items-center">
-            <img
-              src={logo}
-              alt="logo"
-              style={{ width: "120px", height: "30px" }}
-            />
+            <img src={logo} alt="logo" className="w-[120px] h-[30px]" />
           </Link>
 
           <div className="hidden lg:flex items-center space-x-6 flex-1 max-w-4xl ml-8">

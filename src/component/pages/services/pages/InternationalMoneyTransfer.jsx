@@ -9,6 +9,7 @@ import Testimonials from "../Testimonials";
 import TrustedAndLoved from "../components/TrustedAndLoved";
 import InternationalMoneyHeroPage from "../components/InternationalMoneyHeroPage";
 import axios from "axios";
+import Loader from "../../../../common/Loader";
 
 const InternationalMoneyTransfer = () => {
   const { service, serviceDetails, loading } = useServiceData();
@@ -38,7 +39,9 @@ const InternationalMoneyTransfer = () => {
 
     try {
       const res = await axios.post(
-        "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/international_money_lead",
+        `${
+          import.meta.env.VITE_BASE_URL
+        }//ServiceLead/Leads_controller/international_money_lead`,
         payload
       );
       console.log("API Response:", res);
@@ -49,14 +52,6 @@ const InternationalMoneyTransfer = () => {
       alert("Error submitting form. Please try again.");
     }
   };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
 
   const stats = [
     {
@@ -72,8 +67,6 @@ const InternationalMoneyTransfer = () => {
       label: "Years Of Experience",
     },
   ];
-
-  if (!service || !serviceDetails) return null;
 
   const steps = [
     {
@@ -101,6 +94,9 @@ const InternationalMoneyTransfer = () => {
     discription:
       "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
   };
+
+  if (loading) <Loader />;
+  if (!service || !serviceDetails) return null;
 
   return (
     <div className="min-h-screen">

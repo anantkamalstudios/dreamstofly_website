@@ -9,6 +9,7 @@ import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
 import FlightBookingHeroPage from "../components/FlightBookingHeroPage";
 import axios from "axios";
+import Loader from "../../../../common/Loader";
 
 const FlightTicket = () => {
   const { service, serviceDetails, loading, slug } = useServiceData();
@@ -21,23 +22,20 @@ const FlightTicket = () => {
     setShowPopup(true);
   };
   const handlePopupFormSubmit = async () => {
-    console.log("popup formn adata => ", popupFormData);
-    const res = await axios.post(
-      "https://devlopment.dreamstofly.com/ServiceLead/Leads_controller/leads",
-      popupFormData
-    );
-    console.log(res);
-
-    setShowPopup(false);
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/ServiceLead/Leads_controller/leads`,
+        popupFormData
+      );
+      if (res.status === 200) alert(res.data.message);
+      setShowPopup(false);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
 

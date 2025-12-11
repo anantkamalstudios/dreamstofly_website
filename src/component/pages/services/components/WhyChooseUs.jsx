@@ -9,6 +9,7 @@ import {
   Gift,
   BadgeCheck,
 } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
 const WhyChooseUs = () => {
   const features = [
@@ -39,9 +40,10 @@ const WhyChooseUs = () => {
   return (
     <div className="w-full bg-gray-100 py-16 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-4xl font-medium text-center text-gray-900 mb-4">
+        {/* <h2 className="text-4xl md:text-4xl font-medium text-center text-gray-900 mb-4">
           Why Choose Us?
-        </h2>
+        </h2> */}
+        <Heading text="Why Choose Us?" className="text-center mb-4" />
         <div className="w-24 h-1 bg-orange-500 mx-auto mb-12"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-3xl mx-auto">

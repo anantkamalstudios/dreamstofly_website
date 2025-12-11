@@ -1,13 +1,15 @@
 import React from "react";
 import { Laptop, Hand, Headphones } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
 const WhyChooseUsFeatures = ({ features }) => {
   return (
     <div className="w-full bg-gray-50 py-16 px-4 ">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-medium text-center text-gray-900 mb-16">
+        {/* <h2 className="text-4xl md:text-5xl font-medium text-center text-gray-900 mb-16">
           Why choose us
-        </h2>
+        </h2> */}
+        <Heading text="Why choose us" className="text-center mb-10 sm:mb-16" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {features.map((feature, index) => (
             <div

@@ -26,7 +26,7 @@ const BlogDetails = () => {
             id: item.blog_id,
             title: item.blog_title,
             image: item.blog_image,
-            content: item.blog_info, // HTML
+            content: item.blog_info,
             category: item.category_name,
             date: item.date_time,
             author: "Admin",
@@ -35,9 +35,8 @@ const BlogDetails = () => {
 
           setBlog(blogData);
 
-          // Fetch related posts
           const relatedRes = await fetch(
-            "https://devlopment.dreamstofly.com/Blogs/active_blogs"
+            `${import.meta.env.VITE_BASE_URL}/Blogs/active_blogs`
           );
           const relatedJson = await relatedRes.json();
 

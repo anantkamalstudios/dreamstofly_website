@@ -10,7 +10,12 @@ function PropertyDetails({ property, onBack }) {
   const [subProperties, setSubProperties] = useState([
     {
       id: 1,
-      image: currentProperty.image,
+      images:
+        currentProperty.images && currentProperty.images.length > 0
+          ? currentProperty.images
+          : currentProperty.image
+          ? [currentProperty.image]
+          : [],
       name: "Master Room",
       type: "Single",
       pricePerWeek: "£120 per week",
@@ -20,7 +25,12 @@ function PropertyDetails({ property, onBack }) {
     },
     {
       id: 2,
-      image: currentProperty.image,
+      images:
+        currentProperty.images && currentProperty.images.length > 1
+          ? [currentProperty.images[1]]
+          : currentProperty.image
+          ? [currentProperty.image]
+          : [],
       name: "Deluxe Room",
       type: "Double",
       pricePerWeek: "£150 per week",
@@ -30,7 +40,12 @@ function PropertyDetails({ property, onBack }) {
     },
     {
       id: 3,
-      image: currentProperty.image,
+      images:
+        currentProperty.images && currentProperty.images.length > 2
+          ? [currentProperty.images[2]]
+          : currentProperty.image
+          ? [currentProperty.image]
+          : [],
       name: "Standard Room",
       type: "Single",
       pricePerWeek: "£100 per week",
@@ -39,7 +54,15 @@ function PropertyDetails({ property, onBack }) {
       moveInDate: "20 Jan 2025",
     },
   ]);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    name: "",
+    type: "",
+    pricePerWeek: "",
+    deposit: "",
+    stayDuration: "",
+    moveInDate: "",
+    images: [],
+  });
 
   const propertyFields = [
     {
@@ -208,10 +231,10 @@ function PropertyDetails({ property, onBack }) {
                 <div
                   key={i}
                   className="relative rounded-lg overflow-hidden aspect-video group cursor-pointer"
-                  onClick={() => setFullscreenImage(currentProperty.image)}
+                  onClick={() => setFullscreenImage(currentProperty.images)}
                 >
                   <img
-                    src={currentProperty.image}
+                    src={currentProperty.images}
                     alt={`Property ${i}`}
                     className="w-full h-full object-cover"
                   />

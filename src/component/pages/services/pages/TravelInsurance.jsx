@@ -8,6 +8,7 @@ import HowItWorks from "../components/HowItWorks";
 import FAQAccordion from "../components/FAQAccordion";
 import TrustedAndLoved from "../components/TrustedAndLoved";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../../../common/Loader";
 
 const travelInsuranceForm = {
   title: "Buy a plan in mins",
@@ -29,13 +30,7 @@ const TravelInsurance = () => {
     });
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
 

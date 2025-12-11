@@ -2,8 +2,11 @@ import React from "react";
 import { CheckCircle, Clock, Shield, Star, Users, Target } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import CountryCard from "../components/CountryCard";
+import TopAirplaneIcon from "../components/TopAirplaneIcon";
 import "swiper/css";
 import "swiper/css/free-mode";
+import Heading from "../../../../common/Heading";
 
 const ServiceCountry = ({ countryData }) => {
   const topRowCountries = [
@@ -65,77 +68,6 @@ const ServiceCountry = ({ countryData }) => {
     },
   ];
 
-  const CountryCard = ({ country }) => (
-    <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white/90 min-w-max group">
-      <div className="flex items-center gap-4">
-        <div className="relative">
-          {country.image ? (
-            <img
-              src={country.image}
-              alt={`${country.name} flag`}
-              className="w-10 h-10 rounded-full object-cover shadow-sm border border-gray-200 group-hover:shadow-md transition-shadow duration-300"
-              onError={(e) => {
-                e.target.style.display = "none";
-                e.target.nextSibling.style.display = "flex";
-              }}
-            />
-          ) : null}
-
-          <div
-            className={`w-10 h-8 ${
-              country.color
-            } rounded-md flex items-center justify-center shadow-sm ${
-              country.image ? "hidden" : "flex"
-            }`}
-          >
-            <span
-              className={`text-xs font-bold ${
-                country.color.includes("white")
-                  ? "text-red-600"
-                  : country.color.includes("yellow")
-                  ? "text-black"
-                  : "text-white"
-              }`}
-            >
-              {country.code}
-            </span>
-          </div>
-
-          {!country.image && country.flag && (
-            <div className="absolute -top-1 -right-1 text-sm opacity-70 rounded-full w-8 h-8 flex items-center justify-center bg-white shadow">
-              {country.flag}
-            </div>
-          )}
-        </div>
-
-        <div>
-          <span className="text-base font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-            {country.name}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-
-  const TopAirplaneIcon = () => (
-    <div className="absolute -top-28 right-0 md:right-32 transform -translate-y-1/2 z-20 hidden lg:block w-48 h-48 opacity-100 pointer-events-none select-none">
-      <div className="relative">
-        <div className="w-full h-full transform -rotate-12">
-          <img
-            src="/images/services/ap.png"
-            alt="Airplane Icon"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <img
-          src="/images/services/topright.png"
-          alt="Top Right Decoration"
-          className="absolute top-8 left-36 w-full h-full opacity-50 pointer-events-none select-none"
-        />
-      </div>
-    </div>
-  );
-
   return (
     <section className="pt-2">
       <div className="container mx-auto ">
@@ -143,9 +75,13 @@ const ServiceCountry = ({ countryData }) => {
           <div className=" px-2 md:px-4 lg:px-6 lg:py-12 relative">
             <div className="relative z-10">
               <div className="text-center mb-6">
-                <h3 className="text-2xl lg:text-4xl  xl:text-5xl font-normal text-[#115779] mb-4">
+                {/* <h3 className="text-2xl lg:text-4xl  xl:text-5xl font-normal text-[#115779] mb-4">
                   {countryData?.title || ""}
-                </h3>
+                </h3> */}
+                <Heading
+                  text={countryData?.title}
+                  className="text-center mb-4"
+                />
                 <p className="text-md text-gray-600 max-w-2xl mx-auto">
                   {countryData?.discription || ""}
                 </p>

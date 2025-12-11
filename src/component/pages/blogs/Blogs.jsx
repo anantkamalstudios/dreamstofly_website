@@ -23,11 +23,9 @@ const Blogs = () => {
     const fetchBlogs = async () => {
       try {
         const data = await axios.get(
-          "https://devlopment.dreamstofly.com/Blogs/blogs"
+          `${import.meta.env.VITE_BASE_URL}/Blogs/blogs`
         );
         console.log(data);
-
-        // const data = await res.json();
         if (data?.data?.data && Array.isArray(data.data.data)) {
           const mappedBlogs = data.data.data.map((item) => ({
             id: item.blog_id,

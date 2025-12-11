@@ -12,8 +12,8 @@ const OtpModal = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (otp === "123456") {
-      navigate("/"); // ✅ instantly go to home
-      onClose(); // ✅ close modal
+      navigate("/");
+      onClose();
     } else {
       setStep("error");
     }

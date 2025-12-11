@@ -58,13 +58,78 @@ const CourseFinder = () => {
     </div>
   );
 
-  const courses = Array(5).fill({
-    title: "Clinical Education PGCert",
-    campus: "Knowledge Centre Campus (Liverpool City Centre Campus)",
-    city: "Liverpool, United Kingdom",
-    ranking: 147,
-    logo: "/images/courseFinder/courseFinder2.png",
-  });
+  const courses = [
+    {
+      title: "Masters in Data Science",
+      campus: "Tech Innovation Campus (Manchester Central)",
+      city: "Manchester, United Kingdom",
+      ranking: 89,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+    {
+      title: "MBA in International Business",
+      campus: "Business School Campus (London West End)",
+      city: "London, United Kingdom",
+      ranking: 56,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+    {
+      title: "BSc Computer Engineering",
+      campus: "Engineering & Design Campus (Birmingham North)",
+      city: "Birmingham, United Kingdom",
+      ranking: 102,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+    {
+      title: "MSc Cyber Security",
+      campus: "Digital Security Campus (Edinburgh Tech Park)",
+      city: "Edinburgh, United Kingdom",
+      ranking: 74,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+    {
+      title: "BA Psychology",
+      campus: "Social Sciences Campus (Leeds City Campus)",
+      city: "Leeds, United Kingdom",
+      ranking: 131,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+    {
+      title: "MSc Artificial Intelligence",
+      campus: "AI Research Campus (Cambridge Science Park)",
+      city: "Cambridge, United Kingdom",
+      ranking: 42,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+    {
+      title: "BBA Marketing Management",
+      campus: "Business Innovations Campus (Glasgow City Centre)",
+      city: "Glasgow, United Kingdom",
+      ranking: 118,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+    {
+      title: "MSc Biotechnology",
+      campus: "Life Sciences Campus (Oxford Biomedical Centre)",
+      city: "Oxford, United Kingdom",
+      ranking: 28,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+    {
+      title: "BA Graphic Design",
+      campus: "Creative Arts Campus (Bristol Creative Hub)",
+      city: "Bristol, United Kingdom",
+      ranking: 147,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+    {
+      title: "MSc Renewable Energy",
+      campus: "Sustainability Campus (Newcastle Eco Park)",
+      city: "Newcastle, United Kingdom",
+      ranking: 95,
+      logo: "/images/courseFinder/courseFinder2.png",
+    },
+  ];
 
   const HeaderData = {
     title: "Programme Directory Search",

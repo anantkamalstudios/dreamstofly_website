@@ -5,6 +5,7 @@ import ServiceCountry from "../[slug]/ServiceCountry";
 import TravelPartnersFeatures from "../components/TravelPartnersFeatures";
 import WhyChooseUsFeatures from "../components/WhyChooseUsFeatures";
 import Testimonials from "../Testimonials";
+import Loader from "../../../../common/Loader";
 
 const jobSearchForm = {
   title: "Job Search",
@@ -43,13 +44,7 @@ const JobSearchPage = () => {
   //   setShowPopup(false);
   // };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
 

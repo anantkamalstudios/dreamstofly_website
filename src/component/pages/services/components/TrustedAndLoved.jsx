@@ -1,12 +1,14 @@
 import React from "react";
+import Heading from "../../../../common/Heading";
 
 const TrustedAndLoved = ({ stats }) => {
   return (
     <div className="w-full mx-auto py-6 md:py-10 px-6 md:px-20 ">
       {/* Header */}
-      <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-16">
+      {/* <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-16">
         Trusted & loved
-      </h2>
+      </h2> */}
+      <Heading text="Trusted & loved" className="text-center mb-10 sm:mb-16" />
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-8">

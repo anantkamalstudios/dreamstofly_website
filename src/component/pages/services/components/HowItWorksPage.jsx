@@ -20,7 +20,7 @@ const HowItWorksPage = ({ steps }) => {
               key={index}
               className="flex flex-col sm:flex-row items-start justify-start"
             >
-              <div className="mx-2 sm:mx-6 w-28 sm:w-32">
+              <div className="mx-2 sm:mx-4 w-28 sm:w-44">
                 <img
                   src={step.icon}
                   alt=""

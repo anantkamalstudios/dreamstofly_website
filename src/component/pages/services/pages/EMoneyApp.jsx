@@ -12,6 +12,7 @@ import Testimonials from "../Testimonials";
 import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
 import axios from "axios";
+import Loader from "../../../../common/Loader";
 
 const eMoneyAppForm = {
   title: "Select Destination Country",
@@ -104,14 +105,19 @@ const EMoneyApp = () => {
   };
 
   const handlePopupSubmit = async () => {
-    console.log("e money request submitted:=> ", popupFormData);
-    const res = await axios.post(
-      "https://devlopment.dreamstofly.com//ServiceLead/Leads_controller/emoney_lead",
-      popupFormData
-    );
-    console.log(res);
-    alert("form submitted successfully! We'll get back to you soon.");
-    setShowPopup(false);
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }//ServiceLead/Leads_controller/emoney_lead`,
+        popupFormData
+      );
+      if (res.status === 200) alert(res.data.message);
+      setShowPopup(false);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   const features = [
@@ -160,6 +166,8 @@ const EMoneyApp = () => {
     { number: "$50M+", label: "Total Loans Disbursed" },
     { number: "95%", label: "Approval Rate" },
   ];
+
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
 

@@ -117,9 +117,52 @@ function EditPropertyForm({
     const updatedPropertyData = {
       ...property,
       ...formData,
-      image: uploadedImages[0]?.preview || property.image,
+      image: undefined,
+      images: uploadedImages.map((img) => img.preview || img),
     };
+    onSave(updatedPropertyData);
   };
+
+  useEffect(() => {
+    if (property) {
+      const newFormData = { ...property };
+
+      let existingImages = [];
+
+      if (property.images) {
+        existingImages = Array.isArray(property.images)
+          ? property.images
+          : [property.images];
+      } else if (property.image) {
+        existingImages = [property.image];
+      }
+
+      setFormData({
+        ...newFormData,
+        images: existingImages,
+      });
+
+      if (existingImages.length > 0) {
+        const processedImages = existingImages.map((img, index) => {
+          const imageUrl =
+            typeof img === "string" ? img : img.preview || img.url || "";
+          return {
+            id: `existing-${index}-${Date.now()}`,
+            preview: imageUrl,
+            name: `Image ${index + 1}`,
+            progress: 100,
+            isExisting: true,
+          };
+        });
+
+        setUploadedImages(processedImages);
+        setImagePreviews(processedImages.map((img) => img.preview));
+      } else {
+        setUploadedImages([]);
+        setImagePreviews([]);
+      }
+    }
+  }, [property, setFormData]);
 
   return (
     <div className="min-h-screen bg-gray-50">

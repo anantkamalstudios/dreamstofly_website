@@ -141,6 +141,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, Plane } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
 const TravelPartners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -214,9 +215,11 @@ const TravelPartners = () => {
     <div className="w-full bg-[#0073DF1A] py-8 md:py-16 px-4">
       <div className="max-w-7xl mx-auto ">
         {/* Header */}
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-center text-[#115779] mb-6 md:mb-12">
+        {/* <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-center text-[#115779] mb-6 md:mb-12">
           Travel Partners
-        </h2>
+        </h2> */}
+
+        <Heading text="Travel Partners" className="text-center mb-6 md:mb-12" />
 
         <div
           className="relative"
