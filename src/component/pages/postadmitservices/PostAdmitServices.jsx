@@ -289,21 +289,27 @@ const PostAdmitServices = () => {
               className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-white mb-3 md:mb-4"
               dangerouslySetInnerHTML={{ __html: heroSection?.title }}
             />
-            <p
-              className="text-base md:text-lg lg:text-xl xl:text-2xl max-w-2xl text-start leading-relaxed text-white/90"
+            <div
+              className="text-base md:text-lg lg:text-xl xl:text-2xl max-w-2xl text-start leading-relaxed text-white [&_*]:!text-white"
               dangerouslySetInnerHTML={{ __html: heroSection?.subtitle }}
             />
           </motion.div>
         </div>
 
         {/* RIGHT IMAGE - Fixed to bottom */}
-        <div className="flex-1 relative flex items-end justify-center md:justify-end overflow-hidden h-full">
+        <motion.div
+          className="flex-1 relative flex items-end justify-center md:justify-end overflow-hidden h-full"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.1 }}
+        >
           <img
             src={`${import.meta.env.VITE_IMAGE_URL}${heroSection?.image}`}
             alt="Hero"
             className="h-full w-auto object-contain object-bottom"
+            loading="lazy"
           />
-        </div>
+        </motion.div>
       </section>
 
       {/* Services Section */}
@@ -313,7 +319,10 @@ const PostAdmitServices = () => {
             <h2 className="text-3xl font-semibold text-gray-900 mb-3">
               {planSection?.title}
             </h2>
-            <p className="text-base text-gray-600">{planSection?.subtitle}</p>
+            <p
+              className="text-base text-gray-600"
+              dangerouslySetInnerHTML={{ __html: planSection?.subtitle }}
+            ></p>
           </div>
           <div className="grid md:grid-cols-2 gap-10">
             {services.map((service, index) => (
@@ -321,7 +330,7 @@ const PostAdmitServices = () => {
                 onClick={() => {
                   setOpenModal(index === 0 ? "free" : "premium");
                 }}
-                key={service.id}
+                key={index}
                 whileHover={{ scale: 1.02 }}
                 className="relative overflow-hidden bg-white cursor-pointer"
               >

@@ -213,7 +213,7 @@ const TravelPartners = () => {
 
   return (
     <div className="w-full bg-[#0073DF1A] py-8 md:py-16 px-4">
-      <div className="max-w-7xl mx-auto ">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-28">
         {/* Header */}
         {/* <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-center text-[#115779] mb-6 md:mb-12">
           Travel Partners

@@ -23,7 +23,7 @@ function ServiceBenefits() {
   ];
 
   return (
-    <div className="w-full mx-auto px-4 md:px-8 lg:px-16  py-12 ">
+    <div className="w-full mx-auto px-4 md:px-8 lg:px-28  py-12 ">
       {/* <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16">
         Service benefits
       </h2> */}

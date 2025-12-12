@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { apiGet } from "../api/config";
 import axios from "axios";
 
 export const AuthContext = createContext();
@@ -39,8 +38,28 @@ export const AuthProvider = ({ children }) => {
     fetchProfile();
   }, []);
 
+  const handleLogout = async () => {
+    const token = localStorage.getItem("token");
+    const res = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/users/logout_api`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    if (res?.data?.status_code === 200) {
+      localStorage.removeItem("token");
+      setUser(null);
+    }
+    setToken(null);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loadingUser, setUser, fetchProfile }}>
+    <AuthContext.Provider
+      value={{ user, loadingUser, setUser, fetchProfile, handleLogout }}
+    >
       {children}
     </AuthContext.Provider>
   );

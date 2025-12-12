@@ -160,7 +160,7 @@ export default function ServicesBenefits({ whyChoose }) {
           <div className="relative z-10 flex items-center">
             <div
               className="relative z-30 flex-shrink-0"
-              style={{ width: "400px" }}
+              style={{ width: "450px" }}
             >
               <div
                 className="w-full rounded-3xl relative overflow-hidden"

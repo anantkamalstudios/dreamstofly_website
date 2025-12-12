@@ -107,7 +107,7 @@ const CountryCard = ({ country }) => {
 const FeaturedServices = ({ countriesData }) => {
   return (
     <div className="w-full relative">
-      <div className="max-w-7xl container mx-auto px-4 pt-2 md:pt-4 lg:pt-6 relative ">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-28 pt-2 md:pt-4 lg:pt-6 relative ">
         {/* Header */}
         <div className="mb-8">
           <div className="text-sm text-gray-400 my-4 flex items-center gap-2">

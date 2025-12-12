@@ -449,7 +449,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-6 px-12 sm:py-8 sm:px-16 lg:py-10 lg:px-20">
+    <section className="py-6 px-12 sm:py-8 sm:px-16 lg:py-10 lg:px-28">
       <div className="mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 lg:mb-12 gap-4 lg:gap-6">

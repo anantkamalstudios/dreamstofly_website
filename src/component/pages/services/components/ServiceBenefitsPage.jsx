@@ -27,7 +27,7 @@ const ServiceBenefitsPage = () => {
 
   return (
     <div className="w-full bg-gray-50 py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-28">
         {/* <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-16">
           Service benefits
         </h2> */}

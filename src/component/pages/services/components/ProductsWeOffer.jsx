@@ -14,7 +14,7 @@ function ProductsWeOffer() {
 
   return (
     <div className="w-full bg-gray-50 py-12 sm:py-16 lg:py-20 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-28">
         {/* <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center text-gray-900 mb-12">
           Products we offer
         </h2> */}

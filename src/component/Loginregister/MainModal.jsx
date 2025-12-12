@@ -23,7 +23,7 @@ const CollegeduniaApp = () => {
   const [selectedGoal, setSelectedGoal] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [token, setToken] = useState(null);
-  const { setUser } = useContext(AuthContext);
+  const { user, setUser, handleLogout } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -32,23 +32,23 @@ const CollegeduniaApp = () => {
     setToken(storedToken);
   }, []);
 
-  const handleLogout = async () => {
-    const res = await axios.post(
-      `${import.meta.env.VITE_BASE_URL}/users/logout_api`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    if (res?.data?.status_code === 200) {
-      localStorage.removeItem("token");
-      setUser(null);
-      alert("Logout successful!");
-    }
-    setToken(null);
-  };
+  // const handleLogout = async () => {
+  //   const res = await axios.post(
+  //     `${import.meta.env.VITE_BASE_URL}/users/logout_api`,
+  //     {},
+  //     {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     }
+  //   );
+  //   if (res?.data?.status_code === 200) {
+  //     localStorage.removeItem("token");
+  //     setUser(null);
+  //     alert("Logout successful!");
+  //   }
+  //   setToken(null);
+  // };
 
   return (
     <div className="max-w-sm mx-auto bg-gray-100  relative overflow-hidden rounded-lg">
@@ -71,7 +71,7 @@ const CollegeduniaApp = () => {
             </div>
           </div>
 
-          {token ? (
+          {user ? (
             <button
               onClick={handleLogout}
               className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-1 rounded-lg transition-colors duration-200"

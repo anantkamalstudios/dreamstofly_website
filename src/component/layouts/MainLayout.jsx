@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "../../component/Footer";
-import Topbar from "../Header";
-import Topbarnavigae from "../Topbar";
+import Header from "../Header";
+import Topbar from "../Topbar";
 
 export default function MainLayout({ children }) {
   const { pathname } = useLocation();
@@ -17,9 +17,8 @@ export default function MainLayout({ children }) {
 
   return (
     <>
+      <Header />
       <Topbar />
-      <Topbarnavigae />
-      {/* <Navbar /> */}
       <main className="min-h-screen">{children}</main>
       <Footer />
     </>

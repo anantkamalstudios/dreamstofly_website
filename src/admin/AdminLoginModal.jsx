@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { use, useContext, useState } from "react";
 import { X, Lock, Mail, Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../context/AuthContext";
 
 function AdminLoginModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ function AdminLoginModal({ isOpen, onClose }) {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { handleLogout } = useContext(AuthContext);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -56,8 +58,11 @@ function AdminLoginModal({ isOpen, onClose }) {
     );
     console.log(res);
 
-    if (res?.data?.status === true) navigate("/admin");
-    else {
+    if (res?.data?.status === true) {
+      localStorage.setItem("adminToken", res?.data?.token);
+      navigate("/admin");
+      await handleLogout();
+    } else {
       alert("invalid credentials");
       setIsLoading(false);
     }

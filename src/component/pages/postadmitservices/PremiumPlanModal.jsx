@@ -51,7 +51,7 @@ const PremiumPlanModal = ({ onClose }) => {
   ];
 
   const handleProceed = async () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("userToken");
     console.log(token);
 
     try {

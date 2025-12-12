@@ -124,21 +124,16 @@ const OurCommitments = () => {
   return (
     <div className="w-full bg-[linear-gradient(to_top,#beddfa_0%,#beddfa_35%,white_52%,white_60%,white_100%)] py-12 ">
       {/* Header Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-20">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-28">
         {/* <h2 className="text-2xl sm:text-3xl font-bold text-start ">
           Our commitments
         </h2> */}
         <Heading text="Our commitments" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-20">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-28">
         <div className="pt-28 sm:pt-32 lg:pt-40">
-          <div
-            className="
-              grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-              gap-x-8 gap-y-24
-            "
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-24">
             {items.map((item, index) => (
               <div key={index} className="flex justify-center rounded-md">
                 <div className="w-full max-w-xs sm:max-w-sm lg:max-w-none">
@@ -150,8 +145,8 @@ const OurCommitments = () => {
                       min-h-[170px] sm:min-h-[190px] lg:min-h-[200px]
                     "
                   >
-                    <div className="absolute top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-[6px] rounded-full bg-gradient-to-t rom-[#0073DF] to-[#003E79] z-10">
-                      <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 rounded-full bg-white flex items-center justify-center shadow-md">
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-[6px] rounded-full bg-gradient-to-t from-[#0073DF] to-[#003E79] z-10">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 rounded-full bg-white flex items-center justify-center shadow-md border border-gradient-to-b rom-[#0073DF] to-[#003E79]">
                         <img
                           src={item.img}
                           alt={item.title}

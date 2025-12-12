@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Form from "../components/Form";
+import axios from "axios";
 
 function AddProperties() {
   const [formData, setFormData] = useState({
@@ -12,7 +13,6 @@ function AddProperties() {
     city: "",
     address: "",
     description: "",
-    facilities: "",
     special_offers: "",
     house_policies: "",
     payment_info: "",
@@ -239,7 +239,8 @@ function AddProperties() {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    const token = localStorage.getItem("adminToken");
     const propertyData = new FormData();
 
     Object.entries(formData).forEach(([key, value]) => {
@@ -255,24 +256,42 @@ function AddProperties() {
       images: uploadedImages.map((img) => img.name),
     });
 
-    setFormData({
-      title: "",
-      price: "",
-      bedrooms: "",
-      bathrooms: "",
-      area: "",
-      country: "",
-      city: "",
-      address: "",
-      description: "",
-      facilities: "",
-      special_offers: "",
-      house_policies: "",
-      payment_info: "",
-      location_map_link: "",
-    });
-    setUploadedImages([]);
-    setImagePreviews([]);
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }/Accommodation/OwnerDashboardApi/add_room`,
+        propertyData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(res);
+
+      setFormData({
+        title: "",
+        price: "",
+        bedrooms: "",
+        bathrooms: "",
+        area: "",
+        country: "",
+        city: "",
+        address: "",
+        description: "",
+        facilities: "",
+        special_offers: "",
+        house_policies: "",
+        payment_info: "",
+        location_map_link: "",
+      });
+      setUploadedImages([]);
+      setImagePreviews([]);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

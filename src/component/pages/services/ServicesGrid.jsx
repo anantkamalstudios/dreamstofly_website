@@ -19,7 +19,7 @@ const ServicesGrid = ({ services }) => {
 
   return (
     <section className="md:pt-2 md:pb-4 bg-gray-100">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="  w-full mx-auto px-4 md:px-14 lg:px-24">
         <div className="text-start mb-1 md:mb-4 mx-auto">
           <h1 className="text-xl md:text-3xl font-semibold mb-1 text-black ">
             Our Services

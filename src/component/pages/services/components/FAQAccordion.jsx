@@ -28,15 +28,15 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="w-full py-2 md:py-4 lg:py-6 xl:py-8 px-4 bg-[#0073DF0F] ">
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full px-0 sm:px-4 mt-4 bg-[#0073DF0F] ">
+      <div className="w-full mx-auto px-2 md:px-12 lg:px-32 py-2 md:py-4 lg:py-5 xl:py-6">
         <div className="p-6 md:p-10">
           {/* <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-8">
             Frequently Asked Questions
           </h2> */}
           <Heading
             text="Frequently Asked Questions"
-            className="text-gray-900 text-center mb-8"
+            className="text-gray-900 text-center mb-6"
           />
           <div className="space-y-4">
             {faqs.map((faq, index) => (

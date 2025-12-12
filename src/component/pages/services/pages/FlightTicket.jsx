@@ -93,7 +93,7 @@ const FlightTicket = () => {
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-8">
         <RelatedServices />
       </div>
-      <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-16 mb-8">
+      <div className="px-0 sm:px-2 md:px-4 lg:px-6 mt-4 sm:mt-8">
         <FAQAccordion />
       </div>
     </div>
