@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import axiosInstance from "../api/axiosInstance";
 
 export const AuthContext = createContext();
 
@@ -15,14 +16,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/users/profile_api`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const res = await axiosInstance.get("/users/profile_api");
       setUser(res?.data?.data);
       console.log(res?.data?.data?.user);
     } catch (err) {
@@ -39,21 +33,11 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const handleLogout = async () => {
-    const token = localStorage.getItem("token");
-    const res = await axios.post(
-      `${import.meta.env.VITE_BASE_URL}/users/logout_api`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const res = await axiosInstance.post("/users/logout_api", {});
     if (res?.data?.status_code === 200) {
       localStorage.removeItem("token");
       setUser(null);
     }
-    setToken(null);
   };
 
   return (

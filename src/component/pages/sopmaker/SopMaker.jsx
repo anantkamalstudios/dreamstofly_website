@@ -145,7 +145,6 @@ const SopMaker = () => {
     const result = await formUtils.handleSubmit(
       sopFormData,
       "/api/sop/generate",
-      token,
       setGeneratedSOP,
       setIsGenerating
     );

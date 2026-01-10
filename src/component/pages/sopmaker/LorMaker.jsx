@@ -144,7 +144,6 @@ const LorMaker = () => {
     const result = await formUtils.handleSubmit(
       lorFormData,
       "/api/lor/generate",
-      token,
       setGeneratedLOR,
       setIsGenerating
     );

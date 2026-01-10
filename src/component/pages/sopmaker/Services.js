@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from "../../../api/axiosInstance";
 
 export const formUtils = {
   isSectionComplete: (formData, section) => {
@@ -60,19 +60,15 @@ export const formUtils = {
   handleSubmit: async (
     formData,
     apiUrl,
-    token,
     setGeneratedDoc,
     setIsGenerating
   ) => {
     try {
       setIsGenerating(true);
       const payload = formUtils.getFlatFormData(formData);
-      const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}${apiUrl}`,
+      const response = await axiosInstance.post(
+        apiUrl,
         payload,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
       );
 
       if (response.data.status === "success") {

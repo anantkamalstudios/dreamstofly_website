@@ -51,31 +51,39 @@ const PremiumPlanModal = ({ onClose }) => {
   ];
 
   const handleProceed = async () => {
-    const token = localStorage.getItem("userToken");
+    const token = localStorage.getItem("token");
     console.log(token);
-
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/premium/razorpay_pay`,
         { pay_id: 2 },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      console.log(res);
+
+      const { order_id, amount, customer } = res.data;
+      console.log(res.data);
+
       const options = {
         key: import.meta.env.VITE_RAZORPAY_KEY,
-        amount: 10000,
+        amount: amount,
         currency: "INR",
         name: "DreamsToFly",
-        description: "Payment",
-        order_id: orderId,
+        description: "Premium Service Plan",
+        order_id: order_id,
 
-        prefill: {},
+        prefill: {
+          email: customer?.email || "",
+          contact: customer?.contact || "",
+        },
 
         handler: async function (response) {
+          console.log(response);
           await axios.post(
             `${import.meta.env.VITE_BASE_URL}/premium/razorpay_callback`,
             {
-              response,
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
             },
             {
               headers: {
@@ -84,18 +92,15 @@ const PremiumPlanModal = ({ onClose }) => {
             }
           );
         },
-
-        modal: {
-          ondismiss: function () {
-            console.log("Payment Cancelled");
-          },
-        },
       };
+
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch (error) {
       console.error("Payment failed:", error);
     }
+
+    onClose();
   };
 
   return (
