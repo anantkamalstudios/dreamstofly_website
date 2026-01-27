@@ -12,8 +12,8 @@ const OtpModal = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (otp === "123456") {
-      navigate("/"); // ✅ instantly go to home
-      onClose();     // ✅ close modal
+      navigate("/");
+      onClose();
     } else {
       setStep("error");
     }
@@ -22,7 +22,6 @@ const OtpModal = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl w-full max-w-md p-8 relative animate-fadeIn">
-        
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -52,7 +51,7 @@ const OtpModal = ({ isOpen, onClose }) => {
                   maxLength={6}
                   className="w-full pl-12 pr-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl 
                   focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 
-                  transition-all duration-200 hover:bg-white/80 text-center tracking-widest font-mono"
+                  transition-all duration-200 hover:bg-white/80 text-center tracking-widest"
                 />
               </div>
 

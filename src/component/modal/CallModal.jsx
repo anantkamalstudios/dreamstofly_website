@@ -77,7 +77,7 @@ export default function CallModal({ open, onClose }) {
             </button>
             <button
               type="submit"
-              className="px-6 py-3 bg-[#0073df] text-white text-white font-semibold hover:bg-gray-300 hover:text-[#0073df] rounded-lg shadow-md"
+              className="px-6 py-3 bg-[#0073df] text-white font-semibold hover:bg-gray-300 hover:text-[#0073df] rounded-lg shadow-md"
             >
               Join the Call
             </button>

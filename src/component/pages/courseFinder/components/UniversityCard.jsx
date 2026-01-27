@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 const UniversityCard = ({ course }) => {
   const navigate = useNavigate();
-  
+
   const handleViewUniversity = () => {
-    const slug = course.slug || course.title.toLowerCase().replace(/\s+/g, '-');
+    const slug = course.slug || course.title.toLowerCase().replace(/\s+/g, "-");
     navigate(`/university/${slug}`);
   };
 
   const handleViewCourse = () => {
-    const slug = course.slug || course.title.toLowerCase().replace(/\s+/g, '-');
+    const slug = course.slug || course.title.toLowerCase().replace(/\s+/g, "-");
     navigate(`/course/${slug}`);
   };
   return (
@@ -43,10 +43,8 @@ const UniversityCard = ({ course }) => {
 
       <hr className="my-4" />
 
-      {/* RANKING BAR */}
       <div className="bg-blue-50 p-4 rounded-lg flex items-center gap-3">
         <FontAwesomeIcon icon={faTrophy} className="text-blue-600" />
-        {/* <TrophyIcon /> */}
 
         <span className="text-blue-700 text-sm font-medium">
           QS World University Rankings: #={course.ranking}
@@ -55,14 +53,14 @@ const UniversityCard = ({ course }) => {
 
       {/* BUTTONS */}
       <div className="flex justify-end gap-4 mt-6">
-        <button 
+        <button
           onClick={handleViewUniversity}
           className="px-6 py-2 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition"
         >
           View University
         </button>
 
-        <button 
+        <button
           onClick={handleViewCourse}
           className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
         >

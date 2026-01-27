@@ -20,26 +20,27 @@ import RoomEssentials from "./pages/RoomEssentials";
 import RoomReplacement from "./pages/RoomReplacement";
 import InternationalSimCard from "./pages/InternationalSimCard";
 import EMoneyApp from "./pages/EMoneyApp";
+import Accommodation from "../accomodation/AccomodationMainPage";
 
 /**
  * Map service slugs to their dedicated page components
  * If a service slug is not in this map, it will fall back to ServiceDetail component
- * 
+ *
  * To add a new service page:
  * 1. Create the page component in ./pages/
  * 2. Import it above
  * 3. Add the slug-to-component mapping here
  */
 const servicePageMap = {
-  "student-flight-ticket": FlightTicket,
-  "visa-assistance": VisaServicePage,
-  "health-insurance": HealthInsurancePage,
+  "student-flight-tickets": FlightTicket,
+  "get-visa": VisaServicePage,
+  "health-insurance-oshc": HealthInsurancePage,
   "airport-pickup": AirPortPickup,
   "student-financing": StudentFinancing,
-  "money-transfer": InternationalMoneyTransfer,
-  "forex-services": ForexPage,
+  "international-money-transfer": InternationalMoneyTransfer,
+  forex: ForexPage,
   "guarantor-services": GuarantorPage,
-  "hungry-hub": HungryHubPage,
+  hungryhub: HungryHubPage,
   "job-search": JobSearchPage,
   "student-internships": StudentInternship,
   "travel-insurance": TravelInsurance,
@@ -47,9 +48,8 @@ const servicePageMap = {
   "room-essentials": RoomEssentials,
   "room-replacement": RoomReplacement,
   "international-sim": InternationalSimCard,
-  "student-accommodation": EMoneyApp, // Update this if you have a dedicated accommodation page
-  // Services that will use ServiceDetail (fallback):
-  // "student-beans", "test-preparation", "free-online-courses", "study-abroad-counseling"
+  "student-e-money-app": EMoneyApp,
+  accommodation: Accommodation,
 };
 
 const ServiceRouter = () => {
@@ -62,4 +62,3 @@ const ServiceRouter = () => {
 };
 
 export default ServiceRouter;
-

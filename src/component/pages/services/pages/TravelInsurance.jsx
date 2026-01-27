@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import PoweredBySection from "../components/PoweredBySection";
@@ -7,17 +7,30 @@ import Testimonials from "../Testimonials";
 import HowItWorks from "../components/HowItWorks";
 import FAQAccordion from "../components/FAQAccordion";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import { useNavigate } from "react-router-dom";
+import Loader from "../../../../common/Loader";
+
+const travelInsuranceForm = {
+  title: "Buy a plan in mins",
+  icon: "/images/formicon/suit.png",
+  description: "",
+  buttonText: "Book Now",
+  fields: [],
+};
 
 const TravelInsurance = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const navigate = useNavigate();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [firstFormData, setFirstFormData] = useState(null);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  const handleSubmit = (formData) => {
+    // Navigate to the insurance form page with form data
+    navigate("/services/travel-insurance/insurenceform", {
+      state: { formData },
+    });
+  };
+
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
 
@@ -42,43 +55,46 @@ const TravelInsurance = () => {
 
   const steps = [
     {
-      img: "/images/services/search.png",
+      icon: "/images/services/search.png",
       title: "Medical emergency",
       desc: "Expenses incurred for hospitalization in case of accidents.",
     },
     {
-      img: "/images/services/select.png",
+      icon: "/images/services/select.png",
       title: "Baggage loss",
       desc: "You will be offered that you need to buy immediately.",
     },
     {
-      img: "/images/services/book.png",
+      icon: "/images/services/book.png",
       title: "Compassionate visit",
       desc: "Financial aid/support for guardians to travel in case of emergency",
       extraClasses: "md:col-span-2 lg:col-span-1",
     },
   ];
 
-    const stats = [
-      {
-        number: "12K+",
-        label: "Succes Journey",
-      },
-      {
-        number: "16+",
-        label: "Awards Winning",
-      },
-      {
-        number: "20+",
-        label: "Years Of Experience",
-      },
-    ];
+  const stats = [
+    {
+      number: "12K+",
+      label: "Succes Journey",
+    },
+    {
+      number: "16+",
+      label: "Awards Winning",
+    },
+    {
+      number: "20+",
+      label: "Years Of Experience",
+    },
+  ];
   return (
     <div className="min-h-screen">
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          ...travelInsuranceForm,
+          onSubmit: handleSubmit,
+        }}
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />

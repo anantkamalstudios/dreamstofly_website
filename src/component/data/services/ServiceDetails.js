@@ -1,5 +1,5 @@
 export const serviceDetails = {
-  "student-flight-ticket": {
+  "student-flight-tickets": {
     titleColor: "#fff",
     subTitleColor: "#fff",
     title: "Student Flight Ticket Booking",
@@ -38,10 +38,12 @@ export const serviceDetails = {
     ],
   },
 
-  "visa-assistance": {
+  "get-visa": {
     titleColor:
-      "bg-gradient-to-b from-[#0C519B] to-[#041C35] bg-clip-text text-transparent",
-    subTitleColor: "#1D61E7",
+      // "bg-gradient-to-b from-[#0C519B] to-[#041C35] bg-clip-text text-transparent",
+      "#fff",
+    // subTitleColor: "#1D61E7",
+    subTitleColor: "#fff",
     title: "Visa Application Assistance",
     subtitle:
       "Seamless end-to-end Visa Solutions for your study abroad journey",
@@ -162,47 +164,47 @@ export const serviceDetails = {
     ],
   },
 
-  "airport-pickup": {
-    titleColor: "#fff",
-    subTitleColor: "#fff",
-    title: "",
-    subtitle: "",
-    // title: "Airport Pickup Service",
-    // subtitle: "Reliable Airport Transfer to Your Accommodation",
-    heroImage: "/images/services/airportpickup.jpeg",
-    price: "From $45",
-    duration: "Same day service",
-    description:
-      "Start your study abroad journey stress-free with our reliable airport pickup service. Professional drivers will meet you at the airport and take you directly to your accommodation.",
-    features: [
-      "Meet and greet service",
-      "Flight tracking and updates",
-      "Professional drivers",
-      "Comfortable vehicles",
-      "Luggage assistance",
-      "24/7 availability",
-    ],
-    requirements: [
-      "Flight details and arrival time",
-      "Destination address",
-      "Number of passengers",
-      "Luggage information",
-      "Contact phone number",
-    ],
-    process: [
-      "Book pickup service online",
-      "Receive driver details",
-      "Driver meets at airport",
-      "Direct transfer to destination",
-      "Service completion confirmation",
-    ],
-    benefits: [
-      "Stress-free arrival",
-      "No waiting for public transport",
-      "Safe and reliable service",
-      "Professional assistance",
-    ],
-  },
+  // "airport-pickup": {
+  //   titleColor: "#fff",
+  //   subTitleColor: "#fff",
+  //   title: "",
+  //   subtitle: "",
+  //   // title: "Airport Pickup Service",
+  //   // subtitle: "Reliable Airport Transfer to Your Accommodation",
+  //   heroImage: "/images/services/airportpickup.jpeg",
+  //   price: "From $45",
+  //   duration: "Same day service",
+  //   description:
+  //     "Start your study abroad journey stress-free with our reliable airport pickup service. Professional drivers will meet you at the airport and take you directly to your accommodation.",
+  //   features: [
+  //     "Meet and greet service",
+  //     "Flight tracking and updates",
+  //     "Professional drivers",
+  //     "Comfortable vehicles",
+  //     "Luggage assistance",
+  //     "24/7 availability",
+  //   ],
+  //   requirements: [
+  //     "Flight details and arrival time",
+  //     "Destination address",
+  //     "Number of passengers",
+  //     "Luggage information",
+  //     "Contact phone number",
+  //   ],
+  //   process: [
+  //     "Book pickup service online",
+  //     "Receive driver details",
+  //     "Driver meets at airport",
+  //     "Direct transfer to destination",
+  //     "Service completion confirmation",
+  //   ],
+  //   benefits: [
+  //     "Stress-free arrival",
+  //     "No waiting for public transport",
+  //     "Safe and reliable service",
+  //     "Professional assistance",
+  //   ],
+  // },
 
   "bank-account-setup": {
     titleColor: "#fff",
@@ -245,7 +247,7 @@ export const serviceDetails = {
     ],
   },
 
-  "health-insurance": {
+  "health-insurance-oshc": {
     titleColor: "#fff",
     subTitleColor: "#fff",
     title: "Health Insurance",
@@ -449,7 +451,7 @@ export const serviceDetails = {
     ],
   },
 
-  "money-transfer": {
+  "international-money-transfer": {
     titleColor: "#fff",
     subTitleColor: "#fff",
     title: "International Money Transfer",
@@ -490,9 +492,9 @@ export const serviceDetails = {
     ],
   },
 
-  "hungry-hub": {
-    titleColor: "#0A1A2F",
-    subTitleColor: "#1C2A3A",
+  hungryhub: {
+    titleColor: "#fff",
+    subTitleColor: "#fff",
     title: "Restaurant discounts",
     subtitle: "2 for 1 meals at 1000s of restaurants",
     heroImage: "/images/services/default-service.jpeg",
@@ -530,12 +532,18 @@ export const serviceDetails = {
       "Comprehensive support",
     ],
   },
-  "forex-services": {
+  forex: {
     subTitleColor: "#fff",
     titleColor: "#fff",
     title: "Forex",
     subtitle:
       "Purchas, sell, and tranfer innternational currency from anywhere",
+  },
+  "student-internships": {
+    subTitleColor: "#fff",
+    titleColor: "#fff",
+    title: "student internship",
+    subtitle: "Kickstart your career with real-world industry experience",
   },
   "international-sim": {
     subTitleColor: "#fff",
@@ -555,10 +563,47 @@ export const serviceDetails = {
     title: "Luggage Storage",
     subtitle: "Safe & Secure extra storage space at convenient locations",
   },
+  "student-e-money-app": {
+    subTitleColor: "#fff",
+    titleColor: "#fff",
+    title: "Student E-Money App",
+    subtitle: "Manage your money easily while studying abroad",
+    heroImage: "/images/emoney.jpeg",
+    price: "Free",
+    duration: "Instant Access",
+    description:
+      "Get access to a student-friendly e-money app that helps you manage your finances while studying abroad. Enjoy zero foreign transaction fees, real-time spending notifications, and easy money transfers.",
+    features: [
+      "Zero foreign transaction fees",
+      "Real-time spending notifications",
+      "Easy international money transfers",
+      "Multi-currency support",
+      "24/7 customer support",
+      "Budget tracking tools",
+    ],
+    requirements: [
+      "Valid student ID",
+      "Proof of enrollment",
+      "Government-issued ID",
+      "Proof of address",
+    ],
+    process: [
+      "Download the app from App Store or Google Play",
+      "Complete the sign-up process",
+      "Verify your student status",
+      "Start using your digital wallet",
+    ],
+    benefits: [
+      "No monthly fees",
+      "Competitive exchange rates",
+      "Free ATM withdrawals worldwide",
+      "Split bills with friends easily",
+    ],
+  },
   "travel-insurance": {
     subTitleColor: "#fff",
     titleColor: "#fff",
-    title: "Travel Insurance",
+    title: "Travel Insurence",
     subtitle: "Emergencies don't come knocking, better to be safe than sorry",
   },
 };

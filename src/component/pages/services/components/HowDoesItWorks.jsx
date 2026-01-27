@@ -1,5 +1,6 @@
 import React from "react";
 import { Rocket, Lightbulb, CheckCircle, UserCheck } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
 function HowDoesItWork() {
   const steps = [
@@ -28,11 +29,13 @@ function HowDoesItWork() {
   ];
 
   return (
-    <div className="w-full bg-white py-12 sm:py-16 lg:py-20">
+    // <div className="w-full bg-white py-12 sm:py-16 lg:py-20">
+    <div className="w-full mx-auto px-4 sm:px-8 lg:px-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-16 uppercase tracking-wide">
-          How Does It Work?
-        </h2>
+        <Heading
+          text="How Does It Work"
+          className="text-center mb-16 uppercase tracking-wide"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Steps List */}

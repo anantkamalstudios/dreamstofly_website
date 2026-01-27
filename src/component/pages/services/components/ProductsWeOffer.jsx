@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Heading from "../../../../common/Heading";
 
 function ProductsWeOffer() {
   const tabs = ["UniKitOut", "Student Essentials", "StuBuddy"];
@@ -12,11 +13,12 @@ function ProductsWeOffer() {
   });
 
   return (
-    <div className="w-full bg-gray-50 py-12 sm:py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center text-gray-900 mb-12">
+    <div className="w-full bg-gray-50 py-12 sm:py-16 lg:py-20 ">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-28">
+        {/* <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center text-gray-900 mb-12">
           Products we offer
-        </h2>
+        </h2> */}
+        <Heading text="Products we offer" className="mb-12 text-center" />
 
         {/* Tabs */}
         <div className="flex justify-center gap-8 mb-12 flex-wrap">
@@ -56,8 +58,8 @@ function ProductsWeOffer() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {product.title}
                 </h3>
-                <p className="text-sm text-gray-600 mb-1">Starting From</p>
-                <p className="text-2xl font-bold text-gray-900 mb-4">
+                <p className="text-sm text-gray-600 mb-1 ">Starting From</p>
+                <p className="text-2xl font-bold text-gray-900 mb-4 ">
                   {product.price}
                 </p>
                 <button className="w-1/2 bg-blue-50 text-blue-900 font-semibold py-3 rounded-lg hover:bg-blue-100 transition-colors">

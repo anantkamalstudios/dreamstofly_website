@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import ServiceCountry from "../[slug]/ServiceCountry";
@@ -7,34 +7,51 @@ import HowItWorks from "../components/HowItWorks";
 import Testimonials from "../Testimonials";
 import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
+import FlightBookingHeroPage from "../components/FlightBookingHeroPage";
+import axios from "axios";
+import Loader from "../../../../common/Loader";
 
 const FlightTicket = () => {
-  const { service, serviceDetails, formConfig, loading, slug } =
-    useServiceData();
+  const { service, serviceDetails, loading, slug } = useServiceData();
+  const [firstFormData, setFirstFormData] = useState({});
+  const [popupFormData, setPopupFormData] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from flight ticket =>", firstFormData);
+    setShowPopup(true);
+  };
+  const handlePopupFormSubmit = async () => {
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/ServiceLead/Leads_controller/leads`,
+        popupFormData
+      );
+      if (res.status === 200) alert(res.data.message);
+      setShowPopup(false);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
 
   const steps = [
     {
-      img: "/images/services/search.png",
+      icon: "/images/services/search.png",
       title: "Search",
       desc: "Enter your departure and arrival destination, along with your tentative dates and types of tickets.",
     },
     {
-      img: "/images/services/select.png",
+      icon: "/images/services/select.png",
       title: "Select",
       desc: "Select the flight that is the most compatible with your budget and preferences from all the available flights.",
     },
     {
-      img: "/images/services/book.png",
+      icon: "/images/services/book.png",
       title: "Book",
       desc: "Book tickets with special fares, apply discount coupon during checkout or contact team for assistance.",
       extraClasses: "md:col-span-2 lg:col-span-1",
@@ -48,37 +65,35 @@ const FlightTicket = () => {
   };
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
-      <div className="w-full">
-        <ServiceHero
-          service={service}
-          details={serviceDetails}
-          formConfig={formConfig}
-          slug={slug}
-        />
-      </div>
-
-      <div className="pt-2 sm:pt-16 md:pt-24 lg:pt-32 px-4 sm:px-6 md:px-10 lg:px-0">
+    <div className="min-h-screen">
+      <FlightBookingHeroPage
+        service={service}
+        details={serviceDetails}
+        firstFormData={firstFormData}
+        setFirstFormData={setFirstFormData}
+        handleFirstFormSubmit={handleFirstFormSubmit}
+        showPopup={showPopup}
+        setShowPopup={setShowPopup}
+        popupFormData={popupFormData}
+        setPopupFormData={setPopupFormData}
+        handlePopupFormSubmit={handlePopupFormSubmit}
+      />
+      <div className="pt-2 sm:pt-16 md:pt-20 lg:pt-20 px-4 sm:px-6 md:px-10 lg:px-0">
         <ServiceCountry countryData={countryData} />
       </div>
-
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-4 md:mt-8">
         <TravelPartners />
       </div>
-
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-8">
         <HowItWorks steps={steps} />
       </div>
-
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-8">
         <Testimonials />
       </div>
-
       <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-8">
         <RelatedServices />
       </div>
-
-      <div className="px-4 sm:px-6 md:px-10 lg:px-0 mt-4 sm:mt-16 mb-8">
+      <div className="px-0 sm:px-2 md:px-4 lg:px-6 mt-4 sm:mt-8">
         <FAQAccordion />
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import OurCommitments from "../components/OurCommitments";
@@ -7,17 +7,51 @@ import HowItWorksPage from "../components/HowItWorksPage";
 import FAQSection from "../../accomodation/components/FAQSection";
 import Testimonials from "../Testimonials";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import InternationalMoneyHeroPage from "../components/InternationalMoneyHeroPage";
+import axios from "axios";
+import Loader from "../../../../common/Loader";
 
 const InternationalMoneyTransfer = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({});
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  const handleSubmit = async (submissionData) => {
+    const dataToSubmit = submissionData || formData;
+    console.log("Received submission data:", dataToSubmit);
+
+    const payload = {
+      first_name: dataToSubmit.first_name,
+      last_name: dataToSubmit.last_name,
+      email: dataToSubmit.email,
+      phone: `${dataToSubmit.countryCode}${dataToSubmit.phone}`,
+      property: dataToSubmit.provider,
+      payment_method: dataToSubmit.payment_method,
+      recipient_gets: dataToSubmit.recipient_gets,
+      recipient_currency: dataToSubmit.recipient_currency,
+      you_send: dataToSubmit.you_send,
+      send_currency: dataToSubmit.send_currency,
+      fx_rate: dataToSubmit.fx_rate,
+      converted_amount: dataToSubmit.converted_amount,
+    };
+
+    console.log("Submitting prepared payload:", payload);
+
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }//ServiceLead/Leads_controller/international_money_lead`,
+        payload
+      );
+      console.log("API Response:", res);
+      alert("form submitted successfully! We'll get back to you soon.");
+      setShowPopup(false);
+    } catch (error) {
+      console.error("API Error:", error);
+      alert("Error submitting form. Please try again.");
+    }
+  };
 
   const stats = [
     {
@@ -33,8 +67,6 @@ const InternationalMoneyTransfer = () => {
       label: "Years Of Experience",
     },
   ];
-
-  if (!service || !serviceDetails) return null;
 
   const steps = [
     {
@@ -63,12 +95,19 @@ const InternationalMoneyTransfer = () => {
       "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
   };
 
+  if (loading) <Loader />;
+  if (!service || !serviceDetails) return null;
+
   return (
     <div className="min-h-screen">
-      <ServiceHero
+      <InternationalMoneyHeroPage
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formData={formData}
+        setFormData={setFormData}
+        handleSubmit={handleSubmit}
+        setShowPopup={setShowPopup}
+        showPopup={showPopup}
       />
       <OurCommitments />
       <ServiceCountry countryData={countryData} />

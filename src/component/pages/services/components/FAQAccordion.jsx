@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ArrowDown, ArrowUp, ChevronDown, ChevronUp } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
 const FAQAccordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -27,21 +28,25 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="w-full py-16 px-4 bg-[#0073DF0F]">
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full px-0 sm:px-4 mt-4 bg-[#0073DF0F] ">
+      <div className="w-full mx-auto px-2 md:px-12 lg:px-32 py-2 md:py-4 lg:py-5 xl:py-6">
         <div className="p-6 md:p-10">
-          <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-8">
+          {/* <h2 className="text-3xl md:text-4xl font-medium text-center text-gray-900 mb-8">
             Frequently Asked Questions
-          </h2>
+          </h2> */}
+          <Heading
+            text="Frequently Asked Questions"
+            className="text-gray-900 text-center mb-6"
+          />
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <divs key={index} className="overflow-hidden">
+              <div key={index} className="overflow-hidden">
                 <button
                   onClick={() => toggleAccordion(index)}
                   className="mt-4 w-full flex items-center justify-between p-4 md:px-14 md:py-4 text-left bg-white"
                   aria-expanded={openIndex === index}
                 >
-                  <span className="text-sm md:text-base font-normal text-gray-900 pr-4">
+                  <span className="text-sm md:text-lg font-normal text-gray-900 pr-4">
                     {faq.question}
                   </span>
                   <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-900">
@@ -59,11 +64,11 @@ const FAQAccordion = () => {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="p-4 md:p-6 pt-0 text-sm md:text-base text-gray-600 leading-relaxed">
+                  <div className="p-4 md:p-6 pt-0 text-sm md:text-sm text-gray-600 leading-relaxed ">
                     {faq.answer}
                   </div>
                 </div>
-              </divs>
+              </div>
             ))}
           </div>
         </div>

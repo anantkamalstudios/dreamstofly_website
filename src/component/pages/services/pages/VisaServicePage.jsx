@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import OurCommitments from "../components/OurCommitments";
@@ -7,17 +7,99 @@ import Testimonials from "../Testimonials";
 import WhyChooseUs from "../components/WhyChooseUs";
 import HowItWorksPage from "../components/HowItWorksPage";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import axios from "axios";
+import Loader from "../../../../common/Loader";
+
+const visaServiceForm = {
+  title: "Visa Enquiry",
+  icon: "/images/formicon/suit.png",
+  description: "Expert guidance for all your visa needs",
+  buttonText: "Apply Now",
+  fields: [
+    {
+      name: "firstname",
+      label: "First Name",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "lastname",
+      label: "Last Name",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "nationality",
+      label: "Nationality",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "mobile",
+      label: "Phone Number",
+      type: "tel",
+      required: true,
+      placeholder: "Enter your phone number",
+      colSpan: 1,
+    },
+    {
+      name: "university",
+      label: "Select University",
+      type: "select",
+      required: true,
+      options: ["University1", "University2", "University3", "University4"],
+      colSpan: 1,
+    },
+    {
+      name: "country",
+      label: "Destination Country",
+      type: "select",
+      required: true,
+      options: [
+        "USA",
+        "UK",
+        "Canada",
+        "Australia",
+        "Germany",
+        "France",
+        "Other",
+      ],
+      colSpan: 1,
+    },
+    {
+      name: "email",
+      label: "Email Address",
+      type: "email",
+      required: true,
+      placeholder: "Enter your email",
+      colSpan: 2,
+    },
+  ],
+};
 
 const VisaServicePage = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [firstFormData, setFirstFormData] = useState({});
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  const handleFirstFormSubmit = async () => {
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }/ServiceLead/Leads_controller/visa_lead`,
+        firstFormData
+      );
+      if (res.status === 200) alert(res.data.message);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
+  if (loading) <Loader />;
 
   if (!service || !serviceDetails) return null;
   const stats = [
@@ -58,16 +140,21 @@ const VisaServicePage = () => {
 
   const countryData = {
     title: "Countries We Help Immigrate",
-    discription:
+    description:
       "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
   };
 
   return (
-    <div>
+    <div className="min-h-screen">
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
+          ...visaServiceForm,
+          onSubmit: handleFirstFormSubmit,
+        }}
       />
       <OurCommitments />
       <ServiceCountry countryData={countryData} />

@@ -9,7 +9,7 @@ export default function Topbar() {
 
   const links = [
     { name: "HOME", href: "/" },
-    { name: "SOP MAKER", href: "/sop-maker" },
+    { name: "SOP/LOR", href: "/sop-lor-maker" },
     { name: "CONNECT", href: "/connect" },
     { name: "POST ADMIT SERVICES", href: "/post-admit-services" },
     { name: "BLOGS", href: "/blogs" },
@@ -95,15 +95,27 @@ export default function Topbar() {
 
             {/* Desktop nav links - only show on extra large screens */}
             <div className="hidden xl:flex items-center space-x-1 overflow-x-auto">
-              {links.map((link, i) => (
-                <Link
-                  key={i}
-                  to={link.href}
-                  className="text-gray-700 hover:text-blue-700 px-2 py-2 text-sm border-r border-gray-600 whitespace-nowrap"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {links.map((link, i) =>
+                link.name === "FREE COURSES" ? (
+                  <Link
+                    key={i}
+                    to={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-blue-700 px-2 py-2 text-sm border-r border-gray-600 whitespace-nowrap"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <Link
+                    key={i}
+                    to={link.href}
+                    className="text-gray-700 hover:text-blue-700 px-2 py-2 text-sm border-r border-gray-600 whitespace-nowrap"
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
             </div>
 
             {/* Hamburger for medium screens and below */}
@@ -187,16 +199,29 @@ export default function Topbar() {
             </div>
 
             {/* Other Links */}
-            {links.map((link, i) => (
-              <Link
-                key={i}
-                to={link.href}
-                className="block px-3 py-2 text-sm text-gray-900 hover:bg-gray-200 rounded"
-                onClick={closeMobileMenu}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {links.map((link, i) =>
+              link.name === "FREE COURSES" ? (
+                <a
+                  key={i}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-3 py-2 text-sm text-gray-900 hover:bg-gray-200 rounded"
+                  onClick={closeMobileMenu}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={i}
+                  to={link.href}
+                  className="block px-3 py-2 text-sm text-gray-900 hover:bg-gray-200 rounded"
+                  onClick={closeMobileMenu}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
         )}
       </div>

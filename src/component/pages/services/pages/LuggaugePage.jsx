@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import PoweredBySection from "../components/PoweredBySection";
@@ -8,9 +8,90 @@ import ServiceBenefits from "../components/ServiceBenefits";
 import FAQAccordion from "../components/FAQAccordion";
 import Testimonials from "../Testimonials";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import ServicesPopUpForm from "../components/ServicesPopUpForm";
+import axios from "axios";
+
+const luggageForm = {
+  title: "Luggage Storage",
+  icon: "/images/formicon/suit.png",
+  description: "",
+  buttonText: "Book Now",
+  fields: [
+    {
+      name: "country",
+      label: "Country",
+      type: "select",
+      required: true,
+      options: ["UK", "USA"],
+      colSpan: 2,
+    },
+  ],
+};
+
+const luggagePopupForm = {
+  title: "Get Luggage Storage Service",
+  icon: "/images/formicon/suit.png",
+  description: "Leave us your details and we will get back to you soon.",
+  buttonText: "Submit",
+  fields: [
+    {
+      label: "First name",
+      type: "text",
+      name: "firstname",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      label: "Last name",
+      type: "text",
+      name: "lastname",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      label: "Email address",
+      type: "email",
+      name: "email",
+      required: true,
+      colSpan: 2,
+    },
+    {
+      label: "Phone",
+      type: "phone",
+      name: "mobile",
+      required: true,
+      colSpan: 2,
+    },
+  ],
+};
 
 const LuggaugePage = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [showPopup, setShowPopup] = useState(false);
+  const [firstFormData, setFirstFormData] = useState({});
+  const [popupFormData, setPopupFormData] = useState({});
+
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from airportPickup =>", firstFormData);
+    setShowPopup(true);
+  };
+
+  const handlePopupSubmit = async () => {
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }//ServiceLead/Leads_controller/luggage_storage_lead`,
+        popupFormData
+      );
+      if (res.status === 200) alert(res.data.message);
+
+      setShowPopup(false);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
+  };
 
   if (loading) {
     return (
@@ -24,71 +105,90 @@ const LuggaugePage = () => {
 
   const features = [
     {
-      icon: "/images/services/luggage4.png",
-      title: "Free Cancellation",
+      icon: "/images/services/vector1.png",
+      title: "Doorstep Pickup & Drop",
+      description:
+        "We'll pick up and deliver your luggage right at your doorstep.",
     },
     {
-      icon: "/images/services/luggage3.png",
-      title: "Secure Online payments",
+      icon: "/images/services/vector2.png",
+      title: "Real-time Tracking",
+      description:
+        "Track your luggage in real-time with our advanced tracking system.",
     },
     {
-      icon: "/images/services/luggage2.png",
-      title: "Global Network",
+      icon: "/images/services/vector3.png",
+      title: "Safe & Secure",
+      description: "Your belongings are handled with utmost care and security.",
     },
     {
-      icon: "/images/services/luggage1.png",
-      title: "24/7 Customer Support",
+      icon: "/images/services/vector4.png",
+      title: "On-time Delivery",
+      description: "Guaranteed on-time delivery to your specified location.",
     },
   ];
 
   const steps = [
     {
-      img: "/images/services/search.png",
-      title: "Easy and instant Booking",
-      desc: "Add drop-off and pick-up date and time. Booked for your luggage.",
+      icon: "/images/services/search.png",
+      title: "Book Your Service",
+      desc: "Fill in the details and book your luggage service online.",
     },
     {
-      img: "/images/services/select.png",
-      title: "Drop-off your luggage",
-      desc: "Packup your things and Safely drop off your luggage as scheduled.",
+      icon: "/images/services/select.png",
+      title: "Schedule Pickup",
+      desc: "Choose a convenient time for us to pick up your luggage.",
     },
     {
-      img: "/images/services/book.png",
-      title: "Hooray! Pick-up",
-      desc: "Enjoy exploring and pick up your luggage as scheduled.",
-      extraClasses: "md:col-span-2 lg:col-span-1",
+      icon: "/images/services/book.png",
+      title: "Relax & Track",
+      desc: "Sit back and track your luggage in real-time until delivery.",
     },
   ];
 
-    const stats = [
-      {
-        number: "12K+",
-        label: "Succes Journey",
-      },
-      {
-        number: "16+",
-        label: "Awards Winning",
-      },
-      {
-        number: "20+",
-        label: "Years Of Experience",
-      },
-    ];
+  const stats = [
+    { number: "10K+", label: "Happy Customers" },
+    { number: "99.9%", label: "On-time Delivery" },
+    { number: "24/7", label: "Customer Support" },
+  ];
 
   return (
     <div className="min-h-screen">
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
+          onSubmit: handleFirstFormSubmit,
+          ...luggageForm,
+        }}
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />
       <HowItWorks steps={steps} />
-      <ServiceBenefits />
+      <ServiceBenefits benefits={serviceDetails.benefits} />
+      <FAQAccordion faqs={serviceDetails.faqs} />
       <Testimonials />
-      <FAQAccordion />
       <TrustedAndLoved stats={stats} />
+
+      {/* Popup Form */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <ServicesPopUpForm
+              onClose={() => setShowPopup(false)}
+              onSubmit={handlePopupSubmit}
+              formData={popupFormData}
+              setFormData={setPopupFormData}
+              formConfig={luggagePopupForm}
+            />
+          </div>
+        </div>
+      )}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40" />
+      )}
     </div>
   );
 };

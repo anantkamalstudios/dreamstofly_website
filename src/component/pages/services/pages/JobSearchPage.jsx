@@ -1,67 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import ServiceCountry from "../[slug]/ServiceCountry";
 import TravelPartnersFeatures from "../components/TravelPartnersFeatures";
 import WhyChooseUsFeatures from "../components/WhyChooseUsFeatures";
 import Testimonials from "../Testimonials";
+import Loader from "../../../../common/Loader";
+
+const jobSearchForm = {
+  title: "Job Search",
+  icon: "/images/formicon/suit.png",
+  description: "",
+  buttonText: "Find My Job",
+  fields: [
+    {
+      name: "job",
+      label: "Jobs",
+      type: "select",
+      options: ["UK", "INDIA", "USA"],
+      required: true,
+      colSpan: 2,
+    },
+  ],
+};
 
 const JobSearchPage = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [showPopup, setShowPopup] = useState(false);
+  const [firstFormData, setFirstFormData] = useState({});
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  const handleFirstFormSubmit = () => {
+    console.log("first from data from job search =>", firstFormData);
+    setShowPopup(true);
+  };
+
+  // const handlePopupSubmit = (popupFormData) => {
+  //   const combinedData = {
+  //     ...firstFormData,
+  //     ...popupFormData,
+  //   };
+  //   console.log("Job search request:", combinedData);
+  //   // Here you can send the data to your API
+  //   setShowPopup(false);
+  // };
+
+  if (loading) <Loader />;
+
+  if (!service || !serviceDetails) return null;
 
   const features = [
     {
       icon: "/images/services/vector1.png",
-      title: "Trustworthy Platform",
+      title: "Job Matching",
+      description: "We match your skills with the right job opportunities",
     },
     {
       icon: "/images/services/vector2.png",
-      title: "Zero Charges",
+      title: "Visa Assistance",
+      description: "Help with work visa and documentation process",
     },
     {
       icon: "/images/services/vector3.png",
-      title: "One of the Largest Global Job Sites",
+      title: "Interview Prep",
+      description: "Get prepared with mock interviews and tips",
     },
     {
       icon: "/images/services/vector4.png",
-      title: "Part-time & Full-time Jobs",
+      title: "Relocation Support",
+      description: "Assistance with accommodation and settling in",
     },
   ];
 
-  if (!service || !serviceDetails) return null;
-
-  const jobSearchFeatures = [
+  const steps = [
     {
       icon: "/images/services/search.png",
-      title: "Signup through link via web or download app",
-      description:
-        "Download the app via SMS received or signup through web as per the details.",
+      title: "Create Profile",
+      description: "Sign up and create your professional profile",
     },
     {
       icon: "/images/services/select.png",
-      title: "Enter details and get KYC verified",
-      description:
-        "Provide all the necessary information, complete your KYC process as per the process.",
+      title: "Find Jobs",
+      description: "Browse and apply to jobs that match your skills",
     },
     {
       icon: "/images/services/book.png",
-      title: "Enjoy happy banking",
-      description: "Get your Bank account active instantly and ready to use.",
+      title: "Get Hired",
+      description: "Go through the interview process and land your dream job",
     },
   ];
 
+  const stats = [
+    { number: "5000+", label: "Jobs Available" },
+    { number: "100+", label: "Partner Companies" },
+    { number: "24/7", label: "Support" },
+  ];
+
   const countryData = {
-    title: "Popular Destination Choices",
-    discription:
-      "We provide comprehensive immigration services to help you achieve your dreams of living and working abroad.",
+    title: "Popular Job Destinations",
+    description: "Explore job opportunities in top international locations",
   };
 
   return (
@@ -69,11 +105,16 @@ const JobSearchPage = () => {
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
+          onSubmit: handleFirstFormSubmit,
+          ...jobSearchForm,
+        }}
       />
       <ServiceCountry countryData={countryData} />
       <TravelPartnersFeatures features={features} />
-      <WhyChooseUsFeatures features={jobSearchFeatures} />
+      <WhyChooseUsFeatures features={steps} />
       <Testimonials />
     </div>
   );

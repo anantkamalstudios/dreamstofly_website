@@ -1,32 +1,27 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { TbPlane } from "react-icons/tb";
-import { ArrowUpRight } from "lucide-react";
-import { services } from "../../data/services/ServicesData";
 
-const ServicesGrid = () => {
+const ServicesGrid = ({ services }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const navigate = useNavigate();
 
   const handleCardClick = (service) => {
     const slug = service.slug;
 
-    if (slug === "free-cources") {
+    if (slug === "free-cources" || slug === "free-online-courses") {
       window.open("https://freecourse.dreamstofly.com/", "_blank");
-    } else if (slug === "exam-prep") {
-      navigate(`/${slug}`);
-    } else if (slug === "student-accommodation") {
-      navigate("/accomodation");
+    } else if (slug === "exam-prep" || slug === "test-preparation") {
+      navigate(`/exam-prep`);
     } else {
       navigate(`/services/${slug}`);
     }
   };
 
   return (
-    <section className="md:py-2 bg-none">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="md:pt-2 md:pb-4 bg-gray-100">
+      <div className="  w-full mx-auto px-4 md:px-14 lg:px-24">
         <div className="text-start mb-1 md:mb-4 mx-auto">
-          <h1 className="text-xl md:text-3xl font-semibold mb-1 text-black">
+          <h1 className="text-xl md:text-3xl font-semibold mb-1 text-black ">
             Our Services
           </h1>
           <div className="h-2 w-28 bg-blue-500"></div>
@@ -37,46 +32,37 @@ const ServicesGrid = () => {
             return (
               <div
                 key={service.id}
-                className="group bg-white rounded-lg shadow-sm border border-gray-200 p-8 flex flex-col items-center hover:shadow-md transition-all duration-300 cursor-pointer"
+                className="group bg-white shadow-lg border border-gray-200 p-8 flex flex-col items-center hover:shadow-md transition-all duration-300 cursor-pointer hover:bg-[#193F64] hover:text-white text-gray-900 hover:scale-105"
                 onMouseEnter={() => setHoveredCard(service.id)}
                 onMouseLeave={() => setHoveredCard(null)}
                 onClick={() => handleCardClick(service)}
               >
-                {/* Fixed height icon container */}
                 <div className="w-40 flex items-center justify-center">
                   <img
-                    src={service.img}
+                    src={`${import.meta.env.VITE_IMAGE_BASE_URL}${
+                      service.image
+                    }`}
                     alt={service.title}
                     className="w-full object-cover"
                   />
                 </div>
 
-                {/* Fixed height title container */}
                 <div className="h-16 flex items-center justify-center mb-2">
-                  <h3 className="text-xl font-bold text-gray-900 text-center px-2">
+                  <h3 className="text-xl font-bold text-center px-2 ">
                     {service.title}
                   </h3>
                 </div>
+                <div className="w-full h-px bg-gray-600 mb-2 group-hover:bg-white"></div>
 
-                {/* Horizontal line at fixed position */}
-                <div className="w-full h-px bg-gray-600 mb-2"></div>
-
-                {/* Description and yellow bar container */}
                 <div className="w-full mb-6 flex-grow">
-                  {/* Fixed height description */}
-                  <div className="h-12 mb-2">
-                    <p className="text-gray-700 text-sm leading-relaxed text-start">
-                      {service.desc}
-                    </p>
-                  </div>
-
-                  {/* Yellow accent bar */}
+                  <div
+                    className=" text-sm leading-relaxed text-start   group-hover:[&_*]:text-white"
+                    dangerouslySetInnerHTML={{ __html: service?.description }}
+                  ></div>
                   <div className="w-24 h-1.5 bg-yellow-400"></div>
                 </div>
-
-                {/* Button at bottom */}
-                <button className="border-2 border-[#0073DF] text-[#193F64] px-6 py-2.5 rounded text-sm font-semibold flex items-center gap-2 hover:bg-blue-600 hover:text-white transition-colors duration-300 uppercase tracking-wide">
-                  EXPLORE MORE
+                <button className="border-2 text-[#193F64] border-[#0073DF] px-6 py-2.5 text-sm font-semibold flex items-center gap-2 hover:text-white transition-colors duration-300 uppercase tracking-wide group-hover:bg-white group-hover:text-[#0073DF] group-hover:border-[#193F64] ">
+                  {service?.button_text || "EXPLORE MORE"}
                   <span className="text-lg">→</span>
                 </button>
               </div>

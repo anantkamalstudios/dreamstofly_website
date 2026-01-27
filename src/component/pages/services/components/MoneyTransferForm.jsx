@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Heading from "../../../../common/Heading";
 
 const MoneyTransferForm = ({ setShowModal }) => {
   const [recipientAmount, setRecipientAmount] = useState("500");
@@ -25,12 +26,13 @@ const MoneyTransferForm = ({ setShowModal }) => {
   };
 
   return (
-    <div className="absolute right-10 top-40 z-20">
+    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
       <div className="w-full max-w-2xl">
         <div className="bg-white rounded-xl shadow-lg w-full px-8 py-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">
+          {/* <h1 className="text-3xl font-bold text-gray-900 mb-6">
             International Money transfer
-          </h1>
+          </h1> */}
+          <Heading text="International Money transfer" className="mb-6" />
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Recipient gets
@@ -47,7 +49,7 @@ const MoneyTransferForm = ({ setShowModal }) => {
                   {recipientCurrency}
                 </span>
                 <span className="text-2xl">
-                  {recipientCurrency === 'CAD' ? '🇨🇦' : '🇮🇳'}
+                  {recipientCurrency === "CAD" ? "🇨🇦" : "🇮🇳"}
                 </span>
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               </div>
@@ -69,7 +71,7 @@ const MoneyTransferForm = ({ setShowModal }) => {
                   {senderCurrency}
                 </span>
                 <span className="text-2xl">
-                  {senderCurrency === 'INR' ? '🇮🇳' : '🇨🇦'}
+                  {senderCurrency === "INR" ? "🇮🇳" : "🇨🇦"}
                 </span>
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               </div>
@@ -78,7 +80,7 @@ const MoneyTransferForm = ({ setShowModal }) => {
               1 CAD = {exchangeRate} INR (Including all fees)
             </p>
           </div>
-          <button 
+          <button
             onClick={() => setShowModal(true)}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
           >

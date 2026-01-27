@@ -9,13 +9,13 @@ const AccommodationOverview = () => {
   ];
 
   return (
-    <div className="w-full bg-gray-50 py-8 md:py-12">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <div className="w-full py-8 md:py-12">
+      <div className="w-full mx-auto px-4 md:px-16 ">
         {/* Top Cards Section */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16">
           {/* Card 1 - Moving Abroad */}
-          <div className="bg-blue-100 rounded-2xl p-6 md:p-8">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+          <div className="bg-white p-6 md:p-8 hover:bg-blue-200">
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">
               Moving Abroad? We've Got All the Essentials.
             </h3>
             <p className="text-gray-700 text-sm md:text-base mb-4">
@@ -29,14 +29,14 @@ const AccommodationOverview = () => {
           </div>
 
           {/* Card 2 - Short Stays */}
-          <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+          <div className="bg-white p-6 md:p-8 border border-gray-200 hover:bg-blue-200 ">
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">
               Looking For Short Stays?
             </h3>
             <p className="text-gray-700 text-sm md:text-base mb-4">
               Discover flexible student accommodations with
             </p>
-            <button className="text-blue-600 hover:text-blue-700 font-semibold transition-all flex items-center gap-2 text-sm md:text-base">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 md:px-6 py-2.5 md:py-3 rounded-full font-medium transition-all flex items-center gap-2 text-sm md:text-base">
               Browse Properties
               <ArrowRight className="w-4 h-4" />
             </button>
@@ -49,10 +49,10 @@ const AccommodationOverview = () => {
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-1">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-1 ">
                   {stat.value}
                 </div>
-                <div className="text-sm md:text-base text-gray-600">
+                <div className="text-sm md:text-base font-medium text-gray-800">
                   {stat.label}
                 </div>
               </div>
@@ -66,13 +66,17 @@ const AccommodationOverview = () => {
           <div className="hidden sm:block w-px h-12 md:h-16 bg-gray-300"></div>
 
           {/* Google Rating */}
-          <div className="text-center flex">
+          <div className="text-center flex gap-2">
             <div>
-              <p className="text-xs md:text-sm text-gray-600">Rated</p>
-              <p className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900">
+              <p className="text-xs md:text-sm text-gray-800 font-medium">
+                Rated
+              </p>
+              <p className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 ">
                 4.8
               </p>
-              <p className="text-xs md:text-sm text-gray-600">out of 5</p>
+              <p className="text-xs md:text-sm text-gray-800 font-medium">
+                out of 5
+              </p>
             </div>
             <div className="flex flex-col items-center justify-center">
               <svg
@@ -97,7 +101,7 @@ const AccommodationOverview = () => {
                 </text>
               </svg>
               <div className="flex items-center gap-1 justify-center">
-                <span className="text-xs md:text-sm text-gray-700 font-medium">
+                <span className="text-xs md:text-sm text-gray-800 font-medium">
                   Reviews
                 </span>
                 <div className="flex gap-0.5">

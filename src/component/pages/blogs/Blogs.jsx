@@ -10,6 +10,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import axios from "axios";
+import Loader from "../../../common/Loader";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -22,11 +23,9 @@ const Blogs = () => {
     const fetchBlogs = async () => {
       try {
         const data = await axios.get(
-          "https://devlopment.dreamstofly.com/Blogs/blogs"
+          `${import.meta.env.VITE_BASE_URL}/Blogs/blogs`
         );
         console.log(data);
-
-        // const data = await res.json();
         if (data?.data?.data && Array.isArray(data.data.data)) {
           const mappedBlogs = data.data.data.map((item) => ({
             id: item.blog_id,
@@ -82,7 +81,6 @@ const Blogs = () => {
 
   const categories = ["All", "Rankings", "Exams", "Careers", "Education"];
 
-  // Determine which blogs to show
   const blogsToShow = showAll ? filteredPosts : filteredPosts.slice(0, 4);
 
   return (
@@ -146,7 +144,7 @@ const Blogs = () => {
         {/* Blogs List */}
         <div className="lg:col-span-2 order-2 lg:order-1">
           {loading ? (
-            <p className="text-gray-500">Loading blogs...</p>
+            <Loader />
           ) : blogsToShow.length > 0 ? (
             <>
               <div className="grid sm:grid-cols-2 gap-6">

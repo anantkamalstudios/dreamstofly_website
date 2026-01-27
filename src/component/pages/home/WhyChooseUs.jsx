@@ -25,7 +25,9 @@ const WhyChooseUs = () => {
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           Give Your Wings a Smooth Flight <br />
-          <span className="text-[#0073df]">Dreams to Fly Way !</span>
+        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0073df]">
+          Dreams to Fly Way !
         </h2>
         <p className="mt-4 text-gray-600">
           Post a job to tell us about your project. We'll quickly match you with

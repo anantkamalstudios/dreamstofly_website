@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useServiceData } from "../hooks/useServiceData";
 import ServiceHero from "../[slug]/ServiceHero";
 import { Power } from "lucide-react";
@@ -8,9 +8,81 @@ import HowItWorks from "../components/HowItWorks";
 import Testimonials from "../Testimonials";
 import FAQAccordion from "../components/FAQAccordion";
 import TrustedAndLoved from "../components/TrustedAndLoved";
+import axios from "axios";
+import Loader from "../../../../common/Loader";
+
+// Form configuration for Forex Services
+const forexForm = {
+  title: "Get Forex Services",
+  icon: "/images/formicon/suit.png",
+  description: "",
+  buttonText: "Submit",
+  fields: [
+    {
+      name: "firstname",
+      label: "First Name",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "lastname",
+      label: "Last Name",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "nationality",
+      label: "Nationality",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "country",
+      label: "Destination Country",
+      type: "text",
+      required: true,
+      colSpan: 1,
+    },
+    {
+      name: "email",
+      label: "Email Address",
+      type: "email",
+      required: true,
+      placeholder: "Enter your email",
+      colSpan: 2,
+    },
+    {
+      name: "mobile",
+      label: "Phone Number",
+      type: "tel",
+      required: true,
+      placeholder: "Enter your phone number",
+      colSpan: 2,
+    },
+  ],
+};
 
 const ForexPage = () => {
-  const { service, serviceDetails, formConfig, loading } = useServiceData();
+  const { service, serviceDetails, loading } = useServiceData();
+  const [firstFormData, setFirstFormData] = useState({});
+
+  const handleFirstFormSubmit = async () => {
+    try {
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_BASE_URL
+        }//ServiceLead/Leads_controller/forex_lead`,
+        firstFormData
+      );
+      if (res.status === 200) alert(res.data.message);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
+  };
 
   if (loading) {
     return (
@@ -25,37 +97,37 @@ const ForexPage = () => {
   const features = [
     {
       icon: "/images/services/airport1.png",
-      title: "Single click",
+      title: "Best Exchange Rates",
     },
     {
       icon: "/images/services/airport2.jpg",
-      title: "Contactless Bank",
+      title: "Zero Commission",
     },
     {
       icon: "/images/services/airport3.jpg",
-      title: "Doorstep Delivery",
+      title: "Same Day Service",
     },
     {
       icon: "/images/services/airport4.jpg",
-      title: "Zero cost bills",
+      title: "Multiple Currencies",
     },
   ];
 
   const steps = [
     {
-      img: "/images/services/search.png",
-      title: "Filling your requirement",
-      desc: "Details about the total amount and the market price you are expecting.",
+      icon: "/images/services/search.png",
+      title: "Book your order",
+      desc: "Select your preferred currency and amount you want to buy or sell.",
     },
     {
-      img: "/images/services/select.png",
-      title: "Connect with FOREX experts",
-      desc: "Our partner representative will call you back to fullfill your requirement.",
+      icon: "/images/services/select.png",
+      title: "Get live rates",
+      desc: "Check the live exchange rates and confirm your order.",
     },
     {
-      img: "/images/services/book.png",
-      title: "Tada! You got FOREX card",
-      desc: "Get your card or destination currency delivered to your doorstep.",
+      icon: "/images/services/book.png",
+      title: "Collect your currency",
+      desc: "Pick up your currency from our nearest branch or get it delivered.",
       extraClasses: "md:col-span-2 lg:col-span-1",
     },
   ];
@@ -63,7 +135,7 @@ const ForexPage = () => {
   const stats = [
     {
       number: "12K+",
-      label: "Succes Journey",
+      label: "Success Journey",
     },
     {
       number: "16+",
@@ -75,12 +147,21 @@ const ForexPage = () => {
     },
   ];
 
+  if (loading) <Loader />;
+
+  if (!service || !serviceDetails) return null;
+
   return (
     <div className="min-h-screen">
       <ServiceHero
         service={service}
         details={serviceDetails}
-        formConfig={formConfig}
+        formConfig={{
+          formData: firstFormData,
+          setFormData: setFirstFormData,
+          onSubmit: handleFirstFormSubmit,
+          ...forexForm,
+        }}
       />
       <PoweredBySection />
       <TravelPartnersFeatures features={features} />

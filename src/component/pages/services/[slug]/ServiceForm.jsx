@@ -123,7 +123,7 @@ const ServiceForm = ({ service, formConfig }) => {
             </p>
             <div className="bg-white rounded-lg p-6 shadow-sm">
               <p className="text-sm text-gray-500 mb-2">Reference Number:</p>
-              <p className="text-lg font-mono text-gray-900">
+              <p className="text-lg  text-gray-900">
                 {service.slug.toUpperCase()}-{Date.now().toString().slice(-6)}
               </p>
             </div>

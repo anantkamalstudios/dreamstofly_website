@@ -1,413 +1,28 @@
-// const ServicesHero = () => {
-//   return (
-//     <section className="w-full">
-//       <div className="px-10 sm:px-5 relative flex flex-col lg:flex-row lg:items-center lg:justify-center overflow-hidden min-h-[70vh] lg:min-h-screen">
-//         {/* Left Section - Text and CTA */}
-//         <div className="w-full lg:w-1/2 bg-white px-5 sm:px-8 lg:px-16 py-10 sm:py-14 lg:py-20 relative z-10 flex items-center justify-center">
-//           <div className="max-w-xl w-full flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
-//             {/* Badge */}
-//             <div className="inline-block text-[#DF6951] px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-sm font-bold uppercase tracking-wide mb-5">
-//               Best Study Abroad Services
-//             </div>
-
-//             {/* Main Headline */}
-//             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
-//               Study,{" "}
-//               <span className="relative inline-block">
-//                 Enjoy
-//                 <svg
-//                   className="absolute -bottom-2 left-0 w-full"
-//                   viewBox="0 0 200 20"
-//                   fill="none"
-//                 >
-//                   <path
-//                     d="M0 10 Q50 0 100 10 T200 10"
-//                     stroke="#f97316"
-//                     strokeWidth="3"
-//                     strokeLinecap="round"
-//                     fill="none"
-//                   />
-//                 </svg>
-//               </span>{" "}
-//               and live your Dreams
-//             </h1>
-
-//             {/* Description */}
-//             <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-prose">
-//               Comprehensive support for your study abroad journey. From visa
-//               assistance to accommodation, we've got everything covered to make
-//               your dreams take flight.
-//             </p>
-
-//             {/* CTA Buttons */}
-//             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center w-full">
-//               <button className="bg-blue-600 text-white px-7 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto">
-//                 Find out more
-//               </button>
-//               <button className="bg-white text-blue-600 px-7 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 flex flex-col sm:flex-row items-center justify-center gap-2 w-full sm:w-auto text-center">
-//                 <span className="w-full flex justify-center sm:justify-start items-center">
-//                   Watch now
-//                   <svg
-//                     className="w-5 h-5 ml-2 sm:ml-2"
-//                     fill="currentColor"
-//                     viewBox="0 0 20 20"
-//                   >
-//                     <path
-//                       fillRule="evenodd"
-//                       d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-//                       clipRule="evenodd"
-//                     />
-//                   </svg>
-//                 </span>
-//               </button>
-//             </div>
-
-//             {/* Mobile Stats (stacked) */}
-//             {/* <div className="mt-8 lg:hidden w-full">
-//               <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-md border border-white/30">
-//                 <div className="flex justify-between">
-//                   <div className="text-center">
-//                     <div className="text-xl font-bold text-blue-600">500+</div>
-//                     <div className="text-xs text-gray-600">Students</div>
-//                   </div>
-//                   <div className="text-center">
-//                     <div className="text-xl font-bold text-indigo-600">50+</div>
-//                     <div className="text-xs text-gray-600">Countries</div>
-//                   </div>
-//                   <div className="text-center">
-//                     <div className="text-xl font-bold text-violet-600">98%</div>
-//                     <div className="text-xs text-gray-600">Success</div>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div> */}
-//           </div>
-//         </div>
-
-//         <div className="w-full lg:w-1/2 relative overflow-hidden flex items-center justify-start">
-//           <div className="relative left-0 w-full h-full flex items-center justify-start px-4 lg:px-8">
-//             <img
-//               src="/images/services/services_hero.png"
-//               alt="Traveler sitting on luggage"
-//               className="select-none pointer-events-none max-h-[40vh] sm:max-h-[55vh] md:max-h-[70vh] lg:max-h-[92vh] w-auto object-contain drop-shadow-2xl"
-//               style={{ objectPosition: "center bottom", display: "block" }}
-//             />
-
-//             {/* Bottom shapes under the image (hidden on xs for performance) */}
-//             {/* <div className="hidden sm:block absolute bottom-4 left-1/2 -translate-x-1/2 w-[88%] h-7 bg-black/10 blur-xl rounded-full"></div>
-//             <div className="hidden sm:block absolute -bottom-6 left-10 w-32 h-32 lg:w-40 lg:h-40 bg-blue-400/20 rounded-full blur-3xl"></div>
-//             <div className="hidden sm:block absolute -bottom-10 right-10 w-40 h-40 lg:w-52 lg:h-52 bg-orange-400/20 rounded-full blur-3xl"></div> */}
-//           </div>
-
-//           <div className="absolute top-12 left-6 hidden lg:block animate-bounce">
-//             {/* <svg
-//               className="w-12 h-12 text-blue-500"
-//               fill="currentColor"
-//               viewBox="0 0 24 24"
-//             >
-//               <path d="M21.5 12.5l-3-3-2-2-1-1c-.5-.5-1.2-.5-1.7 0l-1 1-2 2-3 3c-.5.5-.5 1.2 0 1.7l3 3 2 2 1 1c.5.5 1.2.5 1.7 0l1-1 2-2 3-3c.5-.5.5-1.2 0-1.7z" />
-//             </svg> */}
-//           </div>
-//           <div
-//             className="absolute bottom-24 right-10 hidden lg:block animate-bounce"
-//             style={{ animationDelay: "1s" }}
-//           >
-//             <svg
-//               className="w-10 h-10 text-indigo-500"
-//               fill="currentColor"
-//               viewBox="0 0 24 24"
-//             >
-//               <path d="M21.5 12.5l-3-3-2-2-1-1c-.5-.5-1.2-.5-1.7 0l-1 1-2 2-3 3c-.5.5-.5 1.2 0 1.7z" />
-//             </svg>
-//           </div>
-//         </div>
-
-//         {/* Stats Section - Overlay (desktop only) */}
-//         {/* <div className="hidden lg:block absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
-//         <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-8 py-5 shadow-xl border border-white/20">
-//           <div className="flex gap-8">
-//             <div className="text-center">
-//               <div className="text-3xl font-bold text-blue-600">500+</div>
-//               <div className="text-sm text-gray-600">Students Helped</div>
-//             </div>
-//             <div className="text-center">
-//               <div className="text-3xl font-bold text-indigo-600">50+</div>
-//               <div className="text-sm text-gray-600">Countries</div>
-//             </div>
-//             <div className="text-center">
-//               <div className="text-3xl font-bold text-violet-600">98%</div>
-//               <div className="text-sm text-gray-600">Success Rate</div>
-//             </div>
-//           </div>
-//         </div>
-//       </div> */}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ServicesHero;
-
-// import React, { useState } from "react";
-// import { Search, Bell, ChevronDown, Menu } from "lucide-react";
-
-// export default function ServicesHero() {
-//   const [allCoursesOpen, setAllCoursesOpen] = useState(false);
-//   const [cityOpen, setCityOpen] = useState(false);
-//   const [exploreOpen, setExploreOpen] = useState(false);
-
-//   return (
-//     <div className="min-h-screen bg-white">
-//       <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible pt-4 lg:pt-6">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center  pt-2 lg:pt-4">
-//             <div className="text-white space-y-6 lg:space-y-8">
-//               {/* <div className="hidden lg:flex flex-col gap-3 absolute left-6 xl:left-12 top-1/2 -translate-y-1/2">
-//                 <div className="w-1.5 h-1.5 border border-white/50 rounded-full"></div>
-//                 <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-//                 <div className="w-1.5 h-1.5 border border-white/50 rounded-full"></div>
-//                 <div className="w-1.5 h-1.5 border border-white/50 rounded-full"></div>
-//               </div> */}
-//               <div>
-//                 <p className="text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider">
-//                   WELCOME TO DREAMS TO FLY
-//                 </p>
-//                 <h1 className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-serif">
-//                   The Future Belongs
-//                   <br />
-//                   To Those Who
-//                   <br />
-//                   Believe In The Beauty
-//                   <br />
-//                   Of Their Dreams
-//                 </h1>
-//               </div>
-
-//               <p className="text-blue-100 text-sm sm:text-base max-w-md leading-relaxed">
-//                 Get Services for every level of education that every student who
-//                 achieves for a bright future can get
-//               </p>
-
-//               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-//                 <button className="bg-white text-blue-600 px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-blue-50 flex items-center justify-center gap-2 text-sm">
-//                   APPLY NOW
-//                   <span>→</span>
-//                 </button>
-//                 <button className="border-2 border-white text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-white/10 text-sm">
-//                   LEARN MORE
-//                 </button>
-//               </div>
-//             </div>
-//             <div className="relative mt-8 lg:mt-0">
-//               <img
-//                 src="/images/services/service-hero.png"
-//                 alt="Graduate student"
-//                 className="relative z-10 rounded-tl-[60px] lg:rounded-tl-[100px] w-full object-contain"
-//               />
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[90%] max-w-6xl z-30">
-//           <div className="bg-white rounded-lg shadow-2xl py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
-//             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-//               <div className="text-center lg:border-r border-[#003E79]">
-//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
-//                   1050 +
-//                 </h3>
-//                 <p className="text-black text-xs sm:text-sm">
-//                   Students Enrolled
-//                 </p>
-//               </div>
-//               <div className="text-center lg:border-r border-[#003E79]">
-//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
-//                   3500 +
-//                 </h3>
-//                 <p className="text-black text-xs sm:text-sm">
-//                   Completed Courses
-//                 </p>
-//               </div>
-//               <div className="text-center lg:border-r border-[#003E79] border-t lg:border-t-0 pt-6 lg:pt-0">
-//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
-//                   500 +
-//                 </h3>
-//                 <p className="text-black text-xs sm:text-sm">
-//                   Registered Instructors
-//                 </p>
-//               </div>
-//               <div className="text-center border-t lg:border-t-0 pt-6 lg:pt-0">
-//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
-//                   100%
-//                 </h3>
-//                 <p className="text-black text-xs sm:text-sm">Success Rate</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Spacer for overlapping stats */}
-//       <div className="h-24 lg:h-32 bg-gray-50"></div>
-//     </div>
-//   );
-// }
-
-// import React, { useState } from "react";
-// import { Search, Bell, ChevronDown, Menu } from "lucide-react";
-
-// export default function ServicesHero() {
-//   const [allCoursesOpen, setAllCoursesOpen] = useState(false);
-//   const [cityOpen, setCityOpen] = useState(false);
-//   const [exploreOpen, setExploreOpen] = useState(false);
-
-//   return (
-//     <div className="max-h-screen bg-white mb-48">
-//       <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible">
-//         <div className="max-w-full mx-auto">
-//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-//             <div className="text-white space-y-6 lg:space-y-8 px-10 md:px-20">
-//               <div>
-//                 <p className="text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider text-white">
-//                   WELCOME TO DREAMS TO FLY
-//                 </p>
-//                 <h1 className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-serif">
-//                   The Future Belongs
-//                   <br />
-//                   To Those Who
-//                   <br />
-//                   Believe In The Beauty
-//                   <br />
-//                   Of Their Dreams
-//                 </h1>
-//               </div>
-
-//               <p className="text-blue-100 text-sm sm:text-base max-w-md leading-relaxed">
-//                 Get Services for every level of education that every student who
-//                 achieves for a bright future can get
-//               </p>
-
-//               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-//                 <button className="bg-white text-blue-600 px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-blue-50 flex items-center justify-center gap-2 text-sm">
-//                   APPLY NOW
-//                   <span>→</span>
-//                 </button>
-//                 <button className="border-2 border-white text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-white/10 text-sm">
-//                   LEARN MORE
-//                 </button>
-//               </div>
-//             </div>
-
-//             {/* Right Side - Girl Image with Yellow Quarter Circle */}
-//             <div className="relative mt-8 lg:mt-0 flex items-end justify-end">
-//               {/* Yellow Quarter Circle Background - Positioned behind girl */}
-//               <div
-//                 className="absolute bottom-0 right-0 rounded-tl-full pointer-events-none"
-//                 style={{
-//                   width: "55%",
-//                   height: "55%",
-//                   backgroundColor: "#EB662B",
-//                   zIndex: 1,
-//                 }}
-//               ></div>
-
-//               {/* Girl Image - On top of yellow circle */}
-//               <img
-//                 src="/images/services/service-hero.png"
-//                 alt="Graduate student"
-//                 className="relative w-full object-contain rounded-tl-[60px] lg:rounded-tl-[100px]"
-//                 style={{ zIndex: 2 }}
-//               />
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Stats Card - Overlapping bottom */}
-//         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[90%] max-w-6xl z-30">
-//           <div className="bg-white rounded-lg border border-gray-100 py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
-//             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-//               <div className="text-center lg:border-r border-[#003E79]">
-//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
-//                   1050 +
-//                 </h3>
-//                 <p className="text-black text-xs sm:text-sm">
-//                   Students Enrolled
-//                 </p>
-//               </div>
-//               <div className="text-center lg:border-r border-[#003E79]">
-//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
-//                   3500 +
-//                 </h3>
-//                 <p className="text-black text-xs sm:text-sm">
-//                   Completed Courses
-//                 </p>
-//               </div>
-//               <div className="text-center lg:border-r border-[#003E79] border-t lg:border-t-0 pt-6 lg:pt-0">
-//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
-//                   500 +
-//                 </h3>
-//                 <p className="text-black text-xs sm:text-sm">
-//                   Registered Instructors
-//                 </p>
-//               </div>
-//               <div className="text-center border-t lg:border-t-0 pt-6 lg:pt-0">
-//                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003E79] mb-2">
-//                   100%
-//                 </h3>
-//                 <p className="text-black text-xs sm:text-sm">Success Rate</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Spacer for overlapping stats */}
-//       <div className="h-36 lg:h-32 mb-20"></div>
-//     </div>
-//   );
-// }
-
-import React, { useState } from "react";
-import { Search, Bell, ChevronDown, Menu } from "lucide-react";
-
-export default function ServicesHero() {
-  const [allCoursesOpen, setAllCoursesOpen] = useState(false);
-  const [cityOpen, setCityOpen] = useState(false);
-  const [exploreOpen, setExploreOpen] = useState(false);
-
+export default function ServicesHero({ hero, counter }) {
   return (
-    <div className="bg-white mb-6 md:mb-8 lg:mb-12">
-      <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible h-auto md:h-[80vh] lg:h-[92vh] xl:h-[82vh]">
+    <div className="bg-gray-100 pb-6 md:pb-8 lg:pb-12">
+      <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 relative overflow-visible h-auto md:h-[87vh] lg:h-[100vh] xl:h-[90vh]">
         <div className="max-w-full mx-auto h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full py-12 md:py-0">
-            {/* Left Side - Text Content */}
-            <div className="text-white space-y-6 lg:space-y-8 px-6 sm:px-10 md:px-20 flex flex-col justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full py-8 md:py-0">
+            <div className="text-white space-y-4 lg:space-y-6 px-5 sm:px-8 md:px-16 flex flex-col justify-center">
               <div>
-                <p className="text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider text-white">
-                  WELCOME TO DREAMS TO FLY
+                <p className=" text-xs sm:text-sm font-medium mb-4 lg:mb-6 tracking-wider text-white">
+                  {hero?.subtitle}
                 </p>
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight font-serif">
-                  The Future Belongs
-                  <br />
-                  To Those Who
-                  <br />
-                  Believe In The Beauty
-                  <br />
-                  Of Their Dreams
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-wide">
+                  {hero?.title}
                 </h1>
               </div>
 
-              <p className="text-blue-100 text-sm sm:text-base lg:text-lg max-w-md leading-relaxed">
-                Get Services for every level of education that every student who
-                achieves for a bright future can get
-              </p>
+              <div
+                className="text-sm sm:text-base lg:text-lg max-w-lg leading-relaxed  text-white text-color-white"
+                dangerouslySetInnerHTML={{ __html: hero?.description }}
+              ></div>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button className="bg-white text-blue-600 px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-blue-50 flex items-center justify-center gap-2 text-sm transition-all">
-                  APPLY NOW
+                <button className="bg-white text-blue-600 px-6 sm:px-10 py-2.5 sm:py-3 font-medium hover:bg-blue-50 flex items-start justify-center gap-2 text-sm transition-all ">
+                  {hero?.button_text}
                   <span>→</span>
-                </button>
-                <button className="border-2 border-white text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded font-medium hover:bg-white/10 text-sm transition-all">
-                  LEARN MORE
                 </button>
               </div>
             </div>
@@ -427,7 +42,7 @@ export default function ServicesHero() {
 
               {/* Girl Image - On top of orange circle */}
               <img
-                src="/images/services/service-hero.png"
+                src={`${import.meta.env.VITE_IMAGE_BASE_URL}${hero?.image}`}
                 alt="Graduate student"
                 className="relative w-full h-full object-contain object-bottom rounded-tl-[40px] sm:rounded-tl-[60px] lg:rounded-tl-[100px]"
                 style={{ zIndex: 2 }}
@@ -438,45 +53,41 @@ export default function ServicesHero() {
 
         {/* Stats Card - Overlapping bottom */}
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[90%] sm:w-[85%] max-w-6xl z-30">
-          <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2 sm:py-4 lg:py-6 px-4 sm:px-6 lg:px-12">
+          <div className="bg-white shadow-xl border border-gray-100 py-2 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-12">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-              {/* Students Enrolled */}
-              <div className="text-center lg:border-r border-[#003E79]">
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-[#003E79] mb-1 sm:mb-2">
-                  1050 +
+              <div className="text-start lg:border-r border-[#003E79]">
+                <h3 className=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
+                  {counter[1]?.counter_value}
                 </h3>
-                <p className="text-gray-700 text-xs sm:text-sm lg:text-base">
-                  Students Enrolled
+                <p className=" text-gray-700 text-xs sm:text-sm lg:text-base">
+                  {counter[1]?.counter_text}
                 </p>
               </div>
 
-              {/* Completed Courses */}
-              <div className="text-center lg:border-r border-[#003E79]">
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-[#003E79] mb-1 sm:mb-2">
-                  3500 +
+              <div className="text-start lg:border-r border-[#003E79]">
+                <h3 className=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
+                  {counter[2]?.counter_value}
                 </h3>
-                <p className="text-gray-700 text-xs sm:text-sm lg:text-base">
-                  Completed Courses
+                <p className=" text-gray-700 text-xs sm:text-sm lg:text-base">
+                  {counter[2]?.counter_text}
                 </p>
               </div>
 
-              {/* Registered Instructors */}
-              <div className="text-center lg:border-r-[#003E79] border-t-2 lg:border-t-0 border-gray-200 pt-4 sm:pt-6 lg:pt-0">
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-[#003E79] mb-1 sm:mb-2">
-                  500 +
+              <div className="text-start lg:border-r border-[#003E79] pt-4 sm:pt-6 lg:pt-0">
+                <h3 className=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
+                  {counter[3]?.counter_value}
                 </h3>
-                <p className="text-gray-700 text-xs sm:text-sm lg:text-base">
-                  Registered Instructors
+                <p className="  text-gray-700 text-xs sm:text-sm lg:text-base">
+                  {counter[3]?.counter_text}
                 </p>
               </div>
 
-              {/* Success Rate */}
-              <div className="text-center border-t-2 lg:border-t-0 border-gray-200 pt-4 sm:pt-6 lg:pt-0">
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-[#003E79] mb-1 sm:mb-2">
-                  100%
+              <div className=" text-start border-t-2 lg:border-t-0 border-gray-200 pt-4 sm:pt-6 lg:pt-0">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#003E79] mb-1 sm:mb-2">
+                  {counter[4]?.counter_value}
                 </h3>
-                <p className="text-gray-700 text-xs sm:text-sm lg:text-base">
-                  Success Rate
+                <p className=" text-gray-700 text-xs sm:text-sm lg:text-base">
+                  {counter[4]?.counter_text}
                 </p>
               </div>
             </div>
@@ -485,7 +96,7 @@ export default function ServicesHero() {
       </div>
 
       {/* Spacer for overlapping stats - Responsive height */}
-      <div className="h-20 sm:h-10 md:h-28 lg:h-16"></div>
+      <div className="h-20 sm:h-10 md:h-28 lg:h-16 bg-gray-100"></div>
     </div>
   );
 }
