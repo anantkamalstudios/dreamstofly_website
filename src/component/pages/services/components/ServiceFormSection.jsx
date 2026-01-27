@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import ServiceEnquiryForm from "../[slug]/ServiceEnquiryForm";
 import FlightBookingForm from "../[slug]/FlightBookingForm";
 import InternationalMoneyTransferForm from "../[slug]/InternationalMoneyTransferForm";
@@ -34,6 +34,14 @@ const ServiceFormSection = ({ formConfig, slug }) => {
         <MoneyTransferForm setShowModal={setShowModal} />
       </>
     );
+  }
+
+  if(slug === "travel-insurance"){
+    return (
+      <>
+          
+      </>
+    )
   }
 
   return (
