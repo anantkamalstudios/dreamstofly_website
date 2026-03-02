@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useServiceData } from "../hooks/useServiceData";
-import ServiceHero from "../[slug]/ServiceHero";
 import ServiceCountry from "../[slug]/ServiceCountry";
 import TravelPartners from "../components/TravelPartners";
 import HowItWorks from "../components/HowItWorks";
@@ -8,34 +7,56 @@ import Testimonials from "../Testimonials";
 import RelatedServices from "../components/RelatedServices";
 import FAQAccordion from "../components/FAQAccordion";
 import FlightBookingHeroPage from "../components/FlightBookingHeroPage";
-import axios from "axios";
 import Loader from "../../../../common/Loader";
+import axios from "axios";
+
+const LEAD_SUBMITTED_KEY = "flight_lead_form_submitted";
 
 const FlightTicket = () => {
-  const { service, serviceDetails, loading, slug } = useServiceData();
-  const [firstFormData, setFirstFormData] = useState({});
-  const [popupFormData, setPopupFormData] = useState({});
-  const [showPopup, setShowPopup] = useState(false);
+  const { service, serviceDetails, loading } = useServiceData();
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [leadFormData, setLeadFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    mobile: "",
+  });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleFirstFormSubmit = () => {
-    console.log("first from data from flight ticket =>", firstFormData);
-    setShowPopup(true);
-  };
-  const handlePopupFormSubmit = async () => {
+  useEffect(() => {
+    const submitted = localStorage.getItem(LEAD_SUBMITTED_KEY);
+    if (!submitted) setShowLeadForm(true);
+  }, []);
+
+  const handleLeadSubmit = async (e) => {
+    e.preventDefault();
+    if (!leadFormData.firstname || !leadFormData.lastname || !leadFormData.email || !leadFormData.mobile) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+    setSubmitting(true);
     try {
-      const res = await axios.post(
+      await axios.post(
         `${import.meta.env.VITE_BASE_URL}/ServiceLead/Leads_controller/leads`,
-        popupFormData
+        { ...leadFormData, service: "student-flight-tickets" }
       );
-      if (res.status === 200) alert(res.data.message);
-      setShowPopup(false);
+      localStorage.setItem(LEAD_SUBMITTED_KEY, "true");
+      setShowLeadForm(false);
+      alert("Thank you! We have your details. Our team will contact you soon.");
     } catch (err) {
-      console.log(err);
+      console.error(err);
       alert("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
-  if (loading) <Loader />;
+  const handleLeadInputChange = (e) => {
+    const { name, value } = e.target;
+    setLeadFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  if (loading) return <Loader />;
 
   if (!service || !serviceDetails) return null;
 
@@ -69,14 +90,13 @@ const FlightTicket = () => {
       <FlightBookingHeroPage
         service={service}
         details={serviceDetails}
-        firstFormData={firstFormData}
-        setFirstFormData={setFirstFormData}
-        handleFirstFormSubmit={handleFirstFormSubmit}
-        showPopup={showPopup}
-        setShowPopup={setShowPopup}
-        popupFormData={popupFormData}
-        setPopupFormData={setPopupFormData}
-        handlePopupFormSubmit={handlePopupFormSubmit}
+        showLeadForm={showLeadForm}
+        setShowLeadForm={setShowLeadForm}
+        leadFormData={leadFormData}
+        setLeadFormData={setLeadFormData}
+        handleLeadSubmit={handleLeadSubmit}
+        handleLeadInputChange={handleLeadInputChange}
+        submitting={submitting}
       />
       <div className="pt-2 sm:pt-16 md:pt-20 lg:pt-20 px-4 sm:px-6 md:px-10 lg:px-0">
         <ServiceCountry countryData={countryData} />

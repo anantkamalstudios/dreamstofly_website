@@ -71,6 +71,9 @@ const AccommodationForm = lazy(() =>
 const TravelInsuranceBook = lazy(() =>
   import("./component/pages/services/pages/TravelInsuranceBook")
 );
+const FlightSearchResults = lazy(() =>
+  import("./component/pages/services/pages/FlightSearchResults")
+);
 const CalculatorMainPage = lazy(() =>
   import("./component/pages/calculator/CalculatorMainPage")
 );
@@ -160,6 +163,10 @@ export default function App() {
                 <Route path="/free-cources" element={<FreeCourses />} />
                 <Route path="/travel" element={<Travel />} />
                 <Route path="/services" element={<Services />} />
+                <Route
+                  path="/services/student-flight-tickets/search"
+                  element={<FlightSearchResults />}
+                />
                 <Route path="/services/:slug" element={<ServiceRouter />} />
                 <Route
                   path="/services/travel-insurance/insurenceform"

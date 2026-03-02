@@ -101,9 +101,8 @@ const FlightBookingForm = ({ showModal, setShowModal }) => {
       "Nov",
       "Dec",
     ];
-    return `${
-      months[date.getMonth()]
-    } ${date.getDate()}, ${date.getFullYear()}, ${days[date.getDay()]}`;
+    return `${months[date.getMonth()]
+      } ${date.getDate()}, ${date.getFullYear()}, ${days[date.getDay()]}`;
   };
 
   const handleSubmit = () => {

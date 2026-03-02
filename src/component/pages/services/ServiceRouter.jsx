@@ -22,15 +22,6 @@ import InternationalSimCard from "./pages/InternationalSimCard";
 import EMoneyApp from "./pages/EMoneyApp";
 import Accommodation from "../accomodation/AccomodationMainPage";
 
-/**
- * Map service slugs to their dedicated page components
- * If a service slug is not in this map, it will fall back to ServiceDetail component
- *
- * To add a new service page:
- * 1. Create the page component in ./pages/
- * 2. Import it above
- * 3. Add the slug-to-component mapping here
- */
 const servicePageMap = {
   "student-flight-tickets": FlightTicket,
   "get-visa": VisaServicePage,
@@ -55,7 +46,6 @@ const servicePageMap = {
 const ServiceRouter = () => {
   const { slug } = useParams();
 
-  // Get the dedicated page component for this slug, or fall back to ServiceDetail
   const ServicePage = servicePageMap[slug] || ServiceDetail;
 
   return <ServicePage />;
