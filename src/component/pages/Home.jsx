@@ -6,12 +6,13 @@ import ExploreProgramsSection from "./home/ExplorePrograms";
 import TopUniversitiesColleges from "./home/TopUniversitiesColleges";
 import AdmissionChanceBanner from "./home/AdmissionBanner";
 import CollegeRanking from "./home/CollegeRanking";
-import StudyAbroadSection from "./home/StudyAbroadSection";
+import HomeBlog from "./home/HomeBlog";
+// import StudyAbroadSection from "./home/StudyAbroadSection";
 import TopStudyPlacesCarousel from "./home/TopStudyPlaces";
 import RegularAlerts from "./home/RegularAlerts";
 // import CourseFinderBanner from './home/CourseBanner'
 import NewsletterForm from "./home/NewsletterForm";
-import LatestNews from "./home/LatestNews";
+// import LatestNews from "./home/LatestNews";
 import Services from "./home/OurServices";
 import WhyChooseUs from "./home/WhyChooseUs";
 // import StudyAbroadPlatform from './home/StudyAbroadPlatform'
@@ -35,8 +36,9 @@ function Home() {
       <TopStudyPlacesCarousel />
       {/* <CourseFinderBanner /> */}
       <PremiumFeature />
-      <LatestNews />
-      <StudyAbroadSection />
+      <HomeBlog />
+      {/* <LatestNews /> */}
+      {/* <StudyAbroadSection /> */}
       <Certificates />
       <NewsletterForm />
     </div>

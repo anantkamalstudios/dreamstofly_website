@@ -5,6 +5,8 @@ import Home from "./component/pages/Home";
 import "./App.css";
 import ScrollToTop from "./component/ScrollToTop";
 import UserProtectedRoute from "./utils/UserProtectedRoute";
+import AccommodationServicePage from "./component/pages/accomodation/AccommodationServicePage";
+import GotARoomPage from "./component/pages/accomodation/GotARoomPage";
 
 // Lazy loaded components
 const Blogs = lazy(() => import("./component/pages/blogs/Blogs"));
@@ -187,6 +189,14 @@ export default function App() {
                 <Route
                   path="/accomodation/:slug/residency"
                   element={<AccommodationListing />}
+                />
+                <Route 
+                  path="/accomodation/accommodation-service"
+                  element={<AccommodationServicePage />}
+                />
+                <Route 
+                  path="/accomodation/got-a-room"
+                  element={<GotARoomPage />}
                 />
                 <Route
                   path="/accomodation/:id/details"

@@ -177,10 +177,11 @@ import { Typewriter } from "react-simple-typewriter";
 import slides from "./data/home/Herosection";
 import axios from "axios";
 import Loader from "../common/Loader";
-
+import CounsellingModal from "./common/CounsellingModal";
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [heroSectionData, setHeroSectionData] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   const BASE_URL = import.meta.env.VITE_HOME_HEROSECTION;
 
@@ -300,7 +301,10 @@ const HeroSection = () => {
 
         {/* Right - Need Counselling & Slide Indicator */}
         <div className="hidden md:flex items-center space-x-4 animate-slide-in-right">
-          <button className="text-white bg-[#0073df] px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
+          <button 
+            onClick={() => setShowModal(true)}
+            className="text-white bg-[#0073df] px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
+          >
             Need Counselling
           </button>
           <div className="flex items-center space-x-2 text-white bg-black bg-opacity-30 px-3 py-2 rounded-lg backdrop-blur-sm">
@@ -318,7 +322,10 @@ const HeroSection = () => {
 
       {/* Mobile - Only Need Counselling (centered) */}
       <div className="absolute bottom-6 left-0 right-0 flex justify-center md:hidden z-20">
-        <button className="bg-[#0073df] hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
+        <button 
+          onClick={() => setShowModal(true)}
+          className="bg-[#0073df] hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
+        >
           Need Counselling
         </button>
       </div>
@@ -347,6 +354,12 @@ const HeroSection = () => {
           }}
         />
       </div>
+
+      {/* Counselling Modal */}
+      <CounsellingModal 
+        isOpen={showModal} 
+        onClose={() => setShowModal(false)} 
+      />
     </div>
   );
 };

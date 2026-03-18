@@ -1,8 +1,4 @@
-import React from "react";
 import FeelAtHomeHero from "./components/FeelAtHomeHero";
-import StudyAbroadBanner from "./components/StudyAbroadBanner";
-import RecentlyViewedProperties from "./components/RecentlyViewedProperties";
-import ContactInfoForm from "./components/ContactInfoForm";
 import AccomodationHeader from "./components/AccomodationHeader";
 import AccommodationOverview from "./components/AccommodationOverview";
 import PopularDestination from "./components/PopularDestination";
@@ -18,10 +14,10 @@ const AccomodationMainPage = () => {
       <hr className="mx-14 border-gray-300" />
       <Testimonials />
       <FeelAtHomeHero />
-      <StudyAbroadBanner />
+      {/* <StudyAbroadBanner />
       <RecentlyViewedProperties />
-      <ContactInfoForm />
-      <FAQSection />
+      <ContactInfoForm /> */}
+      <FAQSection /> 
     </div>
   );
 };

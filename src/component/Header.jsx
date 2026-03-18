@@ -58,7 +58,7 @@ const Header = () => {
           </Link>
 
           <div className="hidden lg:flex items-center space-x-6 flex-1 max-w-4xl ml-8">
-            <div
+            {/* <div
               className="relative flex justify-center items-center"
               onMouseEnter={() => setIsGoalOpen(true)}
               onMouseLeave={() => setIsGoalOpen(false)}
@@ -125,7 +125,7 @@ const Header = () => {
                   </div>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Search */}
             <div className="flex-1 max-w-2xl">
@@ -146,13 +146,13 @@ const Header = () => {
             <button className="hidden lg:flex items-center  text-white px-4 py-2.5 rounded-lg hover:bg-[#0073df] text-sm font-medium">
               <Edit3 className="h-4 w-4 mr-2" />
               Write a Review
-              <div className="ml-2  text-white text-xs px-2 py-0.5 rounded">
+              {/* <div className="ml-2  text-white text-xs px-2 py-0.5 rounded">
                 Get Upto ₹500
-              </div>
+              </div> */}
             </button>
 
             {/* Explore (Desktop) */}
-            <div
+            {/* <div
               className="relative hidden lg:block"
               onMouseEnter={() => setIsExploreOpen(true)}
               onMouseLeave={() => setIsExploreOpen(false)}
@@ -223,7 +223,7 @@ const Header = () => {
                   </div>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Notifications */}
             <button className="relative p-2 text-white hover:text-gray-300">

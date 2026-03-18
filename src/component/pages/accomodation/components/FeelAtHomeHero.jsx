@@ -1,5 +1,6 @@
 import React from "react";
-import { Check, Shield, Tag, FileX, CheckCircle } from "lucide-react";
+import { Check, Shield, FileX, CheckCircle } from "lucide-react";
+import { Headphones, Tag, Users, Globe } from "lucide-react";
 
 export default function FeelAtHomeHero() {
   return (
@@ -88,9 +89,9 @@ export default function FeelAtHomeHero() {
             <div className="bg-white rounded-2xl shadow-xl p-8 relative overflow-hidden flex flex-col lg:flex-row gap-6">
               <div className="lg:w-3/4 flex flex-col justify-center relative z-10">
                 <h2 className="text-3xl lg:text-4xl font-medium text-slate-900 leading-tight">
-                  Where every student
+                  Why use
                   <br />
-                  feels at home!
+                  Accommodation?
                 </h2>
                 <p className="text-slate-600 mt-3 text-base lg:text-lg ">
                   Get personalised options with your preferences in just a few
@@ -102,7 +103,7 @@ export default function FeelAtHomeHero() {
                     <Check className="w-4 h-4" />
                   </div>
                   <span className="text-slate-700 font-medium ">
-                    Upto £200 Cashback
+                    Lowest Price Guarantee
                   </span>
                 </div>
 
@@ -170,74 +171,53 @@ export default function FeelAtHomeHero() {
 
           {/* Right card: features */}
           <div className="bg-white rounded-2xl p-6 shadow-xl">
-            <div className="space-y-4 divide-y divide-gray-100">
-              <div className="flex gap-4 py-4">
-                <div className="flex items-start">
-                  <div className="bg-green-50 rounded-xl p-3">
-                    <Shield className="w-5 h-5 text-green-600" />
-                  </div>
+            <div className="divide-y divide-gray-200">
+
+              {/* Item 1 */}
+              <div className="flex gap-4 py-6 items-start items-center">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-green-100">
+                  <Headphones className="w-5 h-5 text-green-600" strokeWidth={1.5} />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-slate-900 font-semibold">
-                    24×7 Personal Assistance
+                <div>
+                  <h4 className="text-gray-900 font-semibold text-lg">
+                    We're the busiest
                   </h4>
-                  <p className="text-sm text-slate-700 mt-1">
-                    We offer 24×7 expert support in resolving all your
-                    housing-related queries, providing peace of mind.
+                  <p className="text-gray-600 text-sm mt-1 leading-relaxed">
+                    Every 3 minutes someone finds a flatmate on SpareRoom. With the biggest selection of ads, you'll find yours.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 py-4">
-                <div className="flex items-start">
-                  <div className="bg-yellow-50 rounded-xl p-3">
-                    <Tag className="w-5 h-5 text-yellow-600" />
-                  </div>
+              {/* Item 2 */}
+              <div className="flex gap-4 py-6 items-start items-center">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-yellow-100">
+                  <Tag className="w-5 h-5 text-yellow-600" strokeWidth={1.5} />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-slate-900 font-semibold">
-                    Price Match Guarantee
+                <div>
+                  <h4 className="text-gray-900 font-semibold text-lg">
+                    Safety
                   </h4>
-                  <p className="text-sm text-slate-700 mt-1">
-                    If you find a lower price for this accommodation on another
-                    platform, we'll match it when you book.
+                  <p className="text-gray-600 text-sm mt-1 leading-relaxed">
+                    Your safety is our top priority. We have a team of moderators working 7 days a week to check ads and content.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 py-4">
-                <div className="flex items-start">
-                  <div className="bg-red-50 rounded-xl p-3">
-                    <FileX className="w-5 h-5 text-red-600" />
-                  </div>
+              {/* Item 3 */}
+              <div className="flex gap-4 py-6 items-start items-center">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-red-100">
+                  <Users className="w-5 h-5 text-red-500" strokeWidth={1.5} />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-slate-900 font-semibold">
-                    No Visa, No Pay
+                <div>
+                  <h4 className="text-gray-900 font-semibold text-lg">
+                    We're all about people
                   </h4>
-                  <p className="text-sm text-slate-700 mt-1">
-                    If you are unable to obtain a visa, you can cancel your
-                    booking at no cost.
+                  <p className="text-gray-600 text-sm mt-1 leading-relaxed">
+                    Everyone's idea of the perfect housemate is different, so search based on what's important to you.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 py-4">
-                <div className="flex items-start">
-                  <div className="bg-teal-50 rounded-xl p-3">
-                    <CheckCircle className="w-5 h-5 text-teal-600" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-slate-900 font-semibold">
-                    Verified Listings
-                  </h4>
-                  <p className="text-sm text-slate-700 mt-1">
-                    All our properties are verified, which guarantees a seamless
-                    booking experience.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

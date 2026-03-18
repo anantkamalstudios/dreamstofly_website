@@ -40,7 +40,7 @@ export default function Topbar() {
           {/* Left section */}
           <div className="flex items-center space-x-2 flex-1">
             {/* All Courses Dropdown (Desktop and Large tablets) */}
-            <div className="relative hidden xl:block">
+            {/* <div className="relative hidden xl:block">
               <button
                 className="flex items-center text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium whitespace-nowrap"
                 onClick={() => setIsAllCoursesOpen(!isAllCoursesOpen)}
@@ -91,7 +91,7 @@ export default function Topbar() {
                   </div>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Desktop nav links - only show on extra large screens */}
             <div className="hidden xl:flex items-center space-x-1 overflow-x-auto">
