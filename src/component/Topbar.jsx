@@ -102,7 +102,7 @@ export default function Topbar() {
                     to={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-blue-700 px-2 py-2 text-sm border-r border-gray-600 whitespace-nowrap"
+                    className={`text-gray-700 hover:text-blue-700 px-2 py-2 text-sm whitespace-nowrap ${i !== links.length - 1 ? "border-r border-gray-600" : ""}`}
                   >
                     {link.name}
                   </Link>
@@ -110,7 +110,7 @@ export default function Topbar() {
                   <Link
                     key={i}
                     to={link.href}
-                    className="text-gray-700 hover:text-blue-700 px-2 py-2 text-sm border-r border-gray-600 whitespace-nowrap"
+                    className={`text-gray-700 hover:text-blue-700 px-2 py-2 text-sm whitespace-nowrap ${i !== links.length - 1 ? "border-r border-gray-600" : ""}`}
                   >
                     {link.name}
                   </Link>
@@ -159,9 +159,8 @@ export default function Topbar() {
                   All Courses
                 </span>
                 <ChevronDown
-                  className={`ml-2 h-4 w-4 transform transition-transform ${
-                    isMobileCoursesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`ml-2 h-4 w-4 transform transition-transform ${isMobileCoursesOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 

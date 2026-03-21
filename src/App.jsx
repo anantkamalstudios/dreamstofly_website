@@ -7,6 +7,7 @@ import ScrollToTop from "./component/ScrollToTop";
 import UserProtectedRoute from "./utils/UserProtectedRoute";
 import AccommodationServicePage from "./component/pages/accomodation/AccommodationServicePage";
 import GotARoomPage from "./component/pages/accomodation/GotARoomPage";
+import RoomDetails from "./component/pages/accomodation/RoomDetails";
 
 // Lazy loaded components
 const Blogs = lazy(() => import("./component/pages/blogs/Blogs"));
@@ -201,6 +202,10 @@ export default function App() {
                 <Route
                   path="/accomodation/:id/details"
                   element={<AccomodationDetail />}
+                />
+                <Route
+                  path="/accomodation/:id/room-details"
+                  element={<RoomDetails />}
                 />
                 <Route
                   path="/accomodation/list-your-property"

@@ -28,7 +28,7 @@ const SelectField = ({ value, onChange, options, className = "" }) => (
   </div>
 );
 
-const AdvertiseRoomStep5 = ({ onBack }) => {
+const AdvertiseRoomStep5 = ({ onBack, onSubmit, loading }) => {
   const [adTitle, setAdTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ageFrom, setAgeFrom] = useState("select");
@@ -42,9 +42,22 @@ const AdvertiseRoomStep5 = ({ onBack }) => {
   const [telephone, setTelephone] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    navigate("/services/accommodation");
-    console.log("Form submitted!");
+  const handleSubmit = async () => {
+    if (onSubmit) {
+      onSubmit({
+        adTitle,
+        description,
+        ageFrom,
+        ageTo,
+        language,
+        nationality,
+        interests,
+        photos, // Pass raw File objects instead of base64
+        firstName,
+        lastName,
+        telephone
+      });
+    }
   };
 
   return (
@@ -209,9 +222,10 @@ const AdvertiseRoomStep5 = ({ onBack }) => {
         </button>
         <button
           onClick={handleSubmit}
-          className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-64 py-3.5 rounded-xl text-base font-semibold transition-colors"
+          disabled={loading}
+          className={`w-full sm:w-64 py-3.5 rounded-xl text-base font-semibold transition-colors ${loading ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
         >
-          Submit
+          {loading ? 'Submitting...' : 'Submit'}
         </button>
       </div>
 

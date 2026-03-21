@@ -2,11 +2,21 @@ import { useState } from "react";
 
 const RoomWantedStep1 = ({ onNext }) => {
   const [whoSearching, setWhoSearching] = useState("Just me");
-  const [gender, setGender] = useState("2 males");
-  const [buddyUp, setBuddyUp] = useState(true);
+  const [gender, setGender] = useState("male");
+  const [buddyUp, setBuddyUp] = useState(false);
 
-  const whoOptions = ["Just me", "Me and a partner", "Me and a friend"];
-  const genderOptions = ["2 males", "2 females", "1 male 1 female", "Others"];
+  const whoOptions = [
+    { label: "Just me", value: "single room" },
+    { label: "Me and a partner", value: "double room" },
+    { label: "Me and a friend", value: "shared room" },
+  ];
+
+  const genderOptions = [
+    { label: "Male", value: "male" },
+    { label: "Female", value: "female" },
+    { label: "Mixed", value: "mixed" },
+    { label: "Others", value: "other" },
+  ];
 
   return (
     <div className="bg-white w-full max-w-3xl px-5 sm:px-8 md:px-14 py-8 md:py-12 shadow-md">
@@ -29,7 +39,7 @@ const RoomWantedStep1 = ({ onNext }) => {
         Get started with your room wanted ad
       </div>
 
-      {/* Who's searching */}
+      {/* Who's searching → maps to searching_for */}
       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 mb-6 md:mb-7">
         <label className="text-teal-700 font-semibold text-sm md:text-base sm:w-40 flex-shrink-0">
           Who's searching?
@@ -37,24 +47,24 @@ const RoomWantedStep1 = ({ onNext }) => {
         <div className="flex flex-wrap gap-3 md:gap-5">
           {whoOptions.map((opt) => (
             <label
-              key={opt}
+              key={opt.value}
               className="flex items-center gap-2 cursor-pointer text-sm text-gray-700"
             >
               <input
                 type="radio"
                 name="whoSearching"
-                value={opt}
-                checked={whoSearching === opt}
-                onChange={() => setWhoSearching(opt)}
+                value={opt.value}
+                checked={whoSearching === opt.label}
+                onChange={() => setWhoSearching(opt.label)}
                 className="accent-blue-600 w-4 h-4"
               />
-              {opt}
+              {opt.label}
             </label>
           ))}
         </div>
       </div>
 
-      {/* Gender */}
+      {/* Gender → maps to gender */}
       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 mb-6 md:mb-7">
         <label className="text-teal-700 font-semibold text-sm md:text-base sm:w-40 flex-shrink-0">
           Your gender(s)
@@ -62,24 +72,24 @@ const RoomWantedStep1 = ({ onNext }) => {
         <div className="flex flex-wrap gap-3 md:gap-5">
           {genderOptions.map((opt) => (
             <label
-              key={opt}
+              key={opt.value}
               className="flex items-center gap-2 cursor-pointer text-sm text-gray-700"
             >
               <input
                 type="radio"
                 name="gender"
-                value={opt}
-                checked={gender === opt}
-                onChange={() => setGender(opt)}
+                value={opt.value}
+                checked={gender === opt.value}
+                onChange={() => setGender(opt.value)}
                 className="accent-blue-600 w-4 h-4"
               />
-              {opt}
+              {opt.label}
             </label>
           ))}
         </div>
       </div>
 
-      {/* Buddy ups */}
+      {/* Buddy up → maps to buddy_up */}
       <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 mb-10 md:mb-12">
         <label className="text-teal-700 font-semibold text-sm md:text-base sm:w-40 flex-shrink-0 sm:pt-0.5">
           Buddy ups
@@ -101,10 +111,16 @@ const RoomWantedStep1 = ({ onNext }) => {
         </div>
       </div>
 
-      {/* Next button */}
+      {/* Next button — passes mapped values to Step 2 */}
       <div className="flex justify-center">
         <button
-          onClick={() => onNext({ whoSearching, gender, buddyUp })}
+          onClick={() =>
+            onNext({
+              searching_for: whoOptions.find((o) => o.label === whoSearching)?.value || "single room",
+              gender,
+              buddy_up: buddyUp ? "1" : "0",
+            })
+          }
           className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto sm:px-28 py-3 md:py-3.5 rounded-full text-base font-semibold transition-colors"
         >
           Next
