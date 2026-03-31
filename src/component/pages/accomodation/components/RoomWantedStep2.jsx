@@ -68,6 +68,7 @@ const RoomWantedStep2 = ({ onBack, step1Data = {} }) => {
 
   const [country,     setCountry]     = useState("India");
   const [pincode,     setPincode]     = useState("");
+  const [area,        setArea]        = useState("");
   const [roomSize,    setRoomSize]    = useState("single");
   const [budget,      setBudget]      = useState("");
   const [budgetType,  setBudgetType]  = useState("monthly");
@@ -147,6 +148,7 @@ const RoomWantedStep2 = ({ onBack, step1Data = {} }) => {
     fd.append("room_size",      roomSize);
     fd.append("country",        country);
     fd.append("pincode",        pincode);
+    fd.append("area",           area);
     fd.append("budget",         budget);
     fd.append("budget_type",    budgetType);
     fd.append("available_from", buildAvailableFrom());
@@ -174,7 +176,20 @@ const RoomWantedStep2 = ({ onBack, step1Data = {} }) => {
     fd.append("phone",              telephone);
 
     // Photos — append each file
-    photos.forEach((file) => fd.append("photos[]", file));
+    photos.forEach((file) => {
+      console.log('Appending photo:', file.name, file.type, file.size);
+      fd.append("photos[]", file);
+    });
+
+    // Debug: Log all FormData entries before sending
+    console.log('FormData contents before sending:');
+    for (let [key, value] of fd.entries()) {
+      if (value instanceof File) {
+        console.log(`${key}:`, value.name, value.type, value.size);
+      } else {
+        console.log(`${key}:`, value);
+      }
+    }
 
     setLoading(true);
     try {
@@ -184,13 +199,14 @@ const RoomWantedStep2 = ({ onBack, step1Data = {} }) => {
           method: "POST",
           headers: {
             ...(token ? { Authorization: `Bearer ${token}` } : {}),
-            // Do NOT set Content-Type — browser sets it automatically with boundary for FormData
           },
           body: fd,
         }
       );
 
       const data = await response.json();
+      console.log('response', response);
+      console.log('data', data);
 
       if (response.ok) {
         setSuccess(true);
@@ -258,6 +274,17 @@ const RoomWantedStep2 = ({ onBack, step1Data = {} }) => {
           value={pincode}
           onChange={(e) => setPincode(e.target.value)}
           placeholder="eg: 411001"
+          className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
+        />
+      </FormRow>
+
+      {/* Area / City */}
+      <FormRow label="Area / City *" hint="(e.g. Mumbai, Delhi, Bangalore)">
+        <input
+          type="text"
+          value={area}
+          onChange={(e) => setArea(e.target.value)}
+          placeholder="Enter area or city name"
           className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
         />
       </FormRow>

@@ -20,6 +20,7 @@ import RoomEssentials from "./pages/RoomEssentials";
 import RoomReplacement from "./pages/RoomReplacement";
 import InternationalSimCard from "./pages/InternationalSimCard";
 import EMoneyApp from "./pages/EMoneyApp";
+import HotelBooking from "./pages/HotelBooking";
 import Accommodation from "../accomodation/AccomodationMainPage";
 
 const servicePageMap = {
@@ -40,6 +41,7 @@ const servicePageMap = {
   "room-replacement": RoomReplacement,
   "international-sim": InternationalSimCard,
   "student-e-money-app": EMoneyApp,
+  "hotel-booking": HotelBooking,
   accommodation: Accommodation,
 };
 

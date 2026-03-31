@@ -1,0 +1,768 @@
+{
+    "auditData": {
+        "processTime": "73",
+        "timestamp": "2026-03-31 05:03:39.407",
+        "requestHost": "69.62.85.170",
+        "serverId": "hotel-content-api-cfd85b899-qm2sx",
+        "environment": "[int, awseucentral1, k8s, secret, hotel-content-api-cfd85b899-qm2sx]",
+        "release": ""
+    },
+    "hotel": {
+        "code": 1544,
+        "name": {
+            "content": "Costa Mediterraneo - Adults only"
+        },
+        "description": {
+            "content": "Nestled amidst 600 m² of garden, this hotel enjoys a peaceful setting in the lively town of El Arenal."
+        },
+        "country": {
+            "code": "ES",
+            "isoCode": "ES",
+            "description": {
+                "content": "Spain"
+            }
+        },
+        "state": {
+            "code": "07",
+            "name": "ISLAS BALEARES"
+        },
+        "destination": {
+            "code": "PMI",
+            "name": {
+                "content": "Majorca"
+            },
+            "countryCode": "ES"
+        },
+        "zone": {
+            "zoneCode": 75,
+            "name": "S'Arenal",
+            "description": {
+                "content": "El Arenal"
+            }
+        },
+        "coordinates": {
+            "longitude": 2.75574000000000000000,
+            "latitude": 39.49740200000000000000
+        },
+        "category": {
+            "code": "2EST",
+            "description": {
+                "content": "2 STARS"
+            }
+        },
+        "categoryGroup": {
+            "code": "GRUPO2",
+            "description": {
+                "content": "Includes 2-star hotels, standard,  mini hotels, residences and rural hotels."
+            }
+        },
+        "accommodationType": {
+            "code": "H",
+            "typeMultiDescription": {
+                "content": "Hotel"
+            },
+            "typeDescription": "Hotel"
+        },
+        "boards": [
+            {
+                "code": "DB",
+                "description": {
+                    "content": "BUFFET BREAKFAST"
+                }
+            },
+            {
+                "code": "HB",
+                "description": {
+                    "content": "HALF BOARD"
+                }
+            },
+            {
+                "code": "RO",
+                "description": {
+                    "content": "ROOM ONLY"
+                }
+            }
+        ],
+        "segments": [
+            {
+                "code": 81,
+                "description": {
+                    "content": "Family hotels "
+                }
+            },
+            {
+                "code": 37,
+                "description": {
+                    "content": "Beach hotels"
+                }
+            },
+            {
+                "code": 45,
+                "description": {
+                    "content": "Sport hotels"
+                }
+            }
+        ],
+        "address": {
+            "content": "Carrer Girona, 11",
+            "street": "Carrer Girona",
+            "number": "11"
+        },
+        "postalCode": "07600",
+        "city": {
+            "content": "EL ARENAL"
+        },
+        "email": "h@hotelcostamediterraneo.com",
+        "license": "HPM1523",
+        "giataCode": 3357,
+        "phones": [
+            {
+                "phoneNumber": "+34971441612",
+                "phoneType": "PHONEBOOKING"
+            },
+            {
+                "phoneNumber": "+34971441612",
+                "phoneType": "PHONEHOTEL"
+            },
+            {
+                "phoneNumber": "+34971441548",
+                "phoneType": "FAXNUMBER"
+            }
+        ],
+        "rooms": [
+            {
+                "roomCode": "ROO.SU-VM",
+                "isParentRoom": false,
+                "minPax": 1,
+                "maxPax": 10,
+                "maxAdults": 10,
+                "maxChildren": 6,
+                "minAdults": 1,
+                "description": "Room SUPERIOR SEA VIEW",
+                "type": {
+                    "code": "ROO",
+                    "description": {
+                        "content": "Room"
+                    }
+                },
+                "characteristic": {
+                    "code": "SU-VM",
+                    "description": {
+                        "content": "SUPERIOR SEA VIEW"
+                    }
+                }
+            },
+            {
+                "roomCode": "DBT.ST",
+                "isParentRoom": false,
+                "minPax": 1,
+                "maxPax": 2,
+                "maxAdults": 2,
+                "maxChildren": 0,
+                "minAdults": 1,
+                "description": "Double or Twin STANDARD",
+                "type": {
+                    "code": "DBT",
+                    "description": {
+                        "content": "Double or Twin"
+                    }
+                },
+                "characteristic": {
+                    "code": "ST",
+                    "description": {
+                        "content": "STANDARD"
+                    }
+                },
+                "roomFacilities": [
+                    {
+                        "facilityCode": 40,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Hairdryer"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 286,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Fan"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 287,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Smoking rooms"
+                        },
+                        "indYesOrNo": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 295,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Room size (sqm)"
+                        },
+                        "number": 15,
+                        "indYesOrNo": true,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 298,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Number of bedrooms"
+                        },
+                        "indLogic": true,
+                        "number": 1,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 10,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Bathroom"
+                        },
+                        "indLogic": true,
+                        "number": 1,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 279,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Desk"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 275,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Extra beds on demand"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 261,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Wi-fi"
+                        },
+                        "indFee": false,
+                        "indYesOrNo": true,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 260,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Disability-friendly bathroom"
+                        },
+                        "indLogic": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 250,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Wheelchair-accessible"
+                        },
+                        "indYesOrNo": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 240,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Terrace"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 230,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Balcony"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 220,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Living room"
+                        },
+                        "indLogic": false,
+                        "number": 0,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 200,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Safe"
+                        },
+                        "indLogic": true,
+                        "indFee": true,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 180,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Individually adjustable air conditioning"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 55,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "TV"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 50,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Direct dial telephone"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 20,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Shower"
+                        },
+                        "indLogic": true,
+                        "number": 1,
+                        "voucher": false
+                    }
+                ],
+                "roomStays": [
+                    {
+                        "stayType": "BED",
+                        "order": "1",
+                        "description": "Bed room",
+                        "roomStayFacilities": [
+                            {
+                                "facilityCode": 1,
+                                "facilityGroupCode": 61,
+                                "description": {
+                                    "content": "Single bed 80-130 width"
+                                },
+                                "number": 2
+                            }
+                        ]
+                    }
+                ],
+                "PMSRoomCode": "n/a"
+            },
+            {
+                "roomCode": "SGL.AX",
+                "isParentRoom": false,
+                "minPax": 1,
+                "maxPax": 1,
+                "maxAdults": 1,
+                "maxChildren": 0,
+                "minAdults": 1,
+                "description": "SINGLE ANNEX",
+                "type": {
+                    "code": "SGL",
+                    "description": {
+                        "content": "SINGLE"
+                    }
+                },
+                "characteristic": {
+                    "code": "AX",
+                    "description": {
+                        "content": "ANNEX"
+                    }
+                },
+                "roomFacilities": [
+                    {
+                        "facilityCode": 20,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Shower"
+                        },
+                        "indLogic": true,
+                        "number": 1,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 10,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Bathroom"
+                        },
+                        "indLogic": true,
+                        "number": 1,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 30,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Bathtub"
+                        },
+                        "indLogic": true,
+                        "number": 1,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 40,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Hairdryer"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 55,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "TV"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 180,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Individually adjustable air conditioning"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 200,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Safe"
+                        },
+                        "indLogic": true,
+                        "indFee": true,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 220,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Living room"
+                        },
+                        "indLogic": false,
+                        "number": 0,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 230,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Balcony"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 250,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Wheelchair-accessible"
+                        },
+                        "indYesOrNo": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 261,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Wi-fi"
+                        },
+                        "indFee": false,
+                        "indYesOrNo": true,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 279,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Desk"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 286,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Fan"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 287,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Smoking rooms"
+                        },
+                        "indYesOrNo": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 295,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Room size (sqm)"
+                        },
+                        "number": 15,
+                        "indYesOrNo": true,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 298,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Number of bedrooms"
+                        },
+                        "indLogic": true,
+                        "number": 1,
+                        "voucher": false
+                    }
+                ],
+                "roomStays": [
+                    {
+                        "stayType": "BED",
+                        "order": "1",
+                        "description": "Bed room",
+                        "roomStayFacilities": [
+                            {
+                                "facilityCode": 1,
+                                "facilityGroupCode": 61,
+                                "description": {
+                                    "content": "Single bed 80-130 width"
+                                },
+                                "number": 1
+                            }
+                        ]
+                    }
+                ],
+                "PMSRoomCode": "na"
+            },
+            {
+                "roomCode": "TPL.ST",
+                "isParentRoom": false,
+                "minPax": 1,
+                "maxPax": 3,
+                "maxAdults": 3,
+                "maxChildren": 0,
+                "minAdults": 1,
+                "description": "TRIPLE STANDARD",
+                "type": {
+                    "code": "TPL",
+                    "description": {
+                        "content": "TRIPLE"
+                    }
+                },
+                "characteristic": {
+                    "code": "ST",
+                    "description": {
+                        "content": "STANDARD"
+                    }
+                },
+                "roomFacilities": [
+                    {
+                        "facilityCode": 55,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "TV"
+                        },
+                        "indLogic": true,
+                        "indFee": false,
+                        "voucher": false
+                    },
+                    {
+                        "facilityCode": 261,
+                        "facilityGroupCode": 60,
+                        "description": {
+                            "content": "Wi-fi"
+                        },
+                        "indFee": false,
+                        "indYesOrNo": true,
+                        "voucher": false
+                    }
+                ],
+                "roomStays": [
+                    {
+                        "stayType": "BED",
+                        "order": "1",
+                        "description": "Bed room",
+                        "roomStayFacilities": [
+                            {
+                                "facilityCode": 1,
+                                "facilityGroupCode": 61,
+                                "description": {
+                                    "content": "Single bed 80-130 width"
+                                },
+                                "number": 3
+                            }
+                        ]
+                    }
+                ],
+                "PMSRoomCode": "n/a"
+            }
+        ],
+        "facilities": [
+            {
+                "facilityCode": 70,
+                "facilityGroupCode": 10,
+                "description": {
+                    "content": "Total number of rooms"
+                },
+                "order": 1,
+                "indYesOrNo": false,
+                "number": 94,
+                "voucher": false
+            }
+        ],
+        "interestPoints": [
+            {
+                "facilityCode": 20,
+                "facilityGroupCode": 100,
+                "order": 1,
+                "poiName": "Calla San Miguel",
+                "distance": "858000"
+            }
+        ],
+        "images": [
+            {
+                "type": {
+                    "code": "HAB",
+                    "description": {
+                        "content": "Room"
+                    }
+                },
+                "path": "00/001544/001544a_hb_ro_021.jpg",
+                "roomCode": "TPL.ST",
+                "roomType": "TPL",
+                "characteristicCode": "ST",
+                "order": 21,
+                "visualOrder": 339
+            },
+            {
+                "type": {
+                    "code": "HAB",
+                    "description": {
+                        "content": "Room"
+                    }
+                },
+                "path": "00/001544/001544a_hb_ro_036.jpg",
+                "roomCode": "DBT.ST",
+                "roomType": "DBT",
+                "characteristicCode": "ST",
+                "order": 36,
+                "visualOrder": 317
+            },
+            {
+                "type": {
+                    "code": "COM",
+                    "description": {
+                        "content": "Lobby"
+                    }
+                },
+                "path": "00/001544/001544a_hb_l_003.jpg",
+                "order": 3,
+                "visualOrder": 102
+            },
+            {
+                "type": {
+                    "code": "HAB",
+                    "description": {
+                        "content": "Room"
+                    }
+                },
+                "path": "00/001544/001544a_hb_ro_039.jpg",
+                "roomCode": "DBT.ST",
+                "roomType": "DBT",
+                "characteristicCode": "ST",
+                "order": 39,
+                "visualOrder": 319
+            },
+            {
+                "type": {
+                    "code": "PIS",
+                    "description": {
+                        "content": "Pool"
+                    }
+                },
+                "path": "00/001544/001544a_hb_p_002.jpg",
+                "order": 2,
+                "visualOrder": 401
+            },
+            {
+                "type": {
+                    "code": "BAR",
+                    "description": {
+                        "content": "Bar"
+                    }
+                },
+                "path": "00/001544/001544a_hb_ba_001.jpg",
+                "order": 1,
+                "visualOrder": 601
+            }
+        ],
+        "wildcards": [
+            {
+                "roomType": "TPL.ST",
+                "roomCode": "TPL",
+                "characteristicCode": "ST",
+                "hotelRoomDescription": {
+                    "content": "TRIPLE STANDARD 3 ADULTS"
+                }
+            },
+            {
+                "roomType": "SGL.ST",
+                "roomCode": "SGL",
+                "characteristicCode": "ST",
+                "hotelRoomDescription": {
+                    "content": "SINGLE STANDARD"
+                }
+            }
+        ],
+        "lastUpdate": "2026-01-19",
+        "S2C": "1*",
+        "ranking": 22
+    }
+}

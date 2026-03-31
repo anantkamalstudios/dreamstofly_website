@@ -77,6 +77,12 @@ const TravelInsuranceBook = lazy(() =>
 const FlightSearchResults = lazy(() =>
   import("./component/pages/services/pages/FlightSearchResults")
 );
+const HotelSearchResults = lazy(() =>
+  import("./component/pages/services/pages/HotelSearchResults")
+);
+const HotelDetailPage = lazy(() =>
+  import("./component/pages/services/pages/HotelDetailPage")
+);
 const CalculatorMainPage = lazy(() =>
   import("./component/pages/calculator/CalculatorMainPage")
 );
@@ -170,6 +176,14 @@ export default function App() {
                   path="/services/student-flight-tickets/search"
                   element={<FlightSearchResults />}
                 />
+                <Route
+                  path="/services/hotel-booking/search"
+                  element={<HotelSearchResults />}
+                />
+                <Route
+                  path="/services/hotel-booking/hotel/:hotelCode"
+                  element={<HotelDetailPage />}
+                />
                 <Route path="/services/:slug" element={<ServiceRouter />} />
                 <Route
                   path="/services/travel-insurance/insurenceform"
@@ -204,7 +218,7 @@ export default function App() {
                   element={<AccomodationDetail />}
                 />
                 <Route
-                  path="/accomodation/:id/room-details"
+                  path="/accomodation/:type/:id/room-details"
                   element={<RoomDetails />}
                 />
                 <Route

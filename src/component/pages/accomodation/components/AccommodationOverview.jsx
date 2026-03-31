@@ -220,11 +220,11 @@ const AccommodationOverview = () => {
     }
   };
 
-  const stats = [
-    { value: "1.5 M+", label: "Beds" },
-    { value: "10 K+", label: "Properties" },
-    { value: "700+", label: "Cities" },
-  ];
+  // const stats = [
+  //   { value: "1.5 M+", label: "Beds" },
+  //   { value: "10 K+", label: "Properties" },
+  //   { value: "700+", label: "Cities" },
+  // ];
 
   return (
     <div className="w-full py-8 md:py-12 bg-gray-100">
@@ -268,7 +268,7 @@ const AccommodationOverview = () => {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
+        {/* <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <div className="text-center">
@@ -307,7 +307,7 @@ const AccommodationOverview = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Already logged in warning */}
